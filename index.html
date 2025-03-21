@@ -61,7 +61,7 @@
             mouseY = e.pageY;
         });
         function animateCursor() {
-            posX += (mouseX - posX) * 0.1; // Smooth trailing
+            posX += (mouseX - posX) * 0.1;
             posY += (mouseY - posY) * 0.1;
             cursor.style.left = `${posX}px`;
             cursor.style.top = `${posY}px`;
@@ -113,12 +113,8 @@
 
         // RGB Button Hover
         const btn = document.querySelector('.btn');
-        btn.addEventListener('mouseenter', () => {
-            btn.classList.add('rgb-hover');
-        });
-        btn.addEventListener('mouseleave', () => {
-            btn.classList.remove('rgb-hover');
-        });
+        btn.addEventListener('mouseenter', () => btn.classList.add('rgb-hover'));
+        btn.addEventListener('mouseleave', () => btn.classList.remove('rgb-hover'));
 
         // Scroll Fade
         window.addEventListener('scroll', () => {
