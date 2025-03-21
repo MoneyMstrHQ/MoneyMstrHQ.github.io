@@ -142,11 +142,18 @@ nav a:hover {
     font-weight: 600; 
     font-size: 20px; 
     box-shadow: 0 0 20px rgba(0,212,255,0.6); 
-    transition: all 0.4s ease; 
+    transition: transform 0.4s ease, box-shadow 0.4s ease; 
+    animation: rgbCycle 10s infinite linear; /* Slow RGB cycle */
 }
-.btn:hover { 
+.btn.rgb-hover { 
     transform: scale(1.1); 
     box-shadow: 0 0 30px rgba(147,51,234,0.9); 
+}
+@keyframes rgbCycle { 
+    0% { background: linear-gradient(135deg, #00d4ff, #9333ea); } 
+    33% { background: linear-gradient(135deg, #9333ea, #ff00cc); } 
+    66% { background: linear-gradient(135deg, #ff00cc, #00d4ff); } 
+    100% { background: linear-gradient(135deg, #00d4ff, #9333ea); } 
 }
 .stats { 
     display: flex; 
