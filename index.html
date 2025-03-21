@@ -64,15 +64,15 @@
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('hero3d'), alpha: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
+        renderer.setSize(window.innerWidth, window.innerHeight * 0.8); // Contain height
+        const geometry = new THREE.TorusKnotGeometry(8, 2.5, 100, 16); // Smaller knot
         const material = new THREE.MeshPhongMaterial({ color: 0x00d4ff, shininess: 100 });
         const torusKnot = new THREE.Mesh(geometry, material);
         scene.add(torusKnot);
         const light = new THREE.PointLight(0xffffff, 1, 100);
         light.position.set(10, 10, 10);
         scene.add(light);
-        camera.position.z = 30;
+        camera.position.z = 25; // Pull camera closer
         function animate() {
             requestAnimationFrame(animate);
             torusKnot.rotation.x += 0.01;
@@ -80,6 +80,11 @@
             renderer.render(scene, camera);
         }
         animate();
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight * 0.8);
+        });
 
         // Kinetic Text
         const kinetic = document.querySelector('.kinetic');
