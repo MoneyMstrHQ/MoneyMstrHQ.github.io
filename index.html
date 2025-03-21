@@ -3,34 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MoneyMasterHQ - Master Your Wealth</title>
+    <title>MoneyMasterHQ - Elite Wealth Mastery</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>MoneyMasterHQ</h1>
-        <p>Your Path to Financial Freedom</p>
+        <nav>
+            <h1>MoneyMasterHQ</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#strategies">Strategies</a></li>
+                <li><a href="#join">Join</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h2>Unleash Your Financial Future</h2>
+            <p>Master wealth with elite strategies—$3k-$6k by June 2025 starts here.</p>
+            <a href="#join" class="btn">Join the Elite</a>
+        </div>
     </header>
     <main>
-        <section class="hero">
-            <h2>Grow Your Money in 2025</h2>
-            <p>Join thousands mastering wealth with proven strategies.</p>
-            <a href="#start" class="btn">Get Started</a>
+        <section class="stats">
+            <div class="stat"><span>$550-$1k</span><p>Week 1 Potential</p></div>
+            <div class="stat"><span>10,000+</span><p>Active Members</p></div>
+            <div class="stat"><span>$5k-$10k</span><p>Stretch Goal</p></div>
         </section>
-        <section class="features">
-            <div class="feature">
-                <h3>Expert Tips</h3>
-                <p>Learn from top financial minds.</p>
-            </div>
-            <div class="feature">
-                <h3>Real Results</h3>
-                <p>$550-$1k week 1—start now.</p>
+        <section class="strategies">
+            <h3>Proven Strategies</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4>High-Yield Trades</h4>
+                    <p>Maximize returns with insider moves.</p>
+                </div>
+                <div class="card">
+                    <h4>Passive Streams</h4>
+                    <p>Build income that works for you.</p>
+                </div>
+                <div class="card">
+                    <h4>Market Mastery</h4>
+                    <p>Dominate trends with real-time data.</p>
+                </div>
             </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2025 MoneyMasterHQ. All rights reserved.</p>
+        <p>© 2025 MoneyMasterHQ | Elite Wealth Systems</p>
+        <div class="social">
+            <a href="#">X</a><a href="#">Discord</a>
+        </div>
     </footer>
+    <script>
+        window.addEventListener('scroll', () => {
+            document.querySelector('.hero h2').style.transform = `translateY(${window.scrollY * 0.2}px)`;
+        });
+    </script>
 </body>
 </html>
