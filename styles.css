@@ -46,6 +46,7 @@ header {
     display: flex; 
     flex-direction: column; 
     align-items: center; 
+    position: relative; 
 }
 nav { 
     display: flex; 
@@ -58,6 +59,8 @@ nav {
     max-width: 1200px; 
     width: 90%; 
     margin: 0 auto; 
+    position: relative; 
+    z-index: 2; 
 }
 nav h1 { 
     font-size: 36px; 
@@ -90,7 +93,7 @@ nav a:hover {
     max-width: 900px; 
     width: 90%; 
     position: relative; 
-    z-index: 1; 
+    z-index: 2; 
     flex-grow: 1; 
     display: flex; 
     flex-direction: column; 
@@ -99,19 +102,16 @@ nav a:hover {
 }
 #hero3d { 
     position: absolute; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
+    top: 0; 
+    left: 0; 
     width: 100%; 
-    max-width: 400px; 
-    height: 400px; 
-    z-index: -1; 
-    opacity: 0.6; 
+    height: 100%; 
+    z-index: 1; /* Behind text/button */
 }
 .kinetic { 
     font-size: 80px; 
     font-weight: 800; 
-    color: #e0e0e0; /* Static white-ish */
+    color: #e0e0e0; 
     text-shadow: 0 0 15px rgba(0,212,255,0.5); 
 }
 .hero p { 
@@ -240,7 +240,7 @@ footer {
     justify-content: space-between; 
     align-items: center; 
     flex-wrap: wrap; 
-    border-top: 1px solid rgba(0,212,255,0.2); 
+    border-top: 1 moeite solid rgba(0,212,255,0.2); 
 }
 footer p { 
     font-size: 14px; 
@@ -261,7 +261,6 @@ footer p {
 @media (max-width: 768px) {
     .hero h2 { font-size: 48px; }
     .hero p { font-size: 20px; }
-    #hero3d { max-width: 250px; height: 250px; }
     .stats { flex-direction: column; gap: 40px; }
     nav { flex-direction: column; align-items: center; padding: 15px; }
     nav ul { gap: 20px; width: 100%; padding: 10px 0; justify-content: center; }
