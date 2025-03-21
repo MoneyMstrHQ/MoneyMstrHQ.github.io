@@ -145,28 +145,27 @@ nav a:hover {
     color: #d0d0d0; 
 }
 .btn { 
-    background: hsl(180, 100%, 50%); /* Start cyan */
+    background: #A78BFA; /* Start purple pastel */
     color: #0a0e14; 
     padding: 16px 50px; 
     border-radius: 50px; 
     text-decoration: none; 
     font-weight: 600; 
     font-size: 20px; 
-    box-shadow: 0 0 20px rgba(0,212,255,0.6); 
+    box-shadow: 0 0 20px rgba(167,139,250,0.6); 
     transition: transform 0.4s ease, box-shadow 0.4s ease; 
-    animation: rainbowCycle 8s infinite linear; /* Smooth rainbow */
+    animation: pastelCycle 8s infinite linear; /* Soft pastel cycle */
 }
 .btn.rgb-hover { 
     transform: scale(1.1); 
-    box-shadow: 0 0 30px hsla(270, 100%, 50%, 0.9); /* Purple boost */
+    box-shadow: 0 0 30px rgba(167,139,250,0.9); /* Purple boost */
 }
-@keyframes rainbowCycle { 
-    0% { background: hsl(180, 100%, 50%); } /* Cyan */
-    20% { background: hsl(270, 100%, 50%); } /* Purple */
-    40% { background: hsl(330, 100%, 50%); } /* Pink */
-    60% { background: hsl(0, 100%, 50%); } /* Red */
-    80% { background: hsl(90, 100%, 50%); } /* Lime */
-    100% { background: hsl(180, 100%, 50%); } /* Back to cyan */
+@keyframes pastelCycle { 
+    0% { background: #A78BFA; } /* Purple */
+    25% { background: #6EE7B7; } /* Mint green */
+    50% { background: #60A5FA; } /* Sky blue */
+    75% { background: #F9A8D4; } /* Soft pink */
+    100% { background: #A78BFA; } /* Back to purple */
 }
 .stats { 
     display: flex; 
