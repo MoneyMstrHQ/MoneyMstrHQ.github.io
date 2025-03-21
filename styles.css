@@ -15,18 +15,24 @@ body::before {
     left: 0; 
     width: 100%; 
     height: 100%; 
-    background: rgba(13, 17, 23, 0.85); /* Dark overlay over greyscale */
+    background: rgba(13, 17, 23, 0.6); /* Lighter overlay—city shows */
     z-index: -1; 
-    filter: grayscale(100%); /* Ensures greyscale */
+    filter: grayscale(100%); 
 }
-header { background: linear-gradient(135deg, #1f2937, #111827); padding: 20px 40px; position: relative; min-height: 100vh; }
+header { 
+    background: rgba(31, 41, 55, 0.3); /* Transparent grey—city shines */
+    padding: 20px 40px; 
+    position: relative; 
+    min-height: 100vh; 
+    backdrop-filter: blur(5px); /* Classy blur—modern touch */
+}
 nav { display: flex; justify-content: space-between; align-items: center; padding-bottom: 20px; }
-nav h1 { font-size: 32px; font-weight: 800; color: #00d4ff; }
+nav h1 { font-size: 32px; font-weight: 800; color: #00d4ff; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
 nav ul { display: flex; gap: 30px; list-style: none; }
 nav a { color: #e0e0e0; text-decoration: none; font-weight: 600; transition: color 0.3s; }
 nav a:hover { color: #00d4ff; }
 .hero { text-align: center; padding: 100px 20px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; }
-.hero h2 { font-size: 60px; font-weight: 800; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5); transition: transform 0.1s; }
+.hero h2 { font-size: 60px; font-weight: 800; color: #fff; text-shadow: 0 2px 6px rgba(0,0,0,0.7); transition: transform 0.1s; }
 .hero p { font-size: 22px; margin: 20px 0; color: #b0b0b0; }
 .btn { background: #00d4ff; color: #0d1117; padding: 16px 32px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 18px; box-shadow: 0 4px 15px rgba(0,212,255,0.4); transition: all 0.3s; }
 .btn:hover { background: #00aaff; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,212,255,0.6); }
