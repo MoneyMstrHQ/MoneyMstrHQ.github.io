@@ -29,37 +29,36 @@ body::before {
     left: 0; 
     width: 100%; 
     height: 100%; 
-    background: radial-gradient(circle at center, rgba(0,212,255,0.08) 0%, #0a0e14 70%); 
+    background: radial-gradient(circle at center, rgba(0,212,255,0.06) 0%, #0a0e14 80%); 
     z-index: -1; 
-    animation: pulse 8s infinite ease-in-out; 
+    animation: wavePulse 12s infinite ease-in-out; 
 }
 body::after { 
     content: ''; 
     position: fixed; 
     top: 0; 
     left: 0; 
-    width: 200%; 
-    height: 200%; 
-    background: repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(0,212,255,0.04) 20px, rgba(0,212,255,0.04) 22px), 
-                repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(0,212,255,0.04) 20px, rgba(0,212,255,0.04) 22px); 
+    width: 100%; 
+    height: 100%; 
+    background: linear-gradient(135deg, rgba(0,212,255,0.03) 0%, transparent 50%, rgba(0,212,255,0.03) 100%); 
     z-index: -1; 
-    animation: gridMove 15s infinite linear; 
+    animation: waveShift 20s infinite linear; 
 }
-@keyframes pulse { 
-    0%, 100% { opacity: 0.7; transform: scale(1); } 
-    50% { opacity: 1; transform: scale(1.03); } 
+@keyframes wavePulse { 
+    0%, 100% { opacity: 0.5; transform: scale(1); } 
+    50% { opacity: 0.8; transform: scale(1.02); } 
 }
-@keyframes gridMove { 
-    0% { transform: translate(-50%, -50%); } 
-    100% { transform: translate(0%, 0%); } 
+@keyframes waveShift { 
+    0% { transform: translateY(-100%); } 
+    100% { transform: translateY(100%); } 
 }
 header { 
     position: relative; 
     min-height: 100vh; 
     padding: 30px 50px; 
-    background: rgba(10, 14, 20, 0.4); 
+    background: rgba(10, 14, 20, 0.3); 
     backdrop-filter: blur(12px); 
-    border-bottom: 1px solid rgba(0,212,255,0.3); 
+    border-bottom: 1px solid rgba(0,212,255,0.2); 
 }
 nav { 
     display: flex; 
@@ -105,12 +104,14 @@ nav a:hover {
 }
 #hero3d { 
     position: absolute; 
-    top: 0; 
-    left: 0; 
+    top: 10%; 
+    left: 50%; 
+    transform: translateX(-50%); 
     width: 100%; 
-    height: 100%; 
+    max-width: 600px; 
+    height: 60%; 
     z-index: -1; 
-    opacity: 0.7; 
+    opacity: 0.6; 
 }
 .kinetic { 
     font-size: 80px; 
@@ -239,7 +240,7 @@ footer {
     justify-content: space-between; 
     align-items: center; 
     flex-wrap: wrap; 
-    border-top: 1px solid rgba(0,212,255,0.3); 
+    border-top: 1px solid rgba(0,212,255,0.2); 
 }
 footer p { 
     font-size: 14px; 
@@ -260,6 +261,7 @@ footer p {
 @media (max-width: 768px) {
     .hero h2 { font-size: 48px; }
     .hero p { font-size: 20px; }
+    #hero3d { max-width: 100%; height: 50%; top: 15%; }
     .stats { flex-direction: column; gap: 40px; }
     nav { flex-direction: column; align-items: flex-start; padding: 15px; }
     nav ul { gap: 20px; width: 100%; padding: 10px 0; }
