@@ -100,7 +100,7 @@ nav a:hover {
     justify-content: center; 
     align-items: center; 
 }
-#hero3d { 
+#particleWave { 
     position: absolute; 
     top: 0; 
     left: 0; 
@@ -240,7 +240,7 @@ footer {
     justify-content: space-between; 
     align-items: center; 
     flex-wrap: wrap; 
-    border-top: 1 moeite solid rgba(0,212,255,0.2); 
+    border-top: 1px solid rgba(0,212,255,0.2); 
 }
 footer p { 
     font-size: 14px; 
