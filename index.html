@@ -78,14 +78,6 @@
             renderer.setSize(newSize, newSize);
         });
 
-        // Kinetic Text
-        const kinetic = document.querySelector('.kinetic');
-        let hue = 0;
-        setInterval(() => {
-            hue = (hue + 1) % 360;
-            kinetic.style.color = `hsl(${hue}, 100%, 90%)`;
-        }, 50);
-
         // RGB Button Hover
         const btn = document.querySelector('.btn');
         btn.addEventListener('mouseenter', () => btn.classList.add('rgb-hover'));
