@@ -62,21 +62,20 @@
 
         // 3D Hero Canvas
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000); // Square aspect
         const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('hero3d'), alpha: true });
-        const canvasWidth = window.innerWidth > 768 ? 600 : window.innerWidth * 0.8; // Responsive width
-        const canvasHeight = window.innerWidth > 768 ? 400 : window.innerWidth * 0.5; // Responsive height
-        renderer.setSize(canvasWidth, canvasHeight);
-        const geometry = new THREE.TorusKnotGeometry(6, 1.5, 100, 16); // Smaller knot
+        const canvasSize = window.innerWidth > 768 ? 400 : Math.min(window.innerWidth * 0.7, 250); // Smaller
+        renderer.setSize(canvasSize, canvasSize);
+        const geometry = new THREE.TorusKnotGeometry(4, 1, 100, 16); // Tighter knot
         const material = new THREE.MeshPhongMaterial({ color: 0x00d4ff, shininess: 100 });
         const torusKnot = new THREE.Mesh(geometry, material);
         scene.add(torusKnot);
         const light = new THREE.PointLight(0xffffff, 1, 100);
-        light.position.set(10, 10, 10);
+        light.position.set(8, 8, 8);
         scene.add(light);
-        camera.position.z = 20; // Closer camera
-        camera.position.y = 5; // Slight angle
-        camera.lookAt(0, 0, 0); // Center focus
+        camera.position.z = 12; // Closer
+        camera.position.y = 2; // Angle
+        camera.lookAt(0, 0, 0);
         function animate() {
             requestAnimationFrame(animate);
             torusKnot.rotation.x += 0.01;
@@ -85,19 +84,22 @@
         }
         animate();
         window.addEventListener('resize', () => {
-            const newWidth = window.innerWidth > 768 ? 600 : window.innerWidth * 0.8;
-            const newHeight = window.innerWidth > 768 ? 400 : window.innerWidth * 0.5;
-            camera.aspect = newWidth / newHeight;
+            const newSize = window.innerWidth > 768 ? 400 : Math.min(window.innerWidth * 0.7, 250);
+            camera.aspect = 1;
             camera.updateProjectionMatrix();
-            renderer.setSize(newWidth, newHeight);
+            renderer.setSize(newSize, newSize);
         });
 
-        // Kinetic Text
+        // Kinetic Text + RNG Buttons
         const kinetic = document.querySelector('.kinetic');
+        const btn = document.querySelector('.btn');
         let hue = 0;
         setInterval(() => {
             hue = (hue + 1) % 360;
             kinetic.style.color = `hsl(${hue}, 100%, 90%)`;
+            if (Math.random() < 0.1) {
+                btn.style.background = `linear-gradient(135deg, #00d4ff, hsl(${Math.random() * 360}, 80%, 60%))`;
+            }
         }, 50);
 
         // Tilt Cards
