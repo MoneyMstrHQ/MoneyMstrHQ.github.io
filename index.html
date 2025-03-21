@@ -50,32 +50,30 @@
     <script>
         // 3D Hero Canvas
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('hero3d'), alpha: true });
-        const canvasSize = window.innerWidth > 768 ? 400 : Math.min(window.innerWidth * 0.7, 250);
-        renderer.setSize(canvasSize, canvasSize);
-        const geometry = new THREE.TorusKnotGeometry(4, 1, 100, 16);
-        const material = new THREE.MeshPhongMaterial({ color: 0x00d4ff, shininess: 100 });
+        renderer.setSize(window.innerWidth, window.innerHeight); // Full-screen
+        const geometry = new THREE.TorusKnotGeometry(20, 4, 100, 16); // Bigger knot
+        const material = new THREE.MeshPhongMaterial({ color: 0x00d4ff, shininess: 100, transparent: true, opacity: 0.2 });
         const torusKnot = new THREE.Mesh(geometry, material);
         scene.add(torusKnot);
         const light = new THREE.PointLight(0xffffff, 1, 100);
-        light.position.set(8, 8, 8);
+        light.position.set(20, 20, 20);
         scene.add(light);
-        camera.position.z = 12;
-        camera.position.y = 2;
+        camera.position.z = 50; // Pull back for bigger knot
+        camera.position.y = 10;
         camera.lookAt(0, 0, 0);
         function animate() {
             requestAnimationFrame(animate);
-            torusKnot.rotation.x += 0.01;
-            torusKnot.rotation.y += 0.01;
+            torusKnot.rotation.x += 0.005; // Slower rotation
+            torusKnot.rotation.y += 0.005;
             renderer.render(scene, camera);
         }
         animate();
         window.addEventListener('resize', () => {
-            const newSize = window.innerWidth > 768 ? 400 : Math.min(window.innerWidth * 0.7, 250);
-            camera.aspect = 1;
+            camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
-            renderer.setSize(newSize, newSize);
+            renderer.setSize(window.innerWidth, window.innerHeight);
         });
 
         // RGB Button Hover
