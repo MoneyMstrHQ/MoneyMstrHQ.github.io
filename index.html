@@ -8,8 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <canvas id="particleWave"></canvas>
     <header>
+        <canvas id="particleWave"></canvas>
         <nav>
             <h1>MoneyMasterHQ</h1>
             <ul>
@@ -52,12 +52,6 @@
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
-        const colors = [
-            'rgba(167, 139, 250, 0.3)', // Purple
-            'rgba(110, 231, 183, 0.3)', // Mint
-            'rgba(96, 165, 250, 0.3)',  // Blue
-            'rgba(249, 168, 212, 0.3)' // Pink
-        ];
         const particles = [];
         const particleCount = 150;
         for (let i = 0; i < particleCount; i++) {
@@ -67,8 +61,7 @@
                 baseY: Math.random() * canvas.height,
                 speed: 0.5 + Math.random() * 1,
                 amplitude: 50 + Math.random() * 50,
-                phase: Math.random() * Math.PI * 2,
-                color: colors[Math.floor(Math.random() * colors.length)]
+                phase: Math.random() * Math.PI * 2
             });
         }
 
@@ -80,11 +73,11 @@
             particles.forEach(p => {
                 p.x += p.speed;
                 p.y = p.baseY + Math.sin(time + p.phase) * p.amplitude;
-                if (p.x > canvas.width) p.x = -5;
+                if (p.x > canvas.width) p.x = -10;
 
                 ctx.beginPath();
-                ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
-                ctx.fillStyle = p.color;
+                ctx.arc(p.x, p.y, 5, 0, Math.PI * 2); // Gigantic: 5px radius
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.1)'; // White, faint
                 ctx.fill();
             });
 
