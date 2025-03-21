@@ -62,19 +62,19 @@
 
         // 3D Hero Canvas
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000); // Square aspect
+        const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('hero3d'), alpha: true });
-        const canvasSize = window.innerWidth > 768 ? 400 : Math.min(window.innerWidth * 0.7, 250); // Smaller
+        const canvasSize = window.innerWidth > 768 ? 400 : Math.min(window.innerWidth * 0.7, 250);
         renderer.setSize(canvasSize, canvasSize);
-        const geometry = new THREE.TorusKnotGeometry(4, 1, 100, 16); // Tighter knot
+        const geometry = new THREE.TorusKnotGeometry(4, 1, 100, 16);
         const material = new THREE.MeshPhongMaterial({ color: 0x00d4ff, shininess: 100 });
         const torusKnot = new THREE.Mesh(geometry, material);
         scene.add(torusKnot);
         const light = new THREE.PointLight(0xffffff, 1, 100);
         light.position.set(8, 8, 8);
         scene.add(light);
-        camera.position.z = 12; // Closer
-        camera.position.y = 2; // Angle
+        camera.position.z = 12;
+        camera.position.y = 2;
         camera.lookAt(0, 0, 0);
         function animate() {
             requestAnimationFrame(animate);
@@ -90,20 +90,22 @@
             renderer.setSize(newSize, newSize);
         });
 
-        // Kinetic Text + RNG Buttons
+        // Kinetic Text
         const kinetic = document.querySelector('.kinetic');
-        const btn = document.querySelector('.btn');
         let hue = 0;
         setInterval(() => {
             hue = (hue + 1) % 360;
             kinetic.style.color = `hsl(${hue}, 100%, 90%)`;
-            if (Math.random() < 0.1) {
-                btn.style.background = `linear-gradient(135deg, #00d4ff, hsl(${Math.random() * 360}, 80%, 60%))`;
-            }
         }, 50);
 
-        // Tilt Cards
-        VanillaTilt.init(document.querySelectorAll('.card'), { max: 15, speed: 400, glare: true });
+        // RGB Button Hover
+        const btn = document.querySelector('.btn');
+        btn.addEventListener('mouseenter', () => {
+            btn.classList.add('rgb-hover');
+        });
+        btn.addEventListener('mouseleave', () => {
+            btn.classList.remove('rgb-hover');
+        });
 
         // Scroll Fade
         window.addEventListener('scroll', () => {
