@@ -3,57 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MoneyMasterHQ - Elite Wealth Mastery</title>
+    <title>MoneyMasterHQ - Elite Wealth Systems</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="cursor"></div>
     <header>
         <nav>
             <h1>MoneyMasterHQ</h1>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#strategies">Strategies</a></li>
-                <li><a href="#join">Join</a></li>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#strategies" class="nav-link">Strategies</a></li>
+                <li><a href="#join" class="nav-link">Join</a></li>
             </ul>
         </nav>
         <div class="hero">
-            <h2>Unleash Your Future</h2>
-            <p>Grow $550-$1k in week one—elite wealth starts now.</p>
-            <a href="#join" class="btn">Join Now</a>
+            <canvas id="hero3d"></canvas>
+            <h2 class="kinetic">Unleash Your Wealth</h2>
+            <p>Grow $550-$1k week one—master elite systems now.</p>
+            <a href="#join" class="btn">Launch Now</a>
         </div>
     </header>
     <main>
         <section class="stats">
-            <div class="stat"><span>$550-$1k</span><p>Week 1 Gains</p></div>
-            <div class="stat"><span>10K+</span><p>Members</p></div>
-            <div class="stat"><span>$3k-$6k</span><p>90 Days</p></div>
+            <div class="stat" data-hover="Week 1"><span>$550-$1k</span><p>Gains</p></div>
+            <div class="stat" data-hover="Active"><span>10K+</span><p>Members</p></div>
+            <div class="stat" data-hover="90 Days"><span>$3k-$6k</span><p>Target</p></div>
         </section>
         <section class="strategies">
-            <h3>Precision Strategies</h3>
+            <h3>Advanced Strategies</h3>
             <div class="grid">
-                <div class="card">
-                    <h4>High-Yield Trades</h4>
-                    <p>Maximize returns with precision.</p>
-                </div>
-                <div class="card">
-                    <h4>Passive Income</h4>
-                    <p>Effortless wealth streams.</p>
-                </div>
-                <div class="card">
-                    <h4>Market Edge</h4>
-                    <p>Real-time mastery.</p>
-                </div>
+                <div class="card" data-tilt><h4>High-Yield Trades</h4><p>Precision profits.</p></div>
+                <div class="card" data-tilt><h4>Passive Systems</h4><p>Wealth on autopilot.</p></div>
+                <div class="card" data-tilt><h4>Market Pulse</h4><p>Real-time edge.</p></div>
             </div>
         </section>
     </main>
     <footer>
-        <p>© 2025 MoneyMasterHQ</p>
+        <p>© 2025 MoneyMasterHQ | Elite Wealth Systems</p>
         <div class="social">
-            <a href="#">X</a><a href="#">Discord</a>
+            <a href="#" class="social-link">X</a><a href="#" class="social-link">Discord</a>
         </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
     <script>
+        // Dynamic Cursor
+        const cursor = document.querySelector('.cursor');
+        document.addEventListener('mousemove', e => {
+            cursor.style.left = e.pageX + 'px';
+            cursor.style.top = e.pageY + 'px';
+        });
+        document.querySelectorAll('.nav-link, .btn, .social-link').forEach(link => {
+            link.addEventListener('mouseenter', () => cursor.classList.add('active'));
+            link.addEventListener('mouseleave', () => cursor.classList.remove('active'));
+        });
+
+        // 3D Hero Canvas
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('hero3d'), alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
+        const material = new THREE.MeshPhongMaterial({ color: 0x00d4ff, shininess: 100 });
+        const torusKnot = new THREE.Mesh(geometry, material);
+        scene.add(torusKnot);
+        const light = new THREE.PointLight(0xffffff, 1, 100);
+        light.position.set(10, 10, 10);
+        scene.add(light);
+        camera.position.z = 30;
+        function animate() {
+            requestAnimationFrame(animate);
+            torusKnot.rotation.x += 0.01;
+            torusKnot.rotation.y += 0.01;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Kinetic Text
+        const kinetic = document.querySelector('.kinetic');
+        let hue = 0;
+        setInterval(() => {
+            hue = (hue + 1) % 360;
+            kinetic.style.color = `hsl(${hue}, 100%, 90%)`;
+        }, 50);
+
+        // Tilt Cards
+        VanillaTilt.init(document.querySelectorAll('.card'), { max: 15, speed: 400, glare: true });
+
+        // Scroll Fade
         window.addEventListener('scroll', () => {
             const h2 = document.querySelector('.hero h2');
             h2.style.transform = `translateY(${window.scrollY * 0.15}px)`;
