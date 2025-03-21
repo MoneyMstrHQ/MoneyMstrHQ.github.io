@@ -8,7 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="cursor"></div>
+    <div class="cursor">
+        <div class="cursor-inner"></div>
+    </div>
     <header>
         <nav>
             <h1>MoneyMasterHQ</h1>
@@ -49,12 +51,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
     <script>
-        // Dynamic Cursor
+        // Sick Cursor
         const cursor = document.querySelector('.cursor');
+        const cursorInner = document.querySelector('.cursor-inner');
+        let mouseX = 0, mouseY = 0;
+        let posX = 0, posY = 0;
         document.addEventListener('mousemove', e => {
-            cursor.style.left = e.pageX + 'px';
-            cursor.style.top = e.pageY + 'px';
+            mouseX = e.pageX;
+            mouseY = e.pageY;
         });
+        function animateCursor() {
+            posX += (mouseX - posX) * 0.1; // Smooth trailing
+            posY += (mouseY - posY) * 0.1;
+            cursor.style.left = `${posX}px`;
+            cursor.style.top = `${posY}px`;
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
         document.querySelectorAll('.nav-link, .btn, .social-link').forEach(link => {
             link.addEventListener('mouseenter', () => cursor.classList.add('active'));
             link.addEventListener('mouseleave', () => cursor.classList.remove('active'));
