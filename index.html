@@ -64,15 +64,19 @@
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('hero3d'), alpha: true });
-        renderer.setSize(window.innerWidth, window.innerHeight * 0.8); // Contain height
-        const geometry = new THREE.TorusKnotGeometry(8, 2.5, 100, 16); // Smaller knot
+        const canvasWidth = window.innerWidth > 768 ? 600 : window.innerWidth * 0.8; // Responsive width
+        const canvasHeight = window.innerWidth > 768 ? 400 : window.innerWidth * 0.5; // Responsive height
+        renderer.setSize(canvasWidth, canvasHeight);
+        const geometry = new THREE.TorusKnotGeometry(6, 1.5, 100, 16); // Smaller knot
         const material = new THREE.MeshPhongMaterial({ color: 0x00d4ff, shininess: 100 });
         const torusKnot = new THREE.Mesh(geometry, material);
         scene.add(torusKnot);
         const light = new THREE.PointLight(0xffffff, 1, 100);
         light.position.set(10, 10, 10);
         scene.add(light);
-        camera.position.z = 25; // Pull camera closer
+        camera.position.z = 20; // Closer camera
+        camera.position.y = 5; // Slight angle
+        camera.lookAt(0, 0, 0); // Center focus
         function animate() {
             requestAnimationFrame(animate);
             torusKnot.rotation.x += 0.01;
@@ -81,9 +85,11 @@
         }
         animate();
         window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
+            const newWidth = window.innerWidth > 768 ? 600 : window.innerWidth * 0.8;
+            const newHeight = window.innerWidth > 768 ? 400 : window.innerWidth * 0.5;
+            camera.aspect = newWidth / newHeight;
             camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight * 0.8);
+            renderer.setSize(newWidth, newHeight);
         });
 
         // Kinetic Text
