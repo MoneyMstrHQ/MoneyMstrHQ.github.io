@@ -330,21 +330,21 @@ nav a:hover {
     color: #d0d0d0; 
 }
 .highlight span { 
-    display: block; 
+    display: flex; 
+    align-items: center; /* Align button and badge vertically */
+    gap: 8px; /* Tight spacing */
     margin-top: 10px; 
-    font-size: 14px; 
     color: #A78BFA; 
 }
 .badge { 
-    background: #000000; /* Solid black */
-    border: 1px solid #ffffff; /* Thin white border */
+    background: #000000; 
+    border: 1px solid #ffffff; 
     padding: 4px 10px; 
     border-radius: 12px; 
     font-size: 12px; 
-    font-weight: 800; /* Max bold */
-    color: #ffffff; /* Pure white */
-    margin-left: 10px; 
-    text-shadow: 0 0 3px rgba(0, 0, 0, 0.9); /* Sharp black shadow */
+    font-weight: 800; 
+    color: #ffffff; 
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.9); 
 }
 footer { 
     background: rgba(0, 0, 0, 0.9); 
