@@ -225,6 +225,11 @@ nav a:hover {
     opacity: 1; 
     top: -40px; 
 }
+@media (max-width: 768px) {
+    .stat:hover::after { 
+        opacity: 0; /* Disable hover on mobile */
+    }
+}
 .stat.active::after { 
     opacity: 1; 
     top: -40px; 
