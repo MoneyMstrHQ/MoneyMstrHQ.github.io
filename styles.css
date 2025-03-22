@@ -210,7 +210,7 @@ nav a:hover {
     top: -25px; 
     left: 50%; 
     transform: translateX(-50%); 
-    background: rgba(167, 139, 250, 0.8); 
+    background: rgba(167, 139, 250, 0.7); /* Match button base */
     color: #ffffff; 
     padding: 6px 16px; 
     border-radius: 8px; 
@@ -218,7 +218,7 @@ nav a:hover {
     opacity: 0; 
     transition: opacity 0.3s ease, top 0.3s ease; 
     pointer-events: none; 
-    animation: pastelGlow 8s infinite linear; 
+    animation: pastelGlow 8s infinite linear; /* Sync with button */
     white-space: nowrap; 
 }
 .stat:hover::after { 
@@ -233,7 +233,7 @@ nav a:hover {
 .stat.active::after { 
     opacity: 1; 
     top: -40px; 
-    animation: fadeOut 2s forwards; 
+    animation: pastelGlow 8s infinite linear, fadeOut 2s forwards; /* Sync + fade */
 }
 @keyframes fadeOut { 
     0% { opacity: 1; } 
