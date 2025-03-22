@@ -49,7 +49,7 @@ nav {
     position: relative; 
     z-index: 2; 
     box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
-    animation: pastelGlow 8s infinite linear; /* Glow only */
+    animation: pastelOutline 8s infinite linear; /* Outline glow */
 }
 nav h1 { 
     font-size: 32px; 
@@ -121,26 +121,18 @@ nav a:hover {
     box-shadow: 0 0 25px rgba(167, 139, 250, 0.8); 
 }
 @keyframes pastelGlow { 
-    0% { 
-        box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
-        background: rgba(167, 139, 250, 0.7); 
-    } 
-    25% { 
-        box-shadow: 0 0 15px rgba(110, 231, 183, 0.3); 
-        background: rgba(110, 231, 183, 0.7); 
-    } 
-    50% { 
-        box-shadow: 0 0 15px rgba(96, 165, 250, 0.3); 
-        background: rgba(96, 165, 250, 0.7); 
-    } 
-    75% { 
-        box-shadow: 0 0 15px rgba(249, 168, 212, 0.3); 
-        background: rgba(249, 168, 212, 0.7); 
-    } 
-    100% { 
-        box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
-        background: rgba(167, 139, 250, 0.7); 
-    } 
+    0% { background: rgba(167, 139, 250, 0.7); } 
+    25% { background: rgba(110, 231, 183, 0.7); } 
+    50% { background: rgba(96, 165, 250, 0.7); } 
+    75% { background: rgba(249, 168, 212, 0.7); } 
+    100% { background: rgba(167, 139, 250, 0.7); } 
+}
+@keyframes pastelOutline { 
+    0% { box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); } 
+    25% { box-shadow: 0 0 15px rgba(110, 231, 183, 0.3); } 
+    50% { box-shadow: 0 0 15px rgba(96, 165, 250, 0.3); } 
+    75% { box-shadow: 0 0 15px rgba(249, 168, 212, 0.3); } 
+    100% { box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); } 
 }
 .stats { 
     display: flex; 
@@ -169,7 +161,7 @@ nav a:hover {
 .stat:hover { 
     transform: translateY(-5px); 
     box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); /* Initial glow */
-    animation: pastelGlow 8s infinite linear; /* Glow only */
+    animation: pastelOutline 8s infinite linear; /* Outline glow */
 }
 .stat span { 
     font-size: 24px; 
