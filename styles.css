@@ -102,6 +102,12 @@ nav a:hover {
     margin: 15px 0 30px; 
     color: #d0d0d0; 
 }
+.hero p.cta-sub { 
+    font-size: 18px; 
+    color: #A78BFA; 
+    margin-top: 10px; 
+    text-shadow: 0 0 5px rgba(167, 139, 250, 0.3); 
+}
 .btn { 
     background: rgba(167, 139, 250, 0.7); 
     color: #ffffff; 
@@ -155,16 +161,13 @@ nav a:hover {
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add box-shadow transition */
+    transition: transform 0.3s ease; 
     position: relative; 
-    animation: pastelOutline 8s infinite linear; /* Always running */
+    box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
+    animation: pastelOutline 8s infinite linear; 
 }
 .stat:hover { 
     transform: translateY(-5px); 
-    box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); /* Glow on */
-}
-.stat:not(:hover) { 
-    box-shadow: none; /* Glow off */
 }
 .stat span { 
     font-size: 24px; 
@@ -238,6 +241,47 @@ nav a:hover {
     font-size: 14px; 
     color: #d0d0d0; 
 }
+.testimonials { 
+    padding: 80px 15px; 
+    text-align: center; 
+    background: rgba(0, 0, 0, 0.9); 
+    position: relative; 
+    z-index: 2; 
+}
+.testimonials h3 { 
+    font-size: 48px; 
+    color: #ffffff; 
+    margin-bottom: 40px; 
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.4); 
+}
+.testimonial-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+.testimonial { 
+    background: rgba(0, 0, 0, 0.8); 
+    padding: 20px; 
+    border-radius: 20px; 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    transition: all 0.3s ease; 
+}
+.testimonial:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
+}
+.testimonial p { 
+    font-size: 16px; 
+    color: #d0d0d0; 
+}
+.testimonial span { 
+    display: block; 
+    margin-top: 10px; 
+    font-size: 14px; 
+    color: #A78BFA; 
+}
 footer { 
     background: rgba(0, 0, 0, 0.9); 
     padding: 30px 40px; 
@@ -259,11 +303,11 @@ footer p {
     font-size: 14px; 
     transition: all 0.3s ease; 
 }
-.social a:nth-child(1) { /* X */
+.social a:nth-child(1) { 
     color: #6EE7B7; 
     text-shadow: 0 0 5px rgba(110, 231, 183, 0.3); 
 }
-.social a:nth-child(2) { /* Discord */
+.social a:nth-child(2) { 
     background: linear-gradient(90deg, #60A5FA, #A78BFA); 
     -webkit-background-clip: text; 
     color: transparent; 
@@ -276,6 +320,7 @@ footer p {
 @media (max-width: 768px) {
     .hero h2 { font-size: 48px; }
     .hero p { font-size: 20px; }
+    .hero p.cta-sub { font-size: 16px; }
     .stats { 
         gap: 5px; 
         padding: 20px 10px; 
@@ -299,4 +344,13 @@ footer p {
         font-size: 14px; 
     }
     .strategies h3 { font-size: 32px; }
+    .testimonials h3 { font-size: 32px; }
+    footer { 
+        flex-direction: column; 
+        gap: 15px; 
+        text-align: center; 
+    }
+    .social a { 
+        margin: 0 10px; 
+    }
 }
