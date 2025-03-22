@@ -108,27 +108,30 @@
             });
         });
 
-        // Scroll trigger for strategy cards - center only
+        // Scroll trigger for strategy cards - mobile only
         const cards = document.querySelectorAll('.card');
         function highlightCenterCard() {
-            const viewportHeight = window.innerHeight;
-            const centerY = viewportHeight / 2;
-            let closestCard = null;
-            let minDistance = Infinity;
+            // Only run on mobile (max-width: 768px)
+            if (window.matchMedia('(max-width: 768px)').matches) {
+                const viewportHeight = window.innerHeight;
+                const centerY = viewportHeight / 2;
+                let closestCard = null;
+                let minDistance = Infinity;
 
-            cards.forEach(card => {
-                const rect = card.getBoundingClientRect();
-                const cardCenterY = rect.top + (rect.height / 2);
-                const distance = Math.abs(centerY - cardCenterY);
+                cards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    const cardCenterY = rect.top + (rect.height / 2);
+                    const distance = Math.abs(centerY - cardCenterY);
 
-                if (distance < minDistance) {
-                    minDistance = distance;
-                    closestCard = card;
-                }
-            });
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        closestCard = card;
+                    }
+                });
 
-            cards.forEach(card => card.classList.remove('in-view'));
-            if (closestCard) closestCard.classList.add('in-view');
+                cards.forEach(card => card.classList.remove('in-view'));
+                if (closestCard) closestCard.classList.add('in-view');
+            }
         }
 
         window.addEventListener('scroll', highlightCenterCard);
