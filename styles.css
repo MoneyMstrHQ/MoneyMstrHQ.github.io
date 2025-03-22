@@ -225,6 +225,16 @@ nav a:hover {
     opacity: 1; 
     top: -40px; 
 }
+.stat.active::after { 
+    opacity: 1; 
+    top: -40px; 
+    animation: fadeOut 2s forwards; 
+}
+@keyframes fadeOut { 
+    0% { opacity: 1; } 
+    80% { opacity: 1; } 
+    100% { opacity: 0; } 
+}
 .strategies { 
     padding: 80px 15px; 
     text-align: center; 
