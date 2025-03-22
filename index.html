@@ -94,6 +94,15 @@
             },
             "retina_detect": true
         });
+
+        // Tap to show bubble on mobile
+        document.querySelectorAll('.stat').forEach(stat => {
+            stat.addEventListener('touchstart', function(e) {
+                e.preventDefault(); // Stop text selection
+                this.classList.add('active');
+                setTimeout(() => this.classList.remove('active'), 2000); // Fade after 2s
+            });
+        });
     </script>
 </body>
 </html>
