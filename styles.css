@@ -137,8 +137,9 @@ nav a:hover {
     display: inline-block; 
 }
 .btn.btn-small { 
-    padding: 8px 20px; 
+    padding: 6px 20px; /* Adjusted for alignment */
     font-size: 14px; 
+    line-height: 1; /* Tighten vertical */
 }
 .btn.rgb-hover { 
     transform: scale(1.05); 
@@ -331,15 +332,15 @@ nav a:hover {
 }
 .highlight span { 
     display: flex; 
-    align-items: center; /* Align button and badge vertically */
-    gap: 8px; /* Tight spacing */
+    align-items: baseline; /* Lock to text baseline */
+    gap: 8px; 
     margin-top: 10px; 
     color: #A78BFA; 
 }
 .badge { 
     background: #000000; 
     border: 1px solid #ffffff; 
-    padding: 4px 10px; 
+    padding: 6px 10px; /* Match button height */
     border-radius: 12px; 
     font-size: 12px; 
     font-weight: 800; 
