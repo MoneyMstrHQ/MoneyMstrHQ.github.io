@@ -100,8 +100,8 @@ nav a:hover {
     flex-direction: column; 
     justify-content: center; 
     align-items: center; 
-    border: 1px solid transparent; 
-    animation: borderGlow 10s infinite linear; 
+    box-shadow: 0 0 15px rgba(167, 139, 250, 0.2); 
+    animation: subtleGlow 10s infinite ease-in-out; 
 }
 .kinetic { 
     font-size: 72px; 
@@ -116,6 +116,13 @@ nav a:hover {
     0% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.5); } 
     50% { text-shadow: 0 0 25px rgba(167, 139, 250, 0.8); } 
     100% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.5); } 
+}
+@keyframes subtleGlow { 
+    0% { box-shadow: 0 0 15px rgba(167, 139, 250, 0.2); } 
+    25% { box-shadow: 0 0 20px rgba(110, 231, 183, 0.25); } 
+    50% { box-shadow: 0 0 15px rgba(96, 165, 250, 0.2); } 
+    75% { box-shadow: 0 0 20px rgba(249, 168, 212, 0.25); } 
+    100% { box-shadow: 0 0 15px rgba(167, 139, 250, 0.2); } 
 }
 .hero p { 
     font-size: 24px; 
@@ -164,13 +171,6 @@ nav a:hover {
     50% { box-shadow: 0 0 15px rgba(96, 165, 250, 0.3); } 
     75% { box-shadow: 0 0 15px rgba(249, 168, 212, 0.3); } 
     100% { box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); } 
-}
-@keyframes borderGlow { 
-    0% { border-color: rgba(167, 139, 250, 0.7); } 
-    25% { border-color: rgba(110, 231, 183, 0.7); } 
-    50% { border-color: rgba(96, 165, 250, 0.7); } 
-    75% { border-color: rgba(249, 168, 212, 0.7); } 
-    100% { border-color: rgba(167, 139, 250, 0.7); } 
 }
 .stats { 
     display: flex; 
