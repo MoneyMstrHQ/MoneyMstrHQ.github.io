@@ -336,14 +336,15 @@ nav a:hover {
     color: #A78BFA; 
 }
 .badge { 
-    background: linear-gradient(90deg, #60A5FA, #A78BFA); 
+    background: #000000; /* Solid black */
+    border: 1px solid #ffffff; /* Thin white border */
     padding: 4px 10px; 
     border-radius: 12px; 
     font-size: 12px; 
     font-weight: 800; /* Max bold */
-    color: #ffffff; 
+    color: #ffffff; /* Pure white */
     margin-left: 10px; 
-    text-shadow: 0 0 3px rgba(0, 0, 0, 1); /* Thick black shadow, full opacity */
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.9); /* Sharp black shadow */
 }
 footer { 
     background: rgba(0, 0, 0, 0.9); 
