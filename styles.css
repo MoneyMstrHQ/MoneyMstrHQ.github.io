@@ -210,7 +210,7 @@ nav a:hover {
     top: -25px; 
     left: 50%; 
     transform: translateX(-50%); 
-    background: rgba(167, 139, 250, 0.7); /* Match button base */
+    background: rgba(167, 139, 250, 0.7); 
     color: #ffffff; 
     padding: 6px 16px; 
     border-radius: 8px; 
@@ -218,7 +218,7 @@ nav a:hover {
     opacity: 0; 
     transition: opacity 0.3s ease, top 0.3s ease; 
     pointer-events: none; 
-    animation: pastelGlow 8s infinite linear; /* Sync with button */
+    animation: pastelGlow 8s infinite linear; 
     white-space: nowrap; 
 }
 .stat:hover::after { 
@@ -227,13 +227,13 @@ nav a:hover {
 }
 @media (max-width: 768px) {
     .stat:hover::after { 
-        opacity: 0; /* Disable hover on mobile */
+        opacity: 0; 
     }
 }
 .stat.active::after { 
     opacity: 1; 
     top: -40px; 
-    animation: pastelGlow 8s infinite linear, fadeOut 2s forwards; /* Sync + fade */
+    animation: pastelGlow 8s infinite linear, fadeOut 2s forwards; 
 }
 @keyframes fadeOut { 
     0% { opacity: 1; } 
@@ -272,6 +272,18 @@ nav a:hover {
     transform: translateY(-8px); 
     box-shadow: 0 0 20px rgba(110, 231, 183, 0.4); 
     border-color: rgba(110, 231, 183, 0.3); 
+}
+.card.in-view { 
+    transform: translateY(-8px); 
+    box-shadow: 0 0 20px rgba(110, 231, 183, 0.4); 
+    border-color: rgba(110, 231, 183, 0.3); 
+}
+@media (max-width: 768px) {
+    .card:hover { 
+        transform: none; 
+        box-shadow: none; 
+        border-color: rgba(255, 255, 255, 0.1); /* Reset hover on mobile */
+    }
 }
 .card h4 { 
     font-size: 24px; 
