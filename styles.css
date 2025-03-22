@@ -48,6 +48,9 @@ nav {
     margin: 0 auto; 
     position: relative; 
     z-index: 2; 
+    /* Optional: Uncomment for subtle glow */
+    /* border: 1px solid rgba(167, 139, 250, 0.7); */
+    /* animation: pastelCycleBorder 8s infinite linear; */
 }
 nav h1 { 
     font-size: 32px; 
@@ -122,6 +125,13 @@ nav a:hover {
     50% { background: rgba(96, 165, 250, 0.7); } 
     75% { background: rgba(249, 168, 212, 0.7); } 
     100% { background: rgba(167, 139, 250, 0.7); } 
+}
+@keyframes pastelCycleBorder { 
+    0% { border-color: rgba(167, 139, 250, 0.7); } 
+    25% { border-color: rgba(110, 231, 183, 0.7); } 
+    50% { border-color: rgba(96, 165, 250, 0.7); } 
+    75% { border-color: rgba(249, 168, 212, 0.7); } 
+    100% { border-color: rgba(167, 139, 250, 0.7); } 
 }
 .stats { 
     display: flex; 
