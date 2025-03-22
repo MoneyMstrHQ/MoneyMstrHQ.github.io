@@ -52,7 +52,7 @@ nav {
 nav h1 { 
     font-size: 32px; 
     font-weight: 800; 
-    color: #60A5FA; /* Pastel blue */
+    color: #60A5FA; 
     text-shadow: 0 0 8px rgba(96, 165, 250, 0.5); 
 }
 nav ul { 
@@ -70,7 +70,7 @@ nav a {
     transition: all 0.3s ease; 
 }
 nav a:hover { 
-    color: #A78BFA; /* Pastel purple */
+    color: #A78BFA; 
     background: rgba(167, 139, 250, 0.1); 
     box-shadow: 0 0 12px rgba(167, 139, 250, 0.4); 
 }
@@ -102,7 +102,7 @@ nav a:hover {
     background: rgba(167, 139, 250, 0.7); 
     color: #ffffff; 
     padding: 12px 40px; 
-    border-radius: 30px; /* Tighter */
+    border-radius: 30px; 
     text-decoration: none; 
     font-weight: 600; 
     font-size: 18px; 
@@ -131,15 +131,16 @@ nav a:hover {
     background: rgba(0, 0, 0, 0.9); 
     position: relative; 
     z-index: 2; 
+    flex-wrap: wrap; /* Ensure wrapping */
 }
 .stat { 
     text-align: center; 
-    padding: 20px; 
+    padding: 15px; 
     background: rgba(0, 0, 0, 0.7); 
     border: 1px solid rgba(255, 255, 255, 0.1); 
-    border-radius: 50%; /* Circular */
-    width: 100px; 
-    height: 100px; 
+    border-radius: 50%; 
+    width: 120px; /* Bigger */
+    height: 120px; 
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
@@ -151,13 +152,13 @@ nav a:hover {
     box-shadow: 0 0 15px rgba(96, 165, 250, 0.3); 
 }
 .stat span { 
-    font-size: 28px; 
+    font-size: 24px; /* Smaller */
     font-weight: 800; 
     color: #ffffff; 
     text-shadow: 0 0 8px rgba(96, 165, 250, 0.5); 
 }
 .stat p { 
-    font-size: 14px; 
+    font-size: 12px; /* Smaller */
     color: #d0d0d0; 
 }
 .stat::after { 
@@ -214,7 +215,7 @@ nav a:hover {
 }
 .card h4 { 
     font-size: 24px; 
-    color: #6EE7B7; /* Pastel mint */
+    color: #6EE7B7; 
     margin-bottom: 15px; 
 }
 .card p { 
@@ -250,10 +251,17 @@ footer p {
 @media (max-width: 768px) {
     .hero h2 { font-size: 48px; }
     .hero p { font-size: 20px; }
-    .stats { flex-direction: column; gap: 30px; }
-    .stat { width: 80px; height: 80px; }
-    .stat span { font-size: 24px; }
-    .stat p { font-size: 12px; }
+    .stats { 
+        flex-direction: column; /* Force column */
+        gap: 20px; 
+        align-items: center; 
+    }
+    .stat { 
+        width: 100px; /* Adjust for mobile */
+        height: 100px; 
+    }
+    .stat span { font-size: 20px; }
+    .stat p { font-size: 10px; }
     nav { flex-direction: column; padding: 10px; }
     nav ul { gap: 15px; padding: 8px 0; }
     nav a { font-size: 14px; }
