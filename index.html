@@ -53,13 +53,13 @@
         canvas.height = window.innerHeight;
 
         const particles = [];
-        const particleCount = 8; // More: 8 instead of 5
+        const particleCount = 8;
         for (let i = 0; i < particleCount; i++) {
             particles.push({
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
-                speedX: (Math.random() - 0.5) * 0.4, // Random X: -0.2 to 0.2
-                speedY: (Math.random() - 0.5) * 0.4, // Random Y: -0.2 to 0.2
+                speedX: (Math.random() - 0.5) * 0.6, // Faster: -0.3 to 0.3
+                speedY: (Math.random() - 0.5) * 0.6, // Faster: -0.3 to 0.3
                 phase: Math.random() * Math.PI * 2
             });
         }
