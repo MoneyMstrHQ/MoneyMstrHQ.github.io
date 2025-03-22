@@ -340,9 +340,10 @@ nav a:hover {
     padding: 4px 10px; 
     border-radius: 12px; 
     font-size: 12px; 
+    font-weight: 800; /* Max bold */
     color: #ffffff; 
     margin-left: 10px; 
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.8), 0 0 5px rgba(255, 255, 255, 0.5); /* Tight black + white glow */
+    text-shadow: 0 0 3px rgba(0, 0, 0, 1); /* Thick black shadow, full opacity */
 }
 footer { 
     background: rgba(0, 0, 0, 0.9); 
