@@ -264,21 +264,30 @@ footer p {
     .stat span { font-size: 20px; }
     .stat p { font-size: 10px; }
     nav { 
-        padding: 15px; /* More breathing room */
-        border-radius: 8px; /* Tighter */
-        width: 95%; /* Wider */
+        padding: 15px; 
+        border-radius: 12px; 
+        width: 90%; 
+        background: rgba(0, 0, 0, 0.4); /* Softer transparency */
     }
     nav h1 { 
-        font-size: 24px; /* Smaller */
+        font-size: 24px; 
     }
     nav ul { 
-        gap: 10px; /* Tighter */
+        flex-direction: column; /* Stacked */
+        gap: 15px; 
         padding: 8px 0; 
-        flex-direction: row; /* Horizontal */
     }
+    nav a:nth-child(1) { color: #A78BFA; } /* Pastel purple */
+    nav a:nth-child(2) { color: #6EE7B7; } /* Pastel mint */
+    nav a:nth-child(3) { color: #60A5FA; } /* Pastel blue */
     nav a { 
-        font-size: 12px; /* Smaller */
-        padding: 4px 8px; 
+        font-size: 14px; 
+        padding: 6px 12px; 
+    }
+    nav a:hover { 
+        color: #F9A8D4; /* Pastel pink on hover */
+        background: rgba(249, 168, 212, 0.1); 
+        box-shadow: 0 0 12px rgba(249, 168, 212, 0.4); 
     }
     .strategies h3 { font-size: 32px; }
 }
