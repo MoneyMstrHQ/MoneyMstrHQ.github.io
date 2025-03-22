@@ -114,7 +114,7 @@ nav a:hover {
     backdrop-filter: blur(8px); 
     border: 1px solid rgba(255, 255, 255, 0.2); 
     transition: transform 0.4s ease, box-shadow 0.4s ease; 
-    animation: pastelGlow 8s infinite linear; /* Synced with nav */
+    animation: pastelGlow 8s infinite linear; 
 }
 .btn.rgb-hover { 
     transform: scale(1.05); 
@@ -155,7 +155,7 @@ nav a:hover {
 .stat { 
     text-align: center; 
     padding: 15px; 
-    background: rgba(0, 0, 0, 0.7); 
+    background: rgba(0, 0, 0, 0.7); /* Static default */
     border: 1px solid rgba(255, 255, 255, 0.1); 
     border-radius: 50%; 
     width: 120px; 
@@ -163,13 +163,13 @@ nav a:hover {
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
-    transition: transform 0.3s ease; /* Only transform transitions */
+    transition: transform 0.3s ease; /* Only transform */
     position: relative; 
-    box-shadow: 0 0 15px rgba(167, 139, 250, 0.2); /* Always glowing */
-    animation: pastelGlow 8s infinite linear; /* Synced with nav/button */
 }
 .stat:hover { 
     transform: translateY(-5px); 
+    box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); /* Initial glow */
+    animation: pastelGlow 8s infinite linear; /* Synced glow on hover */
 }
 .stat span { 
     font-size: 24px; 
@@ -193,9 +193,9 @@ nav a:hover {
     border-radius: 8px; 
     font-size: 12px; 
     opacity: 0; 
-    transition: opacity 0.3s ease, top 0.3s ease; /* Only opacity/top transition */
+    transition: opacity 0.3s ease, top 0.3s ease; /* Only opacity/top */
     pointer-events: none; 
-    animation: pastelGlow 8s infinite linear; /* Synced with nav/button */
+    animation: pastelGlow 8s infinite linear; /* Always synced */
 }
 .stat:hover::after { 
     opacity: 1; 
