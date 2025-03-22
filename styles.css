@@ -48,9 +48,8 @@ nav {
     margin: 0 auto; 
     position: relative; 
     z-index: 2; 
-    /* Optional: Uncomment for subtle glow */
-    /* border: 1px solid rgba(167, 139, 250, 0.7); */
-    /* animation: pastelCycleBorder 8s infinite linear; */
+    border: 1px solid rgba(167, 139, 250, 0.7); /* Glow */
+    animation: pastelCycleBorder 8s infinite linear; /* Glow */
 }
 nav h1 { 
     font-size: 32px; 
