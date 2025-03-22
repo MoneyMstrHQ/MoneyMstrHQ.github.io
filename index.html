@@ -61,11 +61,11 @@
         <div class="highlight-grid">
             <div class="highlight">
                 <p>"Budget app with 4.8 stars—saves time!"</p>
-                <span><a href="#" class="btn btn-small">Try It</a> - <span class="badge">Top Pick</span></span>
+                <span><a href="#" class="btn btn-small">Try It</a><span class="badge">Top Pick</span></span>
             </div>
             <div class="highlight">
                 <p>"Investment course—up 20% in 90 days."</p>
-                <span><a href="#" class="btn btn-small">Learn More</a> - <span class="badge">Best Value</span></span>
+                <span><a href="#" class="btn btn-small">Learn More</a><span class="badge">Best Value</span></span>
             </div>
         </div>
     </section>
@@ -95,7 +95,6 @@
             "retina_detect": true
         });
 
-        // Tap to show bubble on mobile
         document.querySelectorAll('.stat').forEach(stat => {
             stat.addEventListener('touchstart', function(e) {
                 e.preventDefault();
@@ -108,7 +107,6 @@
             });
         });
 
-        // Scroll trigger for strategy cards - mobile only, strict center
         const cards = document.querySelectorAll('.card');
         function highlightCenterCard() {
             if (window.matchMedia('(max-width: 768px)').matches) {
