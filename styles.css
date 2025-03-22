@@ -90,18 +90,22 @@ nav a:hover {
 }
 .hero { 
     text-align: center; 
-    padding: 15px; 
+    padding: 60px 15px 15px; /* Top padding to clear nav */
     max-width: 900px; 
     width: 90%; 
     position: relative; 
-    z-index: 2; 
+    z-index: 1; 
     flex-grow: 1; 
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
     align-items: center; 
+}
+.hero-inner { 
+    padding: 20px; 
     box-shadow: 0 0 15px rgba(167, 139, 250, 0.2); 
     animation: subtleGlow 10s infinite ease-in-out; 
+    border-radius: 12px; 
 }
 .kinetic { 
     font-size: 72px; 
