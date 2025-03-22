@@ -131,7 +131,7 @@ nav a:hover {
     background: rgba(0, 0, 0, 0.9); 
     position: relative; 
     z-index: 2; 
-    flex-wrap: wrap; /* Ensure wrapping */
+    flex-wrap: wrap; 
 }
 .stat { 
     text-align: center; 
@@ -139,7 +139,7 @@ nav a:hover {
     background: rgba(0, 0, 0, 0.7); 
     border: 1px solid rgba(255, 255, 255, 0.1); 
     border-radius: 50%; 
-    width: 120px; /* Bigger */
+    width: 120px; 
     height: 120px; 
     display: flex; 
     flex-direction: column; 
@@ -152,13 +152,13 @@ nav a:hover {
     box-shadow: 0 0 15px rgba(96, 165, 250, 0.3); 
 }
 .stat span { 
-    font-size: 24px; /* Smaller */
+    font-size: 24px; 
     font-weight: 800; 
     color: #ffffff; 
     text-shadow: 0 0 8px rgba(96, 165, 250, 0.5); 
 }
 .stat p { 
-    font-size: 12px; /* Smaller */
+    font-size: 12px; 
     color: #d0d0d0; 
 }
 .stat::after { 
@@ -252,13 +252,12 @@ footer p {
     .hero h2 { font-size: 48px; }
     .hero p { font-size: 20px; }
     .stats { 
-        flex-direction: column; /* Force column */
-        gap: 20px; 
-        align-items: center; 
+        gap: 10px; /* Tighter for horizontal */
+        padding: 20px 10px; 
     }
     .stat { 
-        width: 100px; /* Adjust for mobile */
-        height: 100px; 
+        width: 90px; /* Smaller for mobile */
+        height: 90px; 
     }
     .stat span { font-size: 20px; }
     .stat p { font-size: 10px; }
