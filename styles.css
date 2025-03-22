@@ -282,7 +282,7 @@ nav a:hover {
     .card:hover { 
         transform: none; 
         box-shadow: none; 
-        border-color: rgba(255, 255, 255, 0.1); /* Reset hover on mobile */
+        border-color: rgba(255, 255, 255, 0.1); 
     }
 }
 .card h4 { 
