@@ -51,6 +51,11 @@ nav {
     box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
     animation: pastelOutline 8s infinite linear; 
 }
+nav.sticky { 
+    position: fixed; 
+    top: 10px; 
+    z-index: 10; 
+}
 nav h1 { 
     font-size: 32px; 
     font-weight: 800; 
@@ -96,6 +101,14 @@ nav a:hover {
     font-weight: 800; 
     color: #ffffff; 
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.5); 
+}
+.kinetic.glow { 
+    animation: glowPulse 2s infinite ease-in-out; 
+}
+@keyframes glowPulse { 
+    0% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.5); } 
+    50% { text-shadow: 0 0 25px rgba(167, 139, 250, 0.8); } 
+    100% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.5); } 
 }
 .hero p { 
     font-size: 24px; 
@@ -169,7 +182,14 @@ nav a:hover {
     transition: transform 0.3s ease; 
     position: relative; 
     box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
-    animation: pastelOutline 8s infinite linear; 
+    animation: pastelOutline 8s infinite linear, scaleIn 0.5s ease-out forwards; 
+}
+.stat:nth-child(1) { animation-delay: 0s; }
+.stat:nth-child(2) { animation-delay: 0.2s; }
+.stat:nth-child(3) { animation-delay: 0.4s; }
+@keyframes scaleIn { 
+    0% { transform: scale(0); } 
+    100% { transform: scale(1); } 
 }
 .stat:hover { 
     transform: translateY(-5px); 
@@ -288,6 +308,15 @@ nav a:hover {
     font-size: 14px; 
     color: #A78BFA; 
 }
+.badge { 
+    background: linear-gradient(90deg, #60A5FA, #A78BFA); 
+    padding: 4px 10px; 
+    border-radius: 12px; 
+    font-size: 12px; 
+    color: #fff; 
+    margin-left: 10px; 
+    text-shadow: 0 0 5px rgba(96, 165, 250, 0.5); 
+}
 footer { 
     background: rgba(0, 0, 0, 0.9); 
     padding: 30px 40px; 
@@ -338,6 +367,12 @@ footer p {
     }
     .stat span { font-size: 20px; }
     .stat p { font-size: 10px; }
+    nav.sticky { 
+        width: 100%; 
+        border-radius: 0; 
+        top: 0; 
+        padding: 10px; 
+    }
     nav { 
         flex-direction: column; 
         padding: 10px; 
