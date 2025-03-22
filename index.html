@@ -108,10 +108,9 @@
             });
         });
 
-        // Scroll trigger for strategy cards - mobile only
+        // Scroll trigger for strategy cards - mobile only, strict center
         const cards = document.querySelectorAll('.card');
         function highlightCenterCard() {
-            // Only run on mobile (max-width: 768px)
             if (window.matchMedia('(max-width: 768px)').matches) {
                 const viewportHeight = window.innerHeight;
                 const centerY = viewportHeight / 2;
@@ -123,14 +122,17 @@
                     const cardCenterY = rect.top + (rect.height / 2);
                     const distance = Math.abs(centerY - cardCenterY);
 
-                    if (distance < minDistance) {
+                    // Only highlight if card is fully in view and near center
+                    if (rect.top >= 0 && rect.bottom <= viewportHeight && distance < minDistance) {
                         minDistance = distance;
                         closestCard = card;
                     }
                 });
 
                 cards.forEach(card => card.classList.remove('in-view'));
-                if (closestCard) closestCard.classList.add('in-view');
+                if (closestCard && minDistance < 100) { // Tighten to 100px from center
+                    closestCard.classList.add('in-view');
+                }
             }
         }
 
