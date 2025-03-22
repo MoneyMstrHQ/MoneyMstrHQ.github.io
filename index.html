@@ -98,28 +98,42 @@
         // Tap to show bubble on mobile
         document.querySelectorAll('.stat').forEach(stat => {
             stat.addEventListener('touchstart', function(e) {
-                e.preventDefault(); // Stop text selection
-                this.classList.remove('active'); // Clear any lingering active
+                e.preventDefault();
+                this.classList.remove('active');
                 this.classList.add('active');
-                setTimeout(() => this.classList.remove('active'), 2000); // Fade after 2s
+                setTimeout(() => this.classList.remove('active'), 2000);
             });
             stat.addEventListener('touchend', function(e) {
                 e.preventDefault();
             });
         });
 
-        // Scroll trigger for strategy cards
+        // Scroll trigger for strategy cards - center only
         const cards = document.querySelectorAll('.card');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
-                } else {
-                    entry.target.classList.remove('in-view');
+        function highlightCenterCard() {
+            const viewportHeight = window.innerHeight;
+            const centerY = viewportHeight / 2;
+            let closestCard = null;
+            let minDistance = Infinity;
+
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const cardCenterY = rect.top + (rect.height / 2);
+                const distance = Math.abs(centerY - cardCenterY);
+
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestCard = card;
                 }
             });
-        }, { threshold: 0.5 }); // Trigger when 50% in view
-        cards.forEach(card => observer.observe(card));
+
+            cards.forEach(card => card.classList.remove('in-view'));
+            if (closestCard) closestCard.classList.add('in-view');
+        }
+
+        window.addEventListener('scroll', highlightCenterCard);
+        window.addEventListener('resize', highlightCenterCard);
+        highlightCenterCard(); // Initial check
     </script>
 </body>
 </html>
