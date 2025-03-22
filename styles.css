@@ -160,7 +160,8 @@ nav a:hover {
 }
 .stat:hover { 
     transform: translateY(-5px); 
-    box-shadow: 0 0 15px rgba(96, 165, 250, 0.3); 
+    box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); /* Initial glow */
+    animation: pastelGlow 8s infinite linear; /* RGB cycle */
 }
 .stat span { 
     font-size: 24px; 
@@ -255,17 +256,17 @@ footer p {
     transition: all 0.3s ease; 
 }
 .social a:nth-child(1) { /* X */
-    color: #6EE7B7; /* Mint */
+    color: #6EE7B7; 
     text-shadow: 0 0 5px rgba(110, 231, 183, 0.3); 
 }
 .social a:nth-child(2) { /* Discord */
-    background: linear-gradient(90deg, #60A5FA, #A78BFA); /* Gradient */
+    background: linear-gradient(90deg, #60A5FA, #A78BFA); 
     -webkit-background-clip: text; 
     color: transparent; 
     text-shadow: 0 0 5px rgba(96, 165, 250, 0.3); 
 }
 .social a:hover { 
-    color: #F9A8D4; /* Pink hover */
+    color: #F9A8D4; 
     text-shadow: 0 0 8px rgba(249, 168, 212, 0.7); 
 }
 @media (max-width: 768px) {
