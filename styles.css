@@ -64,7 +64,12 @@ nav h1 {
     color: transparent; 
     text-shadow: 0 0 5px rgba(96, 165, 250, 0.3); 
 }
-nav ul { 
+.hamburger { 
+    display: none; 
+    font-size: 24px; 
+    cursor: pointer; 
+}
+.nav-links { 
     display: flex; 
     gap: 30px; 
     list-style: none; 
@@ -121,6 +126,16 @@ nav a:hover {
     margin-top: 10px; 
     text-shadow: 0 0 5px rgba(167, 139, 250, 0.3); 
 }
+.micro-cta { 
+    color: #6EE7B7; 
+    text-decoration: underline; 
+    font-weight: 600; 
+    margin-left: 10px; 
+    transition: color 0.3s ease; 
+}
+.micro-cta:hover { 
+    color: #F9A8D4; 
+}
 .btn { 
     background: rgba(167, 139, 250, 0.7); 
     color: #ffffff; 
@@ -137,9 +152,8 @@ nav a:hover {
     display: inline-block; 
 }
 .btn.btn-small { 
-    padding: 6px 20px; 
+    padding: 8px 20px; 
     font-size: 14px; 
-    line-height: 1; 
 }
 .btn.rgb-hover { 
     transform: scale(1.05); 
@@ -180,7 +194,7 @@ nav a:hover {
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
-    transition: transform 0.3s ease; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
     position: relative; 
     box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
     animation: pastelOutline 8s infinite linear, scaleIn 0.5s ease-out forwards; 
@@ -193,7 +207,8 @@ nav a:hover {
     100% { transform: scale(1); } 
 }
 .stat:hover { 
-    transform: translateY(-5px); 
+    transform: translateY(-8px) scale(1.1); 
+    box-shadow: 0 0 20px rgba(167, 139, 250, 0.5); 
 }
 .stat span { 
     font-size: 24px; 
@@ -272,7 +287,9 @@ nav a:hover {
 .card:hover { 
     transform: translateY(-8px); 
     box-shadow: 0 0 20px rgba(110, 231, 183, 0.4); 
-    border-color: rgba(110, 231, 183, 0.3); 
+    border: 1px solid transparent; 
+    background: linear-gradient(#000000, #000000) padding-box, 
+                linear-gradient(90deg, #60A5FA, #A78BFA) border-box; 
 }
 .card.in-view { 
     transform: translateY(-8px); 
@@ -284,6 +301,8 @@ nav a:hover {
         transform: none; 
         box-shadow: none; 
         border-color: rgba(255, 255, 255, 0.1); 
+        background: none; 
+        border: 1px solid rgba(255, 255, 255, 0.1); 
     }
 }
 .card h4 { 
@@ -321,6 +340,10 @@ nav a:hover {
     border-radius: 20px; 
     border: 1px solid rgba(255, 255, 255, 0.1); 
     transition: all 0.3s ease; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 10px; 
 }
 .highlight:hover { 
     transform: translateY(-5px); 
@@ -330,23 +353,16 @@ nav a:hover {
     font-size: 16px; 
     color: #d0d0d0; 
 }
-.highlight span { 
-    display: flex; 
-    justify-content: center; /* Center horizontally */
-    align-items: baseline; /* Align text baseline */
-    gap: 8px; 
-    margin-top: 10px; 
-    color: #A78BFA; 
-}
 .badge { 
     background: #000000; 
     border: 1px solid #ffffff; 
-    padding: 6px 10px; 
+    padding: 4px 10px; 
     border-radius: 12px; 
     font-size: 12px; 
     font-weight: 800; 
     color: #ffffff; 
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.9); 
+    display: inline-block; 
 }
 footer { 
     background: rgba(0, 0, 0, 0.9); 
@@ -362,67 +378,58 @@ footer p {
     font-size: 12px; 
     color: #d0d0d0; 
 }
-.social a { 
+.social { display: flex; align-items: center; }
+.social-icon { 
+    font-size: 20px; 
     margin-left: 20px; 
     text-decoration: none; 
-    font-weight: 600; 
-    font-size: 14px; 
     transition: all 0.3s ease; 
 }
-.social a:nth-child(1) { 
+.social-icon:nth-child(1) { 
     color: #6EE7B7; 
     text-shadow: 0 0 5px rgba(110, 231, 183, 0.3); 
 }
-.social a:nth-child(2) { 
+.social-icon:nth-child(2) { 
     background: linear-gradient(90deg, #60A5FA, #A78BFA); 
     -webkit-background-clip: text; 
     color: transparent; 
     text-shadow: 0 0 5px rgba(96, 165, 250, 0.3); 
 }
-.social a:hover { 
+.social-icon:hover { 
     color: #F9A8D4; 
-    text-shadow: 0 0 8px rgba(249, 168, 212, 0.7); 
+    transform: scale(1.2); 
+    text-shadow: 0 0 10px rgba(249, 168, 212, 0.7); 
 }
 @media (max-width: 768px) {
     .hero h2 { font-size: 48px; }
     .hero p { font-size: 20px; }
     .hero p.cta-sub { font-size: 16px; }
-    .stats { 
-        gap: 5px; 
-        padding: 20px 10px; 
-        flex-wrap: wrap; 
-    }
-    .stat { 
-        width: 80px; 
-        height: 80px; 
-    }
+    .stats { gap: 5px; padding: 20px 10px; flex-wrap: wrap; }
+    .stat { width: 80px; height: 80px; }
     .stat span { font-size: 20px; }
     .stat p { font-size: 10px; }
-    nav.sticky { 
-        width: 100%; 
-        border-radius: 0; 
-        top: 0; 
-        padding: 10px; 
-    }
-    nav { 
+    nav.sticky { width: 100%; border-radius: 0; top: 0; padding: 10px; }
+    nav { flex-direction: row; padding: 10px; }
+    .hamburger { display: block; }
+    .nav-links { 
+        display: none; 
         flex-direction: column; 
-        padding: 10px; 
+        position: absolute; 
+        top: 60px; 
+        left: 0; 
+        width: 100%; 
+        background: rgba(0, 0, 0, 0.9); 
+        padding: 20px; 
+        border-radius: 0 0 12px 12px; 
     }
-    nav ul { 
-        gap: 15px; 
-        padding: 8px 0; 
+    .nav-links.active { display: flex; animation: slideIn 0.3s ease-out; }
+    @keyframes slideIn {
+        0% { transform: translateY(-20px); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
     }
-    nav a { 
-        font-size: 14px; 
-    }
+    nav a { font-size: 14px; }
     .strategies h3 { font-size: 32px; }
     .highlights h3 { font-size: 32px; }
-    footer { 
-        flex-direction: column; 
-        gap: 15px; 
-        text-align: center; 
-    }
-    .social a { 
-        margin: 0 10px; 
-    }
+    footer { flex-direction: column; gap: 15px; text-align: center; }
+    .social-icon { margin: 0 10px; }
 }
