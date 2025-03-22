@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MoneyMasterHQ - Elite Wealth Systems</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -46,7 +46,6 @@
         </div>
     </footer>
     <script>
-        // Particle Wave Canvas
         const canvas = document.getElementById('particleWave');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
@@ -58,8 +57,8 @@
             particles.push({
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
-                speedX: (Math.random() - 0.5) * 0.6, // Faster: -0.3 to 0.3
-                speedY: (Math.random() - 0.5) * 0.6, // Faster: -0.3 to 0.3
+                speedX: (Math.random() - 0.5) * 0.6,
+                speedY: (Math.random() - 0.5) * 0.6,
                 phase: Math.random() * Math.PI * 2
             });
         }
@@ -73,7 +72,6 @@
                 p.x += p.speedX;
                 p.y += p.speedY;
 
-                // Bounce off edges with random drift
                 if (p.x > canvas.width + 150) p.speedX = -Math.abs(p.speedX) * 0.8;
                 if (p.x < -150) p.speedX = Math.abs(p.speedX) * 0.8;
                 if (p.y > canvas.height + 150) p.speedY = -Math.abs(p.speedY) * 0.8;
@@ -94,12 +92,10 @@
             canvas.height = window.innerHeight;
         });
 
-        // RGB Button Hover
         const btn = document.querySelector('.btn');
         btn.addEventListener('mouseenter', () => btn.classList.add('rgb-hover'));
         btn.addEventListener('mouseleave', () => btn.classList.remove('rgb-hover'));
 
-        // Scroll Fade
         window.addEventListener('scroll', () => {
             const h2 = document.querySelector('.hero h2');
             h2.style.transform = `translateY(${window.scrollY * 0.15}px)`;
