@@ -114,32 +114,33 @@ nav a:hover {
     backdrop-filter: blur(8px); 
     border: 1px solid rgba(255, 255, 255, 0.2); 
     transition: transform 0.4s ease, box-shadow 0.4s ease; 
-    animation: pastelCycle 8s infinite linear; 
+    animation: pastelGlow 8s infinite linear; /* Synced with nav */
 }
 .btn.rgb-hover { 
     transform: scale(1.05); 
     box-shadow: 0 0 25px rgba(167, 139, 250, 0.8); 
 }
-@keyframes pastelCycle { 
-    0% { background: rgba(167, 139, 250, 0.7); } 
-    25% { background: rgba(110, 231, 183, 0.7); } 
-    50% { background: rgba(96, 165, 250, 0.7); } 
-    75% { background: rgba(249, 168, 212, 0.7); } 
-    100% { background: rgba(167, 139, 250, 0.7); } 
-}
 @keyframes pastelGlow { 
-    0% { box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); } 
-    25% { box-shadow: 0 0 15px rgba(110, 231, 183, 0.3); } 
-    50% { box-shadow: 0 0 15px rgba(96, 165, 250, 0.3); } 
-    75% { box-shadow: 0 0 15px rgba(249, 168, 212, 0.3); } 
-    100% { box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); } 
-}
-@keyframes pastelBubble { 
-    0% { background: rgba(167, 139, 250, 0.8); } 
-    25% { background: rgba(110, 231, 183, 0.8); } 
-    50% { background: rgba(96, 165, 250, 0.8); } 
-    75% { background: rgba(249, 168, 212, 0.8); } 
-    100% { background: rgba(167, 139, 250, 0.8); } 
+    0% { 
+        box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
+        background: rgba(167, 139, 250, 0.7); 
+    } 
+    25% { 
+        box-shadow: 0 0 15px rgba(110, 231, 183, 0.3); 
+        background: rgba(110, 231, 183, 0.7); 
+    } 
+    50% { 
+        box-shadow: 0 0 15px rgba(96, 165, 250, 0.3); 
+        background: rgba(96, 165, 250, 0.7); 
+    } 
+    75% { 
+        box-shadow: 0 0 15px rgba(249, 168, 212, 0.3); 
+        background: rgba(249, 168, 212, 0.7); 
+    } 
+    100% { 
+        box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
+        background: rgba(167, 139, 250, 0.7); 
+    } 
 }
 .stats { 
     display: flex; 
@@ -162,13 +163,13 @@ nav a:hover {
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
-    transition: all 0.3s ease; 
+    transition: transform 0.3s ease; /* Only transform transitions */
     position: relative; 
+    box-shadow: 0 0 15px rgba(167, 139, 250, 0.2); /* Always glowing */
+    animation: pastelGlow 8s infinite linear; /* Synced with nav/button */
 }
 .stat:hover { 
     transform: translateY(-5px); 
-    box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
-    animation: pastelGlow 8s infinite linear; 
 }
 .stat span { 
     font-size: 24px; 
@@ -186,19 +187,19 @@ nav a:hover {
     top: -25px; 
     left: 50%; 
     transform: translateX(-50%); 
-    background: rgba(96, 165, 250, 0.8); /* Initial */
+    background: rgba(167, 139, 250, 0.8); /* Initial */
     color: #000; 
     padding: 4px 12px; 
     border-radius: 8px; 
     font-size: 12px; 
     opacity: 0; 
-    transition: all 0.3s ease; 
+    transition: opacity 0.3s ease, top 0.3s ease; /* Only opacity/top transition */
     pointer-events: none; 
+    animation: pastelGlow 8s infinite linear; /* Synced with nav/button */
 }
 .stat:hover::after { 
     opacity: 1; 
     top: -35px; 
-    animation: pastelBubble 8s infinite linear; /* RGB cycle */
 }
 .strategies { 
     padding: 80px 15px; 
