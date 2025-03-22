@@ -103,11 +103,23 @@
                 this.classList.add('active');
                 setTimeout(() => this.classList.remove('active'), 2000); // Fade after 2s
             });
-            // Prevent hover interference after tap
             stat.addEventListener('touchend', function(e) {
                 e.preventDefault();
             });
         });
+
+        // Scroll trigger for strategy cards
+        const cards = document.querySelectorAll('.card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                } else {
+                    entry.target.classList.remove('in-view');
+                }
+            });
+        }, { threshold: 0.5 }); // Trigger when 50% in view
+        cards.forEach(card => observer.observe(card));
     </script>
 </body>
 </html>
