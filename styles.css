@@ -252,17 +252,33 @@ footer p {
     .hero h2 { font-size: 48px; }
     .hero p { font-size: 20px; }
     .stats { 
-        gap: 10px; /* Tighter for horizontal */
+        flex-direction: column; 
+        gap: 20px; 
         padding: 20px 10px; 
+        align-items: center; 
     }
     .stat { 
-        width: 90px; /* Smaller for mobile */
+        width: 90px; 
         height: 90px; 
     }
     .stat span { font-size: 20px; }
     .stat p { font-size: 10px; }
-    nav { flex-direction: column; padding: 10px; }
-    nav ul { gap: 15px; padding: 8px 0; }
-    nav a { font-size: 14px; }
+    nav { 
+        padding: 15px; /* More breathing room */
+        border-radius: 8px; /* Tighter */
+        width: 95%; /* Wider */
+    }
+    nav h1 { 
+        font-size: 24px; /* Smaller */
+    }
+    nav ul { 
+        gap: 10px; /* Tighter */
+        padding: 8px 0; 
+        flex-direction: row; /* Horizontal */
+    }
+    nav a { 
+        font-size: 12px; /* Smaller */
+        padding: 4px 8px; 
+    }
     .strategies h3 { font-size: 32px; }
 }
