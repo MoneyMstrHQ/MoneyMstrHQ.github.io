@@ -11,7 +11,8 @@
         <div id="particleWave"></div>
         <nav class="sticky">
             <h1>MoneyMasterHQ</h1>
-            <ul>
+            <div class="hamburger">☰</div>
+            <ul class="nav-links">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Strategies</a></li>
                 <li><a href="#">Stats</a></li>
@@ -21,21 +22,21 @@
         <div class="hero">
             <h2 class="kinetic glow">Master Your Money</h2>
             <p>Smart finance tips and tools to grow your wealth.</p>
-            <a href="#" class="btn">Save $500 Now</a>
-            <p class="cta-sub">Join 500+ Savvy Savers</p>
+            <a href="#" class="btn">Start Saving $500 Today</a>
+            <p class="cta-sub">Join 500+ Savvy Savers • <a href="#" class="micro-cta">Free Guide</a></p>
         </div>
     </header>
     <section class="stats">
         <div class="stat" data-hover="$500+ Saved Week 1">
-            <span>$500+</span>
+            <span data-count="500">$0+</span>
             <p>Saved</p>
         </div>
         <div class="stat" data-hover="Tool Users">
-            <span>1M+</span>
+            <span data-count="1000000">0+</span>
             <p>Users</p>
         </div>
         <div class="stat" data-hover="Avg. 90-Day Gains">
-            <span>20%+</span>
+            <span data-count="20">0%+</span>
             <p>Growth</p>
         </div>
     </section>
@@ -74,8 +75,8 @@
     <footer>
         <p>© 2025 MoneyMasterHQ Elite Wealth Systems</p>
         <div class="social">
-            <a href="#">X</a>
-            <a href="#">Discord</a>
+            <a href="#" class="social-icon">𝕏</a>
+            <a href="#" class="social-icon">🎮</a>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -109,6 +110,23 @@
             });
         });
 
+        document.querySelectorAll('.stat span').forEach(stat => {
+            let count = 0;
+            const target = parseInt(stat.getAttribute('data-count'));
+            const increment = target / 50;
+            const isPercent = stat.textContent.includes('%');
+            const updateCount = () => {
+                count += increment;
+                if (count < target) {
+                    stat.textContent = isPercent ? `${Math.floor(count)}%+` : `$${Math.floor(count)}+`;
+                    requestAnimationFrame(updateCount);
+                } else {
+                    stat.textContent = isPercent ? `${target}%+` : `$${target}+`;
+                }
+            };
+            updateCount();
+        });
+
         const cards = document.querySelectorAll('.card');
         function highlightCenterCard() {
             if (window.matchMedia('(max-width: 768px)').matches) {
@@ -138,6 +156,10 @@
         window.addEventListener('scroll', highlightCenterCard);
         window.addEventListener('resize', highlightCenterCard);
         highlightCenterCard();
+
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
     </script>
 </body>
 </html>
