@@ -27,6 +27,14 @@ header {
     align-items: center; 
     position: relative; 
 }
+#particleWave { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    z-index: 0; 
+}
 nav { 
     display: flex; 
     justify-content: space-between; 
@@ -183,19 +191,19 @@ nav a:hover {
     left: 50%; 
     transform: translateX(-50%); 
     background: rgba(167, 139, 250, 0.8); 
-    color: #ffffff; /* White text */
-    padding: 6px 16px; /* Wider */
+    color: #ffffff; 
+    padding: 6px 16px; 
     border-radius: 8px; 
-    font-size: 14px; /* Bigger */
+    font-size: 14px; 
     opacity: 0; 
     transition: opacity 0.3s ease, top 0.3s ease; 
     pointer-events: none; 
     animation: pastelGlow 8s infinite linear; 
-    white-space: nowrap; /* Keep it one line */
+    white-space: nowrap; 
 }
 .stat:hover::after { 
     opacity: 1; 
-    top: -40px; /* Higher lift */
+    top: -40px; 
 }
 .strategies { 
     padding: 80px 15px; 
