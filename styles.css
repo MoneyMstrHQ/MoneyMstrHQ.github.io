@@ -100,6 +100,8 @@ nav a:hover {
     flex-direction: column; 
     justify-content: center; 
     align-items: center; 
+    border: 1px solid transparent; 
+    animation: borderGlow 10s infinite linear; 
 }
 .kinetic { 
     font-size: 72px; 
@@ -126,16 +128,6 @@ nav a:hover {
     margin-top: 10px; 
     text-shadow: 0 0 5px rgba(167, 139, 250, 0.3); 
 }
-.micro-cta { 
-    color: #6EE7B7; 
-    text-decoration: underline; 
-    font-weight: 600; 
-    margin-left: 10px; 
-    transition: color 0.3s ease; 
-}
-.micro-cta:hover { 
-    color: #F9A8D4; 
-}
 .btn { 
     background: rgba(167, 139, 250, 0.7); 
     color: #ffffff; 
@@ -155,7 +147,7 @@ nav a:hover {
     padding: 8px 20px; 
     font-size: 14px; 
 }
-.btn.rgb-hover { 
+.btn:hover { 
     transform: scale(1.05); 
     box-shadow: 0 0 25px rgba(167, 139, 250, 0.8); 
 }
@@ -172,6 +164,13 @@ nav a:hover {
     50% { box-shadow: 0 0 15px rgba(96, 165, 250, 0.3); } 
     75% { box-shadow: 0 0 15px rgba(249, 168, 212, 0.3); } 
     100% { box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); } 
+}
+@keyframes borderGlow { 
+    0% { border-color: rgba(167, 139, 250, 0.7); } 
+    25% { border-color: rgba(110, 231, 183, 0.7); } 
+    50% { border-color: rgba(96, 165, 250, 0.7); } 
+    75% { border-color: rgba(249, 168, 212, 0.7); } 
+    100% { border-color: rgba(167, 139, 250, 0.7); } 
 }
 .stats { 
     display: flex; 
@@ -314,6 +313,15 @@ nav a:hover {
     font-size: 14px; 
     color: #d0d0d0; 
 }
+.card a, .highlight a:not(.btn) { 
+    color: #6EE7B7; 
+    text-decoration: none; 
+    transition: all 0.3s ease; 
+}
+.card a:hover, .highlight a:not(.btn):hover { 
+    color: #F9A8D4; 
+    text-shadow: 0 0 5px rgba(249, 168, 212, 0.7); 
+}
 .highlights { 
     padding: 80px 15px; 
     text-align: center; 
@@ -377,6 +385,14 @@ footer {
 footer p { 
     font-size: 12px; 
     color: #d0d0d0; 
+}
+.secure-badge { 
+    background: rgba(110, 231, 183, 0.2); 
+    color: #6EE7B7; 
+    padding: 2px 8px; 
+    border-radius: 8px; 
+    font-size: 10px; 
+    margin-left: 10px; 
 }
 .social { display: flex; align-items: center; }
 .social-icon { 
