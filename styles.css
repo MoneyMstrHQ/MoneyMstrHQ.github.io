@@ -336,13 +336,13 @@ nav a:hover {
     color: #A78BFA; 
 }
 .badge { 
-    background: #6EE7B7; /* Solid green from strategy cards */
+    background: linear-gradient(90deg, #60A5FA, #A78BFA); /* Back to gradient */
     padding: 4px 10px; 
     border-radius: 12px; 
     font-size: 12px; 
-    color: #ffffff; /* White text for max contrast */
+    color: #ffffff; /* Solid white text */
     margin-left: 10px; 
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Stronger dark shadow */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Dark shadow for pop */
 }
 footer { 
     background: rgba(0, 0, 0, 0.9); 
