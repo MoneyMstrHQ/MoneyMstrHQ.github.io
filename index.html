@@ -28,15 +28,15 @@
         </div>
     </header>
     <section class="stats">
-        <div class="stat">
+        <div class="stat" data-hover="$500+ Saved Week 1">
             <span data-count="500">$0+</span>
             <p>Saved</p>
         </div>
-        <div class="stat">
+        <div class="stat" data-hover="Tool Users">
             <span data-count="10000">0+</span>
             <p>Users</p>
         </div>
-        <div class="stat">
+        <div class="stat" data-hover="Avg. 90-Day Gains">
             <span data-count="20">0%+</span>
             <p>Growth</p>
         </div>
@@ -86,6 +86,19 @@
     </footer>
     <script>
         console.log("Script running...");
+        // Stat touch interaction
+        document.querySelectorAll('.stat').forEach(stat => {
+            stat.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                this.classList.remove('active');
+                this.classList.add('active');
+                setTimeout(() => this.classList.remove('active'), 2000);
+            });
+            stat.addEventListener('touchend', function(e) {
+                e.preventDefault();
+            });
+        });
+
         // Stat counter animation
         function animateStats() {
             console.log("Starting stat animation...");
