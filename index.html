@@ -88,8 +88,65 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         console.log("Script running...");
-        // Particles with circles first (guaranteed to work), SVGs optional
+        // Particles with SVGs for fade effect
         try {
+            // Base layer with purple
+            particlesJS("particleWave", {
+                "particles": {
+                    "number": { "value": 5, "density": { "enable": true, "value_area": 800 } },
+                    "shape": {
+                        "type": "image",
+                        "image": {
+                            "src": "https://moneymstrhq.github.io/particle-purple.svg",
+                            "width": 30,
+                            "height": 30
+                        }
+                    },
+                    "opacity": { "value": 0.5, "random": false },
+                    "size": { "value": 30, "random": true },
+                    "line_linked": { "enable": false },
+                    "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": { "onhover": { "enable": false }, "onclick": { "enable": false }, "resize": true }
+                },
+                "retina_detect": true
+            });
+            console.log("Particles (purple SVG) initialized");
+
+            // Layer other colors
+            const otherImages = [
+                { src: "https://moneymstrhq.github.io/particle-green.svg", color: "#6EE7B7" },
+                { src: "https://moneymstrhq.github.io/particle-blue.svg", color: "#60A5FA" },
+                { src: "https://moneymstrhq.github.io/particle-pink.svg", color: "#F9A8D4" }
+            ];
+            otherImages.forEach((img, index) => {
+                setTimeout(() => {
+                    particlesJS("particleWave", {
+                        "particles": {
+                            "number": { "value": 5 },
+                            "shape": {
+                                "type": "image",
+                                "image": { "src": img.src, "width": 30, "height": 30 }
+                            },
+                            "opacity": { "value": 0.5 },
+                            "size": { "value": 30, "random": true },
+                            "line_linked": { "enable": false },
+                            "move": { "enable": true, "speed": 1, "direction": "none", "random": true }
+                        },
+                        "interactivity": {
+                            "detect_on": "canvas",
+                            "events": { "onhover": { "enable": false }, "onclick": { "enable": false }, "resize": true }
+                        },
+                        "retina_detect": true
+                    });
+                    console.log(`Added ${img.color} SVG particles`);
+                }, (index + 1) * 500); // Staggered delay
+            });
+        } catch (e) {
+            console.error("Particles error:", e);
+            // Fallback to circles
             particlesJS("particleWave", {
                 "particles": {
                     "number": { "value": 15, "density": { "enable": true, "value_area": 800 } },
@@ -106,36 +163,7 @@
                 },
                 "retina_detect": true
             });
-            console.log("Particles (circles) initialized");
-            // Uncomment below to try SVGs again after circles work
-            /*
-            particlesJS("particleWave", {
-                "particles": {
-                    "number": { "value": 15, "density": { "enable": true, "value_area": 800 } },
-                    "shape": {
-                        "type": "images",
-                        "images": [
-                            { "src": "https://moneymstrhq.github.io/particle-purple.svg", "width": 30, "height": 30 },
-                            { "src": "https://moneymstrhq.github.io/particle-green.svg", "width": 30, "height": 30 },
-                            { "src": "https://moneymstrhq.github.io/particle-blue.svg", "width": 30, "height": 30 },
-                            { "src": "https://moneymstrhq.github.io/particle-pink.svg", "width": 30, "height": 30 }
-                        ]
-                    },
-                    "opacity": { "value": 0.5, "random": false },
-                    "size": { "value": 30, "random": true },
-                    "line_linked": { "enable": false },
-                    "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false }
-                },
-                "interactivity": {
-                    "detect_on": "canvas",
-                    "events": { "onhover": { "enable": false }, "onclick": { "enable": false }, "resize": true }
-                },
-                "retina_detect": true
-            });
-            console.log("Particles (SVGs) initialized");
-            */
-        } catch (e) {
-            console.error("Particles error:", e);
+            console.log("Fallback circles loaded");
         }
 
         // Stat touch interaction
@@ -183,13 +211,13 @@
             if (window.matchMedia('(max-width: 768px)').matches) {
                 const viewportHeight = window.innerHeight;
                 const scrollTop = window.scrollY;
-                const centerY = scrollTop + (viewportHeight / 2); // Adjust for scroll position
+                const centerY = scrollTop + (viewportHeight / 2);
                 let closestCard = null;
                 let minDistance = Infinity;
 
                 cards.forEach(card => {
                     const rect = card.getBoundingClientRect();
-                    const cardCenterY = scrollTop + rect.top + (rect.height / 2); // Absolute position
+                    const cardCenterY = scrollTop + rect.top + (rect.height / 2);
                     const distance = Math.abs(centerY - cardCenterY);
                     console.log(`Card: ${card.querySelector('h4').textContent}, Distance: ${distance}`);
 
@@ -200,7 +228,7 @@
                 });
 
                 cards.forEach(card => card.classList.remove('in-view'));
-                if (closestCard && minDistance < 300) { // Loosened to 300
+                if (closestCard && minDistance < 300) {
                     closestCard.classList.add('in-view');
                     console.log("Highlighted:", closestCard.querySelector('h4').textContent);
                 }
