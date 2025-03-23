@@ -109,6 +109,10 @@
                 "events": { "onhover": { "enable": false }, "onclick": { "enable": false }, "resize": true }
             },
             "retina_detect": true
+        }, function() {
+            console.log("Particles loaded successfully");
+        }, function(err) {
+            console.error("Particles failed to load:", err);
         });
 
         document.querySelectorAll('.stat').forEach(stat => {
@@ -124,10 +128,11 @@
         });
 
         document.querySelectorAll('.stat span').forEach(stat => {
-            let count = 0;
             const target = parseInt(stat.getAttribute('data-count'));
+            let count = 0;
             const increment = target / 50;
             const isPercent = stat.textContent.includes('%');
+            console.log(`Stat target: ${target}, increment: ${increment}`);
             const updateCount = () => {
                 count += increment;
                 if (count < target) {
@@ -142,7 +147,7 @@
 
         const cards = document.querySelectorAll('.card');
         function highlightCenterCard() {
-            if (window.matchMedia('(max-width: 768px)').matches) {
+            if (window.innerWidth <= 768) { // Mobile check
                 const viewportHeight = window.innerHeight;
                 const centerY = viewportHeight / 2;
                 let closestCard = null;
@@ -162,6 +167,7 @@
                 cards.forEach(card => card.classList.remove('in-view'));
                 if (closestCard && minDistance < 100) {
                     closestCard.classList.add('in-view');
+                    console.log("Highlighted card:", closestCard.querySelector('h4').textContent);
                 }
             }
         }
