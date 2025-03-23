@@ -294,7 +294,12 @@ nav a:hover {
 .card.in-view { 
     transform: translateY(-8px); 
     box-shadow: 0 0 20px rgba(110, 231, 183, 0.4); 
-    border-color: rgba(110, 231, 183, 0.3); 
+    border: 1px solid transparent; 
+    background: linear-gradient(#000000, #000000) padding-box, 
+                linear-gradient(90deg, #60A5FA, #A78BFA) border-box; 
+}
+.card.in-view::after { 
+    transform: scaleX(1); 
 }
 @media (max-width: 768px) {
     .card:hover { 
@@ -305,7 +310,7 @@ nav a:hover {
         border: 1px solid rgba(255, 255, 255, 0.1); 
     }
     .card:hover::after { 
-        transform: scaleX(0); /* Bar stays hidden on mobile */
+        transform: scaleX(0); /* Bar stays hidden on hover */
     }
 }
 .card h4 { 
