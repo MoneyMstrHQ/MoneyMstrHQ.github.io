@@ -1,6 +1,6 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { 
-    font-family: 'SF Pro Display', 'Inter', sans-serif; 
+    font-family: 'SF Pro Display', sans-serif; 
     background: #000; 
     color: #e0e0e0; 
     line-height: 1.6; 
@@ -84,10 +84,9 @@ nav a {
     transition: all 0.3s ease; 
 }
 nav a:hover { 
-    color: #F9A8D4; 
-    background: rgba(249, 168, 212, 0.1); 
-    box-shadow: 0 0 12px rgba(249, 168, 212, 0.4); 
-    transform: scale(1.05); 
+    color: #A78BFA; 
+    background: rgba(167, 139, 250, 0.1); 
+    box-shadow: 0 0 12px rgba(167, 139, 250, 0.4); 
 }
 .hero { 
     text-align: center; 
@@ -111,7 +110,6 @@ nav a:hover {
 .kinetic { 
     font-size: 72px; 
     font-weight: 800; 
-    letter-spacing: -1px; 
     color: #ffffff; 
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.5); 
 }
@@ -162,7 +160,7 @@ nav a:hover {
 }
 .btn:hover { 
     transform: scale(1.05); 
-    box-shadow: 0 0 25px rgba(249, 168, 212, 0.8); 
+    box-shadow: 0 0 25px rgba(167, 139, 250, 0.8); 
 }
 @keyframes pastelGlow { 
     0% { background: rgba(167, 139, 250, 0.7); } 
@@ -247,7 +245,9 @@ nav a:hover {
     top: -40px; 
 }
 @media (max-width: 768px) {
-    .stat:hover::after { opacity: 0; }
+    .stat:hover::after { 
+        opacity: 0; 
+    }
 }
 .stat.active::after { 
     opacity: 1; 
@@ -286,14 +286,6 @@ nav a:hover {
     backdrop-filter: blur(12px); 
     border: 1px solid rgba(255, 255, 255, 0.1); 
     transition: all 0.4s ease; 
-    opacity: 0; 
-}
-.card.fade-in { 
-    animation: fadeInUp 0.5s ease-out forwards; 
-}
-@keyframes fadeInUp { 
-    0% { opacity: 0; transform: translateY(20px); } 
-    100% { opacity: 1; transform: translateY(0); } 
 }
 .card:hover { 
     transform: translateY(-8px); 
@@ -406,10 +398,7 @@ footer p {
     font-size: 10px; 
     margin-left: 10px; 
 }
-.social { 
-    display: flex; 
-    align-items: center; 
-}
+.social { display: flex; align-items: center; }
 .social-icon { 
     font-size: 20px; 
     margin-left: 20px; 
@@ -432,52 +421,20 @@ footer p {
     text-shadow: 0 0 10px rgba(249, 168, 212, 0.7); 
 }
 @media (max-width: 768px) {
-    .hero-inner { 
-        padding: 15px; 
-        max-width: 90%; 
-    }
-    .hero h2 { 
-        font-size: 48px; 
-    }
-    .hero p { 
-        font-size: 20px; 
-    }
-    .hero p.cta-sub { 
-        font-size: 16px; 
-    }
-    .btn { 
-        padding: 10px 30px; 
-        font-size: 16px; 
-    }
-    .stats { 
-        gap: 5px; 
-        padding: 20px 10px; 
-        flex-wrap: wrap; 
-    }
+    .hero h2 { font-size: 48px; }
+    .hero p { font-size: 20px; }
+    .hero p.cta-sub { font-size: 16px; }
+    .stats { gap: 5px; padding: 20px 10px; flex-wrap: wrap; }
     .stat { 
         width: 80px; 
         height: 80px; 
         padding: 10px; 
     }
-    .stat span { 
-        font-size: 16px; 
-    }
-    .stat p { 
-        font-size: 8px; 
-    }
-    nav.sticky { 
-        width: 100%; 
-        border-radius: 0; 
-        top: 0; 
-        padding: 10px; 
-    }
-    nav { 
-        flex-direction: row; 
-        padding: 10px; 
-    }
-    .hamburger { 
-        display: block; 
-    }
+    .stat span { font-size: 16px; }
+    .stat p { font-size: 8px; }
+    nav.sticky { width: 100%; border-radius: 0; top: 0; padding: 10px; }
+    nav { flex-direction: row; padding: 10px; }
+    .hamburger { display: block; }
     .nav-links { 
         display: none; 
         flex-direction: column; 
@@ -489,29 +446,14 @@ footer p {
         padding: 20px; 
         border-radius: 0 0 12px 12px; 
     }
-    .nav-links.active { 
-        display: flex; 
-        animation: slideIn 0.3s ease-out; 
-    }
+    .nav-links.active { display: flex; animation: slideIn 0.3s ease-out; }
     @keyframes slideIn {
         0% { transform: translateY(-20px); opacity: 0; }
         100% { transform: translateY(0); opacity: 1; }
     }
-    nav a { 
-        font-size: 14px; 
-    }
-    .strategies h3 { 
-        font-size: 32px; 
-    }
-    .highlights h3 { 
-        font-size: 32px; 
-    }
-    footer { 
-        flex-direction: column; 
-        gap: 15px; 
-        text-align: center; 
-    }
-    .social-icon { 
-        margin: 0 10px; 
-    }
+    nav a { font-size: 14px; }
+    .strategies h3 { font-size: 32px; }
+    .highlights h3 { font-size: 32px; }
+    footer { flex-direction: column; gap: 15px; text-align: center; }
+    .social-icon { margin: 0 10px; }
 }
