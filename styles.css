@@ -266,24 +266,6 @@ nav a:hover {
     border: 1px solid rgba(255, 255, 255, 0.1); 
     transition: all 0.4s ease; 
     position: relative; 
-    overflow: hidden; 
-}
-.card::before { 
-    content: ''; 
-    position: absolute; 
-    top: 50%; 
-    left: 50%; 
-    width: 200%; 
-    height: 200%; 
-    background: radial-gradient(circle, rgba(167, 139, 250, 0.3) 0%, rgba(0, 0, 0, 0) 70%); 
-    transform: translate(-50%, -50%) scale(0); 
-    opacity: 0; 
-    transition: opacity 0.3s ease; 
-    z-index: -1; 
-}
-.card:hover::before { 
-    opacity: 1; 
-    animation: sweepRGB 3s infinite linear; 
 }
 .card:hover { 
     transform: translateY(-8px); 
@@ -291,6 +273,7 @@ nav a:hover {
     border: 1px solid transparent; 
     background: linear-gradient(#000000, #000000) padding-box, 
                 linear-gradient(90deg, #60A5FA, #A78BFA) border-box; 
+    box-shadow: inset 0 0 15px rgba(110, 231, 183, 0.2); 
 }
 .card.in-view { 
     transform: translateY(-8px); 
@@ -304,9 +287,7 @@ nav a:hover {
         border-color: rgba(255, 255, 255, 0.1); 
         background: none; 
         border: 1px solid rgba(255, 255, 255, 0.1); 
-    }
-    .card:hover::before { 
-        opacity: 0; 
+        box-shadow: none; /* No inset shadow on mobile */
     }
 }
 .card h4 { 
@@ -434,28 +415,6 @@ footer p {
     50% { background: rgba(96, 165, 250, 0.7); } 
     75% { background: rgba(249, 168, 212, 0.7); } 
     100% { background: rgba(167, 139, 250, 0.7); } 
-}
-@keyframes sweepRGB { 
-    0% { 
-        background: radial-gradient(circle, rgba(167, 139, 250, 0.3) 0%, rgba(0, 0, 0, 0) 70%); 
-        transform: translate(-50%, -50%) scale(0); 
-    }
-    25% { 
-        background: radial-gradient(circle, rgba(110, 231, 183, 0.3) 0%, rgba(0, 0, 0, 0) 70%); 
-        transform: translate(-50%, -50%) scale(1); 
-    }
-    50% { 
-        background: radial-gradient(circle, rgba(96, 165, 250, 0.3) 0%, rgba(0, 0, 0, 0) 70%); 
-        transform: translate(-50%, -50%) scale(0); 
-    }
-    75% { 
-        background: radial-gradient(circle, rgba(249, 168, 212, 0.3) 0%, rgba(0, 0, 0, 0) 70%); 
-        transform: translate(-50%, -50%) scale(1); 
-    }
-    100% { 
-        background: radial-gradient(circle, rgba(167, 139, 250, 0.3) 0%, rgba(0, 0, 0, 0) 70%); 
-        transform: translate(-50%, -50%) scale(0); 
-    }
 }
 @media (max-width: 768px) {
     .hero h2 { font-size: 48px; }
