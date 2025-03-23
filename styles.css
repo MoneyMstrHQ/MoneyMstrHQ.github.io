@@ -268,37 +268,21 @@ nav a:hover {
     position: relative; 
     overflow: hidden; 
 }
-.card::before { 
-    content: ''; 
-    position: absolute; 
-    bottom: -50px; 
-    left: -50px; 
-    width: 100px; 
-    height: 100px; 
-    background: #6EE7B7; 
-    clip-path: polygon(0 100%, 100% 100%, 0 0); /* Triangle shape */
-    transform: translateY(100%); 
-    transition: transform 0.3s ease; 
-    opacity: 0.7; 
-    z-index: -1; 
-}
 .card::after { 
     content: ''; 
     position: absolute; 
-    top: 0; 
+    bottom: 0; 
     left: 0; 
     width: 100%; 
-    height: 100%; 
-    background: rgba(110, 231, 183, 0.1); /* Faint mint glow */
-    opacity: 0; 
-    transition: opacity 0.3s ease; 
+    height: 4px; 
+    background: linear-gradient(90deg, #6EE7B7, #A78BFA); 
+    transform: scaleX(0); 
+    transform-origin: left; 
+    transition: transform 0.3s ease; 
     z-index: -1; 
 }
-.card:hover::before { 
-    transform: translateY(0); 
-}
 .card:hover::after { 
-    opacity: 1; 
+    transform: scaleX(1); 
 }
 .card:hover { 
     transform: translateY(-8px); 
@@ -320,11 +304,8 @@ nav a:hover {
         background: none; 
         border: 1px solid rgba(255, 255, 255, 0.1); 
     }
-    .card:hover::before { 
-        transform: translateY(100%); /* Triangle stays hidden */
-    }
     .card:hover::after { 
-        opacity: 0; /* Glow stays off */
+        transform: scaleX(0); /* Bar stays hidden on mobile */
     }
 }
 .card h4 { 
