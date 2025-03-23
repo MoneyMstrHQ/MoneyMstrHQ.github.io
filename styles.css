@@ -90,7 +90,7 @@ nav a:hover {
 }
 .hero { 
     text-align: center; 
-    padding: 60px 15px 15px; /* Top padding to clear nav */
+    padding: 60px 15px 15px; 
     max-width: 900px; 
     width: 90%; 
     position: relative; 
@@ -425,9 +425,13 @@ footer p {
     .hero p { font-size: 20px; }
     .hero p.cta-sub { font-size: 16px; }
     .stats { gap: 5px; padding: 20px 10px; flex-wrap: wrap; }
-    .stat { width: 80px; height: 80px; }
-    .stat span { font-size: 20px; }
-    .stat p { font-size: 10px; }
+    .stat { 
+        width: 80px; 
+        height: 80px; 
+        padding: 10px; 
+    }
+    .stat span { font-size: 16px; }
+    .stat p { font-size: 8px; }
     nav.sticky { width: 100%; border-radius: 0; top: 0; padding: 10px; }
     nav { flex-direction: row; padding: 10px; }
     .hamburger { display: block; }
