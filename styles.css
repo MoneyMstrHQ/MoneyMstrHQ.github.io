@@ -125,8 +125,8 @@ nav a:hover {
     margin-top: 10px; 
 }
 .btn { 
-    background: linear-gradient(90deg, #A78BFA, #60A5FA); 
-    background-size: 200% 200%; 
+    background: linear-gradient(to right, #60A5FA, #A78BFA, #F9A8D4, #A78BFA, #60A5FA); 
+    background-size: 200% 100%; 
     color: #ffffff; 
     padding: 12px 40px; 
     border-radius: 30px; 
@@ -137,10 +137,10 @@ nav a:hover {
     border: 1px solid rgba(255, 255, 255, 0.2); 
     transition: all 0.3s ease; 
     display: inline-block; 
-    animation: gradientFlow 4s ease-in-out infinite; 
+    animation: gradientShift 5s ease-in-out infinite; 
 }
 .btn:hover { 
-    background: linear-gradient(90deg, #F9A8D4, #A78BFA); 
+    background: linear-gradient(to right, #F9A8D4, #A78BFA, #60A5FA); 
     transform: scale(1.05); 
     box-shadow: 0 0 25px rgba(249, 168, 212, 0.8); 
 }
@@ -402,4 +402,9 @@ footer p {
     .highlights h3 { font-size: 32px; }
     footer { flex-direction: column; gap: 15px; text-align: center; }
     .social-icon { margin: 0 10px; }
+}
+@keyframes gradientShift { 
+    0% { background-position: 0% 0%; } 
+    50% { background-position: 100% 0%; } 
+    100% { background-position: 0% 0%; } 
 }
