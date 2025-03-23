@@ -88,12 +88,11 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         console.log("Script running...");
-        // Particles with SVGs for fade effect
+        // Particles with single SVG first
         try {
-            // Base layer with purple
             particlesJS("particleWave", {
                 "particles": {
-                    "number": { "value": 5, "density": { "enable": true, "value_area": 800 } },
+                    "number": { "value": 15, "density": { "enable": true, "value_area": 800 } },
                     "shape": {
                         "type": "image",
                         "image": {
@@ -114,45 +113,15 @@
                 "retina_detect": true
             });
             console.log("Particles (purple SVG) initialized");
-
-            // Layer other colors
-            const otherImages = [
-                { src: "https://moneymstrhq.github.io/particle-green.svg", color: "#6EE7B7" },
-                { src: "https://moneymstrhq.github.io/particle-blue.svg", color: "#60A5FA" },
-                { src: "https://moneymstrhq.github.io/particle-pink.svg", color: "#F9A8D4" }
-            ];
-            otherImages.forEach((img, index) => {
-                setTimeout(() => {
-                    particlesJS("particleWave", {
-                        "particles": {
-                            "number": { "value": 5 },
-                            "shape": {
-                                "type": "image",
-                                "image": { "src": img.src, "width": 30, "height": 30 }
-                            },
-                            "opacity": { "value": 0.5 },
-                            "size": { "value": 30, "random": true },
-                            "line_linked": { "enable": false },
-                            "move": { "enable": true, "speed": 1, "direction": "none", "random": true }
-                        },
-                        "interactivity": {
-                            "detect_on": "canvas",
-                            "events": { "onhover": { "enable": false }, "onclick": { "enable": false }, "resize": true }
-                        },
-                        "retina_detect": true
-                    });
-                    console.log(`Added ${img.color} SVG particles`);
-                }, (index + 1) * 500); // Staggered delay
-            });
         } catch (e) {
-            console.error("Particles error:", e);
-            // Fallback to circles
+            console.error("Particles SVG error:", e);
+            // Fallback to circles with fade simulation
             particlesJS("particleWave", {
                 "particles": {
                     "number": { "value": 15, "density": { "enable": true, "value_area": 800 } },
                     "color": { "value": ["#A78BFA", "#6EE7B7", "#60A5FA", "#F9A8D4"] },
                     "shape": { "type": "circle" },
-                    "opacity": { "value": 0.5, "random": false },
+                    "opacity": { "value": 0.5, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1 } },
                     "size": { "value": 30, "random": true },
                     "line_linked": { "enable": false },
                     "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false }
@@ -163,7 +132,7 @@
                 },
                 "retina_detect": true
             });
-            console.log("Fallback circles loaded");
+            console.log("Fallback circles with fade initialized");
         }
 
         // Stat touch interaction
