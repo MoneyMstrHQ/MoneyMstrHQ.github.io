@@ -10,7 +10,6 @@ header {
     min-height: 100vh; 
     padding: 15px 0; 
     background: rgba(0, 0, 0, 0.3); 
-    backdrop-filter: blur(12px); 
     display: flex; 
     flex-direction: column; 
     align-items: center; 
@@ -23,12 +22,13 @@ nav {
     background: rgba(0, 0, 0, 0.6); 
     padding: 10px 20px; 
     border-radius: 12px; 
-    backdrop-filter: blur(8px); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
     max-width: 1200px; 
     width: 90%; 
     margin: 0 auto; 
     position: relative; 
     z-index: 2; 
+    box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
 }
 nav.sticky { 
     position: fixed; 
@@ -87,6 +87,10 @@ nav a:hover {
 }
 .hero-inner { 
     padding: 20px; 
+    border: 1px solid rgba(167, 139, 250, 0.5); 
+    border-radius: 12px; 
+    background: rgba(0, 0, 0, 0.5); 
+    box-shadow: 0 0 20px rgba(167, 139, 250, 0.3); 
 }
 .kinetic { 
     font-size: 72px; 
@@ -121,7 +125,6 @@ nav a:hover {
     font-weight: 600; 
     font-size: 18px; 
     box-shadow: 0 0 15px rgba(167, 139, 250, 0.5); 
-    backdrop-filter: blur(8px); 
     border: 1px solid rgba(255, 255, 255, 0.2); 
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
     display: inline-block; 
@@ -155,12 +158,10 @@ nav a:hover {
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
-    position: relative; 
+    transition: transform 0.3s ease; 
 }
 .stat:hover { 
-    transform: translateY(-8px) scale(1.1); 
-    box-shadow: 0 0 20px rgba(167, 139, 250, 0.5); 
+    transform: translateY(-8px); 
 }
 .stat span { 
     font-size: 24px; 
@@ -170,39 +171,6 @@ nav a:hover {
 .stat p { 
     font-size: 12px; 
     color: #d0d0d0; 
-}
-.stat::after { 
-    content: attr(data-hover); 
-    position: absolute; 
-    top: -25px; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    background: rgba(167, 139, 250, 0.7); 
-    color: #ffffff; 
-    padding: 6px 16px; 
-    border-radius: 8px; 
-    font-size: 14px; 
-    opacity: 0; 
-    transition: opacity 0.3s ease, top 0.3s ease; 
-    pointer-events: none; 
-    white-space: nowrap; 
-}
-.stat:hover::after { 
-    opacity: 1; 
-    top: -40px; 
-}
-@media (max-width: 768px) {
-    .stat:hover::after { opacity: 0; }
-}
-.stat.active::after { 
-    opacity: 1; 
-    top: -40px; 
-    animation: fadeOut 2s forwards; 
-}
-@keyframes fadeOut { 
-    0% { opacity: 1; } 
-    80% { opacity: 1; } 
-    100% { opacity: 0; } 
 }
 .strategies { 
     padding: 80px 15px; 
@@ -227,29 +195,21 @@ nav a:hover {
     background: rgba(0, 0, 0, 0.8); 
     padding: 30px; 
     border-radius: 20px; 
-    backdrop-filter: blur(12px); 
     border: 1px solid rgba(255, 255, 255, 0.1); 
     transition: all 0.4s ease; 
 }
 .card:hover { 
     transform: translateY(-8px); 
     box-shadow: 0 0 20px rgba(110, 231, 183, 0.4); 
-    border: 1px solid transparent; 
-    background: linear-gradient(#000000, #000000) padding-box, 
-                linear-gradient(90deg, #60A5FA, #A78BFA) border-box; 
 }
 .card.in-view { 
     transform: translateY(-8px); 
     box-shadow: 0 0 20px rgba(110, 231, 183, 0.4); 
-    border-color: rgba(110, 231, 183, 0.3); 
 }
 @media (max-width: 768px) {
     .card:hover { 
         transform: none; 
         box-shadow: none; 
-        border-color: rgba(255, 255, 255, 0.1); 
-        background: none; 
-        border: 1px solid rgba(255, 255, 255, 0.1); 
     }
 }
 .card h4 { 
@@ -261,12 +221,12 @@ nav a:hover {
     font-size: 14px; 
     color: #d0d0d0; 
 }
-.card a, .highlight a:not(.btn) { 
+.card a { 
     color: #6EE7B7; 
     text-decoration: none; 
     transition: all 0.3s ease; 
 }
-.card a:hover, .highlight a:not(.btn):hover { 
+.card a:hover { 
     color: #F9A8D4; 
 }
 .highlights { 
@@ -315,8 +275,6 @@ nav a:hover {
     font-size: 12px; 
     font-weight: 800; 
     color: #ffffff; 
-    text-shadow: 0 0 3px rgba(0, 0, 0, 0.9); 
-    display: inline-block; 
 }
 footer { 
     background: rgba(0, 0, 0, 0.9); 
