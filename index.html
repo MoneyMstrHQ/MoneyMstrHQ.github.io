@@ -10,7 +10,9 @@
     <header>
         <div id="particleWave"></div>
         <nav class="sticky">
-            <h1>MoneyMasterHQ</h1>
+            <h1>
+                <span class="title-letter">M</span><span class="title-letter">o</span><span class="title-letter">n</span><span class="title-letter">e</span><span class="title-letter">y</span><span class="title-letter">M</span><span class="title-letter">a</span><span class="title-letter">s</span><span class="title-letter">t</span><span class="title-letter">e</span><span class="title-letter">r</span><span class="title-letter">H</span><span class="title-letter">Q</span>
+            </h1>
             <div class="hamburger">☰</div>
             <ul class="nav-links">
                 <li><a href="#">Home</a></li>
@@ -161,6 +163,15 @@
 
         document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Title animation on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const letters = document.querySelectorAll('.title-letter');
+            letters.forEach((letter, index) => {
+                letter.style.animationDelay = `${index * 0.05}s`;
+                letter.classList.add('reveal');
+            });
         });
     </script>
 </body>
