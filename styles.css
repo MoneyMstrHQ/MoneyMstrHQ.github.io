@@ -30,11 +30,16 @@ nav {
     background: rgba(0, 0, 0, 0.6); 
     padding: 10px 20px; 
     border-radius: 12px; 
+    border: 1px solid transparent; 
+    background: linear-gradient(#000000, #000000) padding-box, 
+                linear-gradient(90deg, #60A5FA, #A78BFA, #F9A8D4, #6EE7B7) border-box; 
+    background-size: 200% 200%; 
     max-width: 1200px; 
     width: 90%; 
     margin: 0 auto; 
     position: relative; 
     z-index: 2; 
+    animation: gradientFlow 4s ease-in-out infinite; 
 }
 nav.sticky { 
     position: fixed; 
@@ -126,7 +131,7 @@ nav a:hover {
     font-size: 18px; 
     box-shadow: 0 0 15px rgba(167, 139, 250, 0.5); 
     border: 1px solid rgba(255, 255, 255, 0.2); 
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    transition: all 0.3s ease; 
     display: inline-block; 
     animation: gradientFlow 4s ease-in-out infinite; 
 }
@@ -152,7 +157,10 @@ nav a:hover {
     text-align: center; 
     padding: 15px; 
     background: rgba(0, 0, 0, 0.7); 
-    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border: 1px solid transparent; 
+    background: linear-gradient(#000000, #000000) padding-box, 
+                linear-gradient(90deg, #60A5FA, #A78BFA, #F9A8D4, #6EE7B7) border-box; 
+    background-size: 200% 200%; 
     border-radius: 50%; 
     width: 120px; 
     height: 120px; 
@@ -160,9 +168,11 @@ nav a:hover {
     flex-direction: column; 
     justify-content: center; 
     transition: transform 0.3s ease; 
+    animation: gradientFlow 4s ease-in-out infinite; 
 }
 .stat:hover { 
     transform: translateY(-8px); 
+    box-shadow: 0 0 20px rgba(110, 231, 183, 0.4); 
 }
 .stat span { 
     font-size: 24px; 
