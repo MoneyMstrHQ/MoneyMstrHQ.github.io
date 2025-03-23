@@ -7,6 +7,33 @@ body {
     overflow-x: hidden; 
     position: relative; 
 }
+.particle-field {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+.particle-field::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #A78BFA;
+    box-shadow: 
+        100px 200px #A78BFA, 300px 150px #6EE7B7, 500px 300px #60A5FA, 700px 100px #F9A8D4,
+        200px 600px #A78BFA, 400px 500px #6EE7B7, 600px 400px #60A5FA, 800px 700px #F9A8D4,
+        150px 350px #A78BFA, 350px 250px #6EE7B7, 550px 450px #60A5FA, 750px 200px #F9A8D4,
+        50px 50px #ffffff, 250px 800px #ffffff, 450px 650px #ffffff, 650px 50px #ffffff;
+    opacity: 0.3;
+    animation: twinkle 5s infinite ease-in-out;
+}
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
 header { 
     min-height: 100vh; 
     padding: 15px 0; 
