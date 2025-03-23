@@ -1,0 +1,7 @@
+<svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+    <radialGradient id="grad" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" style="stop-color:#60A5FA;stop-opacity:0.5" />
+        <stop offset="100%" style="stop-color:#60A5FA;stop-opacity:0" />
+    </radialGradient>
+    <circle cx="15" cy="15" r="15" fill="url(#grad)" />
+</svg>
