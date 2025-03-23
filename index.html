@@ -72,6 +72,10 @@
                 <a href="https://cj.com/investing-app-link" class="btn btn-small">Start Investing</a>
                 <span class="badge">Best Value</span>
             </div>
+            <div class="highlight">
+                <p>"Saved $1k—love this site!"</p>
+                <span class="badge">User Favorite</span>
+            </div>
         </div>
     </section>
     <footer>
@@ -86,7 +90,7 @@
         particlesJS("particleWave", {
             "particles": {
                 "number": { "value": 15, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": ["#A78BFA", "#6EE7B7", "#60A5FA", "#F9A8D4"] },
+                "color": { "value": "#A78BFA" }, // Unified purple
                 "shape": { "type": "circle" },
                 "opacity": { "value": 0.5, "random": false },
                 "size": { "value": 30, "random": true },
@@ -98,6 +102,9 @@
                 "events": { "onhover": { "enable": false }, "onclick": { "enable": false }, "resize": true }
             },
             "retina_detect": true
+        });
+        document.querySelectorAll('#particleWave canvas').forEach(canvas => {
+            canvas.style.filter = 'drop-shadow(0 0 5px rgba(167, 139, 250, 0.5))';
         });
 
         document.querySelectorAll('.stat').forEach(stat => {
@@ -130,34 +137,15 @@
         });
 
         const cards = document.querySelectorAll('.card');
-        function highlightCenterCard() {
-            if (window.matchMedia('(max-width: 768px)').matches) {
-                const viewportHeight = window.innerHeight;
-                const centerY = viewportHeight / 2;
-                let closestCard = null;
-                let minDistance = Infinity;
-
-                cards.forEach(card => {
-                    const rect = card.getBoundingClientRect();
-                    const cardCenterY = rect.top + (rect.height / 2);
-                    const distance = Math.abs(centerY - cardCenterY);
-
-                    if (rect.top >= 0 && rect.bottom <= viewportHeight && distance < minDistance) {
-                        minDistance = distance;
-                        closestCard = card;
-                    }
-                });
-
-                cards.forEach(card => card.classList.remove('in-view'));
-                if (closestCard && minDistance < 100) {
-                    closestCard.classList.add('in-view');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
                 }
-            }
-        }
-
-        window.addEventListener('scroll', highlightCenterCard);
-        window.addEventListener('resize', highlightCenterCard);
-        highlightCenterCard();
+            });
+        }, { threshold: 0.3 });
+        cards.forEach(card => observer.observe(card));
 
         document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('.nav-links').classList.toggle('active');
