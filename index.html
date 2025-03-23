@@ -8,7 +8,6 @@
 </head>
 <body>
     <header>
-        <div id="particleWave"></div>
         <nav class="sticky">
             <h1>MoneyMasterHQ</h1>
             <div class="hamburger">☰</div>
@@ -85,32 +84,8 @@
             <a href="#" class="social-icon">🎮</a>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         console.log("Script running...");
-        // Particles with solid RGB circles
-        try {
-            particlesJS("particleWave", {
-                "particles": {
-                    "number": { "value": 15, "density": { "enable": true, "value_area": 800 } },
-                    "color": { "value": ["#A78BFA", "#6EE7B7", "#60A5FA", "#F9A8D4"] },
-                    "shape": { "type": "circle" },
-                    "opacity": { "value": 0.5, "random": false },
-                    "size": { "value": 30, "random": true },
-                    "line_linked": { "enable": false },
-                    "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false }
-                },
-                "interactivity": {
-                    "detect_on": "canvas",
-                    "events": { "onhover": { "enable": false }, "onclick": { "enable": false }, "resize": true }
-                },
-                "retina_detect": true
-            });
-            console.log("Particles (solid circles) initialized");
-        } catch (e) {
-            console.error("Particles error:", e);
-        }
-
         // Stat touch interaction
         document.querySelectorAll('.stat').forEach(stat => {
             stat.addEventListener('touchstart', function(e) {
