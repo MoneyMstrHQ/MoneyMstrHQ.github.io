@@ -90,7 +90,7 @@
         particlesJS("particleWave", {
             "particles": {
                 "number": { "value": 15, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": "#A78BFA" }, // Unified purple
+                "color": { "value": ["#A78BFA", "#6EE7B7", "#60A5FA", "#F9A8D4"] },
                 "shape": { "type": "circle" },
                 "opacity": { "value": 0.5, "random": false },
                 "size": { "value": 30, "random": true },
@@ -103,9 +103,14 @@
             },
             "retina_detect": true
         });
-        document.querySelectorAll('#particleWave canvas').forEach(canvas => {
-            canvas.style.filter = 'drop-shadow(0 0 5px rgba(167, 139, 250, 0.5))';
-        });
+        const colors = ["#A78BFA", "#6EE7B7", "#60A5FA", "#F9A8D4"];
+        let colorIndex = 0;
+        setInterval(() => {
+            colorIndex = (colorIndex + 1) % colors.length;
+            document.querySelectorAll('#particleWave canvas').forEach(canvas => {
+                canvas.style.filter = `drop-shadow(0 0 10px ${colors[colorIndex]})`;
+            });
+        }, 2000);
 
         document.querySelectorAll('.stat').forEach(stat => {
             stat.addEventListener('touchstart', function(e) {
