@@ -265,6 +265,24 @@ nav a:hover {
     backdrop-filter: blur(12px); 
     border: 1px solid rgba(255, 255, 255, 0.1); 
     transition: all 0.4s ease; 
+    position: relative; /* For ::before positioning */
+    overflow: hidden; /* Contain the animation */
+}
+.card::before { 
+    content: ''; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(167, 139, 250, 0.1); /* Start faint purple */
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+    z-index: -1; /* Behind content */
+}
+.card:hover::before { 
+    opacity: 1; 
+    animation: pulseRGB 2s infinite ease-in-out; /* Fast pulse on hover */
 }
 .card:hover { 
     transform: translateY(-8px); 
@@ -285,6 +303,9 @@ nav a:hover {
         border-color: rgba(255, 255, 255, 0.1); 
         background: none; 
         border: 1px solid rgba(255, 255, 255, 0.1); 
+    }
+    .card:hover::before { 
+        opacity: 0; /* Disable hover animation on mobile */
     }
 }
 .card h4 { 
@@ -412,6 +433,13 @@ footer p {
     50% { background: rgba(96, 165, 250, 0.7); } 
     75% { background: rgba(249, 168, 212, 0.7); } 
     100% { background: rgba(167, 139, 250, 0.7); } 
+}
+@keyframes pulseRGB { 
+    0% { background: rgba(167, 139, 250, 0.1); } /* Faint purple */
+    25% { background: rgba(110, 231, 183, 0.1); } /* Faint mint */
+    50% { background: rgba(96, 165, 250, 0.1); } /* Faint blue */
+    75% { background: rgba(249, 168, 212, 0.1); } /* Faint pink */
+    100% { background: rgba(167, 139, 250, 0.1); } /* Back to purple */
 }
 @media (max-width: 768px) {
     .hero h2 { font-size: 48px; }
