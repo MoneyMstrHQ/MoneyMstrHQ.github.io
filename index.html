@@ -87,38 +87,21 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // Particles with fallback to circles if SVGs fail
-        particlesJS("particleWave", {
-            "particles": {
-                "number": { "value": 15, "density": { "enable": true, "value_area": 800 } },
-                "shape": {
-                    "type": "image",
-                    "image": [
-                        { "src": "particle-purple.svg", "width": 30, "height": 30 },
-                        { "src": "particle-green.svg", "width": 30, "height": 30 },
-                        { "src": "particle-blue.svg", "width": 30, "height": 30 },
-                        { "src": "particle-pink.svg", "width": 30, "height": 30 }
-                    ]
-                },
-                "opacity": { "value": 0.5, "random": false },
-                "size": { "value": 30, "random": true },
-                "line_linked": { "enable": false },
-                "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": { "onhover": { "enable": false }, "onclick": { "enable": false }, "resize": true }
-            },
-            "retina_detect": true
-        }, function() {
-            console.log("Particles loaded successfully");
-        }, function(err) {
-            console.error("Particles failed, switching to circles:", err);
+        console.log("Script running...");
+        // Particles with absolute URLs and fallback
+        try {
             particlesJS("particleWave", {
                 "particles": {
                     "number": { "value": 15, "density": { "enable": true, "value_area": 800 } },
-                    "color": { "value": ["#A78BFA", "#6EE7B7", "#60A5FA", "#F9A8D4"] },
-                    "shape": { "type": "circle" },
+                    "shape": {
+                        "type": "image",
+                        "image": [
+                            { "src": "https://moneymstrhq.github.io/particle-purple.svg", "width": 30, "height": 30 },
+                            { "src": "https://moneymstrhq.github.io/particle-green.svg", "width": 30, "height": 30 },
+                            { "src": "https://moneymstrhq.github.io/particle-blue.svg", "width": 30, "height": 30 },
+                            { "src": "https://moneymstrhq.github.io/particle-pink.svg", "width": 30, "height": 30 }
+                        ]
+                    },
                     "opacity": { "value": 0.5, "random": false },
                     "size": { "value": 30, "random": true },
                     "line_linked": { "enable": false },
@@ -129,85 +112,129 @@
                     "events": { "onhover": { "enable": false }, "onclick": { "enable": false }, "resize": true }
                 },
                 "retina_detect": true
+            }, function() {
+                console.log("Particles loaded successfully");
+            }, function(err) {
+                console.error("Particles failed:", err);
+                // Fallback to circles
+                particlesJS("particleWave", {
+                    "particles": {
+                        "number": { "value": 15, "density": { "enable": true, "value_area": 800 } },
+                        "color": { "value": ["#A78BFA", "#6EE7B7", "#60A5FA", "#F9A8D4"] },
+                        "shape": { "type": "circle" },
+                        "opacity": { "value": 0.5, "random": false },
+                        "size": { "value": 30, "random": true },
+                        "line_linked": { "enable": false },
+                        "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": { "onhover": { "enable": false }, "onclick": { "enable": false }, "resize": true }
+                    },
+                    "retina_detect": true
+                });
             });
-        });
+        } catch (e) {
+            console.error("Particles JS error:", e);
+        }
 
         // Stat touch interaction
-        document.querySelectorAll('.stat').forEach(stat => {
-            stat.addEventListener('touchstart', function(e) {
-                e.preventDefault();
-                this.classList.remove('active');
-                this.classList.add('active');
-                setTimeout(() => this.classList.remove('active'), 2000);
+        try {
+            document.querySelectorAll('.stat').forEach(stat => {
+                stat.addEventListener('touchstart', function(e) {
+                    e.preventDefault();
+                    this.classList.remove('active');
+                    this.classList.add('active');
+                    setTimeout(() => this.classList.remove('active'), 2000);
+                });
+                stat.addEventListener('touchend', function(e) {
+                    e.preventDefault();
+                });
             });
-            stat.addEventListener('touchend', function(e) {
-                e.preventDefault();
-            });
-        });
+        } catch (e) {
+            console.error("Stat touch error:", e);
+        }
 
         // Stat counter animation
         function animateStats() {
-            document.querySelectorAll('.stat span').forEach(stat => {
-                const target = parseInt(stat.getAttribute('data-count'));
-                let count = 0;
-                const increment = target / 50;
-                const isPercent = stat.textContent.includes('%');
-                console.log(`Animating stat: target=${target}, increment=${increment}`);
-                const updateCount = () => {
-                    count += increment;
-                    if (count < target) {
-                        stat.textContent = isPercent ? `${Math.floor(count)}%+` : `$${Math.floor(count)}+`;
-                        requestAnimationFrame(updateCount);
-                    } else {
-                        stat.textContent = isPercent ? `${target}%+` : `$${target}+`;
-                    }
-                };
-                updateCount();
-            });
-        }
-        document.addEventListener('DOMContentLoaded', animateStats);
-
-        // Mobile card scroll highlight
-        const cards = document.querySelectorAll('.card');
-        function highlightCenterCard() {
-            if (window.matchMedia('(max-width: 768px)').matches) {
-                const viewportHeight = window.innerHeight;
-                const centerY = viewportHeight / 2;
-                let closestCard = null;
-                let minDistance = Infinity;
-
-                cards.forEach(card => {
-                    const rect = card.getBoundingClientRect();
-                    const cardCenterY = rect.top + (rect.height / 2);
-                    const distance = Math.abs(centerY - cardCenterY);
-
-                    if (rect.top >= 0 && rect.bottom <= viewportHeight && distance < minDistance) {
-                        minDistance = distance;
-                        closestCard = card;
-                    }
+            try {
+                const stats = document.querySelectorAll('.stat span');
+                console.log("Stats found:", stats.length);
+                stats.forEach(stat => {
+                    const target = parseInt(stat.getAttribute('data-count'));
+                    let count = 0;
+                    const increment = target / 50;
+                    const isPercent = stat.textContent.includes('%');
+                    console.log(`Animating stat: target=${target}, increment=${increment}`);
+                    const updateCount = () => {
+                        count += increment;
+                        if (count < target) {
+                            stat.textContent = isPercent ? `${Math.floor(count)}%+` : `$${Math.floor(count)}+`;
+                            requestAnimationFrame(updateCount);
+                        } else {
+                            stat.textContent = isPercent ? `${target}%+` : `$${target}+`;
+                        }
+                    };
+                    updateCount();
                 });
-
-                cards.forEach(card => card.classList.remove('in-view'));
-                if (closestCard && minDistance < 100) {
-                    closestCard.classList.add('in-view');
-                    console.log("Highlighted:", closestCard.querySelector('h4').textContent);
-                }
+            } catch (e) {
+                console.error("Stat animation error:", e);
             }
         }
+        window.onload = function() {
+            console.log("Window loaded, running animateStats");
+            animateStats();
+        };
 
-        // Debounce scroll for performance
-        let scrollTimeout;
-        window.addEventListener('scroll', () => {
-            clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(highlightCenterCard, 100);
-        });
-        window.addEventListener('resize', highlightCenterCard);
-        document.addEventListener('DOMContentLoaded', highlightCenterCard);
+        // Mobile card scroll highlight
+        try {
+            const cards = document.querySelectorAll('.card');
+            console.log("Cards found:", cards.length);
+            function highlightCenterCard() {
+                if (window.matchMedia('(max-width: 768px)').matches) {
+                    const viewportHeight = window.innerHeight;
+                    const centerY = viewportHeight / 2;
+                    let closestCard = null;
+                    let minDistance = Infinity;
+
+                    cards.forEach(card => {
+                        const rect = card.getBoundingClientRect();
+                        const cardCenterY = rect.top + (rect.height / 2);
+                        const distance = Math.abs(centerY - cardCenterY);
+                        console.log(`Card: ${card.querySelector('h4').textContent}, Distance: ${distance}`);
+
+                        if (rect.top >= 0 && rect.bottom <= viewportHeight && distance < minDistance) {
+                            minDistance = distance;
+                            closestCard = card;
+                        }
+                    });
+
+                    cards.forEach(card => card.classList.remove('in-view'));
+                    if (closestCard && minDistance < 100) {
+                        closestCard.classList.add('in-view');
+                        console.log("Highlighted:", closestCard.querySelector('h4').textContent);
+                    }
+                }
+            }
+
+            window.addEventListener('scroll', highlightCenterCard);
+            window.addEventListener('resize', highlightCenterCard);
+            window.onload = function() {
+                console.log("Initial card highlight check");
+                highlightCenterCard();
+            };
+        } catch (e) {
+            console.error("Card scroll error:", e);
+        }
 
         // Hamburger menu
-        document.querySelector('.hamburger').addEventListener('click', () => {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
+        try {
+            document.querySelector('.hamburger').addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.toggle('active');
+            });
+        } catch (e) {
+            console.error("Hamburger error:", e);
+        }
     </script>
 </body>
 </html>
