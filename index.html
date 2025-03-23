@@ -85,13 +85,20 @@
     <script>
         particlesJS("particleWave", {
             "particles": {
-                "number": { "value": 15, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": ["#A78BFA", "#6EE7B7", "#60A5FA", "#F9A8D4"] },
+                "number": { "value": 50, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#FFFFFF" },
                 "shape": { "type": "circle" },
-                "opacity": { "value": 0.5, "random": false },
-                "size": { "value": 30, "random": true },
+                "opacity": { "value": 0.3, "random": true },
+                "size": { "value": 2, "random": true },
                 "line_linked": { "enable": false },
-                "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false }
+                "move": { 
+                    "enable": true, 
+                    "speed": 2, 
+                    "direction": "right", 
+                    "random": false, 
+                    "straight": true, 
+                    "out_mode": "out" 
+                }
             },
             "interactivity": {
                 "detect_on": "canvas",
