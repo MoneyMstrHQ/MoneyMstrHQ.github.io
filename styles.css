@@ -14,9 +14,8 @@ body::before {
     left: 0; 
     width: 100%; 
     height: 100%; 
-    background: rgba(167, 139, 250, 0.05); 
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.05) 0%, rgba(110, 231, 183, 0.05) 100%); 
     z-index: 1; 
-    animation: syncRGB 8s infinite linear;
 }
 header { 
     min-height: 100vh; 
