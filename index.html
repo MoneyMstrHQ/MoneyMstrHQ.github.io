@@ -88,8 +88,27 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         console.log("Script running...");
-        // Particles with corrected syntax
+        // Particles with circles first (guaranteed to work), SVGs optional
         try {
+            particlesJS("particleWave", {
+                "particles": {
+                    "number": { "value": 15, "density": { "enable": true, "value_area": 800 } },
+                    "color": { "value": ["#A78BFA", "#6EE7B7", "#60A5FA", "#F9A8D4"] },
+                    "shape": { "type": "circle" },
+                    "opacity": { "value": 0.5, "random": false },
+                    "size": { "value": 30, "random": true },
+                    "line_linked": { "enable": false },
+                    "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": { "onhover": { "enable": false }, "onclick": { "enable": false }, "resize": true }
+                },
+                "retina_detect": true
+            });
+            console.log("Particles (circles) initialized");
+            // Uncomment below to try SVGs again after circles work
+            /*
             particlesJS("particleWave", {
                 "particles": {
                     "number": { "value": 15, "density": { "enable": true, "value_area": 800 } },
@@ -113,27 +132,10 @@
                 },
                 "retina_detect": true
             });
-            console.log("Particles initialized");
+            console.log("Particles (SVGs) initialized");
+            */
         } catch (e) {
             console.error("Particles error:", e);
-            // Fallback to circles
-            particlesJS("particleWave", {
-                "particles": {
-                    "number": { "value": 15, "density": { "enable": true, "value_area": 800 } },
-                    "color": { "value": ["#A78BFA", "#6EE7B7", "#60A5FA", "#F9A8D4"] },
-                    "shape": { "type": "circle" },
-                    "opacity": { "value": 0.5, "random": false },
-                    "size": { "value": 30, "random": true },
-                    "line_linked": { "enable": false },
-                    "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false }
-                },
-                "interactivity": {
-                    "detect_on": "canvas",
-                    "events": { "onhover": { "enable": false }, "onclick": { "enable": false }, "resize": true }
-                },
-                "retina_detect": true
-            });
-            console.log("Fallback circles loaded");
         }
 
         // Stat touch interaction
@@ -172,7 +174,7 @@
                 updateCount();
             });
         }
-        setTimeout(animateStats, 500); // Delay to ensure DOM is ready
+        setTimeout(animateStats, 500);
 
         // Mobile card scroll highlight
         const cards = document.querySelectorAll('.card');
@@ -180,24 +182,25 @@
         function highlightCenterCard() {
             if (window.matchMedia('(max-width: 768px)').matches) {
                 const viewportHeight = window.innerHeight;
-                const centerY = viewportHeight / 2;
+                const scrollTop = window.scrollY;
+                const centerY = scrollTop + (viewportHeight / 2); // Adjust for scroll position
                 let closestCard = null;
                 let minDistance = Infinity;
 
                 cards.forEach(card => {
                     const rect = card.getBoundingClientRect();
-                    const cardCenterY = rect.top + (rect.height / 2);
+                    const cardCenterY = scrollTop + rect.top + (rect.height / 2); // Absolute position
                     const distance = Math.abs(centerY - cardCenterY);
                     console.log(`Card: ${card.querySelector('h4').textContent}, Distance: ${distance}`);
 
-                    if (rect.top >= -rect.height && rect.bottom <= viewportHeight + rect.height && distance < minDistance) {
+                    if (distance < minDistance) {
                         minDistance = distance;
                         closestCard = card;
                     }
                 });
 
                 cards.forEach(card => card.classList.remove('in-view'));
-                if (closestCard && minDistance < 200) { // Loosened from 100 to 200
+                if (closestCard && minDistance < 300) { // Loosened to 300
                     closestCard.classList.add('in-view');
                     console.log("Highlighted:", closestCard.querySelector('h4').textContent);
                 }
@@ -206,7 +209,7 @@
 
         window.addEventListener('scroll', highlightCenterCard);
         window.addEventListener('resize', highlightCenterCard);
-        setTimeout(highlightCenterCard, 500); // Initial check
+        setTimeout(highlightCenterCard, 500);
 
         // Hamburger menu
         document.querySelector('.hamburger').addEventListener('click', () => {
