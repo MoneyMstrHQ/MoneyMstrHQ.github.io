@@ -87,16 +87,17 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
+        // Particles with fallback to circles if SVGs fail
         particlesJS("particleWave", {
             "particles": {
                 "number": { "value": 15, "density": { "enable": true, "value_area": 800 } },
                 "shape": {
                     "type": "image",
                     "image": [
-                        { "src": "https://moneymstrhq.github.io/particle-purple.svg", "width": 30, "height": 30 },
-                        { "src": "https://moneymstrhq.github.io/particle-green.svg", "width": 30, "height": 30 },
-                        { "src": "https://moneymstrhq.github.io/particle-blue.svg", "width": 30, "height": 30 },
-                        { "src": "https://moneymstrhq.github.io/particle-pink.svg", "width": 30, "height": 30 }
+                        { "src": "particle-purple.svg", "width": 30, "height": 30 },
+                        { "src": "particle-green.svg", "width": 30, "height": 30 },
+                        { "src": "particle-blue.svg", "width": 30, "height": 30 },
+                        { "src": "particle-pink.svg", "width": 30, "height": 30 }
                     ]
                 },
                 "opacity": { "value": 0.5, "random": false },
@@ -112,9 +113,26 @@
         }, function() {
             console.log("Particles loaded successfully");
         }, function(err) {
-            console.error("Particles failed to load:", err);
+            console.error("Particles failed, switching to circles:", err);
+            particlesJS("particleWave", {
+                "particles": {
+                    "number": { "value": 15, "density": { "enable": true, "value_area": 800 } },
+                    "color": { "value": ["#A78BFA", "#6EE7B7", "#60A5FA", "#F9A8D4"] },
+                    "shape": { "type": "circle" },
+                    "opacity": { "value": 0.5, "random": false },
+                    "size": { "value": 30, "random": true },
+                    "line_linked": { "enable": false },
+                    "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": { "onhover": { "enable": false }, "onclick": { "enable": false }, "resize": true }
+                },
+                "retina_detect": true
+            });
         });
 
+        // Stat touch interaction
         document.querySelectorAll('.stat').forEach(stat => {
             stat.addEventListener('touchstart', function(e) {
                 e.preventDefault();
@@ -127,27 +145,32 @@
             });
         });
 
-        document.querySelectorAll('.stat span').forEach(stat => {
-            const target = parseInt(stat.getAttribute('data-count'));
-            let count = 0;
-            const increment = target / 50;
-            const isPercent = stat.textContent.includes('%');
-            console.log(`Stat target: ${target}, increment: ${increment}`);
-            const updateCount = () => {
-                count += increment;
-                if (count < target) {
-                    stat.textContent = isPercent ? `${Math.floor(count)}%+` : `$${Math.floor(count)}+`;
-                    requestAnimationFrame(updateCount);
-                } else {
-                    stat.textContent = isPercent ? `${target}%+` : `$${target}+`;
-                }
-            };
-            updateCount();
-        });
+        // Stat counter animation
+        function animateStats() {
+            document.querySelectorAll('.stat span').forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-count'));
+                let count = 0;
+                const increment = target / 50;
+                const isPercent = stat.textContent.includes('%');
+                console.log(`Animating stat: target=${target}, increment=${increment}`);
+                const updateCount = () => {
+                    count += increment;
+                    if (count < target) {
+                        stat.textContent = isPercent ? `${Math.floor(count)}%+` : `$${Math.floor(count)}+`;
+                        requestAnimationFrame(updateCount);
+                    } else {
+                        stat.textContent = isPercent ? `${target}%+` : `$${target}+`;
+                    }
+                };
+                updateCount();
+            });
+        }
+        document.addEventListener('DOMContentLoaded', animateStats);
 
+        // Mobile card scroll highlight
         const cards = document.querySelectorAll('.card');
         function highlightCenterCard() {
-            if (window.innerWidth <= 768) { // Mobile check
+            if (window.matchMedia('(max-width: 768px)').matches) {
                 const viewportHeight = window.innerHeight;
                 const centerY = viewportHeight / 2;
                 let closestCard = null;
@@ -167,15 +190,21 @@
                 cards.forEach(card => card.classList.remove('in-view'));
                 if (closestCard && minDistance < 100) {
                     closestCard.classList.add('in-view');
-                    console.log("Highlighted card:", closestCard.querySelector('h4').textContent);
+                    console.log("Highlighted:", closestCard.querySelector('h4').textContent);
                 }
             }
         }
 
-        window.addEventListener('scroll', highlightCenterCard);
+        // Debounce scroll for performance
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(highlightCenterCard, 100);
+        });
         window.addEventListener('resize', highlightCenterCard);
-        highlightCenterCard();
+        document.addEventListener('DOMContentLoaded', highlightCenterCard);
 
+        // Hamburger menu
         document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('.nav-links').classList.toggle('active');
         });
