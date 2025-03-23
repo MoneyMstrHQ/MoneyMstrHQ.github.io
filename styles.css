@@ -49,7 +49,7 @@ nav {
     position: relative; 
     z-index: 2; 
     box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
-    animation: syncRGB 8s infinite linear;
+    animation: pastelOutline 8s infinite linear; 
 }
 nav.sticky { 
     position: fixed; 
@@ -104,6 +104,7 @@ nav a:hover {
 .hero-inner { 
     padding: 20px; 
     box-shadow: 0 0 15px rgba(167, 139, 250, 0.2); 
+    animation: subtleGlow 10s infinite ease-in-out; 
     border-radius: 12px; 
 }
 .kinetic { 
@@ -119,6 +120,13 @@ nav a:hover {
     0% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.5); } 
     50% { text-shadow: 0 0 25px rgba(167, 139, 250, 0.8); } 
     100% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.5); } 
+}
+@keyframes subtleGlow { 
+    0% { box-shadow: 0 0 15px rgba(167, 139, 250, 0.2); } 
+    25% { box-shadow: 0 0 20px rgba(110, 231, 183, 0.25); } 
+    50% { box-shadow: 0 0 15px rgba(96, 165, 250, 0.2); } 
+    75% { box-shadow: 0 0 20px rgba(249, 168, 212, 0.25); } 
+    100% { box-shadow: 0 0 15px rgba(167, 139, 250, 0.2); } 
 }
 .hero p { 
     font-size: 24px; 
@@ -141,12 +149,9 @@ nav a:hover {
     font-size: 18px; 
     box-shadow: 0 0 15px rgba(167, 139, 250, 0.5); 
     backdrop-filter: blur(8px); 
-    border: none; 
-    background: linear-gradient(#000000, #000000) padding-box, 
-                linear-gradient(90deg, #A78BFA, #6EE7B7, #60A5FA, #F9A8D4) border-box; 
-    border: 1px solid transparent; 
+    border: 1px solid rgba(255, 255, 255, 0.2); 
     transition: transform 0.4s ease, box-shadow 0.4s ease; 
-    animation: syncRGB 8s infinite linear; 
+    animation: pastelGlow 8s infinite linear; 
     display: inline-block; 
 }
 .btn.btn-small { 
@@ -156,6 +161,20 @@ nav a:hover {
 .btn:hover { 
     transform: scale(1.05); 
     box-shadow: 0 0 25px rgba(167, 139, 250, 0.8); 
+}
+@keyframes pastelGlow { 
+    0% { background: rgba(167, 139, 250, 0.7); } 
+    25% { background: rgba(110, 231, 183, 0.7); } 
+    50% { background: rgba(96, 165, 250, 0.7); } 
+    75% { background: rgba(249, 168, 212, 0.7); } 
+    100% { background: rgba(167, 139, 250, 0.7); } 
+}
+@keyframes pastelOutline { 
+    0% { box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); } 
+    25% { box-shadow: 0 0 15px rgba(110, 231, 183, 0.3); } 
+    50% { box-shadow: 0 0 15px rgba(96, 165, 250, 0.3); } 
+    75% { box-shadow: 0 0 15px rgba(249, 168, 212, 0.3); } 
+    100% { box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); } 
 }
 .stats { 
     display: flex; 
@@ -181,7 +200,7 @@ nav a:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
     position: relative; 
     box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
-    animation: syncRGB 8s infinite linear, scaleIn 0.5s ease-out forwards; 
+    animation: pastelOutline 8s infinite linear, scaleIn 0.5s ease-out forwards; 
 }
 .stat:nth-child(1) { animation-delay: 0s; }
 .stat:nth-child(2) { animation-delay: 0.2s; }
@@ -218,7 +237,7 @@ nav a:hover {
     opacity: 0; 
     transition: opacity 0.3s ease, top 0.3s ease; 
     pointer-events: none; 
-    animation: syncRGB 8s infinite linear; 
+    animation: pastelGlow 8s infinite linear; 
     white-space: nowrap; 
 }
 .stat:hover::after { 
@@ -233,7 +252,7 @@ nav a:hover {
 .stat.active::after { 
     opacity: 1; 
     top: -40px; 
-    animation: syncRGB 8s infinite linear, fadeOut 2s forwards; 
+    animation: pastelGlow 8s infinite linear, fadeOut 2s forwards; 
 }
 @keyframes fadeOut { 
     0% { opacity: 1; } 
@@ -400,13 +419,6 @@ footer p {
     color: #F9A8D4; 
     transform: scale(1.2); 
     text-shadow: 0 0 10px rgba(249, 168, 212, 0.7); 
-}
-@keyframes syncRGB {
-    0% { box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); } /* #A78BFA purple */
-    25% { box-shadow: 0 0 15px rgba(110, 231, 183, 0.3); } /* #6EE7B7 mint */
-    50% { box-shadow: 0 0 15px rgba(96, 165, 250, 0.3); } /* #60A5FA blue */
-    75% { box-shadow: 0 0 15px rgba(249, 168, 212, 0.3); } /* #F9A8D4 pink */
-    100% { box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); } /* Back to purple */
 }
 @media (max-width: 768px) {
     .hero h2 { font-size: 48px; }
