@@ -57,9 +57,9 @@ nav.sticky {
     z-index: 10; 
 }
 nav h1 { 
-    font-size: 36px; 
+    font-size: 40px; 
     font-weight: 900; 
-    letter-spacing: 2.5px; 
+    letter-spacing: 3px; 
     color: #FFFFFF; 
     position: relative; 
     padding-bottom: 4px; 
@@ -494,5 +494,5 @@ footer p {
     .highlights h3 { font-size: 32px; }
     footer { flex-direction: column; gap: 15px; text-align: center; }
     .social-icon { margin: 0 10px; }
-    nav h1 { font-size: 28px; }
+    nav h1 { font-size: 32px; }
 }
