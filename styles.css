@@ -57,22 +57,23 @@ nav.sticky {
     z-index: 10; 
 }
 nav h1 { 
-    font-size: 32px; 
+    font-size: 34px; 
     font-weight: 900; 
-    letter-spacing: 1.5px; 
-    background: linear-gradient(90deg, #6EE7B7 30%, #A78BFA 70%); 
+    letter-spacing: 2px; 
+    background: linear-gradient(90deg, #6EE7B7 40%, #A78BFA 60%); 
     -webkit-background-clip: text; 
     color: transparent; 
-    text-shadow: 0 0 5px rgba(110, 231, 183, 0.3), 
-                inset 1px 1px 2px rgba(0, 0, 0, 0.5), 
-                -1px -1px 1px rgba(255, 255, 255, 0.2); 
-    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.8); 
+    text-shadow: 0 0 8px rgba(110, 231, 183, 0.4), 
+                1px 1px 2px rgba(0, 0, 0, 0.6), 
+                -1px -1px 2px rgba(255, 255, 255, 0.1), 
+                inset 0 0 4px rgba(167, 139, 250, 0.3); 
     transition: text-shadow 0.3s ease; 
 }
 nav h1:hover { 
-    text-shadow: 0 0 10px rgba(110, 231, 183, 0.5), 
-                inset 1px 1px 2px rgba(0, 0, 0, 0.5), 
-                -1px -1px 1px rgba(255, 255, 255, 0.2); 
+    text-shadow: 0 0 12px rgba(110, 231, 183, 0.6), 
+                1px 1px 2px rgba(0, 0, 0, 0.6), 
+                -1px -1px 2px rgba(255, 255, 255, 0.1), 
+                inset 0 0 6px rgba(167, 139, 250, 0.5); 
 }
 .hamburger { 
     display: none; 
@@ -485,5 +486,5 @@ footer p {
     .highlights h3 { font-size: 32px; }
     footer { flex-direction: column; gap: 15px; text-align: center; }
     .social-icon { margin: 0 10px; }
-    nav h1 { font-size: 24px; }
+    nav h1 { font-size: 26px; }
 }
