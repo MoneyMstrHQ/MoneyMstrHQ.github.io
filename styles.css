@@ -296,7 +296,7 @@ nav a:hover {
     box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
 }
 @media (max-width: 768px) {
-    .testimony:hover { 
+    .testimonial:hover { 
         transform: none; 
         box-shadow: none; 
     }
@@ -429,6 +429,16 @@ nav a:hover {
     transform: translateY(-5px); 
     box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
 }
+.highlight.in-view { 
+    transform: translateY(-5px); 
+    box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
+}
+@media (max-width: 768px) {
+    .highlight:hover { 
+        transform: none; 
+        box-shadow: none; 
+    }
+}
 .highlight p { 
     font-size: 16px; 
     color: #d0d0d0; 
@@ -447,12 +457,6 @@ nav a:hover {
 footer { 
     background: rgba(0, 0, 0, 0.9); 
     padding: 30px 40px; 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    flex-wrap: wrap; 
-    position_references: 
-    padding: 30x40px; 
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
