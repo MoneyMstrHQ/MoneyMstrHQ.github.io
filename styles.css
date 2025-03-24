@@ -501,6 +501,8 @@ nav a:hover {
     border: 2px solid #A78BFA; 
     box-shadow: 0 0 10px rgba(167, 139, 250, 0.5); 
     object-fit: cover; 
+    image-rendering: -webkit-optimize-contrast; /* Sharper edges on Chrome */
+    image-rendering: crisp-edges; /* General sharpness */
 }
 .about-text { 
     text-align: left; 
