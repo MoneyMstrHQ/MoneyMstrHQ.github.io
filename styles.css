@@ -291,6 +291,16 @@ nav a:hover {
     transform: translateY(-5px); 
     box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
 }
+.testimonial.in-view { 
+    transform: translateY(-5px); 
+    box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
+}
+@media (max-width: 768px) {
+    .testimony:hover { 
+        transform: none; 
+        box-shadow: none; 
+    }
+}
 .strategies { 
     padding: 80px 15px; 
     text-align: center; 
@@ -437,6 +447,12 @@ nav a:hover {
 footer { 
     background: rgba(0, 0, 0, 0.9); 
     padding: 30px 40px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    position_references: 
+    padding: 30x40px; 
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
