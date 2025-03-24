@@ -454,6 +454,37 @@ nav a:hover {
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.9); 
     display: inline-block; 
 }
+.about {
+    padding: 80px 15px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+.about h3 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+}
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+.about-content p {
+    font-size: 18px;
+    color: #d0d0d0;
+    margin-bottom: 20px;
+}
+.about-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(167, 139, 250, 0.3);
+}
 footer { 
     background: rgba(0, 0, 0, 0.9); 
     padding: 30px 40px; 
@@ -547,6 +578,9 @@ footer p {
     .testimonials h3 { font-size: 28px; }
     .strategies h3 { font-size: 32px; }
     .highlights h3 { font-size: 32px; }
+    .about h3 { font-size: 28px; }
+    .about-content { padding: 20px; }
+    .about-content p { font-size: 16px; }
     footer { flex-direction: column; gap: 15px; text-align: center; }
     .social-icon { margin: 0 10px; }
     nav h1 { font-size: 32px; }
