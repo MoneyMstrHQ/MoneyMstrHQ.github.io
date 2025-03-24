@@ -90,9 +90,9 @@
     <section class="about">
         <h3>Who’s Behind MMHQ</h3>
         <div class="about-content">
-            <img src="https://via.placeholder.com/100" alt="Riley Quinn" class="avatar">
+            <img src="https://placehold.co/80x80" alt="Skye Carter" class="avatar">
             <div class="about-text">
-                <p>Hey, I’m Riley Quinn—ex-finance nerd, now wealth hacker. MMHQ’s my mission to kill money stress with tools that actually work. Goal: 10k people saving $500 by 2026. Join the squad.</p>
+                <p>Hey, I’m Skye Carter—ex-finance nerd, now wealth hacker. MMHQ’s my mission to kill money stress with tools that actually work. Goal: 10k people saving $500 by 2026. Join the squad.</p>
                 <a href="mailto:join@mmhq.com" class="btn btn-small btn-pulse">Join the Crew</a>
             </div>
         </div>
@@ -168,14 +168,12 @@
                 const viewportHeight = window.innerHeight;
                 const centerY = viewportHeight / 2;
 
-                // Handle cards
                 let closestCard = null;
                 let minCardDistance = Infinity;
                 cards.forEach(card => {
                     const rect = card.getBoundingClientRect();
                     const cardCenterY = rect.top + (rect.height / 2);
                     const distance = Math.abs(centerY - cardCenterY);
-
                     if (rect.top >= 0 && rect.bottom <= viewportHeight && distance < minCardDistance) {
                         minCardDistance = distance;
                         closestCard = card;
@@ -186,14 +184,12 @@
                     closestCard.classList.add('in-view');
                 }
 
-                // Handle testimonials
                 let closestTestimonial = null;
                 let minTestimonialDistance = Infinity;
                 testimonials.forEach(testimonial => {
                     const rect = testimonial.getBoundingClientRect();
                     const testimonialCenterY = rect.top + (rect.height / 2);
                     const distance = Math.abs(centerY - testimonialCenterY);
-
                     if (rect.top >= 0 && rect.bottom <= viewportHeight && distance < minTestimonialDistance) {
                         minTestimonialDistance = distance;
                         closestTestimonial = testimonial;
@@ -204,14 +200,12 @@
                     closestTestimonial.classList.add('in-view');
                 }
 
-                // Handle highlights
                 let closestHighlight = null;
                 let minHighlightDistance = Infinity;
                 highlights.forEach(highlight => {
                     const rect = highlight.getBoundingClientRect();
                     const highlightCenterY = rect.top + (rect.height / 2);
                     const distance = Math.abs(centerY - highlightCenterY);
-
                     if (rect.top >= 0 && rect.bottom <= viewportHeight && distance < minHighlightDistance) {
                         minHighlightDistance = distance;
                         closestHighlight = highlight;
