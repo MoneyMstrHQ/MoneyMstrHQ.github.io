@@ -151,6 +151,7 @@
 
         const cards = document.querySelectorAll('.card');
         const testimonials = document.querySelectorAll('.testimonial');
+        const highlights = document.querySelectorAll('.highlight');
 
         function highlightCenterElements() {
             if (window.matchMedia('(max-width: 768px)').matches) {
@@ -191,6 +192,24 @@
                 testimonials.forEach(testimonial => testimonial.classList.remove('in-view'));
                 if (closestTestimonial && minTestimonialDistance < 100) {
                     closestTestimonial.classList.add('in-view');
+                }
+
+                // Handle highlights
+                let closestHighlight = null;
+                let minHighlightDistance = Infinity;
+                highlights.forEach(highlight => {
+                    const rect = highlight.getBoundingClientRect();
+                    const highlightCenterY = rect.top + (rect.height / 2);
+                    const distance = Math.abs(centerY - highlightCenterY);
+
+                    if (rect.top >= 0 && rect.bottom <= viewportHeight && distance < minHighlightDistance) {
+                        minHighlightDistance = distance;
+                        closestHighlight = highlight;
+                    }
+                });
+                highlights.forEach(highlight => highlight.classList.remove('in-view'));
+                if (closestHighlight && minHighlightDistance < 100) {
+                    closestHighlight.classList.add('in-view');
                 }
             }
         }
