@@ -150,34 +150,54 @@
         });
 
         const cards = document.querySelectorAll('.card');
-        function highlightCenterCard() {
+        const testimonials = document.querySelectorAll('.testimonial');
+
+        function highlightCenterElements() {
             if (window.matchMedia('(max-width: 768px)').matches) {
                 const viewportHeight = window.innerHeight;
                 const centerY = viewportHeight / 2;
-                let closestCard = null;
-                let minDistance = Infinity;
 
+                // Handle cards
+                let closestCard = null;
+                let minCardDistance = Infinity;
                 cards.forEach(card => {
                     const rect = card.getBoundingClientRect();
                     const cardCenterY = rect.top + (rect.height / 2);
                     const distance = Math.abs(centerY - cardCenterY);
 
-                    if (rect.top >= 0 && rect.bottom <= viewportHeight && distance < minDistance) {
-                        minDistance = distance;
+                    if (rect.top >= 0 && rect.bottom <= viewportHeight && distance < minCardDistance) {
+                        minCardDistance = distance;
                         closestCard = card;
                     }
                 });
-
                 cards.forEach(card => card.classList.remove('in-view'));
-                if (closestCard && minDistance < 100) {
+                if (closestCard && minCardDistance < 100) {
                     closestCard.classList.add('in-view');
+                }
+
+                // Handle testimonials
+                let closestTestimonial = null;
+                let minTestimonialDistance = Infinity;
+                testimonials.forEach(testimonial => {
+                    const rect = testimonial.getBoundingClientRect();
+                    const testimonialCenterY = rect.top + (rect.height / 2);
+                    const distance = Math.abs(centerY - testimonialCenterY);
+
+                    if (rect.top >= 0 && rect.bottom <= viewportHeight && distance < minTestimonialDistance) {
+                        minTestimonialDistance = distance;
+                        closestTestimonial = testimonial;
+                    }
+                });
+                testimonials.forEach(testimonial => testimonial.classList.remove('in-view'));
+                if (closestTestimonial && minTestimonialDistance < 100) {
+                    closestTestimonial.classList.add('in-view');
                 }
             }
         }
 
-        window.addEventListener('scroll', highlightCenterCard);
-        window.addEventListener('resize', highlightCenterCard);
-        highlightCenterCard();
+        window.addEventListener('scroll', highlightCenterElements);
+        window.addEventListener('resize', highlightCenterElements);
+        highlightCenterElements();
 
         document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('.nav-links').classList.toggle('active');
