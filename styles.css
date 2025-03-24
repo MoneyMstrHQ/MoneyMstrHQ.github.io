@@ -301,7 +301,7 @@ nav a:hover {
 }
 .testimonial.in-view { 
     transform: translateY(-5px); 
-    box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); 
 }
 @media (max-width: 768px) {
     .testimonial:hover { 
@@ -484,7 +484,7 @@ nav a:hover {
     border: 1px solid rgba(255, 255, 255, 0.1); 
     display: flex; 
     align-items: center; 
-    gap: 20px; 
+    gap: 15px; 
     transition: all 0.4s ease; 
 }
 .about-content:hover { 
@@ -495,11 +495,12 @@ nav a:hover {
                 linear-gradient(90deg, #A78BFA, #6EE7B7) border-box; 
 }
 .about-content .avatar { 
-    width: 100px; 
-    height: 100px; 
+    width: 80px; 
+    height: 80px; 
     border-radius: 50%; 
     border: 2px solid #A78BFA; 
     box-shadow: 0 0 10px rgba(167, 139, 250, 0.5); 
+    object-fit: cover; 
 }
 .about-text { 
     text-align: left; 
@@ -573,11 +574,7 @@ footer p {
     .hero p { font-size: 20px; }
     .hero p.cta-sub { font-size: 16px; }
     .stats { gap: 5px; padding: 20px 10px; flex-wrap: wrap; }
-    .stat { 
-        width: 80px; 
-        height: 80px; 
-        padding: 10px; 
-    }
+    .stat { width: 80px; height: 80px; padding: 10px; }
     .stat span { font-size: 16px; }
     .stat p { font-size: 8px; }
     nav.sticky { width: 100%; border-radius: 0; top: 0; padding: 10px; }
@@ -607,14 +604,9 @@ footer p {
     .about-content { 
         flex-direction: column; 
         padding: 15px; 
+        gap: 10px; 
     }
-    .about-content .avatar { 
-        width: 80px; 
-        height: 80px; 
-    }
-    .about-text { 
-        text-align: center; 
-    }
+    .about-text { text-align: center; }
     .about-text p { font-size: 14px; }
     footer { flex-direction: column; gap: 15px; text-align: center; }
     .social-icon { margin: 0 10px; }
