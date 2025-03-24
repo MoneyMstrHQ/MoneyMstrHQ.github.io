@@ -257,6 +257,40 @@ nav a:hover {
     80% { opacity: 1; } 
     100% { opacity: 0; } 
 }
+.testimonials { 
+    padding: 60px 15px; 
+    text-align: center; 
+    position: relative; 
+    z-index: 2; 
+}
+.testimonials h3 { 
+    font-size: 36px; 
+    font-weight: 600; 
+    margin-bottom: 30px; 
+    color: #ffffff; 
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.4); 
+}
+.testimonial { 
+    background: rgba(0, 0, 0, 0.8); 
+    padding: 20px; 
+    border-radius: 15px; 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    transition: all 0.3s ease; 
+}
+.testimonial p { 
+    font-size: 16px; 
+    color: #d0d0d0; 
+    margin-bottom: 10px; 
+}
+.testimonial span { 
+    font-size: 14px; 
+    color: #A78BFA; 
+    font-style: italic; 
+}
+.testimonial:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
+}
 .strategies { 
     padding: 80px 15px; 
     text-align: center; 
@@ -490,6 +524,7 @@ footer p {
         100% { transform: translateY(0); opacity: 1; }
     }
     nav a { font-size: 14px; }
+    .testimonials h3 { font-size: 28px; }
     .strategies h3 { font-size: 32px; }
     .highlights h3 { font-size: 32px; }
     footer { flex-direction: column; gap: 15px; text-align: center; }
