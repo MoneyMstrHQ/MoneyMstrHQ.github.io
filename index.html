@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MMHQ | Neo-Wealth Matrix</title>
+    <title>MMHQ | Luxe Wealth Vault</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://pixijs.download/v8.x/pixi.min.js"></script>
 </head>
 <body>
-    <div id="neoCanvas"></div>
-    <nav class="neo-nav">
+    <div id="luxeCanvas"></div>
+    <nav class="luxe-nav">
         <h1>MMHQ</h1>
         <div class="nav-toggle">⋮</div>
         <ul class="nav-links">
@@ -21,115 +21,107 @@
         </ul>
     </nav>
     <section id="hero" class="hero-section">
-        <div class="hero-matrix">
-            <h2 class="neo-title">Neo-Wealth Matrix</h2>
-            <p class="neo-subtitle">Finance at the speed of tomorrow.</p>
-            <a href="https://impact.com/ynab-link" class="neo-btn">Ignite Now</a>
+        <div class="hero-vault">
+            <h2 class="luxe-title">Luxe Wealth Vault</h2>
+            <p class="luxe-subtitle">Precision-crafted finance for the elite.</p>
+            <a href="https://impact.com/ynab-link" class="luxe-btn">Unlock Now</a>
         </div>
     </section>
     <section id="stats" class="stats-section">
-        <div class="stats-network">
-            <div class="stat-cell" data-target="500">
-                <canvas class="stat-pulse" width="100" height="100"></canvas>
-                <span class="stat-data">$0+</span>
-                <p>Week 1 Output</p>
+        <div class="stats-vault">
+            <div class="stat-chamber" data-target="500">
+                <canvas class="stat-glow" width="100" height="100"></canvas>
+                <span class="stat-value">$0+</span>
+                <p>Week 1 Yield</p>
             </div>
-            <div class="stat-cell" data-target="10000">
-                <canvas class="stat-pulse" width="100" height="100"></canvas>
-                <span class="stat-data">0+</span>
-                <p>Active Cores</p>
+            <div class="stat-chamber" data-target="10000">
+                <canvas class="stat-glow" width="100" height="100"></canvas>
+                <span class="stat-value">0+</span>
+                <p>Active Members</p>
             </div>
-            <div class="stat-cell" data-target="20">
-                <canvas class="stat-pulse" width="100" height="100"></canvas>
-                <span class="stat-data">0%+</span>
-                <p>90-Day Boost</p>
+            <div class="stat-chamber" data-target="20">
+                <canvas class="stat-glow" width="100" height="100"></canvas>
+                <span class="stat-value">0%+</span>
+                <p>90-Day Gains</p>
             </div>
         </div>
     </section>
     <section id="strategies" class="strategies-section">
-        <h3 class="section-nexus">Neo-Strategies</h3>
-        <div class="neo-grid">
-            <div class="neo-unit">
-                <h4>Flux Savings</h4>
-                <p>Cut $200 via <a href="https://impact.com/ynab-link">YNAB</a>. Streamline groceries for $150. Lock impulses at $20/day.</p>
+        <h3 class="section-luxe">Elite Strategies</h3>
+        <div class="luxe-grid">
+            <div class="luxe-unit">
+                <h4>Swift Capital</h4>
+                <p>Trim $200 with <a href="https://impact.com/ynab-link">YNAB</a>. Refine groceries for $150. Cap impulses at $20/day.</p>
             </div>
-            <div class="neo-unit">
-                <h4>Amplify Core</h4>
-                <p>Inject $100 into ETFs with <a href="https://cj.com/investing-app-link">Robinhood</a>. Cycle dividends. Monitor real-time.</p>
+            <div class="luxe-unit">
+                <h4>Growth Forge</h4>
+                <p>Invest $100 in ETFs via <a href="https://cj.com/investing-app-link">Robinhood</a>. Compound monthly. Track precisely.</p>
             </div>
-            <div class="neo-unit">
-                <h4>Debt Void</h4>
-                <p>Collapse debts with <a href="https://impact.com/credit-card-link">neo-cards</a>. Redirect gains forward.</p>
+            <div class="luxe-unit">
+                <h4>Debt Refinery</h4>
+                <p>Snowball debts with <a href="https://impact.com/credit-card-link">prime cards</a>. Reinvest gains seamlessly.</p>
             </div>
         </div>
     </section>
     <section id="tools" class="tools-section">
-        <h3 class="section-nexus">Neo-Tools</h3>
-        <div class="neo-grid">
-            <div class="neo-unit">
-                <p>YNAB: 4.8-star flux engine.</p>
-                <a href="https://impact.com/ynab-link" class="neo-btn small">Sync</a>
+        <h3 class="section-luxe">Luxe Tools</h3>
+        <div class="luxe-grid">
+            <div class="luxe-unit">
+                <p>YNAB: 4.8-star precision engine.</p>
+                <a href="https://impact.com/ynab-link" class="luxe-btn small">Access</a>
             </div>
-            <div class="neo-unit">
-                <p>Investing Nexus: 20% in 90 days.</p>
-                <a href="https://cj.com/investing-app-link" class="neo-btn small">Deploy</a>
+            <div class="luxe-unit">
+                <p>Investing Vault: 20% in 90 days.</p>
+                <a href="https://cj.com/investing-app-link" class="luxe-btn small">Engage</a>
             </div>
         </div>
     </section>
     <section id="about" class="about-section">
-        <h3 class="section-nexus">The Neo-Architect</h3>
-        <div class="about-network">
+        <h3 class="section-luxe">The Architect</h3>
+        <div class="about-luxe">
             <div id="avatarCanvas" style="width: 140px; height: 140px;"></div>
-            <div class="about-flow">
-                <p>Skye Carter: Finance disruptor turned neo-architect. MMHQ aims for 10k cores, $500 each by 2026.</p>
-                <form class="link-form">
-                    <input type="email" placeholder="Link your email" required>
-                    <button type="submit" class="neo-btn small">Link</button>
+            <div class="about-core">
+                <p>Skye Carter: Finance maestro turned wealth architect. MMHQ targets 10k elites, $500 each by 2026.</p>
+                <form class="vault-form">
+                    <input type="email" placeholder="Enter the vault" required>
+                    <button type="submit" class="luxe-btn small">Join</button>
                 </form>
             </div>
         </div>
     </section>
     <footer>
-        <p>© 2025 MMHQ Neo-Wealth Matrix</p>
-        <div class="social-network">
-            <a href="https://x.com/MoneyMasterHQ" class="social-core">𝕏</a>
-            <a href="#" class="social-core">🎮</a>
+        <p>© 2025 MMHQ Luxe Wealth Vault</p>
+        <div class="social-vault">
+            <a href="https://x.com/MoneyMasterHQ" class="social-link">𝕏</a>
+            <a href="#" class="social-link">🎮</a>
         </div>
     </footer>
     <script>
-        // 3D Particle System Background (PixiJS-inspired)
-        const neoApp = new PIXI.Application({ background: '#0A0F1C', resizeTo: window, antialias: true });
-        document.getElementById('neoCanvas').appendChild(neoApp.view);
-        const particles = new PIXI.ParticleContainer(1000, { position: true, scale: true, tint: true });
-        neoApp.stage.addChild(particles);
-        const particleArray = [];
-        for (let i = 0; i < 200; i++) {
-            const particle = new PIXI.Sprite(PIXI.Texture.WHITE);
-            particle.tint = Math.random() > 0.5 ? 0xFF2E63 : 0x00F5D4;
-            particle.scale.set(0.5 + Math.random() * 1.5);
-            particle.x = Math.random() * neoApp.screen.width;
-            particle.y = Math.random() * neoApp.screen.height;
-            particle.z = Math.random() * 1000;
-            particle.speedX = (Math.random() - 0.5) * 2;
-            particle.speedY = (Math.random() - 0.5) * 2;
-            particle.speedZ = (Math.random() - 0.5) * 1;
-            particles.addChild(particle);
-            particleArray.push(particle);
-        }
-        neoApp.ticker.add(() => {
-            particleArray.forEach(p => {
-                p.x += p.speedX;
-                p.y += p.speedY;
-                p.z += p.speedZ;
-                p.scale.set(0.5 + p.z / 1000);
-                p.alpha = 0.5 + (p.z / 1000);
-                if (p.x < 0 || p.x > neoApp.screen.width) p.speedX *= -1;
-                if (p.y < 0 || p.y > neoApp.screen.height) p.speedY *= -1;
-                if (p.z < 0 || p.z > 1000) p.speedZ *= -1;
-            });
+        // Luxe Metallic Lattice Background
+        const luxeApp = new PIXI.Application({ background: '#0D1117', resizeTo: window, antialias: true });
+        document.getElementById('luxeCanvas').appendChild(luxeApp.view);
+        const lattice = new PIXI.Graphics();
+        luxeApp.stage.addChild(lattice);
+        const gridSize = 100;
+        let time = 0;
+        luxeApp.ticker.add(() => {
+            time += 0.01;
+            lattice.clear();
+            lattice.lineStyle(1, 0xD4AF37, 0.3);
+            for (let x = 0; x < luxeApp.screen.width + gridSize; x += gridSize) {
+                for (let y = 0; y < luxeApp.screen.height + gridSize; y += gridSize) {
+                    const offset = Math.sin(x * 0.02 + time) * 10 + Math.cos(y * 0.02 + time) * 10;
+                    lattice.moveTo(x - offset, y - offset);
+                    lattice.lineTo(x + offset, y + offset);
+                }
+            }
+            // Light Flare
+            lattice.beginFill(0xE6E6E6, 0.1);
+            lattice.drawCircle(luxeApp.screen.width / 2 + Math.sin(time) * 200, luxeApp.screen.height / 2 + Math.cos(time) * 200, 50);
+            lattice.endFill();
         });
 
-        // Avatar Neo Effect
+        // Avatar Luxe Effect
         const avatarApp = new PIXI.Application({ width: 140, height: 140, backgroundAlpha: 0 });
         document.getElementById('avatarCanvas').appendChild(avatarApp.view);
         const avatar = new PIXI.Sprite.from('https://raw.githubusercontent.com/moneymstrhq/moneymstrhq.github.io/main/skye-carter-highres.png');
@@ -137,32 +129,33 @@
         avatar.x = 70;
         avatar.y = 70;
         avatar.scale.set(140 / 240);
-        avatar.filters = [new PIXI.GlowFilter({ distance: 20, outerStrength: 3, color: 0xFF2E63 })];
+        avatar.filters = [new PIXI.GlowFilter({ distance: 15, outerStrength: 2, color: 0xD4AF37 })];
         avatarApp.stage.addChild(avatar);
         avatar.interactive = true;
-        avatar.on('pointerover', () => avatar.filters.push(new PIXI.BlurFilter(2)));
-        avatar.on('pointerout', () => avatar.filters = [avatar.filters[0]]);
+        avatar.on('pointerover', () => avatar.rotation += 0.1);
+        avatar.on('pointerout', () => avatar.rotation = 0);
         avatarApp.ticker.add(() => {
-            avatar.filters[0].outerStrength = 3 + Math.sin(Date.now() * 0.003) * 1.5;
+            avatar.filters[0].outerStrength = 2 + Math.sin(Date.now() * 0.002) * 1;
         });
 
-        // Stats Pulse Animation
-        document.querySelectorAll('.stat-cell').forEach(stat => {
-            const canvas = stat.querySelector('.stat-pulse');
+        // Stats Glow Animation
+        document.querySelectorAll('.stat-chamber').forEach(stat => {
+            const canvas = stat.querySelector('.stat-glow');
             const app = new PIXI.Application({ view: canvas, backgroundAlpha: 0 });
-            const pulse = new PIXI.Graphics();
-            app.stage.addChild(pulse);
-            let radius = 0;
+            const glow = new PIXI.Graphics();
+            app.stage.addChild(glow);
+            let intensity = 0;
             app.ticker.add(() => {
-                radius += 0.5;
-                pulse.clear();
-                pulse.lineStyle(2, 0x00F5D4, 0.7 - (radius % 40) / 40);
-                pulse.drawCircle(50, 50, radius % 40);
+                intensity += 0.05;
+                glow.clear();
+                glow.beginFill(0xD4AF37, 0.3 - (intensity % 1) * 0.2);
+                glow.drawCircle(50, 50, 40 + Math.sin(intensity) * 5);
+                glow.endFill();
             });
 
             let count = 0;
             const target = parseInt(stat.getAttribute('data-target'));
-            const span = stat.querySelector('.stat-data');
+            const span = stat.querySelector('.stat-value');
             const increment = target / 60;
             const isPercent = span.textContent.includes('%');
             const updateCount = () => {
