@@ -3,242 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MMHQ</title>
+    <title>MMHQ | Elite Wealth Systems</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://pixijs.download/v8.x/pixi.min.js"></script>
 </head>
 <body>
-    <header>
-        <div id="coinRain"></div>
-        <nav class="sticky">
-            <h1>MMHQ</h1>
-            <div class="hamburger">☰</div>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Strategies</a></li>
-                <li><a href="#">Stats</a></li>
-                <li><a href="#">Tools</a></li>
-            </ul>
-        </nav>
-        <div class="hero">
-            <div class="hero-inner">
-                <h2 class="kinetic glow">Master Your Money</h2>
-                <p>Smart finance tips and tools to grow your wealth.</p>
-                <a href="https://impact.com/ynab-link" class="btn">Save $500 with YNAB</a>
-                <p class="cta-sub">Trusted by 1k+ Users • Join 500+ Savvy Savers</p>
-            </div>
-        </div>
-    </header>
-    <section class="stats">
-        <div class="stat" data-hover="$500+ Saved Week 1">
-            <span data-count="500">$0+</span>
-            <p>Saved</p>
-        </div>
-        <div class="stat" data-hover="Tool Users">
-            <span data-count="10000">0+</span>
-            <p>Users</p>
-        </div>
-        <div class="stat" data-hover="Avg. 90-Day Gains">
-            <span data-count="20">0%+</span>
-            <p>Growth</p>
+    <div id="holoCanvas"></div>
+    <nav class="floating-nav">
+        <h1>MMHQ</h1>
+        <div class="nav-toggle">⋮</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#strategies">Strategies</a></li>
+            <li><a href="#stats">Stats</a></li>
+            <li><a href="#tools">Tools</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h2 class="neon-text">Master Your Money</h2>
+            <p class="sub-text">Next-gen finance tools for the elite.</p>
+            <a href="https://impact.com/ynab-link" class="holo-btn">Unlock Wealth Now</a>
         </div>
     </section>
-    <section class="testimonials">
-        <h3>What Users Say</h3>
-        <div class="grid">
-            <div class="testimonial">
-                <p>"Saved $500 in a week—total game changer!"</p>
-                <span>- Alex, Savvy Saver</span>
+    <section id="stats" class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card" data-target="500">
+                <span class="stat-value">$0+</span>
+                <p>Saved in Week 1</p>
             </div>
-            <div class="testimonial">
-                <p>"Grew my portfolio 20% with their tips."</p>
-                <span>- Jamie, Investor</span>
+            <div class="stat-card" data-target="10000">
+                <span class="stat-value">0+</span>
+                <p>Active Users</p>
+            </div>
+            <div class="stat-card" data-target="20">
+                <span class="stat-value">0%+</span>
+                <p>90-Day Growth</p>
             </div>
         </div>
     </section>
-    <section class="strategies">
-        <h3>Proven Strategies</h3>
-        <div class="grid">
-            <div class="card">
-                <h4>Save $500 in 7 Days</h4>
-                <p>Cut $200 from subscriptions (audit with <a href="https://impact.com/ynab-link">YNAB</a>), $150 from groceries (meal plan), and $150 from impulse buys (set a $20 daily cap).</p>
+    <section id="strategies" class="strategies-section">
+        <h3 class="section-title">Wealth Hacking Strategies</h3>
+        <div class="holo-grid">
+            <div class="holo-card">
+                <h4>Save $500 Fast</h4>
+                <p>Audit subscriptions with <a href="https://impact.com/ynab-link">YNAB</a>, cut $200. Meal plan to save $150. Cap impulse buys at $20/day.</p>
             </div>
-            <div class="card">
-                <h4>Grow 20% with Easy Investing</h4>
-                <p>Start with $100 in an ETF via <a href="https://cj.com/investing-app-link">Robinhood</a>, reinvest dividends monthly, and track gains weekly—low risk, high reward.</p>
+            <div class="holo-card">
+                <h4>Grow 20% Easy</h4>
+                <p>Invest $100 in ETFs via <a href="https://cj.com/investing-app-link">Robinhood</a>. Reinvest dividends monthly. Track weekly gains.</p>
             </div>
-            <div class="card">
-                <h4>Ditch Debt in 90 Days</h4>
-                <p>Use the snowball method: pay off smallest debts first with <a href="https://impact.com/credit-card-link">top card picks</a>, roll savings into the next, repeat.</p>
-            </div>
-        </div>
-    </section>
-    <section class="highlights">
-        <h3>Top Finance Tools</h3>
-        <div class="highlight-grid">
-            <div class="highlight">
-                <p>"Budget app with 4.8 stars—saves time!"</p>
-                <a href="https://impact.com/ynab-link" class="btn btn-small">Get YNAB Free</a>
-                <span class="badge">Top Pick</span>
-            </div>
-            <div class="highlight">
-                <p>"Investment course—up 20% in 90 days."</p>
-                <a href="https://cj.com/investing-app-link" class="btn btn-small">Start Investing</a>
-                <span class="badge">Best Value</span>
+            <div class="holo-card">
+                <h4>Debt-Free in 90</h4>
+                <p>Snowball method: clear small debts first with <a href="https://impact.com/credit-card-link">top cards</a>. Roll savings forward.</p>
             </div>
         </div>
     </section>
-    <section class="about">
-        <h3>Who’s Behind MMHQ</h3>
-        <div class="about-content">
-            <div id="avatarCanvas" style="width: 80px; height: 80px;"></div>
+    <section id="tools" class="tools-section">
+        <h3 class="section-title">Elite Tools</h3>
+        <div class="holo-grid">
+            <div class="holo-card tool-card">
+                <p>YNAB: 4.8-star budget app—saves time.</p>
+                <a href="https://impact.com/ynab-link" class="holo-btn small">Get Free</a>
+            </div>
+            <div class="holo-card tool-card">
+                <p>Investing Course: 20% gains in 90 days.</p>
+                <a href="https://cj.com/investing-app-link" class="holo-btn small">Start Now</a>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="about-section">
+        <h3 class="section-title">The Mastermind</h3>
+        <div class="about-container">
+            <div id="avatarCanvas" style="width: 120px; height: 120px;"></div>
             <div class="about-text">
-                <p>Hey, I’m Skye Carter—ex-finance nerd, now wealth hacker. MMHQ’s my mission to kill money stress with tools that actually work. Goal: 10k people saving $500 by 2026. Join the squad.</p>
-                <form class="signup">
-                    <input type="email" placeholder="Your email" required>
-                    <button type="submit" class="btn btn-small btn-pulse">Join the Crew</button>
+                <p>Skye Carter: Ex-finance nerd turned wealth hacker. Building MMHQ to obliterate money stress. Target: 10k savers, $500 each by 2026.</p>
+                <form class="signup-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="holo-btn small">Join the Elite</button>
                 </form>
             </div>
         </div>
     </section>
     <footer>
-        <p>© 2025 MMHQ Elite Wealth Systems • <span class="secure-badge">Secure Links</span></p>
-        <div class="social">
+        <p>© 2025 MMHQ Elite Wealth Systems</p>
+        <div class="social-links">
             <a href="https://x.com/MoneyMasterHQ" class="social-icon">𝕏</a>
             <a href="#" class="social-icon">🎮</a>
         </div>
     </footer>
     <script>
-        // Coin Rain Hero
-        const app = new PIXI.Application({ background: '#000', resizeTo: window });
-        document.getElementById('coinRain').appendChild(app.view);
-        const coins = [];
-        for (let i = 0; i < 50; i++) {
-            const coin = new PIXI.Sprite.from('https://raw.githubusercontent.com/moneymstrhq/moneymstrhq.github.io/main/skye-carter-highres.png'); // Swap with coin PNG later
-            coin.anchor.set(0.5);
-            coin.scale.set(0.2);
-            coin.x = Math.random() * app.screen.width;
-            coin.y = Math.random() * -app.screen.height;
-            coin.speed = Math.random() * 2 + 1;
-            app.stage.addChild(coin);
-            coins.push(coin);
+        // Holographic Background
+        const holoApp = new PIXI.Application({ background: '#000', resizeTo: window });
+        document.getElementById('holoCanvas').appendChild(holoApp.view);
+        const particles = new PIXI.ParticleContainer(5000, { position: true, scale: true });
+        holoApp.stage.addChild(particles);
+        const particleArray = [];
+        for (let i = 0; i < 200; i++) {
+            const particle = new PIXI.Sprite(PIXI.Texture.WHITE);
+            particle.tint = Math.random() > 0.5 ? 0x6EE7B7 : 0xA78BFA;
+            particle.scale.set(0.5 + Math.random());
+            particle.x = Math.random() * holoApp.screen.width;
+            particle.y = Math.random() * holoApp.screen.height;
+            particle.speedX = (Math.random() - 0.5) * 2;
+            particle.speedY = (Math.random() - 0.5) * 2;
+            particles.addChild(particle);
+            particleArray.push(particle);
         }
-        app.ticker.add(() => {
-            coins.forEach(coin => {
-                coin.y += coin.speed;
-                if (coin.y > app.screen.height) coin.y = -coin.height;
+        holoApp.ticker.add(() => {
+            particleArray.forEach(p => {
+                p.x += p.speedX;
+                p.y += p.speedY;
+                if (p.x < 0 || p.x > holoApp.screen.width) p.speedX *= -1;
+                if (p.y < 0 || p.y > holoApp.screen.height) p.speedY *= -1;
             });
         });
 
-        // Interactive Avatar
-        const avatarApp = new PIXI.Application({ width: 80, height: 80, backgroundAlpha: 0 });
+        // Avatar Animation
+        const avatarApp = new PIXI.Application({ width: 120, height: 120, backgroundAlpha: 0 });
         document.getElementById('avatarCanvas').appendChild(avatarApp.view);
         const avatar = new PIXI.Sprite.from('https://raw.githubusercontent.com/moneymstrhq/moneymstrhq.github.io/main/skye-carter-highres.png');
         avatar.anchor.set(0.5);
-        avatar.x = 40;
-        avatar.y = 40;
-        avatar.scale.set(80 / 240); // Fit 240x240 into 80x80
-        avatar.filters = [new PIXI.GlowFilter({ distance: 10, outerStrength: 2, color: 0xA78BFA })];
+        avatar.x = 60;
+        avatar.y = 60;
+        avatar.scale.set(120 / 240);
+        avatar.filters = [new PIXI.GlowFilter({ distance: 15, outerStrength: 3, color: 0xA78BFA })];
         avatarApp.stage.addChild(avatar);
         avatar.interactive = true;
-        avatar.on('pointerover', () => avatar.rotation += 0.1);
-        avatar.on('pointerout', () => avatar.rotation = 0);
-
-        // Existing Stats Animation (unchanged)
-        document.querySelectorAll('.stat').forEach(stat => {
-            stat.addEventListener('touchstart', function(e) {
-                e.preventDefault();
-                this.classList.remove('active');
-                this.classList.add('active');
-                setTimeout(() => this.classList.remove('active'), 2000);
-            });
-            stat.addEventListener('touchend', function(e) {
-                e.preventDefault();
-            });
+        let rotationSpeed = 0;
+        avatar.on('pointerover', () => rotationSpeed = 0.05);
+        avatar.on('pointerout', () => rotationSpeed = 0);
+        avatarApp.ticker.add(() => {
+            avatar.rotation += rotationSpeed;
+            avatar.filters[0].outerStrength = 3 + Math.sin(Date.now() * 0.002) * 1;
         });
 
-        document.querySelectorAll('.stat span').forEach(stat => {
+        // Stats Animation
+        document.querySelectorAll('.stat-card').forEach(stat => {
             let count = 0;
-            const target = parseInt(stat.getAttribute('data-count'));
-            const increment = target / 50;
-            const isPercent = stat.textContent.includes('%');
+            const target = parseInt(stat.getAttribute('data-target'));
+            const span = stat.querySelector('.stat-value');
+            const increment = target / 60;
+            const isPercent = span.textContent.includes('%');
             const updateCount = () => {
                 count += increment;
                 if (count < target) {
-                    stat.textContent = isPercent ? `${Math.floor(count)}%+` : `$${Math.floor(count)}+`;
+                    span.textContent = isPercent ? `${Math.floor(count)}%+` : `$${Math.floor(count)}+`;
                     requestAnimationFrame(updateCount);
                 } else {
-                    stat.textContent = isPercent ? `${target}%+` : `$${target}+`;
+                    span.textContent = isPercent ? `${target}%+` : `$${target}+`;
                 }
             };
             updateCount();
         });
 
-        const cards = document.querySelectorAll('.card');
-        const testimonials = document.querySelectorAll('.testimonial');
-        const highlights = document.querySelectorAll('.highlight');
-
-        function highlightCenterElements() {
-            if (window.matchMedia('(max-width: 768px)').matches) {
-                const viewportHeight = window.innerHeight;
-                const centerY = viewportHeight / 2;
-
-                let closestCard = null;
-                let minCardDistance = Infinity;
-                cards.forEach(card => {
-                    const rect = card.getBoundingClientRect();
-                    const cardCenterY = rect.top + (rect.height / 2);
-                    const distance = Math.abs(centerY - cardCenterY);
-                    if (rect.top >= 0 && rect.bottom <= viewportHeight && distance < minCardDistance) {
-                        minCardDistance = distance;
-                        closestCard = card;
-                    }
-                });
-                cards.forEach(card => card.classList.remove('in-view'));
-                if (closestCard && minCardDistance < 100) {
-                    closestCard.classList.add('in-view');
-                }
-
-                let closestTestimonial = null;
-                let minTestimonialDistance = Infinity;
-                testimonials.forEach(testimonial => {
-                    const rect = testimonial.getBoundingClientRect();
-                    const testimonialCenterY = rect.top + (rect.height / 2);
-                    const distance = Math.abs(centerY - testimonialCenterY);
-                    if (rect.top >= 0 && rect.bottom <= viewportHeight && distance < minTestimonialDistance) {
-                        minTestimonialDistance = distance;
-                        closestTestimonial = testimonial;
-                    }
-                });
-                testimonials.forEach(testimonial => testimonial.classList.remove('in-view'));
-                if (closestTestimonial && minTestimonialDistance < 100) {
-                    closestTestimonial.classList.add('in-view');
-                }
-
-                let closestHighlight = null;
-                let minHighlightDistance = Infinity;
-                highlights.forEach(highlight => {
-                    const rect = highlight.getBoundingClientRect();
-                    const highlightCenterY = rect.top + (rect.height / 2);
-                    const distance = Math.abs(centerY - highlightCenterY);
-                    if (rect.top >= 0 && rect.bottom <= viewportHeight && distance < minHighlightDistance) {
-                        minHighlightDistance = distance;
-                        closestHighlight = highlight;
-                    }
-                });
-                highlights.forEach(highlight => highlight.classList.remove('in-view'));
-                if (closestHighlight && minHighlightDistance < 100) {
-                    closestHighlight.classList.add('in-view');
-                }
-            }
-        }
-
-        window.addEventListener('scroll', highlightCenterElements);
-        window.addEventListener('resize', highlightCenterElements);
-        highlightCenterElements();
-
-        document.querySelector('.hamburger').addEventListener('click', () => {
+        // Nav Toggle
+        document.querySelector('.nav-toggle').addEventListener('click', () => {
             document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Parallax Effect
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            document.querySelectorAll('.holo-card').forEach(card => {
+                const speed = 0.05;
+                card.style.transform = `translateY(${scrollY * speed}px)`;
+            });
         });
     </script>
 </body>
