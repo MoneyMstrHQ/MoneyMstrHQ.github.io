@@ -1,11 +1,13 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { 
-    font-family: 'SF Pro Display', sans-serif; 
-    background: #000; 
-    color: #e0e0e0; 
+    font-family: 'Inter', sans-serif; 
+    background: #FFFFFF; 
+    color: #1A1A1A; 
     line-height: 1.6; 
     overflow-x: hidden; 
     position: relative; 
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale; 
 }
 body::before { 
     content: ''; 
@@ -14,13 +16,13 @@ body::before {
     left: 0; 
     width: 100%; 
     height: 100%; 
-    background: linear-gradient(135deg, rgba(167, 139, 250, 0.05) 0%, rgba(110, 231, 183, 0.05) 100%); 
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%); 
     z-index: 1; 
 }
 header { 
     min-height: 100vh; 
     padding: 15px 0; 
-    background: rgba(0, 0, 0, 0.3); 
+    background: rgba(255, 255, 255, 0.95); 
     backdrop-filter: blur(12px); 
     display: flex; 
     flex-direction: column; 
@@ -39,17 +41,16 @@ nav {
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
-    background: rgba(0, 0, 0, 0.6); 
+    background: rgba(255, 255, 255, 0.95); 
     padding: 10px 20px; 
     border-radius: 12px; 
-    backdrop-filter: blur(8px); 
+    border: 1px solid #E5E7EB; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
     max-width: 1200px; 
     width: 90%; 
     margin: 0 auto; 
     position: relative; 
     z-index: 2; 
-    box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
-    animation: syncOutline 8s infinite linear; 
 }
 nav.sticky { 
     position: fixed; 
@@ -60,7 +61,7 @@ nav h1 {
     font-size: 40px; 
     font-weight: 900; 
     letter-spacing: 3px; 
-    color: #FFFFFF; 
+    color: #1A1A1A; 
     position: relative; 
     padding-bottom: 4px; 
     transition: color 0.3s ease; 
@@ -72,13 +73,13 @@ nav h1::after {
     left: 0; 
     width: 100%; 
     height: 2px; 
-    background: linear-gradient(90deg, #6EE7B7, #A78BFA); 
+    background: linear-gradient(90deg, #D4AF37, #A78BFA); 
     transform: scaleX(0); 
     transform-origin: left; 
     transition: transform 0.3s ease; 
 }
 nav h1:hover { 
-    color: #F0F0F0; 
+    color: #D4AF37; 
 }
 nav h1:hover::after { 
     transform: scaleX(1); 
@@ -86,6 +87,7 @@ nav h1:hover::after {
 .hamburger { 
     display: none; 
     font-size: 24px; 
+    color: #1A1A1A; 
     cursor: pointer; 
 }
 .nav-links { 
@@ -94,7 +96,7 @@ nav h1:hover::after {
     list-style: none; 
 }
 nav a { 
-    color: #e0e0e0; 
+    color: #1A1A1A; 
     text-decoration: none; 
     font-weight: 600; 
     font-size: 16px; 
@@ -105,11 +107,11 @@ nav a {
 nav a:hover { 
     color: #A78BFA; 
     background: rgba(167, 139, 250, 0.1); 
-    box-shadow: 0 0 12px rgba(167, 139, 250, 0.4); 
+    box-shadow: 0 0 12px rgba(167, 139, 250, 0.2); 
 }
 .hero { 
     text-align: center; 
-    padding: 60px 15px 15px; 
+    padding: 60px 15px; 
     max-width: 900px; 
     width: 90%; 
     position: relative; 
@@ -122,72 +124,81 @@ nav a:hover {
 }
 .hero-inner { 
     padding: 20px; 
-    box-shadow: 0 0 15px rgba(167, 139, 250, 0.2); 
-    animation: syncOutline 8s infinite linear; 
+    background: #FFFFFF; 
+    border: 1px solid #E5E7EB; 
     border-radius: 12px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
 }
 .kinetic { 
     font-size: 72px; 
     font-weight: 800; 
-    color: #ffffff; 
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5); 
+    color: #1A1A1A; 
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3); 
 }
 .kinetic.glow { 
     animation: glowPulse 2s infinite ease-in-out; 
 }
 @keyframes glowPulse { 
-    0% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.5); } 
-    50% { text-shadow: 0 0 25px rgba(167, 139, 250, 0.8); } 
-    100% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.5); } 
+    0% { text-shadow: 0 0 10px rgba(212, 175, 55, 0.3); } 
+    50% { text-shadow: 0 0 20px rgba(212, 175, 55, 0.5); } 
+    100% { text-shadow: 0 0 10px rgba(212, 175, 55, 0.3); } 
 }
 .hero p { 
     font-size: 24px; 
     margin: 15px 0 30px; 
-    color: #d0d0d0; 
+    color: #4B5563; 
 }
 .hero p.cta-sub { 
     font-size: 18px; 
     color: #A78BFA; 
     margin-top: 10px; 
-    text-shadow: 0 0 5px rgba(167, 139, 250, 0.3); 
+    text-shadow: 0 0 5px rgba(167, 139, 250, 0.2); 
 }
 .btn { 
-    background: rgba(167, 139, 250, 0.7); 
-    color: #ffffff; 
+    background: linear-gradient(135deg, #D4AF37 0%, #B08D2C 100%); 
+    color: #1A1A1A; 
     padding: 12px 40px; 
     border-radius: 30px; 
     text-decoration: none; 
     font-weight: 600; 
     font-size: 18px; 
-    box-shadow: 0 0 15px rgba(167, 139, 250, 0.5); 
-    backdrop-filter: blur(8px); 
-    border: 1px solid rgba(255, 255, 255, 0.2); 
-    transition: transform 0.4s ease, box-shadow 0.4s ease; 
-    animation: syncFill 8s infinite linear; 
+    border: 1px solid #FFFFFF; 
+    box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.3), 0 4px 15px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease; 
+    position: relative; 
+    overflow: hidden; 
     display: inline-block; 
+}
+.btn::before { 
+    content: ''; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    width: 0; 
+    height: 0; 
+    background: rgba(255, 255, 255, 0.2); 
+    border-radius: 50%; 
+    transform: translate(-50%, -50%); 
+    transition: width 0.4s ease, height 0.4s ease; 
+}
+.btn:hover::before { 
+    width: 200px; 
+    height: 200px; 
+}
+.btn:hover { 
+    transform: translateY(-2px); 
+    box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.4), 0 6px 20px rgba(0, 0, 0, 0.15); 
 }
 .btn.btn-small { 
     padding: 8px 20px; 
     font-size: 14px; 
-}
-.btn.btn-pulse {
-    animation: syncFill 8s infinite linear, pulse 2s infinite ease-in-out;
-}
-.btn:hover { 
-    transform: scale(1.05); 
-    box-shadow: 0 0 25px rgba(167, 139, 250, 0.8); 
-}
-@keyframes pulse {
-    0% { box-shadow: 0 0 15px rgba(167, 139, 250, 0.5); }
-    50% { box-shadow: 0 0 25px rgba(167, 139, 250, 0.7); }
-    100% { box-shadow: 0 0 15px rgba(167, 139, 250, 0.5); }
 }
 .stats { 
     display: flex; 
     justify-content: center; 
     gap: 40px; 
     padding: 40px 15px; 
-    background: rgba(0, 0, 0, 0.9); 
+    background: #FFFFFF; 
     position: relative; 
     z-index: 2; 
     flex-wrap: wrap; 
@@ -195,39 +206,31 @@ nav a:hover {
 .stat { 
     text-align: center; 
     padding: 15px; 
-    background: rgba(0, 0, 0, 0.7); 
-    border: 1px solid rgba(255, 255, 255, 0.1); 
+    background: #FFFFFF; 
+    border: 1px solid #E5E7EB; 
     border-radius: 50%; 
     width: 120px; 
     height: 120px; 
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    transition: all 0.3s ease; 
     position: relative; 
-    box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
-    animation: syncOutline 8s infinite linear, scaleIn 0.5s ease-out forwards; 
-}
-.stat:nth-child(1) { animation-delay: 0s; }
-.stat:nth-child(2) { animation-delay: 0.2s; }
-.stat:nth-child(3) { animation-delay: 0.4s; }
-@keyframes scaleIn { 
-    0% { transform: scale(0); } 
-    100% { transform: scale(1); } 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
 }
 .stat:hover { 
-    transform: translateY(-8px) scale(1.1); 
-    box-shadow: 0 0 20px rgba(167, 139, 250, 0.5); 
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); 
 }
 .stat span { 
     font-size: 24px; 
     font-weight: 800; 
-    color: #ffffff; 
-    text-shadow: 0 0 8px rgba(96, 165, 250, 0.5); 
+    color: #D4AF37; 
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.3); 
 }
 .stat p { 
     font-size: 12px; 
-    color: #d0d0d0; 
+    color: #6B7280; 
 }
 .stat::after { 
     content: attr(data-hover); 
@@ -235,15 +238,14 @@ nav a:hover {
     top: -25px; 
     left: 50%; 
     transform: translateX(-50%); 
-    background: rgba(167, 139, 250, 0.7); 
-    color: #ffffff; 
+    background: #A78BFA; 
+    color: #FFFFFF; 
     padding: 6px 16px; 
     border-radius: 8px; 
     font-size: 14px; 
     opacity: 0; 
     transition: opacity 0.3s ease, top 0.3s ease; 
     pointer-events: none; 
-    animation: syncFill 8s infinite linear; 
     white-space: nowrap; 
 }
 .stat:hover::after { 
@@ -258,7 +260,7 @@ nav a:hover {
 .stat.active::after { 
     opacity: 1; 
     top: -40px; 
-    animation: syncFill 8s infinite linear, fadeOut 2s forwards; 
+    animation: fadeOut 2s forwards; 
 }
 @keyframes fadeOut { 
     0% { opacity: 1; } 
@@ -275,19 +277,20 @@ nav a:hover {
     font-size: 36px; 
     font-weight: 600; 
     margin-bottom: 30px; 
-    color: #ffffff; 
-    text-shadow: 0 0 12px rgba(255, 255, 255, 0.4); 
+    color: #1A1A1A; 
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
 }
 .testimonial { 
-    background: rgba(0, 0, 0, 0.8); 
+    background: #FFFFFF; 
     padding: 20px; 
     border-radius: 15px; 
-    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border: 1px solid #E5E7EB; 
     transition: all 0.3s ease; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
 }
 .testimonial p { 
     font-size: 16px; 
-    color: #d0d0d0; 
+    color: #4B5563; 
     margin-bottom: 10px; 
 }
 .testimonial span { 
@@ -297,16 +300,16 @@ nav a:hover {
 }
 .testimonial:hover { 
     transform: translateY(-5px); 
-    box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); 
 }
 .testimonial.in-view { 
     transform: translateY(-5px); 
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); 
 }
 @media (max-width: 768px) {
     .testimonial:hover { 
         transform: none; 
-        box-shadow: none; 
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
     }
 }
 .strategies { 
@@ -319,8 +322,8 @@ nav a:hover {
     font-size: 48px; 
     font-weight: 600; 
     margin-bottom: 40px; 
-    color: #ffffff; 
-    text-shadow: 0 0 12px rgba(255, 255, 255, 0.4); 
+    color: #1A1A1A; 
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
 }
 .grid { 
     display: grid; 
@@ -330,14 +333,14 @@ nav a:hover {
     margin: 0 auto; 
 }
 .card { 
-    background: rgba(0, 0, 0, 0.8); 
+    background: #FFFFFF; 
     padding: 30px; 
     border-radius: 20px; 
-    backdrop-filter: blur(12px); 
-    border: 1px solid rgba(255, 255, 255, 0.1); 
-    transition: all 0.4s ease; 
+    border: 1px solid #E5E7EB; 
+    transition: all 0.3s ease; 
     position: relative; 
     overflow: hidden; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
 }
 .card::after { 
     content: ''; 
@@ -346,28 +349,21 @@ nav a:hover {
     left: 0; 
     width: 100%; 
     height: 4px; 
-    background: linear-gradient(90deg, #6EE7B7, #A78BFA); 
+    background: linear-gradient(90deg, #D4AF37, #A78BFA); 
     transform: scaleX(0); 
     transform-origin: left; 
     transition: transform 0.3s ease; 
-    z-index: -1; 
 }
 .card:hover::after { 
     transform: scaleX(1); 
 }
 .card:hover { 
-    transform: translateY(-8px); 
-    box-shadow: 0 0 20px rgba(110, 231, 183, 0.4); 
-    border: 1px solid transparent; 
-    background: linear-gradient(#000000, #000000) padding-box, 
-                linear-gradient(90deg, #60A5FA, #A78BFA) border-box; 
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); 
 }
 .card.in-view { 
-    transform: translateY(-8px); 
-    box-shadow: 0 0 20px rgba(110, 231, 183, 0.4); 
-    border: 1px solid transparent; 
-    background: linear-gradient(#000000, #000000) padding-box, 
-                linear-gradient(90deg, #60A5FA, #A78BFA) border-box; 
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); 
 }
 .card.in-view::after { 
     transform: scaleX(1); 
@@ -375,10 +371,7 @@ nav a:hover {
 @media (max-width: 768px) {
     .card:hover { 
         transform: none; 
-        box-shadow: none; 
-        border-color: rgba(255, 255, 255, 0.1); 
-        background: none; 
-        border: 1px solid rgba(255, 255, 255, 0.1); 
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
     }
     .card:hover::after { 
         transform: scaleX(0); 
@@ -386,34 +379,34 @@ nav a:hover {
 }
 .card h4 { 
     font-size: 24px; 
-    color: #6EE7B7; 
+    color: #D4AF37; 
     margin-bottom: 15px; 
 }
 .card p { 
     font-size: 14px; 
-    color: #d0d0d0; 
+    color: #4B5563; 
 }
 .card a, .highlight a:not(.btn) { 
-    color: #6EE7B7; 
+    color: #A78BFA; 
     text-decoration: none; 
     transition: all 0.3s ease; 
 }
 .card a:hover, .highlight a:not(.btn):hover { 
-    color: #F9A8D4; 
-    text-shadow: 0 0 5px rgba(249, 168, 212, 0.7); 
+    color: #D4AF37; 
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.3); 
 }
 .highlights { 
     padding: 80px 15px; 
     text-align: center; 
-    background: rgba(0, 0, 0, 0.9); 
+    background: #FFFFFF; 
     position: relative; 
     z-index: 2; 
 }
 .highlights h3 { 
     font-size: 48px; 
-    color: #ffffff; 
+    color: #1A1A1A; 
     margin-bottom: 40px; 
-    text-shadow: 0 0 12px rgba(255, 255, 255, 0.4); 
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
 }
 .highlight-grid { 
     display: grid; 
@@ -423,43 +416,43 @@ nav a:hover {
     margin: 0 auto; 
 }
 .highlight { 
-    background: rgba(0, 0, 0, 0.8); 
+    background: #FFFFFF; 
     padding: 20px; 
     border-radius: 20px; 
-    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border: 1px solid #E5E7EB; 
     transition: all 0.3s ease; 
     display: flex; 
     flex-direction: column; 
     align-items: center; 
     gap: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
 }
 .highlight:hover { 
     transform: translateY(-5px); 
-    box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); 
 }
 .highlight.in-view { 
     transform: translateY(-5px); 
-    box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); 
 }
 @media (max-width: 768px) {
     .highlight:hover { 
         transform: none; 
-        box-shadow: none; 
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
     }
 }
 .highlight p { 
     font-size: 16px; 
-    color: #d0d0d0; 
+    color: #4B5563; 
 }
 .badge { 
-    background: #000000; 
-    border: 1px solid #ffffff; 
+    background: #FFFFFF; 
+    border: 1px solid #D4AF37; 
     padding: 4px 10px; 
     border-radius: 12px; 
     font-size: 12px; 
     font-weight: 800; 
-    color: #ffffff; 
-    text-shadow: 0 0 3px rgba(0, 0, 0, 0.9); 
+    color: #D4AF37; 
     display: inline-block; 
 }
 .about { 
@@ -472,37 +465,34 @@ nav a:hover {
     font-size: 36px; 
     font-weight: 600; 
     margin-bottom: 30px; 
-    color: #ffffff; 
-    text-shadow: 0 0 12px rgba(255, 255, 255, 0.4); 
+    color: #1A1A1A; 
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
 }
 .about-content { 
     max-width: 800px; 
     margin: 0 auto; 
-    background: rgba(0, 0, 0, 0.8); 
+    background: #FFFFFF; 
     padding: 20px; 
     border-radius: 20px; 
-    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border: 1px solid #E5E7EB; 
     display: flex; 
     align-items: center; 
     gap: 15px; 
-    transition: all 0.4s ease; 
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
 }
 .about-content:hover { 
-    transform: translateY(-8px); 
-    box-shadow: 0 0 20px rgba(167, 139, 250, 0.4); 
-    border: 1px solid transparent; 
-    background: linear-gradient(#000000, #000000) padding-box, 
-                linear-gradient(90deg, #A78BFA, #6EE7B7) border-box; 
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); 
 }
 .about-content .avatar { 
     width: 80px; 
     height: 80px; 
     border-radius: 50%; 
     border: 2px solid #A78BFA; 
-    box-shadow: 0 0 10px rgba(167, 139, 250, 0.5); 
+    box-shadow: 0 0 10px rgba(167, 139, 250, 0.3); 
     object-fit: cover; 
-    image-rendering: -webkit-optimize-contrast; /* Sharper edges on Chrome */
-    image-rendering: crisp-edges; /* General sharpness */
+    image-rendering: crisp-edges; 
 }
 .about-text { 
     text-align: left; 
@@ -510,11 +500,11 @@ nav a:hover {
 }
 .about-text p { 
     font-size: 16px; 
-    color: #d0d0d0; 
+    color: #4B5563; 
     margin-bottom: 15px; 
 }
 footer { 
-    background: rgba(0, 0, 0, 0.9); 
+    background: #FFFFFF; 
     padding: 30px 40px; 
     display: flex; 
     justify-content: space-between; 
@@ -522,14 +512,15 @@ footer {
     flex-wrap: wrap; 
     position: relative; 
     z-index: 2; 
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.05); 
 }
 footer p { 
     font-size: 12px; 
-    color: #d0d0d0; 
+    color: #6B7280; 
 }
 .secure-badge { 
-    background: rgba(110, 231, 183, 0.2); 
-    color: #6EE7B7; 
+    background: rgba(212, 175, 55, 0.2); 
+    color: #D4AF37; 
     padding: 2px 8px; 
     border-radius: 8px; 
     font-size: 10px; 
@@ -543,33 +534,17 @@ footer p {
     transition: all 0.3s ease; 
 }
 .social-icon:nth-child(1) { 
-    color: #6EE7B7; 
-    text-shadow: 0 0 5px rgba(110, 231, 183, 0.3); 
+    color: #A78BFA; 
+    text-shadow: 0 0 5px rgba(167, 139, 250, 0.2); 
 }
 .social-icon:nth-child(2) { 
-    background: linear-gradient(90deg, #60A5FA, #A78BFA); 
-    -webkit-background-clip: text; 
-    color: transparent; 
-    text-shadow: 0 0 5px rgba(96, 165, 250, 0.3); 
+    color: #D4AF37; 
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.2); 
 }
 .social-icon:hover { 
-    color: #F9A8D4; 
+    color: #1A1A1A; 
     transform: scale(1.2); 
-    text-shadow: 0 0 10px rgba(249, 168, 212, 0.7); 
-}
-@keyframes syncOutline { 
-    0% { box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); } 
-    25% { box-shadow: 0 0 15px rgba(110, 231, 183, 0.3); } 
-    50% { box-shadow: 0 0 15px rgba(96, 165, 250, 0.3); } 
-    75% { box-shadow: 0 0 15px rgba(249, 168, 212, 0.3); } 
-    100% { box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); } 
-}
-@keyframes syncFill { 
-    0% { background: rgba(167, 139, 250, 0.7); } 
-    25% { background: rgba(110, 231, 183, 0.7); } 
-    50% { background: rgba(96, 165, 250, 0.7); } 
-    75% { background: rgba(249, 168, 212, 0.7); } 
-    100% { background: rgba(167, 139, 250, 0.7); } 
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
 }
 .signup {
     display: flex;
@@ -580,14 +555,20 @@ footer p {
 .signup input {
     padding: 8px 12px;
     border-radius: 8px;
-    border: 1px solid #A78BFA;
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
+    border: 1px solid #D4AF37;
+    background: #F9FAFB;
+    color: #1A1A1A;
     font-size: 14px;
     width: 200px;
+    transition: all 0.3s ease;
+}
+.signup input:focus {
+    border-color: #A78BFA;
+    box-shadow: 0 0 10px rgba(167, 139, 250, 0.3);
+    outline: none;
 }
 .signup input::placeholder {
-    color: #A78BFA;
+    color: #6B7280;
     opacity: 0.7;
 }
 .signup button {
@@ -597,7 +578,7 @@ footer p {
     .hero h2 { font-size: 48px; }
     .hero p { font-size: 20px; }
     .hero p.cta-sub { font-size: 16px; }
-    .stats { gap: 5px; padding: 20px 10px; flex-wrap: wrap; }
+    .stats { gap: 20px; padding: 20px 10px; }
     .stat { width: 80px; height: 80px; padding: 10px; }
     .stat span { font-size: 16px; }
     .stat p { font-size: 8px; }
@@ -611,9 +592,11 @@ footer p {
         top: 60px; 
         left: 0; 
         width: 100%; 
-        background: rgba(0, 0, 0, 0.9); 
+        background: #FFFFFF; 
         padding: 20px; 
         border-radius: 0 0 12px 12px; 
+        border: 1px solid #E5E7EB; 
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
     }
     .nav-links.active { display: flex; animation: slideIn 0.3s ease-out; }
     @keyframes slideIn {
