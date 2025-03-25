@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MMHQ | Elite Wealth Systems</title>
+    <title>MMHQ | Next-Gen Wealth Systems</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://pixijs.download/v8.x/pixi.min.js"></script>
 </head>
 <body>
-    <div id="waveCanvas"></div>
-    <nav class="tech-nav">
+    <div id="globeCanvas"></div>
+    <nav class="future-nav">
         <h1>MMHQ</h1>
         <div class="nav-toggle">⋮</div>
         <ul class="nav-links">
@@ -22,128 +22,118 @@
     </nav>
     <section id="hero" class="hero-section">
         <div class="hero-content">
-            <h2 class="tech-title">Master Your Wealth</h2>
-            <p class="tech-subtitle">Precision tools for financial dominance.</p>
-            <a href="https://impact.com/ynab-link" class="tech-btn">Start Now</a>
+            <h2 class="future-title">Wealth, Engineered</h2>
+            <p class="future-subtitle">Precision finance for the future.</p>
+            <a href="https://impact.com/ynab-link" class="future-btn">Activate Now</a>
         </div>
     </section>
     <section id="stats" class="stats-section">
-        <div class="stats-container">
-            <div class="stat-block" data-target="500">
-                <canvas class="stat-canvas" width="100" height="100"></canvas>
-                <span class="stat-number">$0+</span>
-                <p>Saved in Week 1</p>
+        <div class="stats-grid">
+            <div class="stat-module" data-target="500">
+                <span class="stat-figure">$0+</span>
+                <p>Week 1 Savings</p>
             </div>
-            <div class="stat-block" data-target="10000">
-                <canvas class="stat-canvas" width="100" height="100"></canvas>
-                <span class="stat-number">0+</span>
+            <div class="stat-module" data-target="10000">
+                <span class="stat-figure">0+</span>
                 <p>Active Users</p>
             </div>
-            <div class="stat-block" data-target="20">
-                <canvas class="stat-canvas" width="100" height="100"></canvas>
-                <span class="stat-number">0%+</span>
-                <p>90-Day Growth</p>
+            <div class="stat-module" data-target="20">
+                <span class="stat-figure">0%+</span>
+                <p>90-Day Gains</p>
             </div>
         </div>
     </section>
     <section id="strategies" class="strategies-section">
-        <h3 class="section-title">Strategic Precision</h3>
-        <div class="tech-grid">
-            <div class="tech-card">
-                <h4>Save $500 Swiftly</h4>
-                <p>Eliminate $200 in subscriptions with <a href="https://impact.com/ynab-link">YNAB</a>. Optimize groceries for $150 savings. Limit impulse spending to $20 daily.</p>
+        <h3 class="section-header">Next-Level Strategies</h3>
+        <div class="future-grid">
+            <div class="future-card">
+                <h4>Accelerate Savings</h4>
+                <p>Slash $200 from subscriptions via <a href="https://impact.com/ynab-link">YNAB</a>. Optimize groceries for $150. Cap daily impulses at $20.</p>
             </div>
-            <div class="tech-card">
-                <h4>20% Growth Engine</h4>
-                <p>Deploy $100 into ETFs via <a href="https://cj.com/investing-app-link">Robinhood</a>. Compound dividends monthly. Monitor weekly progress.</p>
+            <div class="future-card">
+                <h4>Amplify Growth</h4>
+                <p>Invest $100 in ETFs with <a href="https://cj.com/investing-app-link">Robinhood</a>. Compound monthly. Track weekly.</p>
             </div>
-            <div class="tech-card">
-                <h4>Debt Zero in 90</h4>
-                <p>Accelerate debt elimination with the snowball method using <a href="https://impact.com/credit-card-link">elite cards</a>. Reinvest savings iteratively.</p>
+            <div class="future-card">
+                <h4>Eliminate Debt</h4>
+                <p>Snowball small debts with <a href="https://impact.com/credit-card-link">elite cards</a>. Reinvest savings forward.</p>
             </div>
         </div>
     </section>
     <section id="tools" class="tools-section">
-        <h3 class="section-title">Advanced Tools</h3>
-        <div class="tech-grid">
-            <div class="tech-card">
-                <p>YNAB: 4.8-star budgeting precision.</p>
-                <a href="https://impact.com/ynab-link" class="tech-btn small">Access Free</a>
+        <h3 class="section-header">Precision Tools</h3>
+        <div class="future-grid">
+            <div class="future-card">
+                <p>YNAB: 4.8-star budget optimizer.</p>
+                <a href="https://impact.com/ynab-link" class="future-btn small">Deploy Free</a>
             </div>
-            <div class="tech-card">
-                <p>Investing Blueprint: 20% gains in 90 days.</p>
-                <a href="https://cj.com/investing-app-link" class="tech-btn small">Launch Now</a>
+            <div class="future-card">
+                <p>Investing Framework: 20% gains in 90 days.</p>
+                <a href="https://cj.com/investing-app-link" class="future-btn small">Engage Now</a>
             </div>
         </div>
     </section>
     <section id="about" class="about-section">
-        <h3 class="section-title">The Architect</h3>
-        <div class="about-container">
-            <div id="avatarCanvas" style="width: 100px; height: 100px;"></div>
-            <div class="about-text">
-                <p>Skye Carter: Former finance analyst, now wealth architect. MMHQ is engineered to eradicate financial friction. Mission: 10k users saving $500 by 2026.</p>
-                <form class="signup-form">
+        <h3 class="section-header">The Visionary</h3>
+        <div class="about-module">
+            <div id="avatarCanvas" style="width: 120px; height: 120px;"></div>
+            <div class="about-content">
+                <p>Skye Carter: Finance pioneer turned wealth architect. MMHQ redefines prosperity—10k users, $500 saved each by 2026.</p>
+                <form class="connect-form">
                     <input type="email" placeholder="Your email" required>
-                    <button type="submit" class="tech-btn small">Join the Network</button>
+                    <button type="submit" class="future-btn small">Connect</button>
                 </form>
             </div>
         </div>
     </section>
     <footer>
-        <p>© 2025 MMHQ Elite Wealth Systems • All Rights Reserved</p>
-        <div class="social-links">
-            <a href="https://x.com/MoneyMasterHQ" class="social-icon">𝕏</a>
-            <a href="#" class="social-icon">🎮</a>
+        <p>© 2025 MMHQ Next-Gen Wealth Systems</p>
+        <div class="social-grid">
+            <a href="https://x.com/MoneyMasterHQ" class="social-link">𝕏</a>
+            <a href="#" class="social-link">🎮</a>
         </div>
     </footer>
     <script>
-        // Subtle Wave Background
-        const waveApp = new PIXI.Application({ background: '#1A1A1A', resizeTo: window });
-        document.getElementById('waveCanvas').appendChild(waveApp.view);
-        const graphics = new PIXI.Graphics();
-        waveApp.stage.addChild(graphics);
-        let time = 0;
-        waveApp.ticker.add(() => {
-            time += 0.02;
-            graphics.clear();
-            graphics.lineStyle(2, 0xA78BFA, 0.3);
-            for (let i = 0; i < waveApp.screen.width; i += 10) {
-                const y = waveApp.screen.height / 2 + Math.sin(i * 0.01 + time) * 50;
-                i === 0 ? graphics.moveTo(i, y) : graphics.lineTo(i, y);
+        // 3D Wireframe Globe
+        const globeApp = new PIXI.Application({ background: '#0F1419', resizeTo: window, antialias: true });
+        document.getElementById('globeCanvas').appendChild(globeApp.view);
+        const globe = new PIXI.Graphics();
+        globeApp.stage.addChild(globe);
+        let rotation = 0;
+        const radius = 100;
+        globeApp.ticker.add(() => {
+            rotation += 0.01;
+            globe.clear();
+            globe.lineStyle(1, 0xA78BFA, 0.5);
+            for (let i = 0; i < 360; i += 15) {
+                const rad = i * Math.PI / 180;
+                const x = radius * Math.cos(rad);
+                const y = radius * Math.sin(rad);
+                globe.moveTo(globeApp.screen.width / 2, globeApp.screen.height / 2);
+                globe.lineTo(globeApp.screen.width / 2 + x * Math.cos(rotation), globeApp.screen.height / 2 + y * Math.sin(rotation));
             }
+            globe.position.set(globeApp.screen.width / 2, globeApp.screen.height / 2);
         });
 
-        // Avatar Glow
-        const avatarApp = new PIXI.Application({ width: 100, height: 100, backgroundAlpha: 0 });
+        // Avatar Pulse
+        const avatarApp = new PIXI.Application({ width: 120, height: 120, backgroundAlpha: 0 });
         document.getElementById('avatarCanvas').appendChild(avatarApp.view);
         const avatar = new PIXI.Sprite.from('https://raw.githubusercontent.com/moneymstrhq/moneymstrhq.github.io/main/skye-carter-highres.png');
         avatar.anchor.set(0.5);
-        avatar.x = 50;
-        avatar.y = 50;
-        avatar.scale.set(100 / 240);
-        avatar.filters = [new PIXI.GlowFilter({ distance: 10, outerStrength: 2, color: 0xA78BFA })];
+        avatar.x = 60;
+        avatar.y = 60;
+        avatar.scale.set(120 / 240);
+        avatar.filters = [new PIXI.GlowFilter({ distance: 15, outerStrength: 2, color: 0x6EE7B7 })];
         avatarApp.stage.addChild(avatar);
         avatarApp.ticker.add(() => {
-            avatar.filters[0].outerStrength = 2 + Math.sin(Date.now() * 0.001) * 0.5;
+            avatar.filters[0].outerStrength = 2 + Math.sin(Date.now() * 0.002) * 1;
         });
 
-        // Stats Animation with PixiJS Rings
-        document.querySelectorAll('.stat-block').forEach(stat => {
-            const canvas = stat.querySelector('.stat-canvas');
-            const app = new PIXI.Application({ view: canvas, backgroundAlpha: 0 });
-            const ring = new PIXI.Graphics();
-            app.stage.addChild(ring);
-            let angle = 0;
-            app.ticker.add(() => {
-                angle += 0.05;
-                ring.clear();
-                ring.lineStyle(2, 0x6EE7B7, 0.8);
-                ring.arc(50, 50, 40, 0, angle % (Math.PI * 2));
-            });
-
+        // Stats Animation
+        document.querySelectorAll('.stat-module').forEach(stat => {
             let count = 0;
             const target = parseInt(stat.getAttribute('data-target'));
-            const span = stat.querySelector('.stat-number');
+            const span = stat.querySelector('.stat-figure');
             const increment = target / 60;
             const isPercent = span.textContent.includes('%');
             const updateCount = () => {
