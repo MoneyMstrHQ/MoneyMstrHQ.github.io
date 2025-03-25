@@ -131,15 +131,6 @@ nav a:hover {
     font-size: 72px; 
     font-weight: 800; 
     color: #1A1A1A; 
-    text-shadow: 0 0 15px rgba(167, 139, 250, 0.3); 
-}
-.kinetic.glow { 
-    animation: glowPulse 2s infinite ease-in-out; 
-}
-@keyframes glowPulse { 
-    0% { text-shadow: 0 0 15px rgba(167, 139, 250, 0.3); } 
-    50% { text-shadow: 0 0 25px rgba(167, 139, 250, 0.5); } 
-    100% { text-shadow: 0 0 15px rgba(167, 139, 250, 0.3); } 
 }
 .hero p { 
     font-size: 24px; 
@@ -150,7 +141,6 @@ nav a:hover {
     font-size: 18px; 
     color: #A78BFA; 
     margin-top: 10px; 
-    text-shadow: 0 0 5px rgba(167, 139, 250, 0.3); 
 }
 .btn { 
     background: rgba(167, 139, 250, 0.7); 
@@ -224,7 +214,6 @@ nav a:hover {
     font-size: 24px; 
     font-weight: 800; 
     color: #1A1A1A; 
-    text-shadow: 0 0 8px rgba(96, 165, 250, 0.3); 
 }
 .stat p { 
     font-size: 12px; 
@@ -277,7 +266,6 @@ nav a:hover {
     font-weight: 600; 
     margin-bottom: 30px; 
     color: #1A1A1A; 
-    text-shadow: 0 0 12px rgba(167, 139, 250, 0.2); 
 }
 .testimonial { 
     background: rgba(255, 255, 255, 0.9); 
@@ -321,7 +309,6 @@ nav a:hover {
     font-weight: 600; 
     margin-bottom: 40px; 
     color: #1A1A1A; 
-    text-shadow: 0 0 12px rgba(167, 139, 250, 0.2); 
 }
 .grid { 
     display: grid; 
@@ -401,7 +388,6 @@ nav a:hover {
 }
 .card a:hover, .highlight a:not(.btn):hover { 
     color: #F9A8D4; 
-    text-shadow: 0 0 5px rgba(249, 168, 212, 0.7); 
 }
 .highlights { 
     padding: 80px 15px; 
@@ -414,7 +400,6 @@ nav a:hover {
     font-size: 48px; 
     color: #1A1A1A; 
     margin-bottom: 40px; 
-    text-shadow: 0 0 12px rgba(167, 139, 250, 0.2); 
 }
 .highlight-grid { 
     display: grid; 
@@ -460,7 +445,6 @@ nav a:hover {
     font-size: 12px; 
     font-weight: 800; 
     color: #1A1A1A; 
-    text-shadow: 0 0 3px rgba(167, 139, 250, 0.2); 
     display: inline-block; 
 }
 .about { 
@@ -474,7 +458,6 @@ nav a:hover {
     font-weight: 600; 
     margin-bottom: 30px; 
     color: #1A1A1A; 
-    text-shadow: 0 0 12px rgba(167, 139, 250, 0.2); 
 }
 .about-content { 
     max-width: 800px; 
@@ -545,18 +528,15 @@ footer p {
 }
 .social-icon:nth-child(1) { 
     color: #6EE7B7; 
-    text-shadow: 0 0 5px rgba(110, 231, 183, 0.3); 
 }
 .social-icon:nth-child(2) { 
     background: linear-gradient(90deg, #60A5FA, #A78BFA); 
     -webkit-background-clip: text; 
     color: transparent; 
-    text-shadow: 0 0 5px rgba(96, 165, 250, 0.3); 
 }
 .social-icon:hover { 
     color: #F9A8D4; 
     transform: scale(1.2); 
-    text-shadow: 0 0 10px rgba(249, 168, 212, 0.7); 
 }
 @keyframes syncOutline { 
     0% { box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); } 
