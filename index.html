@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MMHQ</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://pixijs.download/v8.x/pixi.min.js"></script>
 </head>
 <body>
     <header>
-        <div id="particleWave"></div>
+        <div id="coinRain"></div>
         <nav class="sticky">
             <h1>MMHQ</h1>
             <div class="hamburger">☰</div>
@@ -90,7 +91,7 @@
     <section class="about">
         <h3>Who’s Behind MMHQ</h3>
         <div class="about-content">
-            <img src="https://raw.githubusercontent.com/moneymstrhq/moneymstrhq.github.io/main/skye-carter-highres.png" alt="Skye Carter" class="avatar">
+            <div id="avatarCanvas" style="width: 80px; height: 80px;"></div>
             <div class="about-text">
                 <p>Hey, I’m Skye Carter—ex-finance nerd, now wealth hacker. MMHQ’s my mission to kill money stress with tools that actually work. Goal: 10k people saving $500 by 2026. Join the squad.</p>
                 <form class="signup">
@@ -107,32 +108,43 @@
             <a href="#" class="social-icon">🎮</a>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        particlesJS("particleWave", {
-            "particles": {
-                "number": { "value": 50, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": "#FFFFFF" },
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.3, "random": true },
-                "size": { "value": 2, "random": true },
-                "line_linked": { "enable": false },
-                "move": { 
-                    "enable": true, 
-                    "speed": 2, 
-                    "direction": "right", 
-                    "random": false, 
-                    "straight": true, 
-                    "out_mode": "out" 
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": { "onhover": { "enable": false }, "onclick": { "enable": false }, "resize": true }
-            },
-            "retina_detect": true
+        // Coin Rain Hero
+        const app = new PIXI.Application({ background: '#000', resizeTo: window });
+        document.getElementById('coinRain').appendChild(app.view);
+        const coins = [];
+        for (let i = 0; i < 50; i++) {
+            const coin = new PIXI.Sprite.from('https://raw.githubusercontent.com/moneymstrhq/moneymstrhq.github.io/main/skye-carter-highres.png'); // Swap with coin PNG later
+            coin.anchor.set(0.5);
+            coin.scale.set(0.2);
+            coin.x = Math.random() * app.screen.width;
+            coin.y = Math.random() * -app.screen.height;
+            coin.speed = Math.random() * 2 + 1;
+            app.stage.addChild(coin);
+            coins.push(coin);
+        }
+        app.ticker.add(() => {
+            coins.forEach(coin => {
+                coin.y += coin.speed;
+                if (coin.y > app.screen.height) coin.y = -coin.height;
+            });
         });
 
+        // Interactive Avatar
+        const avatarApp = new PIXI.Application({ width: 80, height: 80, backgroundAlpha: 0 });
+        document.getElementById('avatarCanvas').appendChild(avatarApp.view);
+        const avatar = new PIXI.Sprite.from('https://raw.githubusercontent.com/moneymstrhq/moneymstrhq.github.io/main/skye-carter-highres.png');
+        avatar.anchor.set(0.5);
+        avatar.x = 40;
+        avatar.y = 40;
+        avatar.scale.set(80 / 240); // Fit 240x240 into 80x80
+        avatar.filters = [new PIXI.GlowFilter({ distance: 10, outerStrength: 2, color: 0xA78BFA })];
+        avatarApp.stage.addChild(avatar);
+        avatar.interactive = true;
+        avatar.on('pointerover', () => avatar.rotation += 0.1);
+        avatar.on('pointerout', () => avatar.rotation = 0);
+
+        // Existing Stats Animation (unchanged)
         document.querySelectorAll('.stat').forEach(stat => {
             stat.addEventListener('touchstart', function(e) {
                 e.preventDefault();
