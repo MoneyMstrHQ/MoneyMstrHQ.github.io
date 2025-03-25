@@ -8,7 +8,6 @@
 </head>
 <body>
     <header>
-        <div id="particleWave"></div>
         <nav class="sticky">
             <h1>MMHQ</h1>
             <div class="hamburger">☰</div>
@@ -107,32 +106,7 @@
             <a href="#" class="social-icon">🎮</a>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        particlesJS("particleWave", {
-            "particles": {
-                "number": { "value": 50, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": "#A78BFA" },
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.3, "random": true },
-                "size": { "value": 2, "random": true },
-                "line_linked": { "enable": false },
-                "move": { 
-                    "enable": true, 
-                    "speed": 2, 
-                    "direction": "right", 
-                    "random": false, 
-                    "straight": true, 
-                    "out_mode": "out" 
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": { "onhover": { "enable": false }, "onclick": { "enable": false }, "resize": true }
-            },
-            "retina_detect": true
-        });
-
         document.querySelectorAll('.stat').forEach(stat => {
             stat.addEventListener('touchstart', function(e) {
                 e.preventDefault();
