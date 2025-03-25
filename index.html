@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MMHQ | Luxe Wealth Vault</title>
+    <title>MMHQ | Aurum Wealth Collective</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://pixijs.download/v8.x/pixi.min.js"></script>
 </head>
 <body>
-    <div id="luxeCanvas"></div>
-    <nav class="luxe-nav">
+    <div id="aurumCanvas"></div>
+    <nav class="aurum-nav">
         <h1>MMHQ</h1>
         <div class="nav-toggle">⋮</div>
         <ul class="nav-links">
@@ -22,106 +22,120 @@
     </nav>
     <section id="hero" class="hero-section">
         <div class="hero-vault">
-            <h2 class="luxe-title">Luxe Wealth Vault</h2>
-            <p class="luxe-subtitle">Precision-crafted finance for the elite.</p>
-            <a href="https://impact.com/ynab-link" class="luxe-btn">Unlock Now</a>
+            <h2 class="aurum-title">Aurum Wealth</h2>
+            <p class="aurum-subtitle">Elevate your financial legacy.</p>
+            <a href="https://impact.com/ynab-link" class="aurum-btn">Begin Now</a>
         </div>
     </section>
     <section id="stats" class="stats-section">
         <div class="stats-vault">
             <div class="stat-chamber" data-target="500">
-                <canvas class="stat-glow" width="100" height="100"></canvas>
-                <span class="stat-value">$0+</span>
+                <canvas class="stat-ring" width="100" height="100"></canvas>
+                <span class="stat-gold">$0+</span>
                 <p>Week 1 Yield</p>
             </div>
             <div class="stat-chamber" data-target="10000">
-                <canvas class="stat-glow" width="100" height="100"></canvas>
-                <span class="stat-value">0+</span>
-                <p>Active Members</p>
+                <canvas class="stat-ring" width="100" height="100"></canvas>
+                <span class="stat-gold">0+</span>
+                <p>Members</p>
             </div>
             <div class="stat-chamber" data-target="20">
-                <canvas class="stat-glow" width="100" height="100"></canvas>
-                <span class="stat-value">0%+</span>
-                <p>90-Day Gains</p>
+                <canvas class="stat-ring" width="100" height="100"></canvas>
+                <span class="stat-gold">0%+</span>
+                <p>90-Day Growth</p>
             </div>
         </div>
     </section>
     <section id="strategies" class="strategies-section">
-        <h3 class="section-luxe">Elite Strategies</h3>
-        <div class="luxe-grid">
-            <div class="luxe-unit">
-                <h4>Swift Capital</h4>
-                <p>Trim $200 with <a href="https://impact.com/ynab-link">YNAB</a>. Refine groceries for $150. Cap impulses at $20/day.</p>
+        <h3 class="section-vault">Aurum Strategies</h3>
+        <div class="aurum-grid">
+            <div class="aurum-chamber">
+                <h4>Gold Reserves</h4>
+                <p>Secure $200 savings with <a href="https://impact.com/ynab-link">YNAB</a>. Refine groceries for $150. Limit impulses to $20/day.</p>
             </div>
-            <div class="luxe-unit">
-                <h4>Growth Forge</h4>
-                <p>Invest $100 in ETFs via <a href="https://cj.com/investing-app-link">Robinhood</a>. Compound monthly. Track precisely.</p>
+            <div class="aurum-chamber">
+                <h4>Legacy Growth</h4>
+                <p>Invest $100 in ETFs via <a href="https://cj.com/investing-app-link">Robinhood</a>. Compound dividends. Track precision gains.</p>
             </div>
-            <div class="luxe-unit">
+            <div class="aurum-chamber">
                 <h4>Debt Refinery</h4>
-                <p>Snowball debts with <a href="https://impact.com/credit-card-link">prime cards</a>. Reinvest gains seamlessly.</p>
+                <p>Melt debts with <a href="https://impact.com/credit-card-link">elite cards</a>. Redirect profits forward.</p>
             </div>
         </div>
     </section>
     <section id="tools" class="tools-section">
-        <h3 class="section-luxe">Luxe Tools</h3>
-        <div class="luxe-grid">
-            <div class="luxe-unit">
-                <p>YNAB: 4.8-star precision engine.</p>
-                <a href="https://impact.com/ynab-link" class="luxe-btn small">Access</a>
+        <h3 class="section-vault">Aurum Tools</h3>
+        <div class="aurum-grid">
+            <div class="aurum-chamber">
+                <p>YNAB: 4.8-star wealth engine.</p>
+                <a href="https://impact.com/ynab-link" class="aurum-btn small">Access</a>
             </div>
-            <div class="luxe-unit">
-                <p>Investing Vault: 20% in 90 days.</p>
-                <a href="https://cj.com/investing-app-link" class="luxe-btn small">Engage</a>
+            <div class="aurum-chamber">
+                <p>Investing Forge: 20% in 90 days.</p>
+                <a href="https://cj.com/investing-app-link" class="aurum-btn small">Forge</a>
             </div>
         </div>
     </section>
     <section id="about" class="about-section">
-        <h3 class="section-luxe">The Architect</h3>
-        <div class="about-luxe">
+        <h3 class="section-vault">The Aurum Architect</h3>
+        <div class="about-vault">
             <div id="avatarCanvas" style="width: 140px; height: 140px;"></div>
-            <div class="about-core">
-                <p>Skye Carter: Finance maestro turned wealth architect. MMHQ targets 10k elites, $500 each by 2026.</p>
+            <div class="about-gold">
+                <p>Skye Carter: Wealth alchemist. MMHQ crafts legacies—10k members, $500 each by 2026.</p>
                 <form class="vault-form">
                     <input type="email" placeholder="Enter the vault" required>
-                    <button type="submit" class="luxe-btn small">Join</button>
+                    <button type="submit" class="aurum-btn small">Join</button>
                 </form>
             </div>
         </div>
     </section>
     <footer>
-        <p>© 2025 MMHQ Luxe Wealth Vault</p>
+        <p>© 2025 MMHQ Aurum Wealth Collective</p>
         <div class="social-vault">
-            <a href="https://x.com/MoneyMasterHQ" class="social-link">𝕏</a>
-            <a href="#" class="social-link">🎮</a>
+            <a href="https://x.com/MoneyMasterHQ" class="social-gold">𝕏</a>
+            <a href="#" class="social-gold">🎮</a>
         </div>
     </footer>
     <script>
-        // Luxe Metallic Lattice Background
-        const luxeApp = new PIXI.Application({ background: '#0D1117', resizeTo: window, antialias: true });
-        document.getElementById('luxeCanvas').appendChild(luxeApp.view);
-        const lattice = new PIXI.Graphics();
-        luxeApp.stage.addChild(lattice);
-        const gridSize = 100;
-        let time = 0;
-        luxeApp.ticker.add(() => {
-            time += 0.01;
-            lattice.clear();
-            lattice.lineStyle(1, 0xD4AF37, 0.3);
-            for (let x = 0; x < luxeApp.screen.width + gridSize; x += gridSize) {
-                for (let y = 0; y < luxeApp.screen.height + gridSize; y += gridSize) {
-                    const offset = Math.sin(x * 0.02 + time) * 10 + Math.cos(y * 0.02 + time) * 10;
-                    lattice.moveTo(x - offset, y - offset);
-                    lattice.lineTo(x + offset, y + offset);
-                }
+        // 3D Metallic Sphere Background
+        const aurumApp = new PIXI.Application({ background: '#0D0D0D', resizeTo: window, antialias: true });
+        document.getElementById('aurumCanvas').appendChild(aurumApp.view);
+        const sphere = new PIXI.Graphics();
+        aurumApp.stage.addChild(sphere);
+        let rotation = 0;
+        const particles = new PIXI.ParticleContainer(100, { position: true, scale: true });
+        aurumApp.stage.addChild(particles);
+        const particleArray = [];
+        for (let i = 0; i < 50; i++) {
+            const particle = new PIXI.Sprite(PIXI.Texture.WHITE);
+            particle.tint = 0xD4AF37;
+            particle.scale.set(0.5 + Math.random());
+            particle.x = aurumApp.screen.width / 2;
+            particle.y = aurumApp.screen.height / 2;
+            particle.angle = Math.random() * Math.PI * 2;
+            particle.radius = 150 + Math.random() * 50;
+            particles.addChild(particle);
+            particleArray.push(particle);
+        }
+        aurumApp.ticker.add(() => {
+            rotation += 0.01;
+            sphere.clear();
+            sphere.lineStyle(2, 0xD4AF37, 0.5);
+            for (let i = 0; i < 360; i += 10) {
+                const rad = i * Math.PI / 180;
+                const x = 200 * Math.cos(rad + rotation);
+                const y = 200 * Math.sin(rad + rotation) * 0.5;
+                i === 0 ? sphere.moveTo(aurumApp.screen.width / 2 + x, aurumApp.screen.height / 2 + y) : sphere.lineTo(aurumApp.screen.width / 2 + x, aurumApp.screen.height / 2 + y);
             }
-            // Light Flare
-            lattice.beginFill(0xE6E6E6, 0.1);
-            lattice.drawCircle(luxeApp.screen.width / 2 + Math.sin(time) * 200, luxeApp.screen.height / 2 + Math.cos(time) * 200, 50);
-            lattice.endFill();
+            particleArray.forEach(p => {
+                p.angle += 0.02;
+                p.x = aurumApp.screen.width / 2 + Math.cos(p.angle) * p.radius;
+                p.y = aurumApp.screen.height / 2 + Math.sin(p.angle) * p.radius * 0.5;
+                p.alpha = 0.5 + Math.sin(Date.now() * 0.002 + p.angle) * 0.3;
+            });
         });
 
-        // Avatar Luxe Effect
+        // Avatar Gold Effect
         const avatarApp = new PIXI.Application({ width: 140, height: 140, backgroundAlpha: 0 });
         document.getElementById('avatarCanvas').appendChild(avatarApp.view);
         const avatar = new PIXI.Sprite.from('https://raw.githubusercontent.com/moneymstrhq/moneymstrhq.github.io/main/skye-carter-highres.png');
@@ -129,33 +143,32 @@
         avatar.x = 70;
         avatar.y = 70;
         avatar.scale.set(140 / 240);
-        avatar.filters = [new PIXI.GlowFilter({ distance: 15, outerStrength: 2, color: 0xD4AF37 })];
+        avatar.filters = [new PIXI.GlowFilter({ distance: 20, outerStrength: 3, color: 0xD4AF37 })];
         avatarApp.stage.addChild(avatar);
         avatar.interactive = true;
-        avatar.on('pointerover', () => avatar.rotation += 0.1);
-        avatar.on('pointerout', () => avatar.rotation = 0);
+        avatar.on('pointerover', () => avatar.scale.set(150 / 240));
+        avatar.on('pointerout', () => avatar.scale.set(140 / 240));
         avatarApp.ticker.add(() => {
-            avatar.filters[0].outerStrength = 2 + Math.sin(Date.now() * 0.002) * 1;
+            avatar.filters[0].outerStrength = 3 + Math.sin(Date.now() * 0.002) * 1;
         });
 
-        // Stats Glow Animation
+        // Stats Ring Animation
         document.querySelectorAll('.stat-chamber').forEach(stat => {
-            const canvas = stat.querySelector('.stat-glow');
+            const canvas = stat.querySelector('.stat-ring');
             const app = new PIXI.Application({ view: canvas, backgroundAlpha: 0 });
-            const glow = new PIXI.Graphics();
-            app.stage.addChild(glow);
-            let intensity = 0;
+            const ring = new PIXI.Graphics();
+            app.stage.addChild(ring);
+            let angle = 0;
             app.ticker.add(() => {
-                intensity += 0.05;
-                glow.clear();
-                glow.beginFill(0xD4AF37, 0.3 - (intensity % 1) * 0.2);
-                glow.drawCircle(50, 50, 40 + Math.sin(intensity) * 5);
-                glow.endFill();
+                angle += 0.03;
+                ring.clear();
+                ring.lineStyle(2, 0xD4AF37, 0.8);
+                ring.arc(50, 50, 40, 0, angle % (Math.PI * 2));
             });
 
             let count = 0;
             const target = parseInt(stat.getAttribute('data-target'));
-            const span = stat.querySelector('.stat-value');
+            const span = stat.querySelector('.stat-gold');
             const increment = target / 60;
             const isPercent = span.textContent.includes('%');
             const updateCount = () => {
