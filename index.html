@@ -3,188 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MMHQ | Aurum Wealth Collective</title>
+    <title>MMHQ</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://pixijs.download/v8.x/pixi.min.js"></script>
 </head>
 <body>
-    <div id="aurumCanvas"></div>
-    <nav class="aurum-nav">
-        <h1>MMHQ</h1>
-        <div class="nav-toggle">⋮</div>
-        <ul class="nav-links">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#strategies">Strategies</a></li>
-            <li><a href="#stats">Stats</a></li>
-            <li><a href="#tools">Tools</a></li>
-            <li><a href="#about">About</a></li>
-        </ul>
-    </nav>
-    <section id="hero" class="hero-section">
-        <div class="hero-vault">
-            <h2 class="aurum-title">Aurum Wealth</h2>
-            <p class="aurum-subtitle">Elevate your financial legacy.</p>
-            <a href="https://impact.com/ynab-link" class="aurum-btn">Begin Now</a>
-        </div>
-    </section>
-    <section id="stats" class="stats-section">
-        <div class="stats-vault">
-            <div class="stat-chamber" data-target="500">
-                <canvas class="stat-ring" width="100" height="100"></canvas>
-                <span class="stat-gold">$0+</span>
-                <p>Week 1 Yield</p>
-            </div>
-            <div class="stat-chamber" data-target="10000">
-                <canvas class="stat-ring" width="100" height="100"></canvas>
-                <span class="stat-gold">0+</span>
-                <p>Members</p>
-            </div>
-            <div class="stat-chamber" data-target="20">
-                <canvas class="stat-ring" width="100" height="100"></canvas>
-                <span class="stat-gold">0%+</span>
-                <p>90-Day Growth</p>
+    <header>
+        <div id="particleWave"></div>
+        <nav class="sticky">
+            <h1>MMHQ</h1>
+            <div class="hamburger">☰</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Strategies</a></li>
+                <li><a href="#">Stats</a></li>
+                <li><a href="#">Tools</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <div class="hero-inner">
+                <h2 class="kinetic glow">Master Your Money</h2>
+                <p>Smart finance tips and tools to grow your wealth.</p>
+                <a href="https://impact.com/ynab-link" class="btn">Save $500 with YNAB</a>
+                <p class="cta-sub">Trusted by 1k+ Users • Join 500+ Savvy Savers</p>
             </div>
         </div>
+    </header>
+    <section class="stats">
+        <div class="stat" data-hover="$500+ Saved Week 1">
+            <span data-count="500">$0+</span>
+            <p>Saved</p>
+        </div>
+        <div class="stat" data-hover="Tool Users">
+            <span data-count="10000">0+</span>
+            <p>Users</p>
+        </div>
+        <div class="stat" data-hover="Avg. 90-Day Gains">
+            <span data-count="20">0%+</span>
+            <p>Growth</p>
+        </div>
     </section>
-    <section id="strategies" class="strategies-section">
-        <h3 class="section-vault">Aurum Strategies</h3>
-        <div class="aurum-grid">
-            <div class="aurum-chamber">
-                <h4>Gold Reserves</h4>
-                <p>Secure $200 savings with <a href="https://impact.com/ynab-link">YNAB</a>. Refine groceries for $150. Limit impulses to $20/day.</p>
+    <section class="testimonials">
+        <h3>What Users Say</h3>
+        <div class="grid">
+            <div class="testimonial">
+                <p>"Saved $500 in a week—total game changer!"</p>
+                <span>- Alex, Savvy Saver</span>
             </div>
-            <div class="aurum-chamber">
-                <h4>Legacy Growth</h4>
-                <p>Invest $100 in ETFs via <a href="https://cj.com/investing-app-link">Robinhood</a>. Compound dividends. Track precision gains.</p>
-            </div>
-            <div class="aurum-chamber">
-                <h4>Debt Refinery</h4>
-                <p>Melt debts with <a href="https://impact.com/credit-card-link">elite cards</a>. Redirect profits forward.</p>
+            <div class="testimonial">
+                <p>"Grew my portfolio 20% with their tips."</p>
+                <span>- Jamie, Investor</span>
             </div>
         </div>
     </section>
-    <section id="tools" class="tools-section">
-        <h3 class="section-vault">Aurum Tools</h3>
-        <div class="aurum-grid">
-            <div class="aurum-chamber">
-                <p>YNAB: 4.8-star wealth engine.</p>
-                <a href="https://impact.com/ynab-link" class="aurum-btn small">Access</a>
+    <section class="strategies">
+        <h3>Proven Strategies</h3>
+        <div class="grid">
+            <div class="card">
+                <h4>Save $500 in 7 Days</h4>
+                <p>Cut $200 from subscriptions (audit with <a href="https://impact.com/ynab-link">YNAB</a>), $150 from groceries (meal plan), and $150 from impulse buys (set a $20 daily cap).</p>
             </div>
-            <div class="aurum-chamber">
-                <p>Investing Forge: 20% in 90 days.</p>
-                <a href="https://cj.com/investing-app-link" class="aurum-btn small">Forge</a>
+            <div class="card">
+                <h4>Grow 20% with Easy Investing</h4>
+                <p>Start with $100 in an ETF via <a href="https://cj.com/investing-app-link">Robinhood</a>, reinvest dividends monthly, and track gains weekly—low risk, high reward.</p>
+            </div>
+            <div class="card">
+                <h4>Ditch Debt in 90 Days</h4>
+                <p>Use the snowball method: pay off smallest debts first with <a href="https://impact.com/credit-card-link">top card picks</a>, roll savings into the next, repeat.</p>
             </div>
         </div>
     </section>
-    <section id="about" class="about-section">
-        <h3 class="section-vault">The Aurum Architect</h3>
-        <div class="about-vault">
-            <div id="avatarCanvas" style="width: 140px; height: 140px;"></div>
-            <div class="about-gold">
-                <p>Skye Carter: Wealth alchemist. MMHQ crafts legacies—10k members, $500 each by 2026.</p>
-                <form class="vault-form">
-                    <input type="email" placeholder="Enter the vault" required>
-                    <button type="submit" class="aurum-btn small">Join</button>
+    <section class="highlights">
+        <h3>Top Finance Tools</h3>
+        <div class="highlight-grid">
+            <div class="highlight">
+                <p>"Budget app with 4.8 stars—saves time!"</p>
+                <a href="https://impact.com/ynab-link" class="btn btn-small">Get YNAB Free</a>
+                <span class="badge">Top Pick</span>
+            </div>
+            <div class="highlight">
+                <p>"Investment course—up 20% in 90 days."</p>
+                <a href="https://cj.com/investing-app-link" class="btn btn-small">Start Investing</a>
+                <span class="badge">Best Value</span>
+            </div>
+        </div>
+    </section>
+    <section class="about">
+        <h3>Who’s Behind MMHQ</h3>
+        <div class="about-content">
+            <img src="https://raw.githubusercontent.com/moneymstrhq/moneymstrhq.github.io/main/skye-carter-highres.png" alt="Skye Carter" class="avatar">
+            <div class="about-text">
+                <p>Hey, I’m Skye Carter—ex-finance nerd, now wealth hacker. MMHQ’s my mission to kill money stress with tools that actually work. Goal: 10k people saving $500 by 2026. Join the squad.</p>
+                <form class="signup">
+                    <input type="email" placeholder="Your email" required>
+                    <button type="submit" class="btn btn-small btn-pulse">Join the Crew</button>
                 </form>
             </div>
         </div>
     </section>
     <footer>
-        <p>© 2025 MMHQ Aurum Wealth Collective</p>
-        <div class="social-vault">
-            <a href="https://x.com/MoneyMasterHQ" class="social-gold">𝕏</a>
-            <a href="#" class="social-gold">🎮</a>
+        <p>© 2025 MMHQ Elite Wealth Systems • <span class="secure-badge">Secure Links</span></p>
+        <div class="social">
+            <a href="https://x.com/MoneyMasterHQ" class="social-icon">𝕏</a>
+            <a href="#" class="social-icon">🎮</a>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // 3D Metallic Sphere Background
-        const aurumApp = new PIXI.Application({ background: '#0D0D0D', resizeTo: window, antialias: true });
-        document.getElementById('aurumCanvas').appendChild(aurumApp.view);
-        const sphere = new PIXI.Graphics();
-        aurumApp.stage.addChild(sphere);
-        let rotation = 0;
-        const particles = new PIXI.ParticleContainer(100, { position: true, scale: true });
-        aurumApp.stage.addChild(particles);
-        const particleArray = [];
-        for (let i = 0; i < 50; i++) {
-            const particle = new PIXI.Sprite(PIXI.Texture.WHITE);
-            particle.tint = 0xD4AF37;
-            particle.scale.set(0.5 + Math.random());
-            particle.x = aurumApp.screen.width / 2;
-            particle.y = aurumApp.screen.height / 2;
-            particle.angle = Math.random() * Math.PI * 2;
-            particle.radius = 150 + Math.random() * 50;
-            particles.addChild(particle);
-            particleArray.push(particle);
-        }
-        aurumApp.ticker.add(() => {
-            rotation += 0.01;
-            sphere.clear();
-            sphere.lineStyle(2, 0xD4AF37, 0.5);
-            for (let i = 0; i < 360; i += 10) {
-                const rad = i * Math.PI / 180;
-                const x = 200 * Math.cos(rad + rotation);
-                const y = 200 * Math.sin(rad + rotation) * 0.5;
-                i === 0 ? sphere.moveTo(aurumApp.screen.width / 2 + x, aurumApp.screen.height / 2 + y) : sphere.lineTo(aurumApp.screen.width / 2 + x, aurumApp.screen.height / 2 + y);
-            }
-            particleArray.forEach(p => {
-                p.angle += 0.02;
-                p.x = aurumApp.screen.width / 2 + Math.cos(p.angle) * p.radius;
-                p.y = aurumApp.screen.height / 2 + Math.sin(p.angle) * p.radius * 0.5;
-                p.alpha = 0.5 + Math.sin(Date.now() * 0.002 + p.angle) * 0.3;
+        particlesJS("particleWave", {
+            "particles": {
+                "number": { "value": 50, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#FFFFFF" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.3, "random": true },
+                "size": { "value": 2, "random": true },
+                "line_linked": { "enable": false },
+                "move": { 
+                    "enable": true, 
+                    "speed": 2, 
+                    "direction": "right", 
+                    "random": false, 
+                    "straight": true, 
+                    "out_mode": "out" 
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": { "onhover": { "enable": false }, "onclick": { "enable": false }, "resize": true }
+            },
+            "retina_detect": true
+        });
+
+        document.querySelectorAll('.stat').forEach(stat => {
+            stat.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                this.classList.remove('active');
+                this.classList.add('active');
+                setTimeout(() => this.classList.remove('active'), 2000);
+            });
+            stat.addEventListener('touchend', function(e) {
+                e.preventDefault();
             });
         });
 
-        // Avatar Gold Effect
-        const avatarApp = new PIXI.Application({ width: 140, height: 140, backgroundAlpha: 0 });
-        document.getElementById('avatarCanvas').appendChild(avatarApp.view);
-        const avatar = new PIXI.Sprite.from('https://raw.githubusercontent.com/moneymstrhq/moneymstrhq.github.io/main/skye-carter-highres.png');
-        avatar.anchor.set(0.5);
-        avatar.x = 70;
-        avatar.y = 70;
-        avatar.scale.set(140 / 240);
-        avatar.filters = [new PIXI.GlowFilter({ distance: 20, outerStrength: 3, color: 0xD4AF37 })];
-        avatarApp.stage.addChild(avatar);
-        avatar.interactive = true;
-        avatar.on('pointerover', () => avatar.scale.set(150 / 240));
-        avatar.on('pointerout', () => avatar.scale.set(140 / 240));
-        avatarApp.ticker.add(() => {
-            avatar.filters[0].outerStrength = 3 + Math.sin(Date.now() * 0.002) * 1;
-        });
-
-        // Stats Ring Animation
-        document.querySelectorAll('.stat-chamber').forEach(stat => {
-            const canvas = stat.querySelector('.stat-ring');
-            const app = new PIXI.Application({ view: canvas, backgroundAlpha: 0 });
-            const ring = new PIXI.Graphics();
-            app.stage.addChild(ring);
-            let angle = 0;
-            app.ticker.add(() => {
-                angle += 0.03;
-                ring.clear();
-                ring.lineStyle(2, 0xD4AF37, 0.8);
-                ring.arc(50, 50, 40, 0, angle % (Math.PI * 2));
-            });
-
+        document.querySelectorAll('.stat span').forEach(stat => {
             let count = 0;
-            const target = parseInt(stat.getAttribute('data-target'));
-            const span = stat.querySelector('.stat-gold');
-            const increment = target / 60;
-            const isPercent = span.textContent.includes('%');
+            const target = parseInt(stat.getAttribute('data-count'));
+            const increment = target / 50;
+            const isPercent = stat.textContent.includes('%');
             const updateCount = () => {
                 count += increment;
                 if (count < target) {
-                    span.textContent = isPercent ? `${Math.floor(count)}%+` : `$${Math.floor(count)}+`;
+                    stat.textContent = isPercent ? `${Math.floor(count)}%+` : `$${Math.floor(count)}+`;
                     requestAnimationFrame(updateCount);
                 } else {
-                    span.textContent = isPercent ? `${target}%+` : `$${target}+`;
+                    stat.textContent = isPercent ? `${target}%+` : `$${target}+`;
                 }
             };
             updateCount();
         });
 
-        // Nav Toggle
-        document.querySelector('.nav-toggle').addEventListener('click', () => {
+        const cards = document.querySelectorAll('.card');
+        const testimonials = document.querySelectorAll('.testimonial');
+        const highlights = document.querySelectorAll('.highlight');
+
+        function highlightCenterElements() {
+            if (window.matchMedia('(max-width: 768px)').matches) {
+                const viewportHeight = window.innerHeight;
+                const centerY = viewportHeight / 2;
+
+                let closestCard = null;
+                let minCardDistance = Infinity;
+                cards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    const cardCenterY = rect.top + (rect.height / 2);
+                    const distance = Math.abs(centerY - cardCenterY);
+                    if (rect.top >= 0 && rect.bottom <= viewportHeight && distance < minCardDistance) {
+                        minCardDistance = distance;
+                        closestCard = card;
+                    }
+                });
+                cards.forEach(card => card.classList.remove('in-view'));
+                if (closestCard && minCardDistance < 100) {
+                    closestCard.classList.add('in-view');
+                }
+
+                let closestTestimonial = null;
+                let minTestimonialDistance = Infinity;
+                testimonials.forEach(testimonial => {
+                    const rect = testimonial.getBoundingClientRect();
+                    const testimonialCenterY = rect.top + (rect.height / 2);
+                    const distance = Math.abs(centerY - testimonialCenterY);
+                    if (rect.top >= 0 && rect.bottom <= viewportHeight && distance < minTestimonialDistance) {
+                        minTestimonialDistance = distance;
+                        closestTestimonial = testimonial;
+                    }
+                });
+                testimonials.forEach(testimonial => testimonial.classList.remove('in-view'));
+                if (closestTestimonial && minTestimonialDistance < 100) {
+                    closestTestimonial.classList.add('in-view');
+                }
+
+                let closestHighlight = null;
+                let minHighlightDistance = Infinity;
+                highlights.forEach(highlight => {
+                    const rect = highlight.getBoundingClientRect();
+                    const highlightCenterY = rect.top + (rect.height / 2);
+                    const distance = Math.abs(centerY - highlightCenterY);
+                    if (rect.top >= 0 && rect.bottom <= viewportHeight && distance < minHighlightDistance) {
+                        minHighlightDistance = distance;
+                        closestHighlight = highlight;
+                    }
+                });
+                highlights.forEach(highlight => highlight.classList.remove('in-view'));
+                if (closestHighlight && minHighlightDistance < 100) {
+                    closestHighlight.classList.add('in-view');
+                }
+            }
+        }
+
+        window.addEventListener('scroll', highlightCenterElements);
+        window.addEventListener('resize', highlightCenterElements);
+        highlightCenterElements();
+
+        document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('.nav-links').classList.toggle('active');
         });
     </script>
