@@ -118,12 +118,12 @@ nav a {
 nav a:hover { 
     color: #A78BFA; 
     background: rgba(167, 139, 250, 0.1); 
-    box-shadow: 0 0 12px rgba(167, 139, 250, 0.4); 
+    box-shadow: 0 0 12px rgba(217, 139, 250, 0.4); 
 }
 .hero { 
     text-align: center; 
     padding: 15px; 
-    max-width: 900px; 
+    max-width: 1200px; /* Increased for wider box */
     width: 100%; 
     margin-top: 100px; 
     position: relative; 
@@ -139,13 +139,12 @@ nav a:hover {
     animation: syncOutline 8s infinite linear; 
     border-radius: 12px; 
     background: rgba(255, 255, 255, 0.9); 
-    width: 80%; /* Makes the box wider */
 }
 .kinetic { 
     font-size: 72px; 
     font-weight: 800; 
     color: #1A1A1A; 
-    font-family: 'Poppins', sans-serif; /* New font */
+    font-family: 'Poppins', sans-serif; 
 }
 .hero p { 
     font-size: 24px; 
@@ -337,7 +336,7 @@ nav a:hover {
     border-radius: 20px; 
     backdrop-filter: blur(12px); 
     border: 1px solid rgba(167, 139, 250, 0.2); 
-    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease; 
+    transition: transform 0.4s ease, box-shadow (*)ease, border-color 0.4s ease; 
     position: relative; 
     overflow: hidden; 
 }
