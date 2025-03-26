@@ -140,7 +140,6 @@
             updateCount();
         });
 
-        const cards = document.querySelectorAll('.card');
         const testimonials = document.querySelectorAll('.testimonial');
         const highlights = document.querySelectorAll('.highlight');
 
@@ -148,26 +147,6 @@
             if (window.matchMedia('(max-width: 768px)').matches) {
                 const viewportHeight = window.innerHeight;
                 const centerY = viewportHeight / 2;
-
-                // Handle cards (Proven Strategies)
-                let closestCard = null;
-                let minCardDistance = Infinity;
-                cards.forEach(card => {
-                    const rect = card.getBoundingClientRect();
-                    const cardCenterY = rect.top + (rect.height / 2);
-                    const distance = Math.abs(centerY - cardCenterY);
-                    if (rect.top >= -rect.height && rect.bottom <= viewportHeight + rect.height && distance < minCardDistance) {
-                        minCardDistance = distance;
-                        closestCard = card;
-                    }
-                });
-                cards.forEach(card => {
-                    if (card === closestCard && minCardDistance < 150) { // Increased threshold
-                        card.classList.add('in-view');
-                    } else {
-                        card.classList.remove('in-view');
-                    }
-                });
 
                 // Handle testimonials
                 let closestTestimonial = null;
@@ -211,11 +190,11 @@
             }
         }
 
-        // Debounce scroll event to reduce flicker
+        // Debounce scroll event for testimonials and highlights
         let timeout;
         function debounceHighlight() {
             clearTimeout(timeout);
-            timeout = setTimeout(highlightCenterElements, 50); // 50ms debounce
+            timeout = setTimeout(highlightCenterElements, 50);
         }
 
         window.addEventListener('scroll', debounceHighlight);
