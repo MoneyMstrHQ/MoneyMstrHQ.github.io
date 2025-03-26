@@ -123,6 +123,8 @@ nav a:hover {
 .hero { 
     text-align: center; 
     padding: 15px; 
+    max-width: 1200px; /* Matches nav */
+    width: 90%; /* Matches nav */
     margin-top: 100px; 
     position: relative; 
     z-index: 2; 
@@ -137,11 +139,7 @@ nav a:hover {
     animation: syncOutline 8s infinite linear; 
     border-radius: 12px; 
     background: rgba(255, 255, 255, 0.9); 
-    max-width: 1200px; /* Matches nav */
-    width: 90%; /* Matches nav */
-    position: absolute; 
-    left: 50%; 
-    transform: translateX(-50%); 
+    width: 100%; /* Fills the .hero width */
 }
 .kinetic { 
     font-size: 72px; 
@@ -591,13 +589,12 @@ footer p {
 }
 @media (max-width: 768px) {
     header { padding-top: 60px; }
-    .hero { margin-top: 80px; }
-    .hero-inner { 
-        position: static; 
-        transform: none; 
+    .hero { 
+        margin-top: 80px; 
         width: 100%; 
         max-width: none; 
     }
+    .hero-inner { width: 100%; }
     .hero h2 { font-size: 48px; }
     .hero p { font-size: 20px; }
     .hero p.cta-sub { font-size: 16px; }
