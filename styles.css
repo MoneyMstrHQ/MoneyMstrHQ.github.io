@@ -4,18 +4,18 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Full video background */
+    height: 100%;
     object-fit: cover;
     z-index: 0;
-    backface-visibility: hidden; /* Keep from last fix */
-    -webkit-backface-visibility: hidden; /* For Safari */
-    transform: translate3d(0, 0, 0); /* Force 3D rendering */
-    -webkit-transform: translate3d(0, 0, 0); /* For Safari */
-    overflow: hidden; /* Prevent overflow glitches */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    overflow: hidden;
 }
 body { 
     font-family: 'SF Pro Display', sans-serif; 
-    background: #FFFFFF; /* White fallback for scroll */
+    background: #FFFFFF;
     color: #1A1A1A; 
     line-height: 1.6; 
     overflow-x: hidden; 
@@ -27,7 +27,7 @@ body::before {
     top: 0; 
     left: 0; 
     width: 100%; 
-    height: 100%; /* Full overlay over video */
+    height: 100%;
     background: linear-gradient(135deg, rgba(167, 139, 250, 0.1) 0%, rgba(110, 231, 183, 0.1) 100%); 
     z-index: 1; 
 }
@@ -37,7 +37,7 @@ header {
     flex-direction: column; 
     align-items: center; 
     position: relative; 
-    padding-top: 80px; /* Space for fixed nav */
+    padding-top: 80px;
 }
 nav { 
     display: flex; 
@@ -69,7 +69,16 @@ nav h1 {
     color: #1A1A1A; 
     position: relative; 
     padding-bottom: 4px; 
-    transition: color 0.3s ease; 
+    margin: 0; /* Reset default margins */
+    display: inline-block; /* Contain the span */
+}
+.nav-title {
+    display: inline-block;
+    transition: all 0.4s ease; /* Smooth expansion/contraction */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+.nav-title.expanded {
+    color: #A78BFA; /* Match hover color */
 }
 nav h1::after { 
     content: ''; 
@@ -82,9 +91,6 @@ nav h1::after {
     transform: scaleX(0); 
     transform-origin: left; 
     transition: transform 0.3s ease; 
-}
-nav h1:hover { 
-    color: #A78BFA; 
 }
 nav h1:hover::after { 
     transform: scaleX(1); 
@@ -580,8 +586,8 @@ footer p {
     cursor: pointer;
 }
 @media (max-width: 768px) {
-    header { padding-top: 60px; } /* Space for mobile nav */
-    .hero { margin-top: 80px; } /* Moved down to 80px on mobile */
+    header { padding-top: 60px; }
+    .hero { margin-top: 80px; }
     .hero h2 { font-size: 48px; }
     .hero p { font-size: 20px; }
     .hero p.cta-sub { font-size: 16px; }
