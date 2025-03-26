@@ -49,9 +49,7 @@ nav {
     left: 50%; 
     transform: translateX(-50%); 
     z-index: 10; 
-    box-shadow: 0 0 25px rgba(167, 139, 250, 0.5), /* Brighter base shadow */
-              0 0 35px rgba(110, 231, 183, 0.5), /* Added green glow */
-              0 0 45px rgba(96, 165, 250, 0.5);  /* Added blue glow */
+    box-shadow: 0 0 15px rgba(167, 139, 250, 0.2); 
     animation: syncOutline 8s infinite linear; 
 }
 nav.sticky { 
@@ -126,9 +124,7 @@ nav a:hover {
 }
 .hero-inner { 
     padding: 20px; 
-    box-shadow: 0 0 25px rgba(167, 139, 250, 0.6), /* Brighter purple */
-              0 0 35px rgba(110, 231, 183, 0.6), /* Brighter green */
-              0 0 45px rgba(96, 165, 250, 0.6); /* Brighter blue */
+    box-shadow: 0 0 15px rgba(167, 139, 250, 0.1); 
     animation: syncOutline 8s infinite linear; 
     border-radius: 12px; 
     background: rgba(255, 255, 255, 0.9); 
@@ -543,21 +539,11 @@ footer p {
     transform: scale(1.2); 
 }
 @keyframes syncOutline { 
-    0% { box-shadow: 0 0 25px rgba(167, 139, 250, 0.5), 
-              0 0 35px rgba(110, 231, 183, 0.5), 
-              0 0 45px rgba(96, 165, 250, 0.5); } 
-    25% { box-shadow: 0 0 25px rgba(110, 231, 183, 0.5), 
-              0 0 35px rgba(96, 165, 250, 0.5), 
-              0 0 45px rgba(167, 139, 250, 0.5); } 
-    50% { box-shadow: 0 0 25px rgba(96, 165, 250, 0.5), 
-              0 0 35px rgba(167, 139, 250, 0.5), 
-              0 0 45px rgba(110, 231, 183, 0.5); } 
-    75% { box-shadow: 0 0 25px rgba(249, 168, 212, 0.5), 
-              0 0 35px rgba(110, 231, 183, 0.5), 
-              0 0 45px rgba(167, 139, 250, 0.5); } 
-    100% { box-shadow: 0 0 25px rgba(167, 139, 250, 0.5), 
-              0 0 35px rgba(110, 231, 183, 0.5), 
-              0 0 45px rgba(96, 165, 250, 0.5); } 
+    0% { box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); } 
+    25% { box-shadow: 0 0 15px rgba(110, 231, 183, 0.3); } 
+    50% { box-shadow: 0 0 15px rgba(96, 165, 250, 0.3); } 
+    75% { box-shadow: 0 0 15px rgba(249, 168, 212, 0.3); } 
+    100% { box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); } 
 }
 @keyframes syncFill { 
     0% { background: rgba(167, 139, 250, 0.7); } 
@@ -589,8 +575,8 @@ footer p {
     cursor: pointer;
 }
 @media (max-width: 768px) {
-    header { padding-top: 60px; } /* Adjusted for mobile nav */
-    .hero { margin-top: 100px; } /* Moved down more on mobile */
+    header { padding-top: 60px; } /* Space for mobile nav */
+    .hero { margin-top: 20px; } /* Adjusted for mobile */
     .hero h2 { font-size: 48px; }
     .hero p { font-size: 20px; }
     .hero p.cta-sub { font-size: 16px; }
