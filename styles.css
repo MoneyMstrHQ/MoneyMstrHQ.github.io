@@ -324,7 +324,7 @@ nav a:hover {
     border-radius: 20px; 
     backdrop-filter: blur(12px); 
     border: 1px solid rgba(167, 139, 250, 0.2); 
-    transition: all 0.4s ease; 
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease, border 0.4s ease; /* Unified transition */
     position: relative; 
     overflow: hidden; 
 }
@@ -338,11 +338,8 @@ nav a:hover {
     background: linear-gradient(90deg, #6EE7B7, #A78BFA); 
     transform: scaleX(0); 
     transform-origin: left; 
-    transition: transform 0.3s ease; 
+    transition: transform 0.4s ease; 
     z-index: -1; 
-}
-.card:hover::after { 
-    transform: scaleX(1); 
 }
 .card:hover { 
     transform: translateY(-8px); 
@@ -350,6 +347,9 @@ nav a:hover {
     border: 1px solid transparent; 
     background: linear-gradient(#FFFFFF, #FFFFFF) padding-box, 
                 linear-gradient(90deg, #60A5FA, #A78BFA) border-box; 
+}
+.card:hover::after { 
+    transform: scaleX(1); 
 }
 .card.in-view { 
     transform: translateY(-8px); 
@@ -363,14 +363,13 @@ nav a:hover {
 }
 @media (max-width: 768px) {
     .card:hover { 
-        transform: none; 
-        box-shadow: none; 
-        border-color: rgba(167, 139, 250, 0.2); 
-        background: none; 
-        border: 1px solid rgba(167, 139, 250, 0.2); 
+        transform: translateY(-8px); /* Keep lift on tap */
+        box-shadow: 0 0 20px rgba(110, 231, 183, 0.4); /* Keep shadow */
+        border: 1px solid transparent; /* Keep border */
+        background: rgba(255, 255, 255, 0.95); /* Slightly more opaque, no gradient clash */
     }
     .card:hover::after { 
-        transform: scaleX(0); 
+        transform: scaleX(1); /* Keep underline */
     }
 }
 .card h4 { 
