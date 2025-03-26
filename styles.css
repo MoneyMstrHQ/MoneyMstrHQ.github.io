@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 #bg-video {
     position: fixed;
@@ -123,7 +125,7 @@ nav a:hover {
     padding: 15px; 
     max-width: 900px; 
     width: 100%; 
-    margin-top: 100px; /* Moved down for desktop */
+    margin-top: 100px; 
     position: relative; 
     z-index: 2; 
     display: flex; 
@@ -137,11 +139,13 @@ nav a:hover {
     animation: syncOutline 8s infinite linear; 
     border-radius: 12px; 
     background: rgba(255, 255, 255, 0.9); 
+    width: 80%; /* Makes the box wider */
 }
 .kinetic { 
     font-size: 72px; 
     font-weight: 800; 
     color: #1A1A1A; 
+    font-family: 'Poppins', sans-serif; /* New font */
 }
 .hero p { 
     font-size: 24px; 
@@ -555,9 +559,7 @@ footer p {
     100% { box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); } 
 }
 @keyframes syncFill { 
-    0% { background
-
-: rgba(167, 139, 250, 0.7); } 
+    0% { background: rgba(167, 139, 250, 0.7); } 
     25% { background: rgba(110, 231, 183, 0.7); } 
     50% { background: rgba(96, 165, 250, 0.7); } 
     75% { background: rgba(249, 168, 212, 0.7); } 
