@@ -576,7 +576,7 @@ footer p {
 }
 @media (max-width: 768px) {
     header { padding-top: 60px; } /* Space for mobile nav */
-    .hero { margin-top: 20px; } /* Adjusted for mobile */
+    .hero { margin-top: 80px; } /* Moved down to 80px on mobile */
     .hero h2 { font-size: 48px; }
     .hero p { font-size: 20px; }
     .hero p.cta-sub { font-size: 16px; }
