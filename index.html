@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <video autoplay muted loop playsinline id="bg-video">
+    <video muted loop playsinline id="bg-video">
         <source src="https://cdn.pixabay.com/video/2020/07/30/45961-447087612_large.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -207,12 +207,38 @@
             document.querySelector('.nav-links').classList.toggle('active');
         });
 
-        // Ensure video plays on mobile
+        // Video playback fix for mobile
         const video = document.getElementById('bg-video');
-        video.addEventListener('loadedmetadata', () => {
-            video.play().catch(error => {
+        function playVideo() {
+            video.play().then(() => {
+                console.log('Video playing successfully');
+            }).catch(error => {
                 console.log('Video playback failed:', error);
+                // Fallback: try playing after a slight delay
+                setTimeout(() => {
+                    video.play().catch(err => console.log('Retry failed:', err));
+                }, 1000);
             });
+        }
+
+        // Attempt to play on load
+        window.addEventListener('load', () => {
+            playVideo();
+        });
+
+        // Retry on user interaction if needed (e.g., first scroll or touch)
+        let interactionTriggered = false;
+        window.addEventListener('touchstart', () => {
+            if (!interactionTriggered) {
+                playVideo();
+                interactionTriggered = true;
+            }
+        });
+        window.addEventListener('scroll', () => {
+            if (!interactionTriggered) {
+                playVideo();
+                interactionTriggered = true;
+            }
         });
     </script>
 </body>
