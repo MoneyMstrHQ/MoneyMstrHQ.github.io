@@ -13,7 +13,7 @@
     </video>
     <header>
         <nav class="sticky">
-            <h1>MMHQ</h1>
+            <h1><span class="nav-title">MMHQ</span></h1>
             <div class="hamburger">☰</div>
             <ul class="nav-links">
                 <li><a href="#">Home</a></li>
@@ -149,7 +149,6 @@
                 const viewportHeight = window.innerHeight;
                 const centerY = viewportHeight / 2;
 
-                // Handle cards (Proven Strategies)
                 let closestCard = null;
                 let minCardDistance = Infinity;
                 cards.forEach(card => {
@@ -162,13 +161,12 @@
                     }
                 });
                 cards.forEach(card => {
-                    card.classList.remove('in-view'); // Reset all first
+                    card.classList.remove('in-view');
                     if (card === closestCard && minCardDistance < 150) {
                         card.classList.add('in-view');
                     }
                 });
 
-                // Handle testimonials
                 let closestTestimonial = null;
                 let minTestimonialDistance = Infinity;
                 testimonials.forEach(testimonial => {
@@ -187,7 +185,6 @@
                     }
                 });
 
-                // Handle highlights
                 let closestHighlight = null;
                 let minHighlightDistance = Infinity;
                 highlights.forEach(highlight => {
@@ -208,7 +205,6 @@
             }
         }
 
-        // Debounce scroll event
         let timeout;
         function debounceHighlight() {
             clearTimeout(timeout);
@@ -223,28 +219,24 @@
             document.querySelector('.nav-links').classList.toggle('active');
         });
 
-        // Enhanced video playback fix for mobile
         const video = document.getElementById('bg-video');
         function playVideo() {
-            video.style.visibility = 'visible'; // Ensure visibility
+            video.style.visibility = 'visible';
             video.play().then(() => {
                 console.log('Video playing successfully');
             }).catch(error => {
                 console.log('Video playback failed:', error);
-                // Retry after a delay
                 setTimeout(() => {
                     video.play().catch(err => console.log('Retry failed:', err));
                 }, 1000);
             });
         }
 
-        // Trigger on load
         window.addEventListener('load', () => {
-            video.load(); // Reload video to reset state
+            video.load();
             playVideo();
         });
 
-        // Force play on any user interaction
         let interactionTriggered = false;
         function handleInteraction() {
             if (!interactionTriggered) {
@@ -255,15 +247,41 @@
 
         window.addEventListener('touchstart', handleInteraction);
         window.addEventListener('scroll', handleInteraction);
-        window.addEventListener('click', handleInteraction); // Added click for extra trigger
+        window.addEventListener('click', handleInteraction);
 
-        // Fallback: Check video state after a few seconds
         setTimeout(() => {
             if (video.paused) {
                 console.log('Video still paused, forcing play');
                 playVideo();
             }
         }, 3000);
+
+        // Nav title hover/tap effect
+        const navTitle = document.querySelector('.nav-title');
+        let tapTimeout;
+
+        navTitle.addEventListener('mouseover', () => {
+            navTitle.textContent = 'MoneyMastersHQ';
+            navTitle.classList.add('expanded');
+        });
+
+        navTitle.addEventListener('mouseout', () => {
+            navTitle.textContent = 'MMHQ';
+            navTitle.classList.remove('expanded');
+        });
+
+        navTitle.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            if (!navTitle.classList.contains('expanded')) {
+                navTitle.textContent = 'MoneyMastersHQ';
+                navTitle.classList.add('expanded');
+                clearTimeout(tapTimeout);
+                tapTimeout = setTimeout(() => {
+                    navTitle.textContent = 'MMHQ';
+                    navTitle.classList.remove('expanded');
+                }, 2000); // Retracts after 2 seconds
+            }
+        });
     </script>
 </body>
 </html>
