@@ -7,8 +7,9 @@
     height: 100%; /* Full video background */
     object-fit: cover;
     z-index: 0;
-    transform: translateZ(0); /* Force hardware acceleration */
-    will-change: transform; /* Hint to browser for optimization */
+    /* Removed transform: translateZ(0) and will-change: transform */
+    backface-visibility: hidden; /* Prevent rendering glitches */
+    -webkit-backface-visibility: hidden; /* For Safari */
 }
 body { 
     font-family: 'SF Pro Display', sans-serif; 
