@@ -123,7 +123,7 @@ nav a:hover {
     padding: 15px; 
     max-width: 900px; 
     width: 100%; 
-    margin-top: 40px; 
+    margin-top: 100px; /* Moved down for desktop */
     position: relative; 
     z-index: 2; 
     display: flex; 
@@ -555,7 +555,9 @@ footer p {
     100% { box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); } 
 }
 @keyframes syncFill { 
-    0% { background: rgba(167, 139, 250, 0.7); } 
+    0% { background
+
+: rgba(167, 139, 250, 0.7); } 
     25% { background: rgba(110, 231, 183, 0.7); } 
     50% { background: rgba(96, 165, 250, 0.7); } 
     75% { background: rgba(249, 168, 212, 0.7); } 
