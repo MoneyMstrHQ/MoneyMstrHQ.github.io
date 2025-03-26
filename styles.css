@@ -324,7 +324,7 @@ nav a:hover {
     border-radius: 20px; 
     backdrop-filter: blur(12px); 
     border: 1px solid rgba(167, 139, 250, 0.2); 
-    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease; /* Removed background transition */
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease; 
     position: relative; 
     overflow: hidden; 
 }
@@ -344,7 +344,7 @@ nav a:hover {
 .card:hover { 
     transform: translateY(-8px); 
     box-shadow: 0 0 20px rgba(110, 231, 183, 0.4); 
-    border-color: #A78BFA; /* Subtle border change instead of gradient */
+    border-color: #A78BFA; 
 }
 .card:hover::after { 
     transform: scaleX(1); 
@@ -358,13 +358,20 @@ nav a:hover {
     transform: scaleX(1); 
 }
 @media (max-width: 768px) {
+    .card { 
+        backdrop-filter: none; /* Remove blur on mobile to avoid tint */
+    }
     .card:hover { 
         transform: translateY(-8px); 
         box-shadow: 0 0 20px rgba(110, 231, 183, 0.4); 
         border-color: #A78BFA; 
+        background: rgba(255, 255, 255, 0.9); /* Lock background */
     }
     .card:hover::after { 
         transform: scaleX(1); 
+    }
+    .card.in-view { 
+        background: rgba(255, 255, 255, 0.9); /* Match default */
     }
 }
 .card h4 { 
