@@ -118,13 +118,13 @@ nav a {
 nav a:hover { 
     color: #A78BFA; 
     background: rgba(167, 139, 250, 0.1); 
-    box-shadow: 0 0 12px rgba(217, 139, 250, 0.4); 
+    box-shadow: 0 0 12px rgba(167, 139, 250, 0.4); 
 }
 .hero { 
     text-align: center; 
     padding: 15px; 
-    max-width: 1200px; /* Increased for wider box */
-    width: 100%; 
+    max-width: 1200px; /* Matches nav */
+    width: 90%; /* Matches nav */
     margin-top: 100px; 
     position: relative; 
     z-index: 2; 
@@ -336,7 +336,7 @@ nav a:hover {
     border-radius: 20px; 
     backdrop-filter: blur(12px); 
     border: 1px solid rgba(167, 139, 250, 0.2); 
-    transition: transform 0.4s ease, box-shadow (*)ease, border-color 0.4s ease; 
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease; 
     position: relative; 
     overflow: hidden; 
 }
