@@ -15,6 +15,7 @@ body {
     line-height: 1.6; 
     overflow-x: hidden; 
     position: relative; 
+    padding-top: 80px; /* Adds space for nav height */
 }
 body::before { 
     content: ''; 
@@ -28,7 +29,6 @@ body::before {
 }
 header { 
     min-height: 100vh; 
-    padding: 0; 
     display: flex; 
     flex-direction: column; 
     align-items: center; 
@@ -44,9 +44,11 @@ nav {
     backdrop-filter: blur(8px); 
     max-width: 1200px; 
     width: 90%; 
-    margin: 15px auto; /* Margin to offset from top */
-    position: relative; 
-    z-index: 2; 
+    position: fixed; /* Keeps nav at top */
+    top: 15px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 10; /* Above video and overlay */
     box-shadow: 0 0 15px rgba(167, 139, 250, 0.2); 
     animation: syncOutline 8s infinite linear; 
 }
@@ -109,11 +111,11 @@ nav a:hover {
 }
 .hero { 
     text-align: center; 
-    padding: 80px 15px 15px; /* Adjusted padding: 80px top to clear nav */
+    padding: 15px; /* Minimal padding, offset by body padding */
     max-width: 900px; 
     width: 100%; 
     position: relative; 
-    z-index: 1; 
+    z-index: 2; /* Above video and overlay, below nav */
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
@@ -571,7 +573,8 @@ footer p {
     cursor: pointer;
 }
 @media (max-width: 768px) {
-    .hero { padding: 60px 15px 15px; } /* Reduced top padding for mobile */
+    body { padding-top: 60px; } /* Reduced for mobile nav */
+    .hero { padding: 15px; }
     .hero h2 { font-size: 48px; }
     .hero p { font-size: 20px; }
     .hero p.cta-sub { font-size: 16px; }
@@ -580,7 +583,12 @@ footer p {
     .stat span { font-size: 16px; }
     .stat p { font-size: 8px; }
     nav.sticky { width: 100%; border-radius: 0; top: 0; padding: 10px; }
-    nav { flex-direction: row; padding: 10px; margin: 10px auto; }
+    nav { 
+        padding: 10px; 
+        top: 10px; 
+        width: 90%; 
+        margin: 0 auto; 
+    }
     .hamburger { display: block; }
     .nav-links { 
         display: none; 
