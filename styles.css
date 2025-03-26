@@ -69,16 +69,14 @@ nav h1 {
     color: #1A1A1A; 
     position: relative; 
     padding-bottom: 4px; 
-    margin: 0; /* Reset default margins */
-    display: inline-block; /* Contain the span */
+    margin: 0; 
+    display: inline-block; 
 }
 .nav-title {
     display: inline-block;
-    transition: all 0.4s ease; /* Smooth expansion/contraction */
-    white-space: nowrap; /* Prevent text wrapping */
-}
-.nav-title.expanded {
-    color: #A78BFA; /* Match hover color */
+    transition: all 0.4s ease; /* Smooth expansion only */
+    white-space: nowrap;
+    color: #1A1A1A; /* Force black text always */
 }
 nav h1::after { 
     content: ''; 
