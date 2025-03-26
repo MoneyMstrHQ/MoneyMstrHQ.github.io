@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <video muted loop playsinline id="bg-video">
+    <video muted loop playsinline id="bg-video" style="display: block;">
         <source src="https://cdn.pixabay.com/video/2020/07/30/45961-447087612_large.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -223,36 +223,47 @@
             document.querySelector('.nav-links').classList.toggle('active');
         });
 
-        // Video playback fix for mobile
+        // Enhanced video playback fix for mobile
         const video = document.getElementById('bg-video');
         function playVideo() {
+            video.style.visibility = 'visible'; // Ensure visibility
             video.play().then(() => {
                 console.log('Video playing successfully');
             }).catch(error => {
                 console.log('Video playback failed:', error);
+                // Retry after a delay
                 setTimeout(() => {
                     video.play().catch(err => console.log('Retry failed:', err));
                 }, 1000);
             });
         }
 
+        // Trigger on load
         window.addEventListener('load', () => {
+            video.load(); // Reload video to reset state
             playVideo();
         });
 
+        // Force play on any user interaction
         let interactionTriggered = false;
-        window.addEventListener('touchstart', () => {
+        function handleInteraction() {
             if (!interactionTriggered) {
                 playVideo();
                 interactionTriggered = true;
             }
-        });
-        window.addEventListener('scroll', () => {
-            if (!interactionTriggered) {
+        }
+
+        window.addEventListener('touchstart', handleInteraction);
+        window.addEventListener('scroll', handleInteraction);
+        window.addEventListener('click', handleInteraction); // Added click for extra trigger
+
+        // Fallback: Check video state after a few seconds
+        setTimeout(() => {
+            if (video.paused) {
+                console.log('Video still paused, forcing play');
                 playVideo();
-                interactionTriggered = true;
             }
-        });
+        }, 3000);
     </script>
 </body>
 </html>
