@@ -123,8 +123,8 @@ nav a:hover {
 .hero { 
     text-align: center; 
     padding: 15px; 
-    max-width: 1200px; /* Matches nav */
-    width: 90%; /* Matches nav */
+    max-width: 1200px; 
+    width: 90%; 
     margin-top: 100px; 
     position: relative; 
     z-index: 2; 
@@ -134,12 +134,12 @@ nav a:hover {
     align-items: center; 
 }
 .hero-inner { 
-    padding: 20px; 
+    padding: 20px 40px; /* Increased horizontal padding */
     box-shadow: 0 0 15px rgba(167, 139, 250, 0.1); 
     animation: syncOutline 8s infinite linear; 
     border-radius: 12px; 
     background: rgba(255, 255, 255, 0.9); 
-    width: 100%; /* Fills the .hero width */
+    width: 100%; 
 }
 .kinetic { 
     font-size: 72px; 
