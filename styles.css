@@ -114,7 +114,7 @@ nav a:hover {
     padding: 15px; 
     max-width: 900px; 
     width: 100%; 
-    margin-top: 40px; /* Increased from 20px to 40px for more space */
+    margin-top: 40px; 
     position: relative; 
     z-index: 2; 
     display: flex; 
@@ -324,7 +324,7 @@ nav a:hover {
     border-radius: 20px; 
     backdrop-filter: blur(12px); 
     border: 1px solid rgba(167, 139, 250, 0.2); 
-    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease, border 0.4s ease; /* Unified transition */
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease; /* Removed background transition */
     position: relative; 
     overflow: hidden; 
 }
@@ -344,9 +344,7 @@ nav a:hover {
 .card:hover { 
     transform: translateY(-8px); 
     box-shadow: 0 0 20px rgba(110, 231, 183, 0.4); 
-    border: 1px solid transparent; 
-    background: linear-gradient(#FFFFFF, #FFFFFF) padding-box, 
-                linear-gradient(90deg, #60A5FA, #A78BFA) border-box; 
+    border-color: #A78BFA; /* Subtle border change instead of gradient */
 }
 .card:hover::after { 
     transform: scaleX(1); 
@@ -354,22 +352,19 @@ nav a:hover {
 .card.in-view { 
     transform: translateY(-8px); 
     box-shadow: 0 0 20px rgba(110, 231, 183, 0.4); 
-    border: 1px solid transparent; 
-    background: linear-gradient(#FFFFFF, #FFFFFF) padding-box, 
-                linear-gradient(90deg, #60A5FA, #A78BFA) border-box; 
+    border-color: #A78BFA; 
 }
 .card.in-view::after { 
     transform: scaleX(1); 
 }
 @media (max-width: 768px) {
     .card:hover { 
-        transform: translateY(-8px); /* Keep lift on tap */
-        box-shadow: 0 0 20px rgba(110, 231, 183, 0.4); /* Keep shadow */
-        border: 1px solid transparent; /* Keep border */
-        background: rgba(255, 255, 255, 0.95); /* Slightly more opaque, no gradient clash */
+        transform: translateY(-8px); 
+        box-shadow: 0 0 20px rgba(110, 231, 183, 0.4); 
+        border-color: #A78BFA; 
     }
     .card:hover::after { 
-        transform: scaleX(1); /* Keep underline */
+        transform: scaleX(1); 
     }
 }
 .card h4 { 
