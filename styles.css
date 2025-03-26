@@ -45,7 +45,7 @@ nav {
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
-    background: rgba(255, 255, 255, 0.9); 
+    background: rgba(28, 37, 38, 0.8); /* Dark gray glass */
     padding: 10px 20px; 
     border-radius: 12px; 
     backdrop-filter: blur(8px); 
@@ -68,7 +68,7 @@ nav h1 {
     font-size: 40px; 
     font-weight: 900; 
     letter-spacing: 3px; 
-    color: #1A1A1A; 
+    color: #FFFFFF; /* White for dark background */
     position: relative; 
     padding-bottom: 4px; 
     margin: 0; 
@@ -76,9 +76,9 @@ nav h1 {
 }
 .nav-title {
     display: inline-block;
-    transition: all 0.4s ease; /* Smooth expansion only */
+    transition: all 0.4s ease;
     white-space: nowrap;
-    color: #1A1A1A; /* Force black text always */
+    color: #FFFFFF; /* White for dark background */
 }
 nav h1::after { 
     content: ''; 
@@ -98,7 +98,7 @@ nav h1:hover::after {
 .hamburger { 
     display: none; 
     font-size: 24px; 
-    color: #1A1A1A; 
+    color: #FFFFFF; /* White for dark background */
     cursor: pointer; 
 }
 .nav-links { 
@@ -107,7 +107,7 @@ nav h1:hover::after {
     list-style: none; 
 }
 nav a { 
-    color: #1A1A1A; 
+    color: #FFFFFF; /* White for dark background */
     text-decoration: none; 
     font-weight: 600; 
     font-size: 16px; 
@@ -134,23 +134,24 @@ nav a:hover {
     align-items: center; 
 }
 .hero-inner { 
-    padding: 20px 40px; /* Increased horizontal padding */
+    padding: 20px 40px; 
     box-shadow: 0 0 15px rgba(167, 139, 250, 0.1); 
     animation: syncOutline 8s infinite linear; 
     border-radius: 12px; 
-    background: rgba(255, 255, 255, 0.9); 
+    background: rgba(28, 37, 38, 0.8); /* Dark gray glass */
+    backdrop-filter: blur(8px); 
     width: 100%; 
 }
 .kinetic { 
     font-size: 72px; 
     font-weight: 800; 
-    color: #1A1A1A; 
+    color: #FFFFFF; /* White for dark background */
     font-family: 'Poppins', sans-serif; 
 }
 .hero p { 
     font-size: 24px; 
     margin: 15px 0 30px; 
-    color: #4B5563; 
+    color: #D1D5DB; /* Light gray for readability */
 }
 .hero p.cta-sub { 
     font-size: 18px; 
@@ -200,7 +201,7 @@ nav a:hover {
 .stat { 
     text-align: center; 
     padding: 15px; 
-    background: rgba(255, 255, 255, 0.9); 
+    background: rgba(28, 37, 38, 0.8); /* Dark gray glass */
     border: 1px solid rgba(167, 139, 250, 0.2); 
     border-radius: 50%; 
     width: 120px; 
@@ -227,11 +228,11 @@ nav a:hover {
 .stat span { 
     font-size: 24px; 
     font-weight: 800; 
-    color: #1A1A1A; 
+    color: #FFFFFF; /* White for dark background */
 }
 .stat p { 
     font-size: 12px; 
-    color: #4B5563; 
+    color: #D1D5DB; /* Light gray for readability */
 }
 .stat::after { 
     content: attr(data-hover); 
@@ -279,18 +280,19 @@ nav a:hover {
     font-size: 36px; 
     font-weight: 600; 
     margin-bottom: 30px; 
-    color: #1A1A1A; 
+    color: #FFFFFF; /* White for dark background */
 }
 .testimonial { 
-    background: rgba(255, 255, 255, 0.9); 
+    background: rgba(28, 37, 38, 0.8); /* Dark gray glass */
     padding: 20px; 
     border-radius: 15px; 
     border: 1px solid rgba(167, 139, 250, 0.2); 
     transition: all 0.3s ease; 
+    backdrop-filter: blur(8px); 
 }
 .testimonial p { 
     font-size: 16px; 
-    color: #4B5563; 
+    color: #D1D5DB; /* Light gray for readability */
     margin-bottom: 10px; 
 }
 .testimonial span { 
@@ -322,7 +324,7 @@ nav a:hover {
     font-size: 48px; 
     font-weight: 600; 
     margin-bottom: 40px; 
-    color: #1A1A1A; 
+    color: #FFFFFF; /* White for dark background */
 }
 .grid { 
     display: grid; 
@@ -332,7 +334,7 @@ nav a:hover {
     margin: 0 auto; 
 }
 .card { 
-    background: rgba(255, 255, 255, 0.9); 
+    background: rgba(28, 37, 38, 0.8); /* Dark gray glass */
     padding: 30px; 
     border-radius: 20px; 
     backdrop-filter: blur(12px); 
@@ -378,13 +380,13 @@ nav a:hover {
         transform: translateY(-8px); 
         box-shadow: 0 0 20px rgba(110, 231, 183, 0.4); 
         border-color: #A78BFA; 
-        background: rgba(255, 255, 255, 0.9); 
+        background: rgba(28, 37, 38, 0.8); 
     }
     .card:hover::after { 
         transform: scaleX(1); 
     }
     .card.in-view { 
-        background: rgba(255, 255, 255, 0.9); 
+        background: rgba(28, 37, 38, 0.8); 
     }
 }
 .card h4 { 
@@ -394,7 +396,7 @@ nav a:hover {
 }
 .card p { 
     font-size: 14px; 
-    color: #4B5563; 
+    color: #D1D5DB; /* Light gray for readability */
 }
 .card a, .highlight a:not(.btn) { 
     color: #6EE7B7; 
@@ -412,7 +414,7 @@ nav a:hover {
 }
 .highlights h3 { 
     font-size: 48px; 
-    color: #1A1A1A; 
+    color: #FFFFFF; /* White for dark background */
     margin-bottom: 40px; 
 }
 .highlight-grid { 
@@ -423,7 +425,7 @@ nav a:hover {
     margin: 0 auto; 
 }
 .highlight { 
-    background: rgba(255, 255, 255, 0.9); 
+    background: rgba(28, 37, 38, 0.8); /* Dark gray glass */
     padding: 20px; 
     border-radius: 20px; 
     border: 1px solid rgba(167, 139, 250, 0.2); 
@@ -432,6 +434,7 @@ nav a:hover {
     flex-direction: column; 
     align-items: center; 
     gap: 10px; 
+    backdrop-filter: blur(8px); 
 }
 .highlight:hover { 
     transform: translateY(-5px); 
@@ -449,7 +452,7 @@ nav a:hover {
 }
 .highlight p { 
     font-size: 16px; 
-    color: #4B5563; 
+    color: #D1D5DB; /* Light gray for readability */
 }
 .badge { 
     background: #FFFFFF; 
@@ -471,12 +474,12 @@ nav a:hover {
     font-size: 36px; 
     font-weight: 600; 
     margin-bottom: 30px; 
-    color: #1A1A1A; 
+    color: #FFFFFF; /* White for dark background */
 }
 .about-content { 
     max-width: 800px; 
     margin: 0 auto; 
-    background: rgba(255, 255, 255, 0.9); 
+    background: rgba(28, 37, 38, 0.8); /* Dark gray glass */
     padding: 20px; 
     border-radius: 20px; 
     border: 1px solid rgba(167, 139, 250, 0.2); 
@@ -484,12 +487,13 @@ nav a:hover {
     align-items: center; 
     gap: 15px; 
     transition: all 0.4s ease; 
+    backdrop-filter: blur(8px); 
 }
 .about-content:hover { 
     transform: translateY(-8px); 
     box-shadow: 0 0 20px rgba(167, 139, 250, 0.3); 
     border: 1px solid transparent; 
-    background: linear-gradient(#FFFFFF, #FFFFFF) padding-box, 
+    background: linear-gradient(rgba(28, 37, 38, 0.8), rgba(28, 37, 38, 0.8)) padding-box, 
                 linear-gradient(90deg, #A78BFA, #6EE7B7) border-box; 
 }
 .about-content .avatar { 
@@ -508,7 +512,7 @@ nav a:hover {
 }
 .about-text p { 
     font-size: 16px; 
-    color: #4B5563; 
+    color: #D1D5DB; /* Light gray for readability */
     margin-bottom: 15px; 
 }
 footer { 
@@ -522,7 +526,7 @@ footer {
 }
 footer p { 
     font-size: 12px; 
-    color: #4B5563; 
+    color: #D1D5DB; /* Light gray for readability */
 }
 .secure-badge { 
     background: rgba(110, 231, 183, 0.2); 
@@ -575,8 +579,8 @@ footer p {
     padding: 8px 12px;
     border-radius: 8px;
     border: 1px solid #A78BFA;
-    background: rgba(255, 255, 255, 0.9);
-    color: #1A1A1A;
+    background: rgba(28, 37, 38, 0.8); /* Dark gray glass */
+    color: #FFFFFF; /* White for dark background */
     font-size: 14px;
     width: 200px;
 }
@@ -617,7 +621,7 @@ footer p {
         top: 60px; 
         left: 0; 
         width: 100%; 
-        background: rgba(255, 255, 255, 0.9); 
+        background: rgba(28, 37, 38, 0.8); /* Dark gray glass */
         padding: 20px; 
         border-radius: 0 0 12px 12px; 
     }
