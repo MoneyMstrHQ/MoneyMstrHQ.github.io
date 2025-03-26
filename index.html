@@ -140,6 +140,7 @@
             updateCount();
         });
 
+        const cards = document.querySelectorAll('.card');
         const testimonials = document.querySelectorAll('.testimonial');
         const highlights = document.querySelectorAll('.highlight');
 
@@ -147,6 +148,25 @@
             if (window.matchMedia('(max-width: 768px)').matches) {
                 const viewportHeight = window.innerHeight;
                 const centerY = viewportHeight / 2;
+
+                // Handle cards (Proven Strategies)
+                let closestCard = null;
+                let minCardDistance = Infinity;
+                cards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    const cardCenterY = rect.top + (rect.height / 2);
+                    const distance = Math.abs(centerY - cardCenterY);
+                    if (rect.top >= -rect.height && rect.bottom <= viewportHeight + rect.height && distance < minCardDistance) {
+                        minCardDistance = distance;
+                        closestCard = card;
+                    }
+                });
+                cards.forEach(card => {
+                    card.classList.remove('in-view'); // Reset all first
+                    if (card === closestCard && minCardDistance < 150) {
+                        card.classList.add('in-view');
+                    }
+                });
 
                 // Handle testimonials
                 let closestTestimonial = null;
@@ -161,10 +181,9 @@
                     }
                 });
                 testimonials.forEach(testimonial => {
+                    testimonial.classList.remove('in-view');
                     if (testimonial === closestTestimonial && minTestimonialDistance < 150) {
                         testimonial.classList.add('in-view');
-                    } else {
-                        testimonial.classList.remove('in-view');
                     }
                 });
 
@@ -181,16 +200,15 @@
                     }
                 });
                 highlights.forEach(highlight => {
+                    highlight.classList.remove('in-view');
                     if (highlight === closestHighlight && minHighlightDistance < 150) {
                         highlight.classList.add('in-view');
-                    } else {
-                        highlight.classList.remove('in-view');
                     }
                 });
             }
         }
 
-        // Debounce scroll event for testimonials and highlights
+        // Debounce scroll event
         let timeout;
         function debounceHighlight() {
             clearTimeout(timeout);
