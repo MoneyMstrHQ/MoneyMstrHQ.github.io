@@ -149,57 +149,76 @@
                 const viewportHeight = window.innerHeight;
                 const centerY = viewportHeight / 2;
 
+                // Handle cards (Proven Strategies)
                 let closestCard = null;
                 let minCardDistance = Infinity;
                 cards.forEach(card => {
                     const rect = card.getBoundingClientRect();
                     const cardCenterY = rect.top + (rect.height / 2);
                     const distance = Math.abs(centerY - cardCenterY);
-                    if (rect.top >= 0 && rect.bottom <= viewportHeight && distance < minCardDistance) {
+                    if (rect.top >= -rect.height && rect.bottom <= viewportHeight + rect.height && distance < minCardDistance) {
                         minCardDistance = distance;
                         closestCard = card;
                     }
                 });
-                cards.forEach(card => card.classList.remove('in-view'));
-                if (closestCard && minCardDistance < 100) {
-                    closestCard.classList.add('in-view');
-                }
+                cards.forEach(card => {
+                    if (card === closestCard && minCardDistance < 150) { // Increased threshold
+                        card.classList.add('in-view');
+                    } else {
+                        card.classList.remove('in-view');
+                    }
+                });
 
+                // Handle testimonials
                 let closestTestimonial = null;
                 let minTestimonialDistance = Infinity;
                 testimonials.forEach(testimonial => {
                     const rect = testimonial.getBoundingClientRect();
                     const testimonialCenterY = rect.top + (rect.height / 2);
                     const distance = Math.abs(centerY - testimonialCenterY);
-                    if (rect.top >= 0 && rect.bottom <= viewportHeight && distance < minTestimonialDistance) {
+                    if (rect.top >= -rect.height && rect.bottom <= viewportHeight + rect.height && distance < minTestimonialDistance) {
                         minTestimonialDistance = distance;
                         closestTestimonial = testimonial;
                     }
                 });
-                testimonials.forEach(testimonial => testimonial.classList.remove('in-view'));
-                if (closestTestimonial && minTestimonialDistance < 100) {
-                    closestTestimonial.classList.add('in-view');
-                }
+                testimonials.forEach(testimonial => {
+                    if (testimonial === closestTestimonial && minTestimonialDistance < 150) {
+                        testimonial.classList.add('in-view');
+                    } else {
+                        testimonial.classList.remove('in-view');
+                    }
+                });
 
+                // Handle highlights
                 let closestHighlight = null;
                 let minHighlightDistance = Infinity;
                 highlights.forEach(highlight => {
                     const rect = highlight.getBoundingClientRect();
                     const highlightCenterY = rect.top + (rect.height / 2);
                     const distance = Math.abs(centerY - highlightCenterY);
-                    if (rect.top >= 0 && rect.bottom <= viewportHeight && distance < minHighlightDistance) {
+                    if (rect.top >= -rect.height && rect.bottom <= viewportHeight + rect.height && distance < minHighlightDistance) {
                         minHighlightDistance = distance;
                         closestHighlight = highlight;
                     }
                 });
-                highlights.forEach(highlight => highlight.classList.remove('in-view'));
-                if (closestHighlight && minHighlightDistance < 100) {
-                    closestHighlight.classList.add('in-view');
-                }
+                highlights.forEach(highlight => {
+                    if (highlight === closestHighlight && minHighlightDistance < 150) {
+                        highlight.classList.add('in-view');
+                    } else {
+                        highlight.classList.remove('in-view');
+                    }
+                });
             }
         }
 
-        window.addEventListener('scroll', highlightCenterElements);
+        // Debounce scroll event to reduce flicker
+        let timeout;
+        function debounceHighlight() {
+            clearTimeout(timeout);
+            timeout = setTimeout(highlightCenterElements, 50); // 50ms debounce
+        }
+
+        window.addEventListener('scroll', debounceHighlight);
         window.addEventListener('resize', highlightCenterElements);
         highlightCenterElements();
 
@@ -214,19 +233,16 @@
                 console.log('Video playing successfully');
             }).catch(error => {
                 console.log('Video playback failed:', error);
-                // Fallback: try playing after a slight delay
                 setTimeout(() => {
                     video.play().catch(err => console.log('Retry failed:', err));
                 }, 1000);
             });
         }
 
-        // Attempt to play on load
         window.addEventListener('load', () => {
             playVideo();
         });
 
-        // Retry on user interaction if needed (e.g., first scroll or touch)
         let interactionTriggered = false;
         window.addEventListener('touchstart', () => {
             if (!interactionTriggered) {
