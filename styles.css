@@ -1,7 +1,8 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { 
     font-family: 'SF Pro Display', sans-serif; 
-    background: #FFFFFF; 
+    background: url('https://images.unsplash.com/photo-1616240068720-9080ad69eb58?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed; 
+    background-size: cover; 
     color: #1A1A1A; 
     line-height: 1.6; 
     overflow-x: hidden; 
@@ -110,8 +111,6 @@ nav a:hover {
     flex-direction: column; 
     justify-content: center; 
     align-items: center; 
-    background: url('https://images.unsplash.com/photo-1621344513596-789ff7e1e793?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center 70%; 
-    background-size: cover; 
 }
 .hero-inner { 
     padding: 20px; 
@@ -171,7 +170,6 @@ nav a:hover {
     justify-content: center; 
     gap: 40px; 
     padding: 40px 15px; 
-    background: #FFFFFF; 
     position: relative; 
     z-index: 2; 
     flex-wrap: wrap; 
@@ -385,7 +383,6 @@ nav a:hover {
 .highlights { 
     padding: 80px 15px; 
     text-align: center; 
-    background: #FFFFFF; 
     position: relative; 
     z-index: 2; 
 }
@@ -491,7 +488,6 @@ nav a:hover {
     margin-bottom: 15px; 
 }
 footer { 
-    background: #FFFFFF; 
     padding: 30px 40px; 
     display: flex; 
     justify-content: space-between; 
