@@ -46,7 +46,7 @@ nav {
     justify-content: space-between; 
     align-items: center; 
     background: rgba(28, 37, 38, 0.8); 
-    padding: 20px 20px; /* Increased top/bottom padding for larger logo */
+    padding: 10px 20px; /* Back to original size */
     border-radius: 12px; 
     max-width: 1200px; 
     width: 90%; 
@@ -288,7 +288,7 @@ nav a:hover {
     }
 }
 .strategies { 
-    padding: 60px 15px; 
+    padding: 80px 15px; 
     text-align: center; 
     position: relative; 
     z-index: 2; 
@@ -562,8 +562,9 @@ footer p {
 }
 .nav-logo {
     height: 180px; /* Tripled from 60px */
-    max-height: 180px; /* Ensures it scales up */
+    max-height: 180px; /* Ensures it can scale */
     width: auto;
+    object-fit: contain; /* Keeps aspect ratio while scaling */
     vertical-align: middle;
 }
 @media (max-width: 768px) {
@@ -583,7 +584,7 @@ footer p {
     .stat p { font-size: 8px; }
     nav.sticky { width: 100%; border-radius: 0; top: 0; padding: 10px; }
     nav { 
-        padding: 15px 10px; /* Adjusted for mobile logo size */
+        padding: 10px; /* Back to original mobile size */
         top: 10px; 
         width: 90%; 
         margin: 0 auto; 
@@ -624,6 +625,7 @@ footer p {
     .signup input { width: 100%; }
     .nav-logo { 
         height: 144px; /* Tripled from 48px */
-        max-height: 144px; /* Ensures it scales up */
+        max-height: 144px; /* Ensures it can scale */
+        object-fit: contain; /* Keeps aspect ratio */
     }
 }
