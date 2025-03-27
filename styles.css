@@ -46,7 +46,7 @@ nav {
     justify-content: space-between; 
     align-items: center; 
     background: rgba(28, 37, 38, 0.8); 
-    padding: 10px 20px; /* Back to original size */
+    padding: 10px 20px; /* Original desktop size from Safe Rollback 1 */
     border-radius: 12px; 
     max-width: 1200px; 
     width: 90%; 
@@ -64,12 +64,9 @@ nav.sticky {
     z-index: 10; 
 }
 nav h1 { 
-    font-size: 40px; 
-    font-weight: 900; 
-    letter-spacing: 3px; 
-    color: #FFFFFF; 
     margin: 0; 
     display: inline-block; 
+    line-height: 1; /* Prevents extra height */
 }
 .hamburger { 
     display: none; 
@@ -562,9 +559,8 @@ footer p {
 }
 .nav-logo {
     height: 180px; /* Tripled from 60px */
-    max-height: 180px; /* Ensures it can scale */
-    width: auto;
-    object-fit: contain; /* Keeps aspect ratio while scaling */
+    width: 180px; /* Explicit width to force scaling */
+    object-fit: contain; /* Maintains aspect ratio */
     vertical-align: middle;
 }
 @media (max-width: 768px) {
@@ -582,9 +578,9 @@ footer p {
     .stat { width: 80px; height: 80px; padding: 10px; }
     .stat span { font-size: 16px; }
     .stat p { font-size: 8px; }
-    nav.sticky { width: 100%; border-radius: 0; top: 0; padding: 10px; }
+    nav.sticky { width: 100%; border-radius: 0; top: 0; padding: 10px; /* Original mobile size */ }
     nav { 
-        padding: 10px; /* Back to original mobile size */
+        padding: 10px; /* Original mobile size */
         top: 10px; 
         width: 90%; 
         margin: 0 auto; 
@@ -625,7 +621,7 @@ footer p {
     .signup input { width: 100%; }
     .nav-logo { 
         height: 144px; /* Tripled from 48px */
-        max-height: 144px; /* Ensures it can scale */
-        object-fit: contain; /* Keeps aspect ratio */
+        width: 144px; /* Explicit width to force scaling */
+        object-fit: contain; 
     }
 }
