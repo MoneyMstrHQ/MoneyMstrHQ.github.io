@@ -64,15 +64,9 @@ nav.sticky {
     z-index: 10; 
 }
 nav h1 { 
-    font-size: 40px; 
-    font-weight: 900; 
-    letter-spacing: 3px; 
-    color: #FFFFFF; 
     margin: 0; 
-    display: inline-block; 
-}
-.nav-title {
-    transition: opacity 0.3s ease;
+    padding: 0; 
+    line-height: 1; /* Prevents extra height */
 }
 .hamburger { 
     display: none; 
@@ -81,7 +75,7 @@ nav h1 {
     cursor: pointer; 
 }
 .nav-links { 
-    display: flex; 
+    display: flex; \#/
     gap: 30px; 
     list-style: none; 
 }
@@ -563,6 +557,12 @@ footer p {
 .signup button {
     cursor: pointer;
 }
+.nav-logo {
+    height: 120px; /* "Large large" for desktop */
+    width: auto; /* Scales width proportionally */
+    object-fit: contain; /* Maintains aspect ratio */
+    vertical-align: middle;
+}
 @media (max-width: 768px) {
     header { padding-top: 60px; }
     .hero { 
@@ -616,7 +616,12 @@ footer p {
     .about-text p { font-size: 14px; }
     footer { flex-direction: column; gap: 15px; text-align: center; }
     .social-icon { margin: 0 10px; }
-    nav h1 { font-size: 32px; }
+    nav h1 { line-height: 1; }
     .signup { flex-direction: column; }
     .signup input { width: 100%; }
+    .nav-logo { 
+        height: 96px; /* "Large large" for mobile */
+        width: auto; 
+        object-fit: contain; 
+    }
 }
