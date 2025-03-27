@@ -254,9 +254,9 @@ nav a:hover {
     font-weight: 600; 
     margin-bottom: 30px; 
     color: #FFFFFF; 
-    background: rgba(28, 37, 38, 0.8); /* Bubble added */
-    padding: 10px 20px; 
-    border-radius: 12px; 
+    background: rgba(28, 37, 38, 0.8); 
+    padding: 5px 10px; /* Slimmer padding */
+    border-radius: 8px; /* Sleeker corners */
     display: inline-block; 
 }
 .testimonial { 
@@ -301,9 +301,9 @@ nav a:hover {
     font-weight: 600; 
     margin-bottom: 40px; 
     color: #FFFFFF; 
-    background: rgba(28, 37, 38, 0.8); /* Bubble added */
-    padding: 10px 20px; 
-    border-radius: 12px; 
+    background: rgba(28, 37, 38, 0.8); 
+    padding: 5px 10px; /* Slimmer padding */
+    border-radius: 8px; /* Sleeker corners */
     display: inline-block; 
 }
 .grid { 
@@ -394,9 +394,9 @@ nav a:hover {
     font-size: 48px; 
     color: #FFFFFF; 
     margin-bottom: 40px; 
-    background: rgba(28, 37, 38, 0.8); /* Bubble added */
-    padding: 10px 20px; 
-    border-radius: 12px; 
+    background: rgba(28, 37, 38, 0.8); 
+    padding: 5px 10px; /* Slimmer padding */
+    border-radius: 8px; /* Sleeker corners */
     display: inline-block; 
 }
 .highlight-grid { 
@@ -456,9 +456,9 @@ nav a:hover {
     font-weight: 600; 
     margin-bottom: 30px; 
     color: #FFFFFF; 
-    background: rgba(28, 37, 38, 0.8); /* Bubble added */
-    padding: 10px 20px; 
-    border-radius: 12px; 
+    background: rgba(28, 37, 38, 0.8); 
+    padding: 5px 10px; /* Slimmer padding */
+    border-radius: 8px; /* Sleeker corners */
     display: inline-block; 
 }
 .about-content { 
@@ -513,10 +513,10 @@ footer p {
     color: #D1D5DB; 
 }
 .secure-badge { 
-    background: rgba(28, 37, 38, 0.8); /* Changed to bubble */
+    background: rgba(28, 37, 38, 0.8); 
     color: #6EE7B7; 
-    padding: 4px 10px; /* Slightly more padding */
-    border-radius: 12px; /* Rounded more */
+    padding: 4px 10px; 
+    border-radius: 12px; 
     font-size: 10px; 
     margin-left: 10px; 
 }
