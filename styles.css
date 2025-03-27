@@ -66,7 +66,7 @@ nav.sticky {
 nav h1 { 
     margin: 0; 
     padding: 0; 
-    height: 60px; 
+    height: 80px; /* Increased to fit larger logo */
     display: flex; 
     align-items: center; 
 }
@@ -560,10 +560,11 @@ footer p {
     cursor: pointer;
 }
 .nav-logo {
-    height: 60px; 
+    height: 80px; /* Increased from 60px */
     width: auto;
     object-fit: contain;
     vertical-align: middle;
+    margin-top: -10px; /* Moves it up 10px */
 }
 @media (max-width: 768px) {
     header { padding-top: 60px; }
@@ -618,10 +619,11 @@ footer p {
     .about-text p { font-size: 14px; }
     footer { flex-direction: column; gap: 15px; text-align: center; }
     .social-icon { margin: 0 10px; }
-    nav h1 { height: 48px; }
+    nav h1 { height: 64px; } /* Increased to fit larger logo */
     .signup { flex-direction: column; }
     .signup input { width: 100%; }
     .nav-logo { 
-        height: 48px; 
+        height: 64px; /* Increased from 48px */
+        margin-top: -8px; /* Moves it up 8px */
     }
 }
