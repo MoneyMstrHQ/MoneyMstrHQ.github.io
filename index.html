@@ -261,7 +261,7 @@
         let tapTimeout;
 
         navTitle.addEventListener('mouseover', () => {
-            navTitle.textContent = 'MoneyMastersHQ';
+            navTitle.textContent = 'MONEYMASTERHQ';
             navTitle.classList.add('expanded');
         });
 
@@ -273,7 +273,7 @@
         navTitle.addEventListener('touchstart', (e) => {
             e.preventDefault();
             if (!navTitle.classList.contains('expanded')) {
-                navTitle.textContent = 'MoneyMastersHQ';
+                navTitle.textContent = 'MONEYMASTERHQ';
                 navTitle.classList.add('expanded');
                 clearTimeout(tapTimeout);
                 tapTimeout = setTimeout(() => {
