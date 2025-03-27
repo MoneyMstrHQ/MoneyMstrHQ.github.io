@@ -13,7 +13,7 @@
     </video>
     <header>
         <nav class="sticky">
-            <h1><span class="nav-title">MMHQ</span></h1>
+            <h1><img src="mmhq-logo1.png" alt="MMHQ Logo" class="nav-logo"></h1>
             <div class="hamburger">☰</div>
             <ul class="nav-links">
                 <li><a href="#">Home</a></li>
@@ -255,25 +255,6 @@
                 playVideo();
             }
         }, 3000);
-
-        const navTitle = document.querySelector('.nav-title');
-        const titles = ['MMHQ', '💰💰HQ', 'MoneyHQ', 'MM💰Q'];
-        let index = 0;
-
-        function updateTitle() {
-            navTitle.style.opacity = 0;
-            setTimeout(() => {
-                index = (index + 1) % titles.length;
-                navTitle.textContent = titles[index];
-                navTitle.style.opacity = 1;
-            }, 300);
-        }
-
-        navTitle.addEventListener('mouseover', updateTitle);
-        navTitle.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            updateTitle();
-        });
     </script>
 </body>
 </html>
