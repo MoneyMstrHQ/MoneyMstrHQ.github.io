@@ -13,7 +13,7 @@
     </video>
     <header>
         <nav class="sticky">
-            <h1><span class="nav-title">MMHQ</span></h1>
+            <h1><img src="mmhq-logo.png" alt="MMHQ Logo" class="nav-logo"></h1>
             <div class="hamburger">☰</div>
             <ul class="nav-links">
                 <li><a href="#">Home</a></li>
@@ -255,33 +255,6 @@
                 playVideo();
             }
         }, 3000);
-
-        // Nav title hover/tap effect
-        const navTitle = document.querySelector('.nav-title');
-        let tapTimeout;
-
-        navTitle.addEventListener('mouseover', () => {
-            navTitle.textContent = 'MONEYMASTERHQ';
-            navTitle.classList.add('expanded');
-        });
-
-        navTitle.addEventListener('mouseout', () => {
-            navTitle.textContent = 'MMHQ';
-            navTitle.classList.remove('expanded');
-        });
-
-        navTitle.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            if (!navTitle.classList.contains('expanded')) {
-                navTitle.textContent = 'MONEYMASTERHQ';
-                navTitle.classList.add('expanded');
-                clearTimeout(tapTimeout);
-                tapTimeout = setTimeout(() => {
-                    navTitle.textContent = 'MMHQ';
-                    navTitle.classList.remove('expanded');
-                }, 2000);
-            }
-        });
     </script>
 </body>
 </html>
