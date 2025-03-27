@@ -561,7 +561,7 @@ footer p {
     cursor: pointer;
 }
 .nav-logo {
-    height: 60px;
+    height: 180px;
     width: auto;
     vertical-align: middle;
 }
@@ -622,6 +622,6 @@ footer p {
     .signup { flex-direction: column; }
     .signup input { width: 100%; }
     .nav-logo { 
-        height: 48px; 
+        height: 144px; 
     }
 }
