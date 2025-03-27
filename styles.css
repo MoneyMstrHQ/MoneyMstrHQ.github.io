@@ -46,7 +46,7 @@ nav {
     justify-content: space-between; 
     align-items: center; 
     background: rgba(28, 37, 38, 0.8); 
-    padding: 10px 20px; /* Original desktop size */
+    padding: 10px 20px; 
     border-radius: 12px; 
     max-width: 1200px; 
     width: 90%; 
@@ -64,10 +64,15 @@ nav.sticky {
     z-index: 10; 
 }
 nav h1 { 
+    font-size: 40px; 
+    font-weight: 900; 
+    letter-spacing: 3px; 
+    color: #FFFFFF; 
     margin: 0; 
-    padding: 0; 
-    height: auto; /* Prevents h1 from forcing nav height */
-    line-height: 1; 
+    display: inline-block; 
+}
+.nav-title {
+    transition: opacity 0.3s ease;
 }
 .hamburger { 
     display: none; 
@@ -558,12 +563,6 @@ footer p {
 .signup button {
     cursor: pointer;
 }
-.nav-logo {
-    height: 180px !important; /* Tripled from 60px */
-    width: auto !important; /* Let width scale with height */
-    object-fit: contain; /* Maintain aspect ratio */
-    vertical-align: middle;
-}
 @media (max-width: 768px) {
     header { padding-top: 60px; }
     .hero { 
@@ -581,7 +580,7 @@ footer p {
     .stat p { font-size: 8px; }
     nav.sticky { width: 100%; border-radius: 0; top: 0; padding: 10px; }
     nav { 
-        padding: 10px; /* Original mobile size */
+        padding: 10px; 
         top: 10px; 
         width: 90%; 
         margin: 0 auto; 
@@ -617,12 +616,7 @@ footer p {
     .about-text p { font-size: 14px; }
     footer { flex-direction: column; gap: 15px; text-align: center; }
     .social-icon { margin: 0 10px; }
-    nav h1 { line-height: 1; }
+    nav h1 { font-size: 32px; }
     .signup { flex-direction: column; }
     .signup input { width: 100%; }
-    .nav-logo { 
-        height: 144px !important; /* Tripled from 48px */
-        width: auto !important; 
-        object-fit: contain; 
-    }
 }
