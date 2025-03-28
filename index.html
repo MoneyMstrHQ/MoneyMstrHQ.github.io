@@ -3,258 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MMHQ</title>
+    <title>Modern Hip Website</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <video muted loop playsinline id="bg-video" style="display: block;">
-        <source src="https://cdn.pixabay.com/video/2020/07/30/45961-447087612_large.mp4" type="video/mp4">
+    <video id="bg-video" autoplay muted loop playsinline>
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-video-of-a-circuit-with-white-background-44137-large.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
+
     <header>
-        <nav class="sticky">
-            <h1><img src="logo1.png" alt="MMHQ Logo" class="nav-logo"></h1>
+        <nav>
+            <h1>
+                <img src="https://via.placeholder.com/150x60.png?text=Logo" alt="Logo" class="nav-logo">
+            </h1>
             <div class="hamburger">☰</div>
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Strategies</a></li>
-                <li><a href="#">Stats</a></li>
-                <li><a href="#">Tools</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#strategies">Strategies</a></li>
+                <li><a href="#highlights">Highlights</a></li>
+                <li><a href="#about">About</a></li>
             </ul>
         </nav>
+
         <div class="hero">
             <div class="hero-inner">
-                <h2 class="kinetic">Master Your Money</h2>
-                <p>Smart finance tips and tools to grow your wealth.</p>
-                <a href="https://impact.com/ynab-link" class="btn">Save $500 with YNAB</a>
-                <p class="cta-sub">Trusted by 1k+ Users • Join 500+ Savvy Savers</p>
+                <h2 class="kinetic">Your Brand</h2>
+                <p>Discover the future of innovation with us.</p>
+                <p class="cta-sub">Join thousands of satisfied users today!</p>
+                <a href="#" class="btn btn-pulse">Get Started</a>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat" data-hover="Users">
+                <span>10K+</span>
+                <p>Active Users</p>
+            </div>
+            <div class="stat" data-hover="Projects">
+                <span>500+</span>
+                <p>Projects Done</p>
+            </div>
+            <div class="stat" data-hover="Awards">
+                <span>50+</span>
+                <p>Awards Won</p>
             </div>
         </div>
     </header>
-    <section class="stats">
-        <div class="stat" data-hover="$500+ Saved Week 1">
-            <span data-count="500">$0+</span>
-            <p>Saved</p>
-        </div>
-        <div class="stat" data-hover="Tool Users">
-            <span data-count="10000">0+</span>
-            <p>Users</p>
-        </div>
-        <div class="stat" data-hover="Avg. 90-Day Gains">
-            <span data-count="20">0%+</span>
-            <p>Growth</p>
-        </div>
-    </section>
+
     <section class="testimonials">
-        <h3>What Users Say</h3>
+        <h3>Testimonials</h3>
         <div class="grid">
             <div class="testimonial">
-                <p>"Saved $500 in a week—total game changer!"</p>
-                <span>- Alex, Savvy Saver</span>
+                <p>"This platform transformed my business!"</p>
+                <span>- Jane Doe, CEO</span>
             </div>
             <div class="testimonial">
-                <p>"Grew my portfolio 20% with their tips."</p>
-                <span>- Jamie, Investor</span>
+                <p>"Incredible support and features."</p>
+                <span>- John Smith, Developer</span>
+            </div>
+            <div class="testimonial">
+                <p>"A game-changer for my projects."</p>
+                <span>- Emily Johnson, Designer</span>
             </div>
         </div>
     </section>
+
     <section class="strategies">
-        <h3>Proven Strategies</h3>
+        <h3>Strategies</h3>
         <div class="grid">
             <div class="card">
-                <h4>Save $500 in 7 Days</h4>
-                <p>Cut $200 from subscriptions (audit with <a href="https://impact.com/ynab-link">YNAB</a>), $150 from groceries (meal plan), and $150 from impulse buys (set a $20 daily cap).</p>
+                <h4>Innovation</h4>
+                <p>Stay ahead with cutting-edge solutions.</p>
+                <a href="#">Learn More</a>
             </div>
             <div class="card">
-                <h4>Grow 20% with Easy Investing</h4>
-                <p>Start with $100 in an ETF via <a href="https://cj.com/investing-app-link">Robinhood</a>, reinvest dividends monthly, and track gains weekly—low risk, high reward.</p>
+                <h4>Collaboration</h4>
+                <p>Work together to achieve greatness.</p>
+                <a href="#">Learn More</a>
             </div>
             <div class="card">
-                <h4>Ditch Debt in 90 Days</h4>
-                <p>Use the snowball method: pay off smallest debts first with <a href="https://impact.com/credit-card-link">top card picks</a>, roll savings into the next, repeat.</p>
+                <h4>Growth</h4>
+                <p>Scale your business with ease.</p>
+                <a href="#">Learn More</a>
             </div>
         </div>
     </section>
+
     <section class="highlights">
-        <h3>Top Finance Tools</h3>
+        <h3>Highlights</h3>
         <div class="highlight-grid">
             <div class="highlight">
-                <p>"Budget app with 4.8 stars—saves time!"</p>
-                <a href="https://impact.com/ynab-link" class="btn btn-small">Get YNAB Free</a>
-                <span class="badge">Top Pick</span>
+                <span class="badge">New</span>
+                <p>Explore our latest features.</p>
+                <a href="#" class="btn btn-small">Discover</a>
             </div>
             <div class="highlight">
-                <p>"Investment course—up 20% in 90 days."</p>
-                <a href="https://cj.com/investing-app-link" class="btn btn-small">Start Investing</a>
-                <span class="badge">Best Value</span>
+                <span class="badge">Popular</span>
+                <p>Join our community today.</p>
+                <a href="#">Join Now</a>
+            </div>
+            <div class="highlight">
+                <span class="badge">Exclusive</span>
+                <p>Access premium content.</p>
+                <a href="#">Unlock</a>
             </div>
         </div>
     </section>
+
     <section class="about">
-        <h3>Who’s Behind MMHQ</h3>
+        <h3>About Us</h3>
         <div class="about-content">
-            <img src="https://raw.githubusercontent.com/moneymstrhq/moneymstrhq.github.io/main/skye-carter-highres.png" alt="Skye Carter" class="avatar">
+            <img src="https://via.placeholder.com/80" alt="Avatar" class="avatar">
             <div class="about-text">
-                <p>Hey, I’m Skye Carter—ex-finance nerd, now wealth hacker. MMHQ’s my mission to kill money stress with tools that actually work. Goal: 10k people saving $500 by 2026. Join the squad.</p>
-                <form class="signup">
-                    <input type="email" placeholder="Your email" required>
-                    <button type="submit" class="btn btn-small btn-pulse">Join the Crew</button>
-                </form>
+                <p>We are a team passionate about innovation and technology, dedicated to helping you succeed.</p>
+                <p>Our mission is to empower your business with the best tools and strategies.</p>
             </div>
         </div>
     </section>
+
     <footer>
-        <p>© 2025 MMHQ Elite Wealth Systems • <span class="secure-badge">Secure Links</span></p>
+        <div>
+            <p>&copy; 2025 Your Brand. All rights reserved.</p>
+            <span class="secure-badge">Secure</span>
+        </div>
+        <div class="signup">
+            <input type="email" placeholder="Enter your email">
+            <a href="#" class="btn btn-small">Sign Up</a>
+        </div>
         <div class="social">
-            <a href="https://x.com/MoneyMasterHQ" class="social-icon">𝕏</a>
-            <a href="#" class="social-icon">🎮</a>
+            <a href="#" class="social-icon">𝕏</a>
+            <a href="#" class="social-icon">📸</a>
         </div>
     </footer>
+
     <script>
-        document.querySelectorAll('.stat').forEach(stat => {
-            stat.addEventListener('touchstart', function(e) {
-                e.preventDefault();
-                this.classList.remove('active');
-                this.classList.add('active');
-                setTimeout(() => this.classList.remove('active'), 2000);
-            });
-            stat.addEventListener('touchend', function(e) {
-                e.preventDefault();
-            });
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
 
-        document.querySelectorAll('.stat span').forEach(stat => {
-            let count = 0;
-            const target = parseInt(stat.getAttribute('data-count'));
-            const increment = target / 50;
-            const isPercent = stat.textContent.includes('%');
-            const updateCount = () => {
-                count += increment;
-                if (count < target) {
-                    stat.textContent = isPercent ? `${Math.floor(count)}%+` : `$${Math.floor(count)}+`;
-                    requestAnimationFrame(updateCount);
-                } else {
-                    stat.textContent = isPercent ? `${target}%+` : `$${target}+`;
+        // Scroll-Triggered Animations
+        const elementsToAnimate = document.querySelectorAll('.stats, .testimonials, .strategies, .highlights, .about, .card, .highlight, .testimonial');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
                 }
-            };
-            updateCount();
-        });
-
-        const cards = document.querySelectorAll('.card');
-        const testimonials = document.querySelectorAll('.testimonial');
-        const highlights = document.querySelectorAll('.highlight');
-
-        function highlightCenterElements() {
-            if (window.matchMedia('(max-width: 768px)').matches) {
-                const viewportHeight = window.innerHeight;
-                const centerY = viewportHeight / 2;
-
-                let closestCard = null;
-                let minCardDistance = Infinity;
-                cards.forEach(card => {
-                    const rect = card.getBoundingClientRect();
-                    const cardCenterY = rect.top + (rect.height / 2);
-                    const distance = Math.abs(centerY - cardCenterY);
-                    if (rect.top >= -rect.height && rect.bottom <= viewportHeight + rect.height && distance < minCardDistance) {
-                        minCardDistance = distance;
-                        closestCard = card;
-                    }
-                });
-                cards.forEach(card => {
-                    card.classList.remove('in-view');
-                    if (card === closestCard && minCardDistance < 150) {
-                        card.classList.add('in-view');
-                    }
-                });
-
-                let closestTestimonial = null;
-                let minTestimonialDistance = Infinity;
-                testimonials.forEach(testimonial => {
-                    const rect = testimonial.getBoundingClientRect();
-                    const testimonialCenterY = rect.top + (rect.height / 2);
-                    const distance = Math.abs(centerY - testimonialCenterY);
-                    if (rect.top >= -rect.height && rect.bottom <= viewportHeight + rect.height && distance < minTestimonialDistance) {
-                        minTestimonialDistance = distance;
-                        closestTestimonial = testimonial;
-                    }
-                });
-                testimonials.forEach(testimonial => {
-                    testimonial.classList.remove('in-view');
-                    if (testimonial === closestTestimonial && minTestimonialDistance < 150) {
-                        testimonial.classList.add('in-view');
-                    }
-                });
-
-                let closestHighlight = null;
-                let minHighlightDistance = Infinity;
-                highlights.forEach(highlight => {
-                    const rect = highlight.getBoundingClientRect();
-                    const highlightCenterY = rect.top + (rect.height / 2);
-                    const distance = Math.abs(centerY - highlightCenterY);
-                    if (rect.top >= -rect.height && rect.bottom <= viewportHeight + rect.height && distance < minHighlightDistance) {
-                        minHighlightDistance = distance;
-                        closestHighlight = highlight;
-                    }
-                });
-                highlights.forEach(highlight => {
-                    highlight.classList.remove('in-view');
-                    if (highlight === closestHighlight && minHighlightDistance < 150) {
-                        highlight.classList.add('in-view');
-                    }
-                });
-            }
-        }
-
-        let timeout;
-        function debounceHighlight() {
-            clearTimeout(timeout);
-            timeout = setTimeout(highlightCenterElements, 50);
-        }
-
-        window.addEventListener('scroll', debounceHighlight);
-        window.addEventListener('resize', highlightCenterElements);
-        highlightCenterElements();
-
-        document.querySelector('.hamburger').addEventListener('click', () => {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-
-        const video = document.getElementById('bg-video');
-        function playVideo() {
-            video.style.visibility = 'visible';
-            video.play().then(() => {
-                console.log('Video playing successfully');
-            }).catch(error => {
-                console.log('Video playback failed:', error);
-                setTimeout(() => {
-                    video.play().catch(err => console.log('Retry failed:', err));
-                }, 1000);
             });
-        }
+        }, { threshold: 0.2 });
 
-        window.addEventListener('load', () => {
-            video.load();
-            playVideo();
+        elementsToAnimate.forEach(element => {
+            observer.observe(element);
         });
 
-        let interactionTriggered = false;
-        function handleInteraction() {
-            if (!interactionTriggered) {
-                playVideo();
-                interactionTriggered = true;
-            }
-        }
+        // 3D Tilt Effect on Hover
+        const tiltElements = document.querySelectorAll('.card, .highlight, .testimonial');
+        tiltElements.forEach(element => {
+            element.addEventListener('mousemove', (e) => {
+                const rect = element.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                const rotateX = y / rect.height * 20; // Max 20deg tilt
+                const rotateY = -x / rect.width * 20;
+                element.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+            });
 
-        window.addEventListener('touchstart', handleInteraction);
-        window.addEventListener('scroll', handleInteraction);
-        window.addEventListener('click', handleInteraction);
+            element.addEventListener('mouseleave', () => {
+                element.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+            });
+        });
 
-        setTimeout(() => {
-            if (video.paused) {
-                console.log('Video still paused, forcing play');
-                playVideo();
-            }
-        }, 3000);
+        // Stat Tooltip Trigger
+        const stats = document.querySelectorAll('.stat');
+        stats.forEach(stat => {
+            stat.addEventListener('click', () => {
+                stat.classList.add('active');
+            });
+        });
     </script>
 </body>
 </html>
