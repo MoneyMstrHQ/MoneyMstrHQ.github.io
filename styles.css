@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 #bg-video {
@@ -251,26 +251,13 @@ nav a:hover {
 }
 .testimonials h3 { 
     font-size: 36px; 
-    font-weight: 800; 
-    font-family: 'Bebas Neue', sans-serif; /* Modern font */
-    letter-spacing: -0.5px; /* Slightly tighter but readable */
+    font-weight: 600; 
     margin-bottom: 30px; 
     color: #FFFFFF; 
-    background: rgba(28, 37, 38, 0.6); /* Slightly more transparent */
-    padding: 3px 8px; /* Slimmer padding */
-    border-radius: 6px; /* Sleeker corners */
+    background: rgba(28, 37, 38, 0.8); 
+    padding: 5px 10px; /* Slimmer padding */
+    border-radius: 8px; /* Sleeker corners */
     display: inline-block; 
-    position: relative;
-}
-.testimonials h3::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50%;
-    height: 3px;
-    background: linear-gradient(90deg, #A78BFA, #6EE7B7); /* Gradient underline */
 }
 .testimonial { 
     background: rgba(28, 37, 38, 0.8); 
@@ -302,9 +289,6 @@ nav a:hover {
         transform: none; 
         box-shadow: none; 
     }
-    .testimonials h3 { 
-        font-size: 28px; 
-    }
 }
 .strategies { 
     padding: 80px 15px; 
@@ -314,26 +298,13 @@ nav a:hover {
 }
 .strategies h3 { 
     font-size: 48px; 
-    font-weight: 800; 
-    font-family: 'Bebas Neue', sans-serif; /* Modern font */
-    letter-spacing: -0.5px; /* Slightly tighter but readable */
+    font-weight: 600; 
     margin-bottom: 40px; 
     color: #FFFFFF; 
-    background: rgba(28, 37, 38, 0.6); /* Slightly more transparent */
-    padding: 3px 8px; /* Slimmer padding */
-    border-radius: 6px; /* Sleeker corners */
+    background: rgba(28, 37, 38, 0.8); 
+    padding: 5px 10px; /* Slimmer padding */
+    border-radius: 8px; /* Sleeker corners */
     display: inline-block; 
-    position: relative;
-}
-.strategies h3::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50%;
-    height: 3px;
-    background: linear-gradient(90deg, #A78BFA, #6EE7B7); /* Gradient underline */
 }
 .grid { 
     display: grid; 
@@ -395,9 +366,6 @@ nav a:hover {
     .card.in-view { 
         background: rgba(28, 37, 38, 0.8); 
     }
-    .strategies h3 { 
-        font-size: 32px; 
-    }
 }
 .card h4 { 
     font-size: 24px; 
@@ -424,26 +392,12 @@ nav a:hover {
 }
 .highlights h3 { 
     font-size: 48px; 
-    font-weight: 800; 
-    font-family: 'Bebas Neue', sans-serif; /* Modern font */
-    letter-spacing: -0.5px; /* Slightly tighter but readable */
-    margin-bottom: 40px; 
     color: #FFFFFF; 
-    background: rgba(28, 37, 38, 0.6); /* Slightly more transparent */
-    padding: 3px 8px; /* Slimmer padding */
-    border-radius: 6px; /* Sleeker corners */
+    margin-bottom: 40px; 
+    background: rgba(28, 37, 38, 0.8); 
+    padding: 5px 10px; /* Slimmer padding */
+    border-radius: 8px; /* Sleeker corners */
     display: inline-block; 
-    position: relative;
-}
-.highlights h3::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50%;
-    height: 3px;
-    background: linear-gradient(90deg, #A78BFA, #6EE7B7); /* Gradient underline */
 }
 .highlight-grid { 
     display: grid; 
@@ -476,9 +430,6 @@ nav a:hover {
         transform: none; 
         box-shadow: none; 
     }
-    .highlights h3 { 
-        font-size: 32px; 
-    }
 }
 .highlight p { 
     font-size: 16px; 
@@ -502,26 +453,13 @@ nav a:hover {
 }
 .about h3 { 
     font-size: 36px; 
-    font-weight: 800; 
-    font-family: 'Bebas Neue', sans-serif; /* Modern font */
-    letter-spacing: -0.5px; /* Slightly tighter but readable */
+    font-weight: 600; 
     margin-bottom: 30px; 
     color: #FFFFFF; 
-    background: rgba(28, 37, 38, 0.6); /* Slightly more transparent */
-    padding: 3px 8px; /* Slimmer padding */
-    border-radius: 6px; /* Sleeker corners */
+    background: rgba(28, 37, 38, 0.8); 
+    padding: 5px 10px; /* Slimmer padding */
+    border-radius: 8px; /* Sleeker corners */
     display: inline-block; 
-    position: relative;
-}
-.about h3::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50%;
-    height: 3px;
-    background: linear-gradient(90deg, #A78BFA, #6EE7B7); /* Gradient underline */
 }
 .about-content { 
     max-width: 800px; 
