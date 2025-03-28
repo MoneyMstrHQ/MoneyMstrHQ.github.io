@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Hip Website</title>
+    <title>My Website</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -28,24 +28,24 @@
 
         <div class="hero">
             <div class="hero-inner">
-                <h2 class="kinetic">Your Brand</h2>
-                <p>Discover the future of innovation with us.</p>
-                <p class="cta-sub">Join thousands of satisfied users today!</p>
+                <h2 class="kinetic">My Brand</h2>
+                <p>Explore the future of innovation.</p>
+                <p class="cta-sub">Join thousands of users today!</p>
                 <a href="#" class="btn btn-pulse">Get Started</a>
             </div>
         </div>
 
         <div class="stats">
             <div class="stat" data-hover="Users">
-                <span>10K+</span>
+                <span>5K+</span>
                 <p>Active Users</p>
             </div>
             <div class="stat" data-hover="Projects">
-                <span>500+</span>
+                <span>300+</span>
                 <p>Projects Done</p>
             </div>
             <div class="stat" data-hover="Awards">
-                <span>50+</span>
+                <span>20+</span>
                 <p>Awards Won</p>
             </div>
         </div>
@@ -55,134 +55,11 @@
         <h3>Testimonials</h3>
         <div class="grid">
             <div class="testimonial">
-                <p>"This platform transformed my business!"</p>
-                <span>- Jane Doe, CEO</span>
+                <p>"This platform changed everything for me!"</p>
+                <span>- Alex Brown, Entrepreneur</span>
             </div>
             <div class="testimonial">
-                <p>"Incredible support and features."</p>
-                <span>- John Smith, Developer</span>
+                <p>"Amazing features and support."</p>
+                <span>- Sarah Lee, Developer</span>
             </div>
-            <div class="testimonial">
-                <p>"A game-changer for my projects."</p>
-                <span>- Emily Johnson, Designer</span>
-            </div>
-        </div>
-    </section>
-
-    <section class="strategies">
-        <h3>Strategies</h3>
-        <div class="grid">
-            <div class="card">
-                <h4>Innovation</h4>
-                <p>Stay ahead with cutting-edge solutions.</p>
-                <a href="#">Learn More</a>
-            </div>
-            <div class="card">
-                <h4>Collaboration</h4>
-                <p>Work together to achieve greatness.</p>
-                <a href="#">Learn More</a>
-            </div>
-            <div class="card">
-                <h4>Growth</h4>
-                <p>Scale your business with ease.</p>
-                <a href="#">Learn More</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="highlights">
-        <h3>Highlights</h3>
-        <div class="highlight-grid">
-            <div class="highlight">
-                <span class="badge">New</span>
-                <p>Explore our latest features.</p>
-                <a href="#" class="btn btn-small">Discover</a>
-            </div>
-            <div class="highlight">
-                <span class="badge">Popular</span>
-                <p>Join our community today.</p>
-                <a href="#">Join Now</a>
-            </div>
-            <div class="highlight">
-                <span class="badge">Exclusive</span>
-                <p>Access premium content.</p>
-                <a href="#">Unlock</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="about">
-        <h3>About Us</h3>
-        <div class="about-content">
-            <img src="https://via.placeholder.com/80" alt="Avatar" class="avatar">
-            <div class="about-text">
-                <p>We are a team passionate about innovation and technology, dedicated to helping you succeed.</p>
-                <p>Our mission is to empower your business with the best tools and strategies.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div>
-            <p>&copy; 2025 Your Brand. All rights reserved.</p>
-            <span class="secure-badge">Secure</span>
-        </div>
-        <div class="signup">
-            <input type="email" placeholder="Enter your email">
-            <a href="#" class="btn btn-small">Sign Up</a>
-        </div>
-        <div class="social">
-            <a href="#" class="social-icon">𝕏</a>
-            <a href="#" class="social-icon">📸</a>
-        </div>
-    </footer>
-
-    <script>
-        // Hamburger Menu Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Scroll-Triggered Animations
-        const elementsToAnimate = document.querySelectorAll('.stats, .testimonials, .strategies, .highlights, .about, .card, .highlight, .testimonial');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
-                }
-            });
-        }, { threshold: 0.2 });
-
-        elementsToAnimate.forEach(element => {
-            observer.observe(element);
-        });
-
-        // 3D Tilt Effect on Hover
-        const tiltElements = document.querySelectorAll('.card, .highlight, .testimonial');
-        tiltElements.forEach(element => {
-            element.addEventListener('mousemove', (e) => {
-                const rect = element.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                const rotateX = y / rect.height * 20; // Max 20deg tilt
-                const rotateY = -x / rect.width * 20;
-                element.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
-            });
-
-            element.addEventListener('mouseleave', () => {
-                element.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
-            });
-        });
-
-        // Stat Tooltip Trigger
-        const stats = document.querySelectorAll('.stat');
-        stats.forEach(stat => {
-            stat.addEventListener('click', () => {
-                stat.classList.add('active');
-            });
-        });
-    </script>
-</body>
-</html>
+            <div class="
