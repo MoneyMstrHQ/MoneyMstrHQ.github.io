@@ -114,6 +114,7 @@ nav a:hover {
     text-transform: uppercase;
     line-height: 1;
     display: inline-flex;
+    position: relative; /* For positioning the coin */
 }
 
 .letter {
@@ -139,37 +140,18 @@ nav a:hover {
     }
 }
 
-/* Spinning Coin Styles */
-.spinning-coin {
+/* Hopping Coin Styles */
+.hopping-coin {
     position: absolute;
     width: 64px;
     height: 64px;
-    top: -100px;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    animation: fallIntoLogo 1s ease-in forwards;
-    animation-delay: 0.8s;
+    top: -64px; /* Position above the letter */
+    left: 50%; /* Center above the "H" (third letter) */
+    transform: translateX(30px); /* Adjust to center above the "H" */
+    opacity: 0; /* Hidden initially */
+    transition: opacity 0.5s ease-in;
     z-index: 10;
     filter: brightness(0); /* Makes the coin black */
-}
-
-@keyframes fallIntoLogo {
-    0% {
-        opacity: 1;
-        top: -100px;
-        transform: translateX(-50%) rotate(0deg);
-    }
-    80% {
-        opacity: 1;
-        top: 50%;
-        transform: translateX(-50%) rotate(360deg);
-    }
-    100% {
-        opacity: 0;
-        top: 50%;
-        transform: translateX(-50%) rotate(360deg);
-    }
 }
 
 .hero-right {
@@ -463,27 +445,11 @@ footer p {
         font-size: 80px; 
         margin-top: 40px;
     }
-    .spinning-coin {
+    .hopping-coin {
         width: 48px;
         height: 48px;
-        top: -80px;
-    }
-    @keyframes fallIntoLogo {
-        0% {
-            opacity: 1;
-            top: -80px;
-            transform: translateX(-50%) rotate(0deg);
-        }
-        80% {
-            opacity: 1;
-            top: 50%;
-            transform: translateX(-50%) rotate(360deg);
-        }
-        100% {
-            opacity: 0;
-            top: 50%;
-            transform: translateX(-50%) rotate(360deg);
-        }
+        top: -48px;
+        transform: translateX(20px); /* Adjust for smaller "H" on mobile */
     }
     .hero-right p { font-size: 24px; }
     .container-graphic { 
