@@ -8,6 +8,15 @@
 </head>
 <body>
     <div class="background-overlay"></div>
+    <!-- Logo outside the content wrapper so it animates immediately -->
+    <div class="hero">
+        <div class="hero-left">
+            <h2 class="logo-large">
+                <span class="letter">M</span><span class="letter">M</span><span class="letter">H</span><span class="letter">Q</span>
+            </h2>
+        </div>
+    </div>
+    <!-- Rest of the content fades in after logo animation -->
     <div class="content-wrapper" style="opacity: 0;">
         <header>
             <nav>
@@ -22,9 +31,6 @@
                 </ul>
             </nav>
             <div class="hero">
-                <div class="hero-left">
-                    <h2 class="logo-large">MMHQ</h2>
-                </div>
                 <div class="hero-right">
                     <p>Smart finance solutions for growing your wealth</p>
                     <span class="established">Established 2025</span>
@@ -122,13 +128,14 @@
             document.querySelector('.nav-links').classList.toggle('active');
         });
 
-        // Page fade-in on load
+        // Page reveal after logo animation
         document.addEventListener('DOMContentLoaded', () => {
             const content = document.querySelector('.content-wrapper');
+            // Wait for the logo animation to complete (0.8s for pop-up + 0.2s buffer)
             setTimeout(() => {
                 content.style.opacity = '1';
                 content.style.transition = 'opacity 0.5s ease-in';
-            }, 100); // Small delay to ensure smooth fade-in
+            }, 1000); // Total: 0.8s animation + 0.2s buffer
         });
     </script>
 </body>
