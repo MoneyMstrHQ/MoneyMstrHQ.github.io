@@ -7,41 +7,46 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <video muted loop playsinline id="bg-video" style="display: block;">
-        <source src="https://cdn.pixabay.com/video/2020/07/30/45961-447087612_large.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <div class="background-overlay"></div>
     <header>
-        <nav class="sticky">
-            <h1><img src="logo1.png" alt="MMHQ Logo" class="nav-logo"></h1>
+        <nav>
+            <h1 class="logo">MMHQ</h1>
             <div class="hamburger">☰</div>
             <ul class="nav-links">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Strategies</a></li>
                 <li><a href="#">Stats</a></li>
                 <li><a href="#">Tools</a></li>
+                <li><a href="#" class="lang-toggle">EN</a></li>
             </ul>
         </nav>
         <div class="hero">
-            <div class="hero-inner">
-                <h2 class="kinetic">Master Your Money</h2>
-                <p>Smart finance tips and tools to grow your wealth.</p>
-                <a href="https://impact.com/ynab-link" class="btn">Save $500 with YNAB</a>
-                <p class="cta-sub">Trusted by 1k+ Users • Join 500+ Savvy Savers</p>
+            <div class="hero-left">
+                <h2 class="logo-large">MMHQ</h2>
+            </div>
+            <div class="hero-right">
+                <p>Smart finance solutions for growing your wealth</p>
+                <span class="established">Established 2025</span>
+            </div>
+        </div>
+        <div class="container-graphic">
+            <div class="container-text">
+                <p>Smart Finance Solutions</p>
+                <span class="container-label">BY MMHQ</span>
             </div>
         </div>
     </header>
     <section class="stats">
-        <div class="stat" data-hover="$500+ Saved Week 1">
-            <span data-count="500">$0+</span>
+        <div class="stat">
+            <span>$500+</span>
             <p>Saved</p>
         </div>
-        <div class="stat" data-hover="Tool Users">
-            <span data-count="10000">0+</span>
+        <div class="stat">
+            <span>10,000+</span>
             <p>Users</p>
         </div>
-        <div class="stat" data-hover="Avg. 90-Day Gains">
-            <span data-count="20">0%+</span>
+        <div class="stat">
+            <span>20%+</span>
             <p>Growth</p>
         </div>
     </section>
@@ -98,163 +103,22 @@
                 <p>Hey, I’m Skye Carter—ex-finance nerd, now wealth hacker. MMHQ’s my mission to kill money stress with tools that actually work. Goal: 10k people saving $500 by 2026. Join the squad.</p>
                 <form class="signup">
                     <input type="email" placeholder="Your email" required>
-                    <button type="submit" class="btn btn-small btn-pulse">Join the Crew</button>
+                    <button type="submit" class="btn btn-small">Join the Crew</button>
                 </form>
             </div>
         </div>
     </section>
     <footer>
-        <p>© 2025 MMHQ Elite Wealth Systems • <span class="secure-badge">Secure Links</span></p>
+        <p>© 2025 MMHQ Elite Wealth Systems</p>
         <div class="social">
             <a href="https://x.com/MoneyMasterHQ" class="social-icon">𝕏</a>
             <a href="#" class="social-icon">🎮</a>
         </div>
     </footer>
     <script>
-        document.querySelectorAll('.stat').forEach(stat => {
-            stat.addEventListener('touchstart', function(e) {
-                e.preventDefault();
-                this.classList.remove('active');
-                this.classList.add('active');
-                setTimeout(() => this.classList.remove('active'), 2000);
-            });
-            stat.addEventListener('touchend', function(e) {
-                e.preventDefault();
-            });
-        });
-
-        document.querySelectorAll('.stat span').forEach(stat => {
-            let count = 0;
-            const target = parseInt(stat.getAttribute('data-count'));
-            const increment = target / 50;
-            const isPercent = stat.textContent.includes('%');
-            const updateCount = () => {
-                count += increment;
-                if (count < target) {
-                    stat.textContent = isPercent ? `${Math.floor(count)}%+` : `$${Math.floor(count)}+`;
-                    requestAnimationFrame(updateCount);
-                } else {
-                    stat.textContent = isPercent ? `${target}%+` : `$${target}+`;
-                }
-            };
-            updateCount();
-        });
-
-        const cards = document.querySelectorAll('.card');
-        const testimonials = document.querySelectorAll('.testimonial');
-        const highlights = document.querySelectorAll('.highlight');
-
-        function highlightCenterElements() {
-            if (window.matchMedia('(max-width: 768px)').matches) {
-                const viewportHeight = window.innerHeight;
-                const centerY = viewportHeight / 2;
-
-                let closestCard = null;
-                let minCardDistance = Infinity;
-                cards.forEach(card => {
-                    const rect = card.getBoundingClientRect();
-                    const cardCenterY = rect.top + (rect.height / 2);
-                    const distance = Math.abs(centerY - cardCenterY);
-                    if (rect.top >= -rect.height && rect.bottom <= viewportHeight + rect.height && distance < minCardDistance) {
-                        minCardDistance = distance;
-                        closestCard = card;
-                    }
-                });
-                cards.forEach(card => {
-                    card.classList.remove('in-view');
-                    if (card === closestCard && minCardDistance < 150) {
-                        card.classList.add('in-view');
-                    }
-                });
-
-                let closestTestimonial = null;
-                let minTestimonialDistance = Infinity;
-                testimonials.forEach(testimonial => {
-                    const rect = testimonial.getBoundingClientRect();
-                    const testimonialCenterY = rect.top + (rect.height / 2);
-                    const distance = Math.abs(centerY - testimonialCenterY);
-                    if (rect.top >= -rect.height && rect.bottom <= viewportHeight + rect.height && distance < minTestimonialDistance) {
-                        minTestimonialDistance = distance;
-                        closestTestimonial = testimonial;
-                    }
-                });
-                testimonials.forEach(testimonial => {
-                    testimonial.classList.remove('in-view');
-                    if (testimonial === closestTestimonial && minTestimonialDistance < 150) {
-                        testimonial.classList.add('in-view');
-                    }
-                });
-
-                let closestHighlight = null;
-                let minHighlightDistance = Infinity;
-                highlights.forEach(highlight => {
-                    const rect = highlight.getBoundingClientRect();
-                    const highlightCenterY = rect.top + (rect.height / 2);
-                    const distance = Math.abs(centerY - highlightCenterY);
-                    if (rect.top >= -rect.height && rect.bottom <= viewportHeight + rect.height && distance < minHighlightDistance) {
-                        minHighlightDistance = distance;
-                        closestHighlight = highlight;
-                    }
-                });
-                highlights.forEach(highlight => {
-                    highlight.classList.remove('in-view');
-                    if (highlight === closestHighlight && minHighlightDistance < 150) {
-                        highlight.classList.add('in-view');
-                    }
-                });
-            }
-        }
-
-        let timeout;
-        function debounceHighlight() {
-            clearTimeout(timeout);
-            timeout = setTimeout(highlightCenterElements, 50);
-        }
-
-        window.addEventListener('scroll', debounceHighlight);
-        window.addEventListener('resize', highlightCenterElements);
-        highlightCenterElements();
-
         document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('.nav-links').classList.toggle('active');
         });
-
-        const video = document.getElementById('bg-video');
-        function playVideo() {
-            video.style.visibility = 'visible';
-            video.play().then(() => {
-                console.log('Video playing successfully');
-            }).catch(error => {
-                console.log('Video playback failed:', error);
-                setTimeout(() => {
-                    video.play().catch(err => console.log('Retry failed:', err));
-                }, 1000);
-            });
-        }
-
-        window.addEventListener('load', () => {
-            video.load();
-            playVideo();
-        });
-
-        let interactionTriggered = false;
-        function handleInteraction() {
-            if (!interactionTriggered) {
-                playVideo();
-                interactionTriggered = true;
-            }
-        }
-
-        window.addEventListener('touchstart', handleInteraction);
-        window.addEventListener('scroll', handleInteraction);
-        window.addEventListener('click', handleInteraction);
-
-        setTimeout(() => {
-            if (video.paused) {
-                console.log('Video still paused, forcing play');
-                playVideo();
-            }
-        }, 3000);
     </script>
 </body>
 </html>
