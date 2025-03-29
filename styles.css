@@ -93,6 +93,7 @@ nav a:hover {
     width: 90%; 
     padding: 40px 20px; 
     flex: 1;
+    position: relative;
 }
 
 .hero-left {
@@ -105,6 +106,37 @@ nav a:hover {
     color: #1A1A1A;
     text-transform: uppercase;
     line-height: 1;
+    display: inline-flex;
+}
+
+.letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: popUp 0.8s ease-out forwards;
+}
+
+.letter:nth-child(1) { animation-delay: 0s; }
+.letter:nth-child(2) { animation-delay: 0.1s; }
+.letter:nth-child(3) { animation-delay: 0.2s; }
+.letter:nth-child(4) { animation-delay: 0.3s; }
+
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-10px);
+    }
+    80% {
+        transform: translateY(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero-right {
@@ -242,6 +274,11 @@ h3 {
     margin-bottom: 15px; 
 }
 
+/* Highlight savings-related card */
+.card:nth-child(1) h4 { 
+    color: #FF5733; 
+}
+
 .card a, .highlight a:not(.btn) { 
     color: #FF5733; 
     text-decoration: none; 
@@ -274,12 +311,12 @@ h3 {
 }
 
 .badge { 
-    background: #E0E0E0; 
+    background: #FF5733; 
+    color: #FFFFFF; 
     padding: 4px 10px; 
     border-radius: 12px; 
     font-size: 12px; 
     font-weight: 700; 
-    color: #1A1A1A; 
     display: inline-block; 
 }
 
@@ -334,6 +371,18 @@ h3 {
 
 .signup button {
     cursor: pointer;
+    background: #FF5733;
+    color: #FFFFFF;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.signup button:hover {
+    background: #E04E2B;
 }
 
 footer { 
@@ -378,7 +427,9 @@ footer p {
         flex: none; 
     }
     .hero-right { margin-top: 20px; }
-    .logo-large { font-size: 80px; }
+    .logo-large { 
+        font-size: 80px; 
+    }
     .hero-right p { font-size: 24px; }
     .container-text p { font-size: 18px; }
     .stats { gap: 20px; padding: 20px; }
