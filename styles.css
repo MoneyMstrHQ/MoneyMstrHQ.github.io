@@ -42,7 +42,7 @@ nav {
     padding: 20px 40px; 
     width: 100%; 
     max-width: 1200px; 
-    margin: 0A auto;
+    margin: 0 auto;
 }
 
 .logo {
@@ -105,33 +105,55 @@ nav a:hover {
     color: #1A1A1A;
     text-transform: uppercase;
     line-height: 1;
-    display: inline-flex; /* Ensure letters are inline for animation */
+    display: inline-flex;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: slideUp 1s ease-in-out forwards 1s; /* Slide to final position after 1s delay */
+}
+
+@keyframes slideUp {
+    0% {
+        bottom: 20px;
+    }
+    70% {
+        bottom: calc(100vh - 200px); /* Adjust based on final position */
+        transform: translateX(-50%) scale(1.05);
+    }
+    100% {
+        bottom: calc(100vh - 180px);
+        transform: translateX(-50%) scale(1);
+    }
 }
 
 .letter {
     display: inline-block;
     opacity: 0;
-    transform: scale(0.8);
-    animation: letterReveal 1.5s ease-out forwards;
+    transform: translateY(50px);
+    animation: popUp 0.8s ease-out forwards;
 }
 
 .letter:nth-child(1) { animation-delay: 0s; }
-.letter:nth-child(2) { animation-delay: 0.2s; }
-.letter:nth-child(3) { animation-delay: 0.4s; }
-.letter:nth-child(4) { animation-delay: 0.6s; }
+.letter:nth-child(2) { animation-delay: 0.1s; }
+.letter:nth-child(3) { animation-delay: 0.2s; }
+.letter:nth-child(4) { animation-delay: 0.3s; }
 
-@keyframes letterReveal {
+@keyframes popUp {
     0% {
         opacity: 0;
-        transform: scale(0.8);
+        transform: translateY(50px);
     }
-    50% {
+    60% {
         opacity: 1;
-        transform: scale(1.1);
+        transform: translateY(-10px);
+    }
+    80% {
+        transform: translateY(5px);
     }
     100% {
         opacity: 1;
-        transform: scale(1);
+        transform: translateY(0);
     }
 }
 
@@ -423,7 +445,23 @@ footer p {
         flex: none; 
     }
     .hero-right { margin-top: 20px; }
-    .logo-large { font-size: 80px; }
+    .logo-large { 
+        font-size: 80px; 
+        bottom: 10px;
+    }
+    @keyframes slideUp {
+        0% {
+            bottom: 10px;
+        }
+        70% {
+            bottom: calc(100vh - 140px);
+            transform: translateX(-50%) scale(1.05);
+        }
+        100% {
+            bottom: calc(100vh - 120px);
+            transform: translateX(-50%) scale(1);
+        }
+    }
     .hero-right p { font-size: 24px; }
     .container-text p { font-size: 18px; }
     .stats { gap: 20px; padding: 20px; }
