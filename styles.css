@@ -428,7 +428,7 @@ footer p {
     .hero-right { margin-top: 15px; }
     .logo-large { 
         font-size: 80px; 
-        margin-top: 20px; /* Added to move the logo down a tiny bit */
+        margin-top: 30px; /* Increased from 20px to 30px to move the logo down a bit more */
     }
     .hero-right p { font-size: 24px; }
     .container-graphic { 
