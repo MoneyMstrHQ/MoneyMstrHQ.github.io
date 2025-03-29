@@ -11,14 +11,10 @@
     <!-- Suppress favicon 404 error -->
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <link rel="stylesheet" href="styles.css">
-    <!-- Include Lottie Web -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
 </head>
 <body>
     <div class="background-overlay"></div>
     <header>
-        <!-- Piggy Bank Animation (Lottie) -->
-        <div id="piggy-bank-animation" class="piggy-bank-animation"></div>
         <nav>
             <h1 class="logo"><span class="hidden-text">MMHQ</span></h1>
             <div class="hamburger"><span class="hidden-text">☰</span></div>
@@ -121,7 +117,7 @@
         </div>
     </section>
     <footer>
-        <p><span class="hidden-text">© 2025 MMHQ Elite Wealth Systems | Piggy Bank Animation by LottieFiles</span></p>
+        <p><span class="hidden-text">© 2025 MMHQ Elite Wealth Systems</span></p>
         <div class="social">
             <a href="https://x.com/MoneyMasterHQ" class="social-icon hidden-element"><span class="hidden-text">𝕏</span></a>
             <a href="#" class="social-icon hidden-element"><span class="hidden-text">🎮</span></a>
@@ -136,9 +132,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             const hiddenTexts = document.querySelectorAll('.hidden-text');
             const hiddenElements = document.querySelectorAll('.hidden-element');
-            // Log the number of elements to confirm selection (remove after testing)
-            console.log('Hidden Texts:', hiddenTexts.length);
-            console.log('Hidden Elements:', hiddenElements.length);
             // Wait for the logo animation to complete (1.2s total: 0.8s for letters + 0.4s buffer)
             setTimeout(() => {
                 hiddenTexts.forEach(text => {
@@ -147,33 +140,9 @@
                 });
                 hiddenElements.forEach(element => {
                     element.style.opacity = '1';
-                    element.style.transition = 'opacity 0.5s ease-in'; // Fixed the bug here
+                    element.style.transition = 'opacity 0.5s ease-in';
                 });
             }, 1200);
-
-            // Load the Piggy Bank Lottie animation
-            const piggyBankAnim = lottie.loadAnimation({
-                container: document.getElementById('piggy-bank-animation'),
-                renderer: 'svg',
-                loop: false, // We'll handle looping manually
-                autoplay: false, // We'll control playback
-                path: 'piggy-bank.json' // Local file hosted on your GitHub Pages
-            });
-
-            // Function to play the animation with a delay between loops
-            function playWithDelay() {
-                piggyBankAnim.play();
-                piggyBankAnim.addEventListener('complete', () => {
-                    setTimeout(() => {
-                        piggyBankAnim.goToAndPlay(0); // Restart the animation
-                    }, 5000); // 5-second delay between loops
-                }, { once: true }); // Ensure the event listener is only called once per loop
-            }
-
-            // Start the animation after the page loads
-            piggyBankAnim.addEventListener('DOMLoaded', () => {
-                playWithDelay();
-            });
         });
     </script>
 </body>
