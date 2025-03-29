@@ -21,19 +21,6 @@ body {
     opacity: 0.3;
 }
 
-/* Piggy Bank Animation Styles */
-.piggy-bank-animation {
-    position: absolute;
-    width: 200px; /* Smaller width */
-    height: 200px; /* Smaller height */
-    z-index: 0; /* Behind the content in the header */
-    opacity: 0.5; /* Subtle visibility */
-    /* Position it below the tagline */
-    top: 250px; /* Increased to move below the tagline (nav ~60px + logo ~120px + tagline ~43px + spacing) */
-    right: 20%; /* Align with the right-aligned tagline */
-    transform: translateX(50%); /* Center it horizontally */
-}
-
 .hidden-text {
     opacity: 0;
 }
@@ -47,7 +34,6 @@ header {
     display: flex; 
     flex-direction: column; 
     align-items: center; 
-    position: relative; /* For positioning the animation */
     padding-top: 20px;
     background: rgba(255, 255, 255, 0.95);
     margin: 20px;
@@ -62,8 +48,6 @@ nav {
     width: 100%; 
     max-width: 1200px; 
     margin: 0 auto;
-    position: relative;
-    z-index: 1; /* In front of the animation */
 }
 
 .logo {
@@ -114,13 +98,10 @@ nav a:hover {
     width: 90%; 
     padding: 40px 20px; 
     flex: 1;
-    position: relative;
-    z-index: 1; /* In front of the animation */
 }
 
 .hero-left {
     flex: 1;
-    position: relative;
     text-align: center; /* Center the logo */
 }
 
@@ -131,8 +112,6 @@ nav a:hover {
     text-transform: uppercase;
     line-height: 1;
     display: inline-flex;
-    position: relative;
-    z-index: 1; /* Ensure the logo is in front of the animation */
 }
 
 .letter {
@@ -161,8 +140,6 @@ nav a:hover {
 .hero-right {
     flex: 1;
     text-align: right;
-    position: relative;
-    z-index: 1; /* Ensure the tagline is in front of the animation */
 }
 
 .hero-right p {
@@ -186,8 +163,6 @@ nav a:hover {
 .container-graphic {
     text-align: center;
     margin: 40px 0;
-    position: relative;
-    z-index: 1; /* In front of the animation */
 }
 
 .container-text {
@@ -455,13 +430,6 @@ footer p {
     .logo-large { 
         font-size: 80px; 
         margin-top: 40px;
-    }
-    .piggy-bank-animation {
-        top: 320px; /* Adjust for mobile layout: below the logo and tagline */
-        width: 150px; /* Smaller on mobile */
-        height: 150px;
-        right: 50%; /* Center on mobile since the tagline is centered */
-        transform: translateX(50%);
     }
     .hero-right p { font-size: 24px; }
     .container-graphic { 
