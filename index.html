@@ -9,6 +9,8 @@
     <!-- Load the font stylesheet -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap">
     <link rel="stylesheet" href="styles.css">
+    <!-- Include Lottie Player -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body>
     <div class="background-overlay"></div>
@@ -29,6 +31,14 @@
                 <h2 class="logo-large">
                     <span class="letter">M</span><span class="letter">M</span><span class="letter">H</span><span class="letter">Q</span>
                 </h2>
+                <lottie-player 
+                    src="https://lottie.host/2b2b49ee-e7fe-4f79-b35a-1361d394db85/bHWalSF1W1.lottie" 
+                    background="transparent" 
+                    speed="1" 
+                    loop 
+                    autoplay 
+                    class="spinning-coin">
+                </lottie-player>
             </div>
             <div class="hero-right">
                 <p><span class="hidden-text">Smart finance solutions for growing your wealth</span></p>
@@ -138,7 +148,7 @@
                 });
                 hiddenElements.forEach(element => {
                     element.style.opacity = '1';
-                    element.style.transition = 'opacity 0.5s ease-in';
+                    text.style.transition = 'opacity 0.5s ease-in';
                 });
             }, 1200);
         });
