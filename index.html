@@ -16,34 +16,32 @@
         <video id="header-video" muted playsinline>
             <source src="https://videos.pexels.com/video-files/3943962/3943962-sd_960_506_25fps.mp4" type="video/mp4">
         </video>
-        <div class="hero-card">
-            <nav>
-                <h1 class="logo"><span class="hidden-text">MMHQ</span></h1>
-                <div class="hamburger"><span class="hidden-text">☰</span></div>
-                <ul class="nav-links">
-                    <li><a href="#"><span class="hidden-text">Home</span></a></li>
-                    <li><a href="#"><span class="hidden-text">Strategies</span></a></li>
-                    <li><a href="#"><span class="hidden-text">Stats</span></a></li>
-                    <li><a href="#"><span class="hidden-text">Tools</span></a></li>
-                    <li><a href="#" class="lang-toggle hidden-element"><span class="hidden-text">EN</span></a></li>
-                </ul>
-            </nav>
-            <div class="hero">
-                <div class="hero-left">
-                    <h2 class="logo-large">
-                        <span class="letter">M</span><span class="letter">M</span><span class="letter">H</span><span class="letter">Q</span>
-                    </h2>
-                </div>
-                <div class="hero-right">
-                    <p><span class="hidden-text">Smart finance solutions for growing your wealth</span></p>
-                    <span class="established hidden-element"><span class="hidden-text">Established 2025</span></span>
-                </div>
+        <nav>
+            <h1 class="logo"><span class="hidden-text">MMHQ</span></h1>
+            <div class="hamburger"><span class="hidden-text">☰</span></div>
+            <ul class="nav-links">
+                <li><a href="#"><span class="hidden-text">Home</span></a></li>
+                <li><a href="#"><span class="hidden-text">Strategies</span></a></li>
+                <li><a href="#"><span class="hidden-text">Stats</span></a></li>
+                <li><a href="#"><span class="hidden-text">Tools</span></a></li>
+                <li><a href="#" class="lang-toggle hidden-element"><span class="hidden-text">EN</span></a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <div class="hero-left">
+                <h2 class="logo-large">
+                    <span class="letter">M</span><span class="letter">M</span><span class="letter">H</span><span class="letter">Q</span>
+                </h2>
             </div>
-            <div class="container-graphic">
-                <div class="container-text hidden-element">
-                    <p><span class="hidden-text">Smart Finance Solutions</span></p>
-                    <span class="container-label hidden-element"><span class="hidden-text">BY MMHQ</span></span>
-                </div>
+            <div class="hero-right">
+                <p><span class="hidden-text">Smart finance solutions for growing your wealth</span></p>
+                <span class="established hidden-element"><span class="hidden-text">Established 2025</span></span>
+            </div>
+        </div>
+        <div class="container-graphic">
+            <div class="container-text hidden-element">
+                <p><span class="hidden-text">Smart Finance Solutions</span></p>
+                <span class="container-label hidden-element"><span class="hidden-text">BY MMHQ</span></span>
             </div>
         </div>
     </header>
@@ -133,28 +131,30 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             const video = document.getElementById('header-video');
-            const heroCard = document.querySelector('.hero-card');
             const hiddenTexts = document.querySelectorAll('.hidden-text');
             const hiddenElements = document.querySelectorAll('.hidden-element');
-
-            // Hide hero card initially
-            heroCard.style.opacity = '0';
 
             // Play video on load
             video.play();
 
-            // When video ends, fade it out and show hero card
+            // Start logo animation 1 second before video ends
+            video.addEventListener('timeupdate', () => {
+                if (video.duration - video.currentTime <= 1) {
+                    startLogoAnimation();
+                    video.removeEventListener('timeupdate', this); // Remove listener after trigger
+                }
+            });
+
+            // Fade out video when it ends
             video.onended = () => {
                 video.style.opacity = '0';
                 setTimeout(() => {
                     video.style.display = 'none'; // Hide video after fade
-                    heroCard.style.opacity = '1'; // Show hero card
-                    startLogoAnimation();
-                }, 1000); // Match fade-out duration
+                }, 500); // Match fade-out duration
             };
 
             function startLogoAnimation() {
-                // Reveal logo letters (handled by CSS animation)
+                // Logo animation is handled by CSS
                 setTimeout(() => {
                     // Reveal text and elements after logo animation
                     hiddenTexts.forEach(text => {
@@ -163,7 +163,7 @@
                     });
                     hiddenElements.forEach(element => {
                         element.style.opacity = '1';
-                        element.style.transition = 'opacity 0.5s ease-in';
+                        text.style.transition = 'opacity 0.5s ease-in';
                     });
                 }, 1200); // Wait for logo animation to complete (0.8s + buffer)
             }
