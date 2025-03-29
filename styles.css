@@ -254,10 +254,24 @@ nav a:hover {
     font-weight: 600; 
     margin-bottom: 30px; 
     color: #FFFFFF; 
-    background: rgba(28, 37, 38, 0.8); 
-    padding: 5px 10px; /* Slimmer padding */
-    border-radius: 8px; /* Sleeker corners */
+    position: relative; 
     display: inline-block; 
+}
+.testimonials h3::after { 
+    content: ''; 
+    position: absolute; 
+    bottom: -8px; 
+    left: 0; 
+    width: 100%; 
+    height: 3px; 
+    background: linear-gradient(90deg, #A78BFA, #6EE7B7); 
+    transform: scaleX(0); 
+    transform-origin: left; 
+    animation: underline 1.5s ease-out forwards; 
+}
+@keyframes underline { 
+    0% { transform: scaleX(0); } 
+    100% { transform: scaleX(1); } 
 }
 .testimonial { 
     background: rgba(28, 37, 38, 0.8); 
@@ -301,10 +315,20 @@ nav a:hover {
     font-weight: 600; 
     margin-bottom: 40px; 
     color: #FFFFFF; 
-    background: rgba(28, 37, 38, 0.8); 
-    padding: 5px 10px; /* Slimmer padding */
-    border-radius: 8px; /* Sleeker corners */
+    position: relative; 
     display: inline-block; 
+}
+.strategies h3::after { 
+    content: ''; 
+    position: absolute; 
+    bottom: -8px; 
+    left: 0; 
+    width: 100%; 
+    height: 3px; 
+    background: linear-gradient(90deg, #A78BFA, #6EE7B7); 
+    transform: scaleX(0); 
+    transform-origin: left; 
+    animation: underline 1.5s ease-out forwards; 
 }
 .grid { 
     display: grid; 
@@ -394,10 +418,20 @@ nav a:hover {
     font-size: 48px; 
     color: #FFFFFF; 
     margin-bottom: 40px; 
-    background: rgba(28, 37, 38, 0.8); 
-    padding: 5px 10px; /* Slimmer padding */
-    border-radius: 8px; /* Sleeker corners */
+    position: relative; 
     display: inline-block; 
+}
+.highlights h3::after { 
+    content: ''; 
+    position: absolute; 
+    bottom: -8px; 
+    left: 0; 
+    width: 100%; 
+    height: 3px; 
+    background: linear-gradient(90deg, #A78BFA, #6EE7B7); 
+    transform: scaleX(0); 
+    transform-origin: left; 
+    animation: underline 1.5s ease-out forwards; 
 }
 .highlight-grid { 
     display: grid; 
@@ -456,10 +490,20 @@ nav a:hover {
     font-weight: 600; 
     margin-bottom: 30px; 
     color: #FFFFFF; 
-    background: rgba(28, 37, 38, 0.8); 
-    padding: 5px 10px; /* Slimmer padding */
-    border-radius: 8px; /* Sleeker corners */
+    position: relative; 
     display: inline-block; 
+}
+.about h3::after { 
+    content: ''; 
+    position: absolute; 
+    bottom: -8px; 
+    left: 0; 
+    width: 100%; 
+    height: 3px; 
+    background: linear-gradient(90deg, #A78BFA, #6EE7B7); 
+    transform: scaleX(0); 
+    transform-origin: left; 
+    animation: underline 1.5s ease-out forwards; 
 }
 .about-content { 
     max-width: 800px; 
