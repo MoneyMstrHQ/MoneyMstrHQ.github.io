@@ -136,6 +136,9 @@
         document.addEventListener('DOMContentLoaded', () => {
             const hiddenTexts = document.querySelectorAll('.hidden-text');
             const hiddenElements = document.querySelectorAll('.hidden-element');
+            // Log the number of elements to confirm selection (remove after testing)
+            console.log('Hidden Texts:', hiddenTexts.length);
+            console.log('Hidden Elements:', hiddenElements.length);
             // Wait for the logo animation to complete (1.2s total: 0.8s for letters + 0.4s buffer)
             setTimeout(() => {
                 hiddenTexts.forEach(text => {
@@ -144,7 +147,7 @@
                 });
                 hiddenElements.forEach(element => {
                     element.style.opacity = '1';
-                    text.style.transition = 'opacity 0.5s ease-in';
+                    element.style.transition = 'opacity 0.5s ease-in'; // Fixed the bug here
                 });
             }, 1200);
 
