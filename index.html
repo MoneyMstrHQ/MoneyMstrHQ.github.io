@@ -8,18 +8,11 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" as="style">
     <!-- Load the font stylesheet -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap">
-    <!-- Suppress favicon 404 error -->
-    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="background-overlay"></div>
     <header>
-        <!-- Intro Video -->
-        <video class="intro-video" autoplay muted loop playsinline>
-            <source src="path-to-your-video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
         <nav>
             <h1 class="logo"><span class="hidden-text">MMHQ</span></h1>
             <div class="hamburger"><span class="hidden-text">☰</span></div>
@@ -133,11 +126,11 @@
             document.querySelector('.nav-links').classList.toggle('active');
         });
 
-        // Reveal text and outlined elements after video and logo animation
+        // Reveal text and outlined elements after logo animation
         document.addEventListener('DOMContentLoaded', () => {
             const hiddenTexts = document.querySelectorAll('.hidden-text');
             const hiddenElements = document.querySelectorAll('.hidden-element');
-            // Wait for the video (3s) + logo animation (0.8s) to complete
+            // Wait for the logo animation to complete (1.2s total: 0.8s for letters + 0.4s buffer)
             setTimeout(() => {
                 hiddenTexts.forEach(text => {
                     text.style.opacity = '1';
@@ -147,7 +140,7 @@
                     element.style.opacity = '1';
                     element.style.transition = 'opacity 0.5s ease-in';
                 });
-            }, 3800); // 3s (video) + 0.8s (logo animation)
+            }, 1200);
         });
     </script>
 </body>
