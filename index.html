@@ -9,8 +9,8 @@
     <!-- Load the font stylesheet -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap">
     <link rel="stylesheet" href="styles.css">
-    <!-- Include Lottie Player -->
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <!-- Include Lottie Player from a reliable CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKmlUcmDGBv2vUI/REn6FuIdixLNnQT+vKusE2hhTk2is3cFvv5wA+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
     <div class="background-overlay"></div>
@@ -30,15 +30,8 @@
             <div class="hero-left">
                 <h2 class="logo-large">
                     <span class="letter">M</span><span class="letter">M</span><span class="letter">H</span><span class="letter">Q</span>
+                    <div id="hopping-coin" class="hopping-coin"></div>
                 </h2>
-                <lottie-player 
-                    src="https://lottie.host/2b2b49ee-e7fe-4f79-b35a-1361d394db85/bHWalSF1W1.lottie" 
-                    background="transparent" 
-                    speed="1" 
-                    loop 
-                    autoplay 
-                    class="spinning-coin">
-                </lottie-player>
             </div>
             <div class="hero-right">
                 <p><span class="hidden-text">Smart finance solutions for growing your wealth</span></p>
@@ -125,7 +118,7 @@
         </div>
     </section>
     <footer>
-        <p><span class="hidden-text">© 2025 MMHQ Elite Wealth Systems</span></p>
+        <p><span class="hidden-text">© 2025 MMHQ Elite Wealth Systems | Spinning Coin Animation by Anna Song via LottieFiles</span></p>
         <div class="social">
             <a href="https://x.com/MoneyMasterHQ" class="social-icon hidden-element"><span class="hidden-text">𝕏</span></a>
             <a href="#" class="social-icon hidden-element"><span class="hidden-text">🎮</span></a>
@@ -148,9 +141,24 @@
                 });
                 hiddenElements.forEach(element => {
                     element.style.opacity = '1';
-                    text.style.transition = 'opacity 0.5s ease-in';
+                    element.style.transition = 'opacity 0.5s ease-in';
                 });
             }, 1200);
+
+            // Load the Lottie animation
+            lottie.loadAnimation({
+                container: document.getElementById('hopping-coin'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: false, // We'll control playback
+                path: 'https://lottie.host/2b2b49ee-e7fe-4f79-b35a-1361d394db85/bHWalSF1W1.lottie'
+            }).addEventListener('rendered', () => {
+                // Start the animation after the logo animation (0.8s)
+                setTimeout(() => {
+                    document.getElementById('hopping-coin').style.opacity = '1';
+                    lottie.play('hopping-coin');
+                }, 800);
+            });
         });
     </script>
 </body>
