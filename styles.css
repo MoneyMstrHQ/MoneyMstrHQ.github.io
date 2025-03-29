@@ -106,25 +106,6 @@ nav a:hover {
     text-transform: uppercase;
     line-height: 1;
     display: inline-flex;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: slideUp 1s ease-in-out forwards 1s; /* Slide to final position after 1s delay */
-}
-
-@keyframes slideUp {
-    0% {
-        bottom: 20px;
-    }
-    70% {
-        bottom: calc(100vh - 200px); /* Adjust based on final position */
-        transform: translateX(-50%) scale(1.05);
-    }
-    100% {
-        bottom: calc(100vh - 180px);
-        transform: translateX(-50%) scale(1);
-    }
 }
 
 .letter {
@@ -447,20 +428,6 @@ footer p {
     .hero-right { margin-top: 20px; }
     .logo-large { 
         font-size: 80px; 
-        bottom: 10px;
-    }
-    @keyframes slideUp {
-        0% {
-            bottom: 10px;
-        }
-        70% {
-            bottom: calc(100vh - 140px);
-            transform: translateX(-50%) scale(1.05);
-        }
-        100% {
-            bottom: calc(100vh - 120px);
-            transform: translateX(-50%) scale(1);
-        }
     }
     .hero-right p { font-size: 24px; }
     .container-text p { font-size: 18px; }
