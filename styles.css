@@ -99,12 +99,12 @@ nav a:hover {
     width: 90%; 
     padding: 40px 20px; 
     flex: 1;
-    position: relative; /* For positioning the coin */
+    position: relative;
 }
 
 .hero-left {
     flex: 1;
-    position: relative; /* For positioning the coin */
+    position: relative;
 }
 
 .logo-large {
@@ -144,13 +144,14 @@ nav a:hover {
     position: absolute;
     width: 64px;
     height: 64px;
-    top: -100px; /* Start above the logo */
+    top: -100px;
     left: 50%;
-    transform: translateX(-50%); /* Center horizontally */
-    opacity: 0; /* Hidden initially */
+    transform: translateX(-50%);
+    opacity: 0;
     animation: fallIntoLogo 1s ease-in forwards;
-    animation-delay: 0.8s; /* Start after logo animation */
-    z-index: 10; /* Ensure it’s above the logo */
+    animation-delay: 0.8s;
+    z-index: 10;
+    filter: brightness(0); /* Makes the coin black */
 }
 
 @keyframes fallIntoLogo {
@@ -161,11 +162,11 @@ nav a:hover {
     }
     80% {
         opacity: 1;
-        top: 50%; /* Fall to the center of the logo */
-        transform: translateX(-50%) rotate(360deg); /* Rotate while falling */
+        top: 50%;
+        transform: translateX(-50%) rotate(360deg);
     }
     100% {
-        opacity: 0; /* Disappear as if it fell into the piggy bank */
+        opacity: 0;
         top: 50%;
         transform: translateX(-50%) rotate(360deg);
     }
@@ -463,9 +464,9 @@ footer p {
         margin-top: 40px;
     }
     .spinning-coin {
-        width: 48px; /* Smaller size for mobile */
+        width: 48px;
         height: 48px;
-        top: -80px; /* Adjust starting position for smaller logo */
+        top: -80px;
     }
     @keyframes fallIntoLogo {
         0% {
