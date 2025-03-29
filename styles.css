@@ -1,7 +1,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body { 
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Updated fallback font stack */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background: #F5F5F5;
     color: #1A1A1A; 
     line-height: 1.6; 
@@ -99,10 +99,12 @@ nav a:hover {
     width: 90%; 
     padding: 40px 20px; 
     flex: 1;
+    position: relative; /* For positioning the coin */
 }
 
 .hero-left {
     flex: 1;
+    position: relative; /* For positioning the coin */
 }
 
 .logo-large {
@@ -134,6 +136,38 @@ nav a:hover {
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Spinning Coin Styles */
+.spinning-coin {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    top: -100px; /* Start above the logo */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    opacity: 0; /* Hidden initially */
+    animation: fallIntoLogo 1s ease-in forwards;
+    animation-delay: 0.8s; /* Start after logo animation */
+    z-index: 10; /* Ensure it’s above the logo */
+}
+
+@keyframes fallIntoLogo {
+    0% {
+        opacity: 1;
+        top: -100px;
+        transform: translateX(-50%) rotate(0deg);
+    }
+    80% {
+        opacity: 1;
+        top: 50%; /* Fall to the center of the logo */
+        transform: translateX(-50%) rotate(360deg); /* Rotate while falling */
+    }
+    100% {
+        opacity: 0; /* Disappear as if it fell into the piggy bank */
+        top: 50%;
+        transform: translateX(-50%) rotate(360deg);
     }
 }
 
@@ -426,7 +460,29 @@ footer p {
     .hero-right { margin-top: 15px; }
     .logo-large { 
         font-size: 80px; 
-        margin-top: 40px; /* Increased from 30px to 40px to move the logo down a bit more */
+        margin-top: 40px;
+    }
+    .spinning-coin {
+        width: 48px; /* Smaller size for mobile */
+        height: 48px;
+        top: -80px; /* Adjust starting position for smaller logo */
+    }
+    @keyframes fallIntoLogo {
+        0% {
+            opacity: 1;
+            top: -80px;
+            transform: translateX(-50%) rotate(0deg);
+        }
+        80% {
+            opacity: 1;
+            top: 50%;
+            transform: translateX(-50%) rotate(360deg);
+        }
+        100% {
+            opacity: 0;
+            top: 50%;
+            transform: translateX(-50%) rotate(360deg);
+        }
     }
     .hero-right p { font-size: 24px; }
     .container-graphic { 
