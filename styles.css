@@ -414,22 +414,22 @@ footer p {
     header { 
         padding-top: 10px; 
         margin: 10px; 
-        min-height: 60vh; /* Reduced from 100vh to shorten the hero section */
+        min-height: 75vh; /* Increased from 60vh to 75vh for a bit more height */
     }
     .hero { 
         flex-direction: column; 
         text-align: center; 
-        padding: 20px 20px 10px; /* Reduced bottom padding to decrease gap */
+        padding: 20px 20px 20px; /* Increased bottom padding from 10px to 20px for more space */
     }
     .hero-left, .hero-right { 
         text-align: center; 
         flex: none; 
     }
-    .hero-right { margin-top: 10px; } /* Reduced margin to bring text closer */
+    .hero-right { margin-top: 15px; } /* Increased from 10px to 15px for a bit more breathing room */
     .logo-large { font-size: 80px; }
     .hero-right p { font-size: 24px; }
     .container-graphic { 
-        margin: 20px 0; /* Reduced from 40px to bring "Smart Finance Solutions" closer */
+        margin: 30px 0; /* Increased from 20px to 30px for a bit more space */
     }
     .container-text p { font-size: 18px; }
     .stats { gap: 20px; padding: 20px; }
