@@ -414,22 +414,25 @@ footer p {
     header { 
         padding-top: 10px; 
         margin: 10px; 
-        min-height: 75vh; /* Increased from 60vh to 75vh for a bit more height */
+        min-height: 75vh;
     }
     .hero { 
         flex-direction: column; 
         text-align: center; 
-        padding: 20px 20px 20px; /* Increased bottom padding from 10px to 20px for more space */
+        padding: 20px 20px 20px;
     }
     .hero-left, .hero-right { 
         text-align: center; 
         flex: none; 
     }
-    .hero-right { margin-top: 15px; } /* Increased from 10px to 15px for a bit more breathing room */
-    .logo-large { font-size: 80px; }
+    .hero-right { margin-top: 15px; }
+    .logo-large { 
+        font-size: 80px; 
+        margin-top: 20px; /* Added to move the logo down a tiny bit */
+    }
     .hero-right p { font-size: 24px; }
     .container-graphic { 
-        margin: 30px 0; /* Increased from 20px to 30px for a bit more space */
+        margin: 30px 0;
     }
     .container-text p { font-size: 18px; }
     .stats { gap: 20px; padding: 20px; }
