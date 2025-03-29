@@ -21,6 +21,17 @@ body {
     opacity: 0.3;
 }
 
+/* Piggy Bank Animation Styles */
+.piggy-bank-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* Behind the background overlay and all content */
+    opacity: 0.5; /* Subtle visibility */
+}
+
 .hidden-text {
     opacity: 0;
 }
@@ -114,7 +125,7 @@ nav a:hover {
     text-transform: uppercase;
     line-height: 1;
     display: inline-flex;
-    position: relative; /* For positioning the coin */
+    position: relative;
 }
 
 .letter {
@@ -138,20 +149,6 @@ nav a:hover {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-/* Hopping Coin Styles */
-.hopping-coin {
-    position: absolute;
-    width: 64px;
-    height: 64px;
-    top: -64px; /* Position above the letter */
-    left: 50%; /* Center above the "H" (third letter) */
-    transform: translateX(30px); /* Adjust to center above the "H" */
-    opacity: 0; /* Hidden initially */
-    transition: opacity 0.5s ease-in;
-    z-index: 10;
-    filter: brightness(0); /* Makes the coin black */
 }
 
 .hero-right {
@@ -444,12 +441,6 @@ footer p {
     .logo-large { 
         font-size: 80px; 
         margin-top: 40px;
-    }
-    .hopping-coin {
-        width: 48px;
-        height: 48px;
-        top: -48px;
-        transform: translateX(20px); /* Adjust for smaller "H" on mobile */
     }
     .hero-right p { font-size: 24px; }
     .container-graphic { 
