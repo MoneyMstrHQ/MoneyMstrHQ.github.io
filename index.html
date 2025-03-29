@@ -23,9 +23,7 @@
             </nav>
             <div class="hero">
                 <div class="hero-left">
-                    <h2 class="logo-large">
-                        <span class="letter">M</span><span class="letter">M</span><span class="letter">H</span><span class="letter">Q</span>
-                    </h2>
+                    <h2 class="logo-large">MMHQ</h2>
                 </div>
                 <div class="hero-right">
                     <p>Smart finance solutions for growing your wealth</p>
@@ -124,15 +122,13 @@
             document.querySelector('.nav-links').classList.toggle('active');
         });
 
-        // Page reveal after logo animation
+        // Page fade-in on load
         document.addEventListener('DOMContentLoaded', () => {
             const content = document.querySelector('.content-wrapper');
-
-            // Wait for the logo animation to complete (0.8s for pop-up + 0.2s buffer)
             setTimeout(() => {
                 content.style.opacity = '1';
                 content.style.transition = 'opacity 0.5s ease-in';
-            }, 1000); // Total: 0.8s animation + 0.2s buffer
+            }, 100); // Small delay to ensure smooth fade-in
         });
     </script>
 </body>
