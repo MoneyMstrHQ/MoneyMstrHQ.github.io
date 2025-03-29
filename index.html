@@ -144,7 +144,7 @@
                 });
                 hiddenElements.forEach(element => {
                     element.style.opacity = '1';
-                    element.style.transition = 'opacity 0.5s ease-in';
+                    text.style.transition = 'opacity 0.5s ease-in';
                 });
             }, 1200);
 
@@ -156,9 +156,6 @@
                 autoplay: false, // We'll control playback
                 path: 'piggy-bank.json' // Local file hosted on your GitHub Pages
             });
-
-            // Slow down the animation (50% speed)
-            piggyBankAnim.setSpeed(0.5);
 
             // Function to play the animation with a delay between loops
             function playWithDelay() {
