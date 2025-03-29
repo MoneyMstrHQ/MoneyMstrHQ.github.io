@@ -13,6 +13,9 @@
 <body>
     <div class="background-overlay"></div>
     <header>
+        <video id="header-video" muted playsinline>
+            <source src="https://videos.pexels.com/video-files/3943962/3943962-sd_960_506_25fps.mp4" type="video/mp4">
+        </video>
         <nav>
             <h1 class="logo"><span class="hidden-text">MMHQ</span></h1>
             <div class="hamburger"><span class="hidden-text">☰</span></div>
@@ -126,21 +129,37 @@
             document.querySelector('.nav-links').classList.toggle('active');
         });
 
-        // Reveal text and outlined elements after logo animation
         document.addEventListener('DOMContentLoaded', () => {
+            const video = document.getElementById('header-video');
             const hiddenTexts = document.querySelectorAll('.hidden-text');
             const hiddenElements = document.querySelectorAll('.hidden-element');
-            // Wait for the logo animation to complete (1.2s total: 0.8s for letters + 0.4s buffer)
-            setTimeout(() => {
-                hiddenTexts.forEach(text => {
-                    text.style.opacity = '1';
-                    text.style.transition = 'opacity 0.5s ease-in';
-                });
-                hiddenElements.forEach(element => {
-                    element.style.opacity = '1';
-                    element.style.transition = 'opacity 0.5s ease-in';
-                });
-            }, 1200);
+
+            // Play video on load
+            video.play();
+
+            // When video ends, fade it out and trigger logo animation
+            video.onended = () => {
+                video.style.opacity = '0';
+                setTimeout(() => {
+                    video.style.display = 'none'; // Hide video after fade
+                    startLogoAnimation();
+                }, 1000); // Match fade-out duration
+            };
+
+            function startLogoAnimation() {
+                // Reveal logo letters (already handled by CSS animation)
+                setTimeout(() => {
+                    // Reveal text and elements after logo animation (1.2s total)
+                    hiddenTexts.forEach(text => {
+                        text.style.opacity = '1';
+                        text.style.transition = 'opacity 0.5s ease-in';
+                    });
+                    hiddenElements.forEach(element => {
+                        element.style.opacity = '1';
+                        element.style.transition = 'opacity 0.5s ease-in';
+                    });
+                }, 1200); // Wait for logo animation to complete
+            }
         });
     </script>
 </body>
