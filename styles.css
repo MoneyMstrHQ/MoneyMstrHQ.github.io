@@ -35,6 +35,10 @@ header {
     flex-direction: column; 
     align-items: center; 
     position: relative; 
+    padding-top: 20px;
+    background: rgba(255, 255, 255, 0.95); /* Restored original white card styling */
+    margin: 20px;
+    border-radius: 12px;
     overflow: hidden; /* Ensure video stays within header */
 }
 
@@ -46,22 +50,7 @@ header {
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    transition: opacity 1s ease; /* Fade out effect */
-}
-
-.hero-card {
-    background: rgba(255, 255, 255, 0.95);
-    margin: 20px;
-    border-radius: 12px;
-    width: 100%;
-    max-width: 1240px; /* Matches original header width with padding */
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    z-index: 2; /* Above video */
-    transition: opacity 0.5s ease; /* Fade in effect */
+    transition: opacity 0.5s ease; /* Faster fade-out */
 }
 
 nav { 
@@ -72,6 +61,8 @@ nav {
     width: 100%; 
     max-width: 1200px; 
     margin: 0 auto;
+    position: relative;
+    z-index: 2; /* Above video */
 }
 
 .logo {
@@ -122,6 +113,8 @@ nav a:hover {
     width: 90%; 
     padding: 40px 20px; 
     flex: 1;
+    position: relative;
+    z-index: 2; /* Above video */
 }
 
 .hero-left {
@@ -186,6 +179,8 @@ nav a:hover {
 .container-graphic {
     text-align: center;
     margin: 40px 0;
+    position: relative;
+    z-index: 2; /* Above video */
 }
 
 .container-text {
@@ -433,11 +428,9 @@ footer p {
 
 @media (max-width: 768px) {
     header { 
-        min-height: 75vh;
-    }
-    .hero-card { 
+        padding-top: 10px; 
         margin: 10px; 
-        padding-top: 10px;
+        min-height: 75vh;
     }
     .hero { 
         flex-direction: column; 
