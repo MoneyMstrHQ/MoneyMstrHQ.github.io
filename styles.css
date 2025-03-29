@@ -23,6 +23,10 @@ body {
     opacity: 0.3;
 }
 
+.hidden-text {
+    opacity: 0;
+}
+
 header { 
     min-height: 100vh; 
     display: flex; 
@@ -106,14 +110,13 @@ nav a:hover {
     text-transform: uppercase;
     line-height: 1;
     display: inline-flex;
-    animation: pulse 0.5s ease-in-out 1.2s; /* Pulse after letter animation */
 }
 
 .letter {
     display: inline-block;
     opacity: 0;
     transform: translateY(20px);
-    animation: letterReveal 0.6s ease-out forwards;
+    animation: slideUpFade 0.5s ease-out forwards;
 }
 
 .letter:nth-child(1) { animation-delay: 0s; }
@@ -121,33 +124,14 @@ nav a:hover {
 .letter:nth-child(3) { animation-delay: 0.2s; }
 .letter:nth-child(4) { animation-delay: 0.3s; }
 
-@keyframes letterReveal {
+@keyframes slideUpFade {
     0% {
         opacity: 0;
         transform: translateY(20px);
-        text-shadow: none;
-    }
-    50% {
-        opacity: 1;
-        transform: translateY(0);
-        text-shadow: 0 0 10px rgba(255, 87, 51, 0.5); /* Subtle orange glow */
     }
     100% {
         opacity: 1;
         transform: translateY(0);
-        text-shadow: 0 0 5px rgba(255, 87, 51, 0.3);
-    }
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
     }
 }
 
