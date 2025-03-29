@@ -17,7 +17,7 @@
     <header>
         <!-- Intro Video -->
         <video class="intro-video" autoplay muted loop playsinline>
-            <source src="https://videos.pexels.com/video-files/3943962/3943962-sd_960_506_25fps.mp4" type="video/mp4">
+            <source src="path-to-your-video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <nav>
@@ -133,11 +133,11 @@
             document.querySelector('.nav-links').classList.toggle('active');
         });
 
-        // Reveal text and outlined elements after logo animation
+        // Reveal text and outlined elements after video and logo animation
         document.addEventListener('DOMContentLoaded', () => {
             const hiddenTexts = document.querySelectorAll('.hidden-text');
             const hiddenElements = document.querySelectorAll('.hidden-element');
-            // Wait for the logo animation to complete (1.2s total: 0.8s for letters + 0.4s buffer)
+            // Wait for the video (3s) + logo animation (0.8s) to complete
             setTimeout(() => {
                 hiddenTexts.forEach(text => {
                     text.style.opacity = '1';
@@ -147,7 +147,7 @@
                     element.style.opacity = '1';
                     element.style.transition = 'opacity 0.5s ease-in';
                 });
-            }, 1200);
+            }, 3800); // 3s (video) + 0.8s (logo animation)
         });
     </script>
 </body>
