@@ -50,7 +50,7 @@ header {
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    transition: opacity 0.2s ease; /* Even faster fade-out */
+    transition: opacity 2s ease; /* Slow and smooth fade-out over 2 seconds */
 }
 
 nav { 
@@ -318,7 +318,7 @@ h3 {
 }
 
 .btn:hover { 
-    background: #E04E2B; 
+    background: #E04E2 anzianiB; 
 }
 
 .badge { 
