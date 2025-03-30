@@ -36,7 +36,7 @@ header {
     align-items: center; 
     position: relative; 
     padding-top: 20px;
-    background: rgba(255, 255, 255, 0.95); /* Restored original white card styling */
+    background: rgba(255, 255, 255, 0.95); /* Original white card styling */
     margin: 20px;
     border-radius: 12px;
     overflow: hidden; /* Ensure video stays within header */
@@ -50,7 +50,7 @@ header {
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    transition: opacity 0.5s ease; /* Faster fade-out */
+    transition: opacity 0.2s ease; /* Even faster fade-out */
 }
 
 nav { 
