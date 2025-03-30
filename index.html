@@ -202,33 +202,33 @@
                 // Logo animation handled by CSS
             }
 
-            // Scroll-based orange outline on mobile
-            const sections = document.querySelectorAll('.stats, .testimonials, .strategies, .highlights, .about');
+            // Scroll-based glow on individual cards on mobile
+            const cards = document.querySelectorAll('.stat, .testimonial, .card, .highlight, .about-content');
             
-            function checkSectionPosition() {
+            function checkCardPosition() {
                 if (window.innerWidth > 768) return; // Only on mobile
 
                 const viewportHeight = window.innerHeight;
                 const viewportCenter = viewportHeight / 2;
 
-                sections.forEach(section => {
-                    const rect = section.getBoundingClientRect();
-                    const sectionHeight = rect.height;
-                    const sectionMidpoint = rect.top + (sectionHeight / 2);
+                cards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    const cardHeight = rect.height;
+                    const cardMidpoint = rect.top + (cardHeight / 2);
 
-                    // Check if the section's midpoint is near the viewport center
-                    if (sectionMidpoint > viewportCenter - 50 && sectionMidpoint < viewportCenter + 50) {
-                        section.classList.add('active-card');
+                    // Check if the card's midpoint is near the viewport center
+                    if (cardMidpoint > viewportCenter - 50 && cardMidpoint < viewportCenter + 50) {
+                        card.classList.add('active-glow');
                     } else {
-                        section.classList.remove('active-card');
+                        card.classList.remove('active-glow');
                     }
                 });
             }
 
             // Add scroll and resize listeners
-            window.addEventListener('scroll', checkSectionPosition);
-            window.addEventListener('resize', checkSectionPosition);
-            checkSectionPosition(); // Initial check
+            window.addEventListener('scroll', checkCardPosition);
+            window.addEventListener('resize', checkCardPosition);
+            checkCardPosition(); // Initial check
         });
     </script>
 </body>
