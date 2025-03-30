@@ -15,6 +15,7 @@
     <header>
         <video id="header-video" muted playsinline>
             <source src="https://videos.pexels.com/video-files/3943962/3943962-sd_960_506_25fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
         </video>
         <nav>
             <h1 class="logo"><span class="hidden-text">MMHQ</span></h1>
@@ -133,30 +134,30 @@
             const video = document.getElementById('header-video');
             const hiddenTexts = document.querySelectorAll('.hidden-text');
             const hiddenElements = document.querySelectorAll('.hidden-element');
+            let textRevealed = false;
+            let logoStarted = false;
 
-            // Play video on load
-            video.play();
+            // Attempt to play video and handle mobile fallback
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(() => {
+                    // If autoplay fails (e.g., mobile restriction), trigger text reveal immediately
+                    revealTextAndElements();
+                });
+            }
 
             // Handle video timing
             video.addEventListener('timeupdate', () => {
                 // Start fading out video and reveal text/elements at 3 seconds
-                if (video.currentTime >= 3) {
-                    if (video.style.opacity !== '0') {
-                        video.style.opacity = '0';
-                    }
-                    hiddenTexts.forEach(text => {
-                        text.style.opacity = '1';
-                        text.style.transition = 'opacity 0.5s ease-in';
-                    });
-                    hiddenElements.forEach(element => {
-                        element.style.opacity = '1';
-                        element.style.transition = 'opacity 0.5s ease-in';
-                    });
+                if (video.currentTime >= 3 && !textRevealed) {
+                    video.style.opacity = '0';
+                    revealTextAndElements();
+                    textRevealed = true;
                 }
                 // Start logo animation 1 second before video ends
-                if (video.duration - video.currentTime <= 1) {
+                if (video.duration - video.currentTime <= 1 && !logoStarted) {
                     startLogoAnimation();
-                    video.removeEventListener('timeupdate', this); // Remove listener after logo trigger
+                    logoStarted = true;
                 }
             });
 
@@ -165,8 +166,27 @@
                 video.style.display = 'none';
             };
 
+            // Fallback: If video doesn't play within 5 seconds, reveal text
+            setTimeout(() => {
+                if (!textRevealed) {
+                    revealTextAndElements();
+                    textRevealed = true;
+                }
+            }, 5000);
+
+            function revealTextAndElements() {
+                hiddenTexts.forEach(text => {
+                    text.style.opacity = '1';
+                    text.style.transition = 'opacity 0.5s ease-in';
+                });
+                hiddenElements.forEach(element => {
+                    element.style.opacity = '1';
+                    element.style.transition = 'opacity 0.5s ease-in';
+                });
+            }
+
             function startLogoAnimation() {
-                // Logo animation is handled by CSS, no text reveal here
+                // Logo animation is handled by CSS
             }
         });
     </script>
