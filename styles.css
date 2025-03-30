@@ -236,14 +236,19 @@ nav a:hover {
     transform: rotate(-5deg);
 }
 
+.stats, .testimonials, .strategies, .highlights, .about { 
+    padding: 60px 20px; 
+    background: #FFFFFF; 
+    margin: 20px; 
+    border-radius: 12px; 
+    text-align: center; 
+    transition: outline 0.3s ease; /* Smooth outline transition */
+}
+
 .stats { 
     display: flex; 
     justify-content: center; 
     gap: 40px; 
-    padding: 40px 20px; 
-    background: #FFFFFF; 
-    margin: 20px; 
-    border-radius: 12px; 
     flex-wrap: wrap; 
 }
 
@@ -261,14 +266,6 @@ nav a:hover {
 .stat p { 
     font-size: 16px; 
     color: #666; 
-}
-
-.testimonials, .strategies, .highlights, .about { 
-    padding: 60px 20px; 
-    background: #FFFFFF; 
-    margin: 20px; 
-    border-radius: 12px; 
-    text-align: center; 
 }
 
 h3 { 
@@ -488,6 +485,15 @@ footer p {
     .container-text p { 
         font-size: 18px; 
     }
+    .stats, .testimonials, .strategies, .highlights, .about {
+        padding: 40px 10px; 
+        margin: 10px; 
+    }
+    /* Orange outline when active on mobile */
+    .active-card {
+        outline: 3px solid #FF5733;
+        outline-offset: 2px;
+    }
     .stats { 
         gap: 15px; 
         padding: 20px; 
@@ -524,10 +530,6 @@ footer p {
     }
     nav a { 
         font-size: 14px; 
-    }
-    .testimonials, .strategies, .highlights, .about { 
-        padding: 40px 10px; 
-        margin: 10px; 
     }
     h3 { 
         font-size: 28px; 
