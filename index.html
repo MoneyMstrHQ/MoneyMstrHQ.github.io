@@ -137,9 +137,9 @@
             // Play video on load
             video.play();
 
-            // Start fading out video at 5 seconds
+            // Start fading out video at 3 seconds
             video.addEventListener('timeupdate', () => {
-                if (video.currentTime >= 5 && video.style.opacity !== '0') {
+                if (video.currentTime >= 3 && video.style.opacity !== '0') {
                     video.style.opacity = '0';
                 }
                 // Start logo animation 1 second before video ends
@@ -149,7 +149,7 @@
                 }
             });
 
-            // Hide video after fade-out completes
+            // Hide video after it ends
             video.onended = () => {
                 video.style.display = 'none';
             };
@@ -157,7 +157,7 @@
             function startLogoAnimation() {
                 // Logo animation is handled by CSS
                 setTimeout(() => {
-                    // Reveal text and elements after logo animation
+                    // Reveal text and elements sooner after logo animation
                     hiddenTexts.forEach(text => {
                         text.style.opacity = '1';
                         text.style.transition = 'opacity 0.5s ease-in';
@@ -166,7 +166,7 @@
                         element.style.opacity = '1';
                         element.style.transition = 'opacity 0.5s ease-in';
                     });
-                }, 1200); // Wait for logo animation to complete (0.8s + buffer)
+                }, 800); // Reduced from 1200ms to 800ms
             }
         });
     </script>
