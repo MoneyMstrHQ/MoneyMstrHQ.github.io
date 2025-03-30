@@ -139,12 +139,11 @@
 
             // Handle video timing
             video.addEventListener('timeupdate', () => {
-                // Start fading out video at 3 seconds
-                if (video.currentTime >= 3 && video.style.opacity !== '0') {
-                    video.style.opacity = '0';
-                }
-                // Reveal text and elements when video is fully faded (3s + 2s fade = 5s)
-                if (video.currentTime >= 5) {
+                // Start fading out video and reveal text/elements at 3 seconds
+                if (video.currentTime >= 3) {
+                    if (video.style.opacity !== '0') {
+                        video.style.opacity = '0';
+                    }
                     hiddenTexts.forEach(text => {
                         text.style.opacity = '1';
                         text.style.transition = 'opacity 0.5s ease-in';
@@ -167,7 +166,7 @@
             };
 
             function startLogoAnimation() {
-                // Logo animation is handled by CSS, no text reveal here anymore
+                // Logo animation is handled by CSS, no text reveal here
             }
         });
     </script>
