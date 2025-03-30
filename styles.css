@@ -29,6 +29,10 @@ body {
     opacity: 0;
 }
 
+.hidden {
+    display: none;
+}
+
 header { 
     min-height: 100vh; 
     display: flex; 
@@ -36,10 +40,10 @@ header {
     align-items: center; 
     position: relative; 
     padding-top: 20px;
-    background: rgba(255, 255, 255, 0.95); /* Original white card styling */
+    background: rgba(255, 255, 255, 0.95);
     margin: 20px;
     border-radius: 12px;
-    overflow: hidden; /* Ensure video stays within header */
+    overflow: hidden;
 }
 
 #header-video {
@@ -50,7 +54,28 @@ header {
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    transition: opacity 2s ease; /* Slow and smooth fade-out over 2 seconds */
+    transition: opacity 2s ease;
+}
+
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #FF5733;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 3;
+    transition: background 0.3s ease;
+}
+
+.play-btn:hover {
+    background: #E04E2B;
 }
 
 nav { 
@@ -62,7 +87,7 @@ nav {
     max-width: 1200px; 
     margin: 0 auto;
     position: relative;
-    z-index: 2; /* Above video */
+    z-index: 2;
 }
 
 .logo {
@@ -114,7 +139,7 @@ nav a:hover {
     padding: 40px 20px; 
     flex: 1;
     position: relative;
-    z-index: 2; /* Above video */
+    z-index: 2;
 }
 
 .hero-left {
@@ -180,7 +205,7 @@ nav a:hover {
     text-align: center;
     margin: 40px 0;
     position: relative;
-    z-index: 2; /* Above video */
+    z-index: 2;
 }
 
 .container-text {
@@ -430,10 +455,10 @@ footer p {
     header { 
         padding-top: 10px; 
         margin: 10px; 
-        min-height: 60vh; /* Reduced height for mobile */
+        min-height: 60vh;
     }
     #header-video {
-        object-fit: cover; /* Ensure video scales properly */
+        object-fit: cover;
         height: 100%;
         width: 100%;
     }
@@ -448,11 +473,11 @@ footer p {
     }
     .hero-right { margin-top: 10px; }
     .logo-large { 
-        font-size: 60px; /* Smaller logo for mobile */
+        font-size: 60px;
         margin-top: 20px;
     }
     .hero-right p { 
-        font-size: 20px; /* Smaller text for mobile */
+        font-size: 20px;
     }
     .container-graphic { 
         margin: 20px 0;
@@ -486,7 +511,7 @@ footer p {
         display: none; 
         flex-direction: column; 
         position: absolute; 
-        top: 50px; /* Adjusted for smaller nav */
+        top: 50px; 
         left: 0; 
         width: 100%; 
         background: #FFFFFF; 
