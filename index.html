@@ -137,20 +137,21 @@
             // Play video on load
             video.play();
 
-            // Start logo animation 1 second before video ends
+            // Start fading out video at 5 seconds
             video.addEventListener('timeupdate', () => {
+                if (video.currentTime >= 5 && video.style.opacity !== '0') {
+                    video.style.opacity = '0';
+                }
+                // Start logo animation 1 second before video ends
                 if (video.duration - video.currentTime <= 1) {
                     startLogoAnimation();
-                    video.removeEventListener('timeupdate', this); // Remove listener after trigger
+                    video.removeEventListener('timeupdate', this); // Remove listener after logo trigger
                 }
             });
 
-            // Fade out video when it ends
+            // Hide video after fade-out completes
             video.onended = () => {
-                video.style.opacity = '0';
-                setTimeout(() => {
-                    video.style.display = 'none'; // Hide video after fade
-                }, 200); // Match faster fade-out duration (0.2s)
+                video.style.display = 'none';
             };
 
             function startLogoAnimation() {
@@ -163,7 +164,7 @@
                     });
                     hiddenElements.forEach(element => {
                         element.style.opacity = '1';
-                        element.style.transition = 'opacity 0.5s ease-in'; // Fixed typo from 'text' to 'element'
+                        element.style.transition = 'opacity 0.5s ease-in';
                     });
                 }, 1200); // Wait for logo animation to complete (0.8s + buffer)
             }
