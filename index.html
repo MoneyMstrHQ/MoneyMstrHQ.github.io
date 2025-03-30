@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MMHQ</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <!-- Preload the Inter font -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" as="style">
     <!-- Load the font stylesheet -->
@@ -17,6 +19,7 @@
             <source src="https://videos.pexels.com/video-files/3943962/3943962-sd_960_506_25fps.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+        <button id="play-video" class="play-btn hidden">Play Video</button>
         <nav>
             <h1 class="logo"><span class="hidden-text">MMHQ</span></h1>
             <div class="hamburger"><span class="hidden-text">☰</span></div>
@@ -132,29 +135,40 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             const video = document.getElementById('header-video');
+            const playBtn = document.getElementById('play-video');
             const hiddenTexts = document.querySelectorAll('.hidden-text');
             const hiddenElements = document.querySelectorAll('.hidden-element');
             let textRevealed = false;
             let logoStarted = false;
 
-            // Attempt to play video and handle mobile fallback
+            // Attempt to play video
             const playPromise = video.play();
             if (playPromise !== undefined) {
-                playPromise.catch(() => {
-                    // If autoplay fails (e.g., mobile restriction), trigger text reveal immediately
-                    revealTextAndElements();
-                });
+                playPromise
+                    .then(() => {
+                        playBtn.classList.add('hidden'); // Hide play button if video plays
+                    })
+                    .catch(() => {
+                        // Show play button if autoplay fails
+                        playBtn.classList.remove('hidden');
+                        revealTextAndElements(); // Show text immediately
+                    });
             }
+
+            // Play button click handler
+            playBtn.addEventListener('click', () => {
+                video.play().then(() => {
+                    playBtn.classList.add('hidden');
+                });
+            });
 
             // Handle video timing
             video.addEventListener('timeupdate', () => {
-                // Start fading out video and reveal text/elements at 3 seconds
                 if (video.currentTime >= 3 && !textRevealed) {
                     video.style.opacity = '0';
                     revealTextAndElements();
                     textRevealed = true;
                 }
-                // Start logo animation 1 second before video ends
                 if (video.duration - video.currentTime <= 1 && !logoStarted) {
                     startLogoAnimation();
                     logoStarted = true;
@@ -166,7 +180,7 @@
                 video.style.display = 'none';
             };
 
-            // Fallback: If video doesn't play within 5 seconds, reveal text
+            // Fallback: Reveal text if video doesn't progress after 5s
             setTimeout(() => {
                 if (!textRevealed) {
                     revealTextAndElements();
@@ -186,7 +200,7 @@
             }
 
             function startLogoAnimation() {
-                // Logo animation is handled by CSS
+                // Logo animation handled by CSS
             }
         });
     </script>
