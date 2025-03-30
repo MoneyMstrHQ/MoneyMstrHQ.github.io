@@ -202,8 +202,8 @@
                 // Logo animation handled by CSS
             }
 
-            // Scroll-based glow on individual cards on mobile
-            const cards = document.querySelectorAll('.stat, .testimonial, .card, .highlight, .about-content');
+            // Scroll-based glow on individual cards on mobile (excluding .stat)
+            const cards = document.querySelectorAll('.testimonial, .card, .highlight, .about-content');
             
             function checkCardPosition() {
                 if (window.innerWidth > 768) return; // Only on mobile
