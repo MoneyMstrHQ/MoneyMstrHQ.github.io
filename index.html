@@ -137,10 +137,22 @@
             // Play video on load
             video.play();
 
-            // Start fading out video at 3 seconds
+            // Handle video timing
             video.addEventListener('timeupdate', () => {
+                // Start fading out video at 3 seconds
                 if (video.currentTime >= 3 && video.style.opacity !== '0') {
                     video.style.opacity = '0';
+                }
+                // Reveal text and elements when video is fully faded (3s + 2s fade = 5s)
+                if (video.currentTime >= 5) {
+                    hiddenTexts.forEach(text => {
+                        text.style.opacity = '1';
+                        text.style.transition = 'opacity 0.5s ease-in';
+                    });
+                    hiddenElements.forEach(element => {
+                        element.style.opacity = '1';
+                        element.style.transition = 'opacity 0.5s ease-in';
+                    });
                 }
                 // Start logo animation 1 second before video ends
                 if (video.duration - video.currentTime <= 1) {
@@ -155,18 +167,7 @@
             };
 
             function startLogoAnimation() {
-                // Logo animation is handled by CSS
-                setTimeout(() => {
-                    // Reveal text and elements sooner after logo animation
-                    hiddenTexts.forEach(text => {
-                        text.style.opacity = '1';
-                        text.style.transition = 'opacity 0.5s ease-in';
-                    });
-                    hiddenElements.forEach(element => {
-                        element.style.opacity = '1';
-                        element.style.transition = 'opacity 0.5s ease-in';
-                    });
-                }, 800); // Reduced from 1200ms to 800ms
+                // Logo animation is handled by CSS, no text reveal here anymore
             }
         });
     </script>
