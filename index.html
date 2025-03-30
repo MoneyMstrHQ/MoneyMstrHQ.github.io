@@ -1,103 +1,235 @@
-<script>
-    document.querySelector('.hamburger').addEventListener('click', () => {
-        document.querySelector('.nav-links').classList.toggle('active');
-    });
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMHQ</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!-- Preload the Inter font -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" as="style">
+    <!-- Load the font stylesheet -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <header>
+        <video id="header-video" muted playsinline>
+            <source src="https://videos.pexels.com/video-files/3943962/3943962-sd_960_506_25fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <button id="play-video" class="play-btn hidden">Play Video</button>
+        <nav>
+            <h1 class="logo"><span class="hidden-text">MMHQ</span></h1>
+            <div class="hamburger"><span class="hidden-text">☰</span></div>
+            <ul class="nav-links">
+                <li><a href="#"><span class="hidden-text">Home</span></a></li>
+                <li><a href="#"><span class="hidden-text">Strategies</span></a></li>
+                <li><a href="#"><span class="hidden-text">Stats</span></a></li>
+                <li><a href="#"><span class="hidden-text">Tools</span></a></li>
+                <li><a href="#" class="lang-toggle hidden-element"><span class="hidden-text">EN</span></a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <div class="hero-left">
+                <h2 class="logo-large">
+                    <span class="letter">M</span><span class="letter">M</span><span class="letter">H</span><span class="letter">Q</span>
+                </h2>
+            </div>
+            <div class="hero-right">
+                <p><span class="hidden-text">Smart finance solutions for growing your wealth</span></p>
+                <span class="established hidden-element"><span class="hidden-text">Established 2025</span></span>
+            </div>
+        </div>
+        <div class="container-graphic">
+            <div class="container-text hidden-element">
+                <p><span class="hidden-text">Smart Finance Solutions</span></p>
+                <span class="container-label hidden-element"><span class="hidden-text">BY MMHQ</span></span>
+            </div>
+        </div>
+    </header>
+    <section class="stats">
+        <div class="stat">
+            <span><span class="hidden-text">$500+</span></span>
+            <p><span class="hidden-text">Saved</span></p>
+        </div>
+        <div class="stat">
+            <span><span class="hidden-text">10,000+</span></span>
+            <p><span class="hidden-text">Users</span></p>
+        </div>
+        <div class="stat">
+            <span><span class="hidden-text">20%+</span></span>
+            <p><span class="hidden-text">Growth</span></p>
+        </div>
+    </section>
+    <section class="testimonials">
+        <h3><span class="hidden-text">What Users Say</span></h3>
+        <div class="grid">
+            <div class="testimonial hidden-element">
+                <p><span class="hidden-text">"Saved $500 in a week—total game changer!"</span></p>
+                <span><span class="hidden-text">- Alex, Savvy Saver</span></span>
+            </div>
+            <div class="testimonial hidden-element">
+                <p><span class="hidden-text">"Grew my portfolio 20% with their tips."</span></p>
+                <span><span class="hidden-text">- Jamie, Investor</span></span>
+            </div>
+        </div>
+    </section>
+    <section class="strategies">
+        <h3><span class="hidden-text">Proven Strategies</span></h3>
+        <div class="grid">
+            <div class="card hidden-element">
+                <h4><span class="hidden-text">Save $500 in 7 Days</span></h4>
+                <p><span class="hidden-text">Cut $200 from subscriptions (audit with <a href="https://impact.com/ynab-link">YNAB</a>), $150 from groceries (meal plan), and $150 from impulse buys (set a $20 daily cap).</span></p>
+            </div>
+            <div class="card hidden-element">
+                <h4><span class="hidden-text">Grow 20% with Easy Investing</span></h4>
+                <p><span class="hidden-text">Start with $100 in an ETF via <a href="https://cj.com/investing-app-link">Robinhood</a>, reinvest dividends monthly, and track gains weekly—low risk, high reward.</span></p>
+            </div>
+            <div class="card hidden-element">
+                <h4><span class="hidden-text">Ditch Debt in 90 Days</span></h4>
+                <p><span class="hidden-text">Use the snowball method: pay off smallest debts first with <a href="https://impact.com/credit-card-link">top card picks</a>, roll savings into the next, repeat.</span></p>
+            </div>
+        </div>
+    </section>
+    <section class="highlights">
+        <h3><span class="hidden-text">Top Finance Tools</span></h3>
+        <div class="highlight-grid">
+            <div class="highlight hidden-element">
+                <p><span class="hidden-text">"Budget app with 4.8 stars—saves time!"</span></p>
+                <a href="https://impact.com/ynab-link" class="btn btn-small hidden-element"><span class="hidden-text">Get YNAB Free</span></a>
+                <span class="badge hidden-element"><span class="hidden-text">Top Pick</span></span>
+            </div>
+            <div class="highlight hidden-element">
+                <p><span class="hidden-text">"Investment course—up 20% in 90 days."</span></p>
+                <a href="https://cj.com/investing-app-link" class="btn btn-small hidden-element"><span class="hidden-text">Start Investing</span></a>
+                <span class="badge hidden-element"><span class="hidden-text">Best Value</span></span>
+            </div>
+        </div>
+    </section>
+    <section class="about">
+        <h3><span class="hidden-text">Who’s Behind MMHQ</span></h3>
+        <div class="about-content">
+            <img src="https://raw.githubusercontent.com/moneymstrhq/moneymstrhq.github.io/main/skye-carter-highres.png" alt="Skye Carter" class="avatar hidden-element">
+            <div class="about-text">
+                <p><span class="hidden-text">Hey, I’m Skye Carter—ex-finance nerd, now wealth hacker. MMHQ’s my mission to kill money stress with tools that actually work. Goal: 10k people saving $500 by 2026. Join the squad.</span></p>
+                <form class="signup">
+                    <input type="email" placeholder="Your email" required class="hidden-element">
+                    <button type="submit" class="btn btn-small hidden-element"><span class="hidden-text">Join the Crew</span></button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p><span class="hidden-text">© 2025 MMHQ Elite Wealth Systems</span></p>
+        <div class="social">
+            <a href="https://x.com/MoneyMasterHQ" class="social-icon hidden-element"><span class="hidden-text">𝕏</span></a>
+            <a href="#" class="social-icon hidden-element"><span class="hidden-text">🎮</span></a>
+        </div>
+    </footer>
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const video = document.getElementById('header-video');
-        const playBtn = document.getElementById('play-video');
-        const hiddenTexts = document.querySelectorAll('.hidden-text');
-        const hiddenElements = document.querySelectorAll('.hidden-element');
-        let textRevealed = false;
-        let logoStarted = false;
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.getElementById('header-video');
+            const playBtn = document.getElementById('play-video');
+            const hiddenTexts = document.querySelectorAll('.hidden-text');
+            const hiddenElements = document.querySelectorAll('.hidden-element');
+            let textRevealed = false;
+            let logoStarted = false;
 
-        // Attempt to play video
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-            playPromise
-                .then(() => {
+            // Attempt to play video
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise
+                    .then(() => {
+                        playBtn.classList.add('hidden');
+                    })
+                    .catch(() => {
+                        playBtn.classList.remove('hidden');
+                        revealTextAndElements();
+                    });
+            }
+
+            // Play button click handler
+            playBtn.addEventListener('click', () => {
+                video.play().then(() => {
                     playBtn.classList.add('hidden');
-                })
-                .catch(() => {
-                    playBtn.classList.remove('hidden');
-                    revealTextAndElements();
                 });
-        }
-
-        // Play button click handler
-        playBtn.addEventListener('click', () => {
-            video.play().then(() => {
-                playBtn.classList.add('hidden');
             });
-        });
 
-        // Handle video timing
-        video.addEventListener('timeupdate', () => {
-            if (video.currentTime >= 3 && !textRevealed) {
-                video.style.opacity = '0';
-                revealTextAndElements();
-                textRevealed = true;
-            }
-            if (video.duration - video.currentTime <= 1 && !logoStarted) {
-                startLogoAnimation();
-                logoStarted = true;
-            }
-        });
-
-        // Hide video after it ends
-        video.onended = () => {
-            video.style.display = 'none';
-        };
-
-        // Fallback: Reveal text if video doesn't progress after 5s
-        setTimeout(() => {
-            if (!textRevealed) {
-                revealTextAndElements();
-                textRevealed = true;
-            }
-        }, 5000);
-
-        function revealTextAndElements() {
-            hiddenTexts.forEach(text => {
-                text.style.opacity = '1';
-                text.style.transition = 'opacity 0.5s ease-in';
-            });
-            hiddenElements.forEach(element => {
-                element.style.opacity = '1';
-                element.style.transition = 'opacity 0.5s ease-in';
-            });
-        }
-
-        function startLogoAnimation() {
-            // Logo animation handled by CSS
-        }
-
-        // Scroll-based orange outline on mobile
-        const sections = document.querySelectorAll('.stats, .testimonials, .strategies, .highlights, .about');
-        
-        function checkSectionPosition() {
-            if (window.innerWidth > 768) return; // Only on mobile
-
-            const viewportHeight = window.innerHeight;
-            const viewportCenter = viewportHeight / 2;
-
-            sections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-                const sectionHeight = rect.height;
-                const sectionMidpoint = rect.top + (sectionHeight / 2);
-
-                // Check if the section's midpoint is near the viewport center
-                if (sectionMidpoint > viewportCenter - 50 && sectionMidpoint < viewportCenter + 50) {
-                    section.classList.add('active-card');
-                } else {
-                    section.classList.remove('active-card');
+            // Handle video timing
+            video.addEventListener('timeupdate', () => {
+                if (video.currentTime >= 3 && !textRevealed) {
+                    video.style.opacity = '0';
+                    revealTextAndElements();
+                    textRevealed = true;
+                }
+                if (video.duration - video.currentTime <= 1 && !logoStarted) {
+                    startLogoAnimation();
+                    logoStarted = true;
                 }
             });
-        }
 
-        // Add scroll and resize listeners
-        window.addEventListener('scroll', checkSectionPosition);
-        window.addEventListener('resize', checkSectionPosition);
-        checkSectionPosition(); // Initial check
-    });
-</script>
+            // Hide video after it ends
+            video.onended = () => {
+                video.style.display = 'none';
+            };
+
+            // Fallback: Reveal text if video doesn't progress after 5s
+            setTimeout(() => {
+                if (!textRevealed) {
+                    revealTextAndElements();
+                    textRevealed = true;
+                }
+            }, 5000);
+
+            function revealTextAndElements() {
+                hiddenTexts.forEach(text => {
+                    text.style.opacity = '1';
+                    text.style.transition = 'opacity 0.5s ease-in';
+                });
+                hiddenElements.forEach(element => {
+                    element.style.opacity = '1';
+                    element.style.transition = 'opacity 0.5s ease-in';
+                });
+            }
+
+            function startLogoAnimation() {
+                // Logo animation handled by CSS
+            }
+
+            // Scroll-based orange outline on mobile
+            const sections = document.querySelectorAll('.stats, .testimonials, .strategies, .highlights, .about');
+            
+            function checkSectionPosition() {
+                if (window.innerWidth > 768) return; // Only on mobile
+
+                const viewportHeight = window.innerHeight;
+                const viewportCenter = viewportHeight / 2;
+
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    const sectionHeight = rect.height;
+                    const sectionMidpoint = rect.top + (sectionHeight / 2);
+
+                    // Check if the section's midpoint is near the viewport center
+                    if (sectionMidpoint > viewportCenter - 50 && sectionMidpoint < viewportCenter + 50) {
+                        section.classList.add('active-card');
+                    } else {
+                        section.classList.remove('active-card');
+                    }
+                });
+            }
+
+            // Add scroll and resize listeners
+            window.addEventListener('scroll', checkSectionPosition);
+            window.addEventListener('resize', checkSectionPosition);
+            checkSectionPosition(); // Initial check
+        });
+    </script>
+</body>
+</html>
