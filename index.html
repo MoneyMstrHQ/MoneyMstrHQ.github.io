@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MMHQ</title>
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <!-- Preload the Inter font -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" as="style">
-    <!-- Load the font stylesheet -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -81,15 +78,15 @@
         <div class="grid">
             <div class="card hidden-element">
                 <h4><span class="hidden-text">Save $500 in 7 Days</span></h4>
-                <p><span class="hidden-text">Cut $200 from subscriptions (audit with <a href="https://impact.com/ynab-link">YNAB</a>), $150 from groceries (meal plan), and $150 from impulse buys (set a $20 daily cap).</span></p>
+                <p><span class="hidden-text">Slash $200 off subscriptions with <a href="https://impactradius.go2cloud.org/aff_c?offer_id=simplifi&aff_id=yourID">Simplifi by Quicken</a> (track every penny), save $150 on groceries (meal prep like a pro), and cut $150 from impulse buys (set a $20 daily limit).</span></p>
             </div>
             <div class="card hidden-element">
                 <h4><span class="hidden-text">Grow 20% with Easy Investing</span></h4>
-                <p><span class="hidden-text">Start with $100 in an ETF via <a href="https://cj.com/investing-app-link">Robinhood</a>, reinvest dividends monthly, and track gains weekly—low risk, high reward.</span></p>
+                <p><span class="hidden-text">Kick off with $100 in stocks via <a href="https://impactradius.go2cloud.org/aff_c?offer_id=moomoo&aff_id=yourID">Moomoo</a> (free trades + bonuses), reinvest dividends monthly, and watch gains stack up—low risk, big reward.</span></p>
             </div>
             <div class="card hidden-element">
                 <h4><span class="hidden-text">Ditch Debt in 90 Days</span></h4>
-                <p><span class="hidden-text">Use the snowball method: pay off smallest debts first with <a href="https://impact.com/credit-card-link">top card picks</a>, roll savings into the next, repeat.</span></p>
+                <p><span class="hidden-text">Snowball debt with <a href="https://it-media.pxf.io/kOZEZd">PersonalLoans.com</a> (up to $35k) or <a href="https://impactradius.go2cloud.org/aff_c?offer_id=upgrade&aff_id=yourID">Upgrade</a> (fast loans, no fees)—roll savings into the next debt.</span></p>
             </div>
         </div>
     </section>
@@ -97,14 +94,19 @@
         <h3><span class="hidden-text">Top Finance Tools</span></h3>
         <div class="highlight-grid">
             <div class="highlight hidden-element">
-                <p><span class="hidden-text">"Budget app with 4.8 stars—saves time!"</span></p>
-                <a href="https://impact.com/ynab-link" class="btn btn-small hidden-element"><span class="hidden-text">Get YNAB Free</span></a>
+                <p><span class="hidden-text">"Top budgeting app—simplify your savings!"</span></p>
+                <a href="https://impactradius.go2cloud.org/aff_c?offer_id=simplifi&aff_id=yourID" class="btn btn-small hidden-element"><span class="hidden-text">Try Simplifi Free</span></a>
                 <span class="badge hidden-element"><span class="hidden-text">Top Pick</span></span>
             </div>
             <div class="highlight hidden-element">
-                <p><span class="hidden-text">"Investment course—up 20% in 90 days."</span></p>
-                <a href="https://cj.com/investing-app-link" class="btn btn-small hidden-element"><span class="hidden-text">Start Investing</span></a>
+                <p><span class="hidden-text">"Invest smarter—20% gains in 90 days!"</span></p>
+                <a href="https://impactradius.go2cloud.org/aff_c?offer_id=moomoo&aff_id=yourID" class="btn btn-small hidden-element"><span class="hidden-text">Start with Moomoo</span></a>
                 <span class="badge hidden-element"><span class="hidden-text">Best Value</span></span>
+            </div>
+            <div class="highlight hidden-element">
+                <p><span class="hidden-text">"Fast loans—crush debt now!"</span></p>
+                <a href="https://it-media.pxf.io/kOZEZd" class="btn btn-small hidden-element"><span class="hidden-text">Get PersonalLoans</span></a>
+                <span class="badge hidden-element"><span class="hidden-text">Debt Buster</span></span>
             </div>
         </div>
     </section>
@@ -141,27 +143,17 @@
             let textRevealed = false;
             let logoStarted = false;
 
-            // Attempt to play video
             const playPromise = video.play();
             if (playPromise !== undefined) {
                 playPromise
-                    .then(() => {
-                        playBtn.classList.add('hidden');
-                    })
-                    .catch(() => {
-                        playBtn.classList.remove('hidden');
-                        revealTextAndElements();
-                    });
+                    .then(() => { playBtn.classList.add('hidden'); })
+                    .catch(() => { playBtn.classList.remove('hidden'); revealTextAndElements(); });
             }
 
-            // Play button click handler
             playBtn.addEventListener('click', () => {
-                video.play().then(() => {
-                    playBtn.classList.add('hidden');
-                });
+                video.play().then(() => { playBtn.classList.add('hidden'); });
             });
 
-            // Handle video timing
             video.addEventListener('timeupdate', () => {
                 if (video.currentTime >= 3 && !textRevealed) {
                     video.style.opacity = '0';
@@ -174,12 +166,8 @@
                 }
             });
 
-            // Hide video after it ends
-            video.onended = () => {
-                video.style.display = 'none';
-            };
+            video.onended = () => { video.style.display = 'none'; };
 
-            // Fallback: Reveal text if video doesn't progress after 5s
             setTimeout(() => {
                 if (!textRevealed) {
                     revealTextAndElements();
@@ -198,15 +186,12 @@
                 });
             }
 
-            function startLogoAnimation() {
-                // Logo animation handled by CSS
-            }
+            function startLogoAnimation() {}
 
-            // Scroll-based glow on individual cards on mobile (excluding .stat)
             const cards = document.querySelectorAll('.testimonial, .card, .highlight, .about-content');
             
             function checkCardPosition() {
-                if (window.innerWidth > 768) return; // Only on mobile
+                if (window.innerWidth > 768) return;
 
                 const viewportHeight = window.innerHeight;
                 const viewportCenter = viewportHeight / 2;
@@ -216,7 +201,6 @@
                     const cardHeight = rect.height;
                     const cardMidpoint = rect.top + (cardHeight / 2);
 
-                    // Check if the card's midpoint is near the viewport center
                     if (cardMidpoint > viewportCenter - 50 && cardMidpoint < viewportCenter + 50) {
                         card.classList.add('active-glow');
                     } else {
@@ -225,10 +209,9 @@
                 });
             }
 
-            // Add scroll and resize listeners
             window.addEventListener('scroll', checkCardPosition);
             window.addEventListener('resize', checkCardPosition);
-            checkCardPosition(); // Initial check
+            checkCardPosition();
         });
     </script>
 </body>
